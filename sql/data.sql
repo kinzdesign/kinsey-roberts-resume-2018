@@ -26,6 +26,16 @@ USE `resume`;
 
 LOCK TABLES `bullets` WRITE;
 /*!40000 ALTER TABLE `bullets` DISABLE KEYS */;
+INSERT INTO `bullets` VALUES
+  (1,1,'WSOM Bullet A',1),
+  (2,1,'WSOM Bullet B',2),
+  (3,1,'WSOM Bullet C',3),
+  (4,2,'DOSA Bullet A',1),
+  (5,2,'DOSA Bullet B',2),
+  (6,2,'DOSA Bullet C',3),
+  (7,3,'BS Bullet A',1),
+  (8,5,'MS Bullet B',2),
+  (9,5,'MS Bullet A',1);
 /*!40000 ALTER TABLE `bullets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,6 +70,12 @@ UNLOCK TABLES;
 
 LOCK TABLES `project_skills` WRITE;
 /*!40000 ALTER TABLE `project_skills` DISABLE KEYS */;
+INSERT INTO `project_skills` VALUES
+  (1,2,NULL),
+  (2,1,NULL),
+  (2,2,NULL),
+  (3,1,NULL),
+  (4,1,NULL);
 /*!40000 ALTER TABLE `project_skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -69,6 +85,11 @@ UNLOCK TABLES;
 
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
+INSERT INTO `projects` VALUES
+  (1,1,'WSOM Project B','wsom-project-b',2),
+  (2,1,'WSOM Project A','wsom-project-a',1),
+  (3,2,'ITOG Project','itog-project',NULL),
+  (4,5,'MS Project','ms-project',NULL);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,6 +99,10 @@ UNLOCK TABLES;
 
 LOCK TABLES `skill_types` WRITE;
 /*!40000 ALTER TABLE `skill_types` DISABLE KEYS */;
+INSERT INTO `skill_types` VALUES
+  (1,'Type C','type-c',3),
+  (2,'Type A','type-a',1),
+  (3,'Type B','type-b',2);
 /*!40000 ALTER TABLE `skill_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,6 +112,9 @@ UNLOCK TABLES;
 
 LOCK TABLES `skills` WRITE;
 /*!40000 ALTER TABLE `skills` DISABLE KEYS */;
+INSERT INTO `skills` VALUES
+  (1,1,'Skill AA','skill-aa',NULL,NULL),
+  (2,2,'Skill BA','skill-ba',NULL,NULL);
 /*!40000 ALTER TABLE `skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
