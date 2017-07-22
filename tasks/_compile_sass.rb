@@ -17,7 +17,6 @@ end
 def compile_sass_with_map(webroot, file_name, sass_file, out_path, style, sass_cache_dir, git)
   # compute map file path
   map_path = "#{out_path}.map"
-puts "map_path /#{map_path}"
   # build Sass Engine with correct options
   sass_engine = Sass::Engine.for_file(File.join(webroot, sass_file), {
     :style => style,

@@ -26,7 +26,7 @@
     echo "<li{$class}><a href=\"$href\">$text</a></li>\r\n";
   }
 ?>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
 <?# Brand and toggle get grouped for better mobile display ?>
         <div class="navbar-header">
