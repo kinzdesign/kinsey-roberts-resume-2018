@@ -89,6 +89,7 @@ CREATE TABLE `project_skills` (
   `displayorder` tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`project`,`skill`),
   KEY `skill` (`skill`),
+  KEY `project` (`project`),
   CONSTRAINT `project_skills_ibfk_1` FOREIGN KEY (`project`) REFERENCES `projects` (`id`),
   CONSTRAINT `project_skills_ibfk_2` FOREIGN KEY (`skill`) REFERENCES `skills` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -108,6 +109,7 @@ CREATE TABLE `projects` (
   `slug` varchar(160) DEFAULT NULL,
   `displayorder` tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`),
   KEY `experience` (`tenure`),
   CONSTRAINT `projects_ibfk_1` FOREIGN KEY (`tenure`) REFERENCES `tenures` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -125,7 +127,8 @@ CREATE TABLE `skill_types` (
   `name` varchar(55) NOT NULL,
   `slug` varchar(55) NOT NULL,
   `displayorder` tinyint(4) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -141,11 +144,11 @@ CREATE TABLE `skills` (
   `type` tinyint(3) unsigned NOT NULL,
   `name` varchar(55) NOT NULL,
   `slug` varchar(55) NOT NULL,
-  `synopsis` varchar(160) NOT NULL,
+  `synopsis` varchar(160) DEFAULT NULL,
   `displayorder` tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`) USING BTREE,
   KEY `category` (`type`),
-  KEY `slug` (`slug`),
   CONSTRAINT `skills_ibfk_1` FOREIGN KEY (`type`) REFERENCES `skill_types` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -162,7 +165,8 @@ CREATE TABLE `tenure_types` (
   `name` varchar(55) NOT NULL,
   `slug` varchar(55) NOT NULL,
   `displayorder` tinyint(3) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -184,6 +188,7 @@ CREATE TABLE `tenures` (
   `start` date NOT NULL,
   `end` date DEFAULT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`),
   KEY `type` (`type`),
   KEY `organization` (`department`) USING BTREE,
   CONSTRAINT `tenures_ibfk_1` FOREIGN KEY (`type`) REFERENCES `tenure_types` (`id`),
