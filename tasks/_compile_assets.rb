@@ -1,4 +1,5 @@
 Dir.chdir("/")
+require 'git'
 require_relative '_compile_sass'
 require_relative '_concat_javascript'
 require_relative '_get_webroot'
@@ -11,13 +12,16 @@ def compile_assets()
   webroot = get_webroot()
   sass_cache_dir = File.join(webroot, ".sass-cache")
 
-  # compile sass
-  compile_sass("resume", webroot, sass_cache_dir)
-  compile_sass("resume-critical", webroot, sass_cache_dir)
+  # open Git repository
+  git = Git.open(webroot)
 
-  # compile javascript
-  concat_javascript("resume", webroot)
+  # compile sass
+  compile_sass(webroot, "resume", sass_cache_dir, git)
+  compile_sass(webroot, "resume-critical", sass_cache_dir, git)
+
+  # # compile javascript
+  concat_javascript(webroot, "resume", git)
 
   # update timestamp to expire caches
-  update_timestamp(webroot)
+  update_timestamp(webroot, git)
 end
