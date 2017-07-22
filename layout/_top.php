@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<? 
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/classes/Config.php'); 
+?><!DOCTYPE html>
 <html lang="en">
   <head>
 <? require($_SERVER['DOCUMENT_ROOT'] . '/layout/_head.php'); ?>
