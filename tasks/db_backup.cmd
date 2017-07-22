@@ -1,6 +1,7 @@
 :: Dumps structure and contents of database to the file system
 :: for inclusion in source control.
-:: PREREQ: Copy /sql/mysql.cnf.blank to /sql/mysql.cnf and complete values
+:: PREREQ: Copy /sql/mysql.cnf.blank to /sql/mysql.cnf and
+::         edit config under [mysqldump] block
 @ECHO OFF
 ECHO.
 ECHO Dumping database structure...
