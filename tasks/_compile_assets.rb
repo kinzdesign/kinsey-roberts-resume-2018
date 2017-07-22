@@ -8,4 +8,5 @@ def compile_assets()
 
   # Compile Sass
   compile_sass("resume", webroot, sass_cache_dir)
+  compile_sass("resume-critical", webroot, sass_cache_dir)
 end
