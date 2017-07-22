@@ -5226,5 +5226,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   width: device-width; }
 @viewport {
   width: device-width; }
+body.top-navbar-fixed {
+  padding-top: 70px; }
 
 /*# sourceMappingURL=/assets/css/resume.css.map */
