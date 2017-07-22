@@ -73,12 +73,12 @@ LOCK TABLES `projects` WRITE;
 UNLOCK TABLES;
 
 --
--- Dumping data for table `skill_categories`
+-- Dumping data for table `skill_types`
 --
 
-LOCK TABLES `skill_categories` WRITE;
-/*!40000 ALTER TABLE `skill_categories` DISABLE KEYS */;
-/*!40000 ALTER TABLE `skill_categories` ENABLE KEYS */;
+LOCK TABLES `skill_types` WRITE;
+/*!40000 ALTER TABLE `skill_types` DISABLE KEYS */;
+/*!40000 ALTER TABLE `skill_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

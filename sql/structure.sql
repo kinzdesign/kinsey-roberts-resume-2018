@@ -86,6 +86,7 @@ DROP TABLE IF EXISTS `project_skills`;
 CREATE TABLE `project_skills` (
   `project` tinyint(3) unsigned NOT NULL,
   `skill` smallint(5) unsigned NOT NULL,
+  `displayorder` tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`project`,`skill`),
   KEY `skill` (`skill`),
   CONSTRAINT `project_skills_ibfk_1` FOREIGN KEY (`project`) REFERENCES `projects` (`id`),
@@ -105,6 +106,7 @@ CREATE TABLE `projects` (
   `tenure` tinyint(3) unsigned NOT NULL,
   `title` varchar(160) DEFAULT NULL,
   `slug` varchar(160) DEFAULT NULL,
+  `displayorder` tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `experience` (`tenure`),
   CONSTRAINT `projects_ibfk_1` FOREIGN KEY (`tenure`) REFERENCES `tenures` (`id`)
@@ -112,16 +114,17 @@ CREATE TABLE `projects` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `skill_categories`
+-- Table structure for table `skill_types`
 --
 
-DROP TABLE IF EXISTS `skill_categories`;
+DROP TABLE IF EXISTS `skill_types`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `skill_categories` (
+CREATE TABLE `skill_types` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(55) NOT NULL,
   `slug` varchar(55) NOT NULL,
+  `displayorder` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -135,14 +138,15 @@ DROP TABLE IF EXISTS `skills`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `skills` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `category` tinyint(3) unsigned NOT NULL,
+  `type` tinyint(3) unsigned NOT NULL,
   `name` varchar(55) NOT NULL,
   `slug` varchar(55) NOT NULL,
   `synopsis` varchar(160) NOT NULL,
+  `displayorder` tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `category` (`category`),
+  KEY `category` (`type`),
   KEY `slug` (`slug`),
-  CONSTRAINT `skills_ibfk_1` FOREIGN KEY (`category`) REFERENCES `skill_categories` (`id`)
+  CONSTRAINT `skills_ibfk_1` FOREIGN KEY (`type`) REFERENCES `skill_types` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
