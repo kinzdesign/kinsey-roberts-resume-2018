@@ -54,7 +54,7 @@ CREATE TABLE `departments` (
   PRIMARY KEY (`id`),
   KEY `organization` (`organization`),
   CONSTRAINT `departments_ibfk_1` FOREIGN KEY (`organization`) REFERENCES `organizations` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `organizations` (
   `state` varchar(2) DEFAULT NULL,
   `zip` varchar(5) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,7 +104,7 @@ CREATE TABLE `projects` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `tenure` tinyint(3) unsigned NOT NULL,
   `title` varchar(160) DEFAULT NULL,
-  `contents` text,
+  `slug` varchar(160) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `experience` (`tenure`),
   CONSTRAINT `projects_ibfk_1` FOREIGN KEY (`tenure`) REFERENCES `tenures` (`id`)
@@ -136,9 +136,9 @@ DROP TABLE IF EXISTS `skills`;
 CREATE TABLE `skills` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `category` tinyint(3) unsigned NOT NULL,
-  `name_short` varchar(55) NOT NULL,
+  `name` varchar(55) NOT NULL,
   `slug` varchar(55) NOT NULL,
-  `name_long` varchar(160) NOT NULL,
+  `synopsis` varchar(160) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `category` (`category`),
   KEY `slug` (`slug`),
@@ -159,7 +159,7 @@ CREATE TABLE `tenure_types` (
   `slug` varchar(55) NOT NULL,
   `displayorder` tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,6 +174,9 @@ CREATE TABLE `tenures` (
   `type` tinyint(3) unsigned NOT NULL,
   `department` tinyint(3) unsigned NOT NULL,
   `title` varchar(55) NOT NULL,
+  `slug` varchar(55) NOT NULL,
+  `category` varchar(55) DEFAULT NULL,
+  `notes` varchar(55) DEFAULT NULL,
   `start` date NOT NULL,
   `end` date DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -181,7 +184,7 @@ CREATE TABLE `tenures` (
   KEY `organization` (`department`) USING BTREE,
   CONSTRAINT `tenures_ibfk_1` FOREIGN KEY (`type`) REFERENCES `tenure_types` (`id`),
   CONSTRAINT `tenures_ibfk_2` FOREIGN KEY (`department`) REFERENCES `departments` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

@@ -15,11 +15,11 @@ mysqldump --defaults-extra-file=..\sql\mysql.cnf ^
   -e "/Dumping routines for database /d" ^
   -e "s$VALUES ($VALUES\n  ($g" ^
   -e "s$),($),\n  ($g" ^
-  -e "s/DEFINER[ ]*=[ ]*[^*]*FUNCTION/FUNCTION/" ^
-  -e "s/DEFINER[ ]*=[ ]*[^*]*PROCEDURE/PROCEDURE/" ^
-  -e "s/AUTO_INCREMENT=[0-9]*^s*//" ^
-  -e "s/DEFINER[ ]*=[ ]*[^*]*^*/^*/" ^
-  -e "s/`resume`^.//g" > ..\sql\structure.sql
+  -e "s/DEFINER[ ]*=[ ]*[\*]*FUNCTION/FUNCTION/" ^
+  -e "s/DEFINER[ ]*=[ ]*[\*]*PROCEDURE/PROCEDURE/" ^
+  -e "s/AUTO_INCREMENT=[0-9]*\s*//" ^
+  -e "s/DEFINER[ ]*=[ ]*[\*]*\*/\*/" ^
+  -e "s/`resume`\.//g" > ..\sql\structure.sql
 ECHO Dumping data...
 mysqldump --defaults-extra-file=..\sql\mysql.cnf ^
   --no-create-info --skip-dump-date ^
@@ -31,6 +31,6 @@ mysqldump --defaults-extra-file=..\sql\mysql.cnf ^
   -e "/Dumping routines for database /d" ^
   -e "s$VALUES ($VALUES\n  ($g" ^
   -e "s$),($),\n  ($g" ^
-  -e "s/`resume`^.//g" > ..\sql\data.sql
+  -e "s/`resume`\.//g" > ..\sql\data.sql
 ECHO.
 ECHO Done!
