@@ -4,6 +4,7 @@ require_relative '_write_file_with_feedback'
 
 # compiles compressed and nested versions of css with source maps
 def compile_sass(file_name, webroot, sass_cache_dir)
+  puts " + Compiling Sass: #{file_name}.scss..."
   # compute input file path and base output file name (w/o extension) folders and file names
   sass_file = File.join(webroot, "src", "sass", "#{file_name}.scss")
   output_base = File.join(webroot, "assets", "css", file_name)

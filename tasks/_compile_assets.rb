@@ -4,6 +4,8 @@ require_relative '_get_webroot'
 require_relative '_update_timestamp'
 
 def compile_assets()
+  puts
+  puts "Compiling assets..."
   # compute webroot and sass-cache directory
   webroot = get_webroot()
   sass_cache_dir = File.join(webroot, ".sass-cache")

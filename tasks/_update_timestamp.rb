@@ -3,6 +3,7 @@ require_relative '_write_file_with_feedback'
 
 # updates Config::$assetTimestamp to the current time
 def update_timestamp(webroot)
+  puts " + Updating asset timestamp..."
   # get current time
   timestamp = Time.now.to_i
   # load Config class file
