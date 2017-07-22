@@ -1,9 +1,10 @@
 Dir.chdir("/")
 require_relative '_compile_sass'
+require_relative '_get_webroot'
 
 def compile_assets()
   # compute webroot and sass-cache directory
-  webroot = File.expand_path(File.join(File.dirname(File.expand_path(__FILE__)),".."))
+  webroot = get_webroot()
   sass_cache_dir = File.join(webroot, ".sass-cache")
 
   # Compile Sass
