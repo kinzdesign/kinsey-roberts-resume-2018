@@ -1,0 +1,19 @@
+// bootstrap JavaScript
+bootstrap/transition.js
+bootstrap/alert.js
+bootstrap/button.js
+bootstrap/carousel.js
+bootstrap/collapse.js
+bootstrap/dropdown.js
+bootstrap/modal.js
+bootstrap/tab.js
+bootstrap/affix.js
+bootstrap/scrollspy.js
+bootstrap/tooltip.js
+bootstrap/popover.js
+
+// IE10 viewport hack for Surface/desktop Windows 8 bug
+_ie10-viewport.js
+
+// off-canvas sidebar
+_offcanvas.js
