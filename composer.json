@@ -5,7 +5,8 @@
   },
   "autoload": {
     "files": [ 
-      "src/classes/Config.php" 
+      "src/classes/Config.php",
+      "src/classes/Database.php" 
     ]
   }
 }

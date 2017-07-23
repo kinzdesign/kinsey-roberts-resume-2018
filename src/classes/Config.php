@@ -5,4 +5,10 @@ class Config {
   public static function getBuildTime() { return '1500833894'; }
   public static function echoBuildTime() { echo self::getBuildTime(); }
 
+  // get database configuration variables
+  public static function dbHost() { return getenv('DB_HOST'); }
+  public static function dbUser() { return getenv('DB_USER'); }
+  public static function dbPass() { return getenv('DB_PASS'); }
+  public static function dbDatabase() { return getenv('DB_DATABASE'); }
+
 }
