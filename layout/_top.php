@@ -1,5 +1,5 @@
 <?php 
-  require_once($_SERVER['DOCUMENT_ROOT'] . '/classes/Config.class.php'); 
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'); 
 ?><!DOCTYPE html>
 <html lang="en">
   <head>

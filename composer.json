@@ -2,5 +2,10 @@
   "require": {
     "php": "~7.0.10",
     "adodb/adodb-php": "~5.20"
+  },
+  "autoload": {
+    "files": [ 
+      "src/classes/Config.php" 
+    ]
   }
 }
