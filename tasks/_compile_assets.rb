@@ -7,7 +7,6 @@ require_relative '_update_timestamp'
 
 def compile_assets()
   puts
-  puts "Compiling assets..."
   # compute webroot and sass-cache directory
   webroot = get_webroot()
   sass_cache_dir = File.join(webroot, ".sass-cache")
@@ -24,4 +23,5 @@ def compile_assets()
 
   # update timestamp to expire caches
   update_timestamp(webroot, git)
+  puts
 end
