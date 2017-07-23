@@ -1,4 +1,4 @@
-<? require($_SERVER['DOCUMENT_ROOT'] . '/layout/_top.php'); ?>
+<?php require($_SERVER['DOCUMENT_ROOT'] . '/layout/_top.php'); ?>
           <div class="jumbotron">
             <h1><i class="fa fa-hand-peace-o"></i> Hello, world!</h1>
             <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
@@ -35,4 +35,4 @@
               <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
             </div>
           </div>
-<? require($_SERVER['DOCUMENT_ROOT'] . '/layout/_bottom.php'); ?>
+<?php require($_SERVER['DOCUMENT_ROOT'] . '/layout/_bottom.php'); ?>

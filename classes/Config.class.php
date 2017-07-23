@@ -1,4 +1,4 @@
-<?
+<?php
 class Config {
 
   # timestamp of last js/css compilation
