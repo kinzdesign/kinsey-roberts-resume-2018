@@ -8,7 +8,7 @@ def update_timestamp(webroot, git)
   timestamp = Time.now.to_i
   # load Config class file
   data = ''
-  config_path = File.join("classes", "Config.php")
+  config_path = File.join("classes", "Config.class.php")
   File.open(File.join(webroot, config_path), "r+") do |file|
     data = file.read
   end

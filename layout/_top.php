@@ -1,5 +1,5 @@
 <? 
-  require_once($_SERVER['DOCUMENT_ROOT'] . '/classes/Config.php'); 
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/classes/Config.class.php'); 
 ?><!DOCTYPE html>
 <html lang="en">
   <head>
