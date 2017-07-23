@@ -1,7 +1,7 @@
 Dir.chdir("/")
 require_relative '_write_file_with_feedback'
 
-# updates Config::$assetTimestamp to the current time
+# updates Config::getBuildTime() to the current time
 def update_timestamp(webroot, git)
   puts " + Updating asset timestamp..."
   # get current time
@@ -13,8 +13,8 @@ def update_timestamp(webroot, git)
     data = file.read
   end
   # update timestamp
-  data.gsub!(/\$assetTimestamp(\s*)=(\s*)'([0-9]{10})'/) do |match|
-    "\$assetTimestamp = '#{timestamp}'"
+  data.gsub!(/public\s*static\s*function\s*buildTime\(\)\s*\{\s*return\s*'([0-9]{10})'\s*;\s*\}/) do |match|
+    "public static function buildTime() { return '#{timestamp}'; }"
   end
   write_file_with_feedback(webroot, config_path, data, git)
 end

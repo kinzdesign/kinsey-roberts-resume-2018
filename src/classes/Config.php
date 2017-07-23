@@ -1,7 +1,8 @@
 <?php
 class Config {
 
-  # timestamp of last js/css compilation
-  public static $assetTimestamp = '1500738980';
+  // timestamp of last build
+  public static function getBuildTime() { return '1500833894'; }
+  public static function echoBuildTime() { echo self::getBuildTime(); }
 
 }
