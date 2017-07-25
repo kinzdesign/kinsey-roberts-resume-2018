@@ -5,7 +5,7 @@ class TenureType {
    * data access
    */
   private function __construct($row) {
-    $this->id = $row['id'];
+    $this->id   = $row['id'];
     $this->name = $row['name'];
     $this->slug = $row['slug'];
   }
@@ -16,7 +16,8 @@ class TenureType {
 
   private $id,
           $name,
-          $slug;
+          $slug,
+          $tenures;
 
   public function id() {
     return $this->id;
@@ -30,31 +31,39 @@ class TenureType {
     return $this->slug;
   }
 
+  public function getTenures() {
+    // lazy-load Tenure array
+    if(!$this->tenures)
+      $this->tenures = Tenure::getByType($this);
+    return $this->tenures;
+  }
+
   /*
    * data access
    */
 
-  const SELECT = 'SELECT tt.id, tt.name, tt.slug FROM tenure_types tt ';
-  const ORDER = ' ORDER BY tt.displayorder ';
+  const SELECT = "SELECT id, name, slug FROM tenure_types ";
+  const ORDER  = " ORDER BY displayorder ";
 
   public static function getAll() {
-    $result = Database::execute(self::SELECT . self::ORDER);
     $arr = array();
-    while($row = $result->fetchRow()) 
-      $arr[] = new self($row);
+    $result = Database::execute(self::SELECT . self::ORDER);
+    if($result)
+      while($row = $result->fetchRow()) 
+        $arr[] = new self($row);
     return $arr;
   }
 
   public static function getById($id) {
     $result = Database::execute(self::SELECT . ' WHERE id = ? ' . self::ORDER, $id);
-    if($row = $result->fetchRow())
+    if($result && $row = $result->fetchRow())
       return new self($row);
     return false;
   }
 
   public static function getBySlug($slug) {
     $result = Database::execute(self::SELECT . ' WHERE slug = ? ' . self::ORDER, $slug);
-    if($row = $result->fetchRow())
+    if($result && $row = $result->fetchRow())
       return new self($row);
     return false;
   }
