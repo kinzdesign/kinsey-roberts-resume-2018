@@ -32,7 +32,8 @@ class Tenure {
           $notes,
           $start,
           $end,
-          $months;
+          $months,
+          $bullets;
 
   public function id() {
     return $this->id;
@@ -96,6 +97,13 @@ class Tenure {
     if($m == 0)
       return "$y $yLabel";
     return "$y $yLabel, $m $mLabel";
+  }
+
+  public function bullets() {
+    // lazy-load Bullet objects
+    if(!$this->bullets)
+      $this->bullets = Bullet::getByTenure($this);
+    return $this->bullets;
   }
 
   /*
