@@ -16,6 +16,7 @@ class Tenure {
     $this->notes        = $row['notes'];
     $this->start        = $row['start'];
     $this->end          = $row['end'];
+    $this->months     = $row['months'];
   }
 
   /*
@@ -30,7 +31,8 @@ class Tenure {
           $category,
           $notes,
           $start,
-          $end;
+          $end,
+          $months;
 
   public function id() {
     return $this->id;
@@ -82,11 +84,28 @@ class Tenure {
     return $this->end;
   }
 
+  public function months() {
+    return $this->months;
+  }
+
+  public function duration() {
+    $y = intdiv($this->months, 12);
+    $yLabel = $y > 0 ? 'years' : 'year';
+    $m = $this->months % 12;
+    $mLabel = $m > 0 ? 'months' : 'month';
+    if($m == 0)
+      return "$y $yLabel";
+    return "$y $yLabel, $m $mLabel";
+  }
+
   /*
    * data access
    */
 
-  const SELECT = "SELECT id, type, department, title, slug, category, notes, start, end FROM tenures ";
+  const SELECT = "SELECT id, type, department, title, slug, category, notes, " .
+    "MonthYearOrPresent(start) start, MonthYearOrPresent(end) end, " .
+    "TIMESTAMPDIFF(MONTH, start, COALESCE(end, NOW())) AS months " .
+    "FROM tenures ";
   const ORDER  = " ORDER BY COALESCE(end, '2099-01-01') DESC ";
 
   public static function getAll() {
@@ -113,7 +132,7 @@ class Tenure {
     if($type) {
       $sql = self::SELECT . ' WHERE type = ? ' . self::ORDER;
       $result = Database::execute($sql, $type->id(), $type);
-      //if($result)
+      if($result)
         while($row = $result->fetchRow()) 
           $arr[] = new self($row, $type);
     }
