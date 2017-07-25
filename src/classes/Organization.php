@@ -76,11 +76,4 @@ class Organization {
       return new self($row);
     return false;
   }
-
-  public static function getByStreet2($street2) {
-    $result = Database::execute(self::SELECT . ' WHERE street2 = ? ', $street2);
-    if($result && $row = $result->fetchRow())
-      return new self($row);
-    return false;
-  }
 }
