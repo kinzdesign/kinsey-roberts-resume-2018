@@ -9,7 +9,7 @@ class Tenure {
     $this->typeId       = $row['type'];
     $this->type         = $type;
     $this->departmentId = $row['department'];
-    //$this->department   = $department;
+    $this->department   = $department;
     $this->title        = $row['title'];
     $this->slug         = $row['slug'];
     $this->category     = $row['category'];
@@ -25,7 +25,7 @@ class Tenure {
 
   private $id,
           $typeId, $type,
-          $departmentId, //$department,
+          $departmentId, $department,
           $title,
           $slug,
           $category,
@@ -53,12 +53,12 @@ class Tenure {
     return $this->departmentId;
   }
 
-  // public function department() {
-  //   // lazy-load Department object
-  //   if(!$this->department)
-  //     $this->department = Department::getById($this->departmentId);
-  //   return $this->department;
-  // }
+  public function department() {
+    // lazy-load Department object
+    if(!$this->department)
+      $this->department = Department::getById($this->departmentId);
+    return $this->department;
+  }
 
   public function title() {
     return $this->title;
@@ -135,6 +135,28 @@ class Tenure {
       if($result)
         while($row = $result->fetchRow()) 
           $arr[] = new self($row, $type);
+    }
+    return $arr;
+  }
+
+  public static function getByDepartmentId($departmentId) {
+    $arr = array();
+    $sql = self::SELECT . ' WHERE department = ? ' . self::ORDER;
+    $result = Database::execute($sql, $departmentId);
+    if($result)
+      while($row = $result->fetchRow()) 
+        $arr[] = new self($row);
+    return $arr;
+  }
+
+  public static function getByDepartment($department) {
+    $arr = array();
+    if($department) {
+      $sql = self::SELECT . ' WHERE department = ? ' . self::ORDER;
+      $result = Database::execute($sql, $department->id(), $department);
+      if($result)
+        while($row = $result->fetchRow()) 
+          $arr[] = new self($row, false, $department);
     }
     return $arr;
   }

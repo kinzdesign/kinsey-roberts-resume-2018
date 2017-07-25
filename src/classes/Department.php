@@ -1,0 +1,89 @@
+<?php
+class Department {
+
+  /*
+   * data access
+   */
+  private function __construct($row) {
+    $this->id             = $row['id'];
+    $this->organizationId = $row['organization'];
+    $this->name           = $row['name'];
+    $this->parent         = $row['parent'];
+    $this->url            = $row['url'];
+  }
+
+  /*
+   * properties and getters
+   */
+
+  private $id,
+          $organizationId, //$organization,
+          $name,
+          $parent,
+          $url,
+          $tenures;
+
+  public function id() {
+    return $this->id;
+  }
+
+  public function organizationId() {
+    return $this->organizationId;
+  }
+
+  // public function organization() {
+  //   // lazy-load Organization object
+  //   if(!$this->organization)
+  //     $this->organization = Organization::getById($this->organizationId);
+  //   return $this->organization;
+  // }
+
+  public function name() {
+    return $this->name;
+  }
+
+  public function parent() {
+    return $this->parent;
+  }
+
+  public function url() {
+    return $this->url;
+  }
+
+  public function getTenures() {
+    // lazy-load Tenure array
+    if(!$this->tenures)
+      $this->tenures = Tenure::getByDepartment($this);
+    return $this->tenures;
+  }
+
+  /*
+   * data access
+   */
+
+  const SELECT = "SELECT id, organization, name, parent, url FROM departments ";
+  const ORDER  = " ORDER BY name";
+
+  public static function getAll() {
+    $arr = array();
+    $result = Database::execute(self::SELECT . self::ORDER);
+    if($result)
+      while($row = $result->fetchRow()) 
+        $arr[] = new self($row);
+    return $arr;
+  }
+
+  public static function getById($id) {
+    $result = Database::execute(self::SELECT . ' WHERE id = ? ', $id);
+    if($result && $row = $result->fetchRow())
+      return new self($row);
+    return false;
+  }
+
+  public static function getByParent($parent) {
+    $result = Database::execute(self::SELECT . ' WHERE parent = ? ', $parent);
+    if($result && $row = $result->fetchRow())
+      return new self($row);
+    return false;
+  }
+}
