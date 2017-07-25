@@ -9,6 +9,7 @@
       "src/classes/Config.php"
      ,"src/classes/Database.php"
 
+     ,"src/classes/Department.php" 
      ,"src/classes/Tenure.php" 
      ,"src/classes/TenureType.php" 
     ]
