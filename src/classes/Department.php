@@ -17,7 +17,7 @@ class Department {
    */
 
   private $id,
-          $organizationId, //$organization,
+          $organizationId, $organization,
           $name,
           $parent,
           $url,
@@ -31,12 +31,12 @@ class Department {
     return $this->organizationId;
   }
 
-  // public function organization() {
-  //   // lazy-load Organization object
-  //   if(!$this->organization)
-  //     $this->organization = Organization::getById($this->organizationId);
-  //   return $this->organization;
-  // }
+  public function organization() {
+    // lazy-load Organization object
+    if(!$this->organization)
+      $this->organization = Organization::getById($this->organizationId);
+    return $this->organization;
+  }
 
   public function name() {
     return $this->name;
@@ -75,13 +75,6 @@ class Department {
 
   public static function getById($id) {
     $result = Database::execute(self::SELECT . ' WHERE id = ? ', $id);
-    if($result && $row = $result->fetchRow())
-      return new self($row);
-    return false;
-  }
-
-  public static function getByParent($parent) {
-    $result = Database::execute(self::SELECT . ' WHERE parent = ? ', $parent);
     if($result && $row = $result->fetchRow())
       return new self($row);
     return false;

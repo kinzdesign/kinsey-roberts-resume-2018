@@ -10,6 +10,7 @@
      ,"src/classes/Database.php"
 
      ,"src/classes/Department.php" 
+     ,"src/classes/Organization.php" 
      ,"src/classes/Tenure.php" 
      ,"src/classes/TenureType.php" 
     ]

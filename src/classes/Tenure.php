@@ -16,7 +16,7 @@ class Tenure {
     $this->notes        = $row['notes'];
     $this->start        = $row['start'];
     $this->end          = $row['end'];
-    $this->months     = $row['months'];
+    $this->months       = $row['months'];
   }
 
   /*
