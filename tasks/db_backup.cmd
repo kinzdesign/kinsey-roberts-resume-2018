@@ -4,7 +4,7 @@
 ::         edit config under [mysqldump] block
 @ECHO OFF
 ECHO.
-ECHO Dumping database structure...
+ECHO  + Dumping database structure...
 mysqldump --defaults-extra-file=..\sql\mysql.cnf ^
   --routines -d --skip-dump-date ^
   --databases %DB_DATABASE% | sed ^
@@ -20,7 +20,9 @@ mysqldump --defaults-extra-file=..\sql\mysql.cnf ^
   -e "s/AUTO_INCREMENT=[0-9]*\s*//" ^
   -e "s/DEFINER[ ]*=[ ]*[\*]*\*/\*/" ^
   -e "s/`resume`\.//g" > ..\sql\structure.sql
-ECHO Dumping data...
+git add ..\sql\structure.sql
+ECHO    ^> Wrote to sql/structure.sql
+ECHO  + Dumping data...
 mysqldump --defaults-extra-file=..\sql\mysql.cnf ^
   --no-create-info --skip-dump-date ^
   --databases %DB_DATABASE% | sed ^
@@ -32,5 +34,6 @@ mysqldump --defaults-extra-file=..\sql\mysql.cnf ^
   -e "s$VALUES ($VALUES\n  ($g" ^
   -e "s$),($),\n  ($g" ^
   -e "s/`resume`\.//g" > ..\sql\data.sql
+git add ..\sql\data.sql
+ECHO    ^> Wrote to sql/data.sql
 ECHO.
-ECHO Done!

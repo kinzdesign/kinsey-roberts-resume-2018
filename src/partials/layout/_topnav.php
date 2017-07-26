@@ -1,4 +1,4 @@
-<?
+<?php
   function isActive($href) {
     // see if this tab is active on current page
     return (0 === strpos($_SERVER["SCRIPT_NAME"], $href));
@@ -28,7 +28,7 @@
 ?>
     <nav class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-<?# Brand and toggle get grouped for better mobile display ?>
+<?php # Brand and toggle get grouped for better mobile display ?>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
@@ -38,16 +38,16 @@
           </button>
           <a class="navbar-brand" href="/">Kinsey Roberts</a>
         </div>
-<?# Collect the nav links and other content for toggling ?>
+<?php # Collect the nav links and other content for toggling ?>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav">
-            <? navbarBeginDropdown('/experience/', 'Experience'); ?>
+            <?php navbarBeginDropdown('/experience/', 'Experience'); ?>
               <ul class="dropdown-menu">
                 <li><a href="#">Lead Web Developer</a></li>
                 <li><a href="#">Application Developer</a></li>
               </ul>
             </li>
-            <? navbarSimpleLink('/education/', 'Education'); ?>
+            <?php navbarSimpleLink('/education/', 'Education'); ?>
           </ul>
         </div>
       </div>
