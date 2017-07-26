@@ -1,4 +1,4 @@
-<?php require($_SERVER['DOCUMENT_ROOT'] . '/layout/_top.php'); ?>
+<?php require($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_top.php'); ?>
           <!-- <pre> -->
 <?php
       $headers = TenureType::getAll();
@@ -39,4 +39,4 @@
 <?php   } // end tenure ?>
           </ul>
 <?php } // end header ?>
-<?php require($_SERVER['DOCUMENT_ROOT'] . '/layout/_bottom.php'); ?>
+<?php require($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_bottom.php'); ?>

@@ -1,6 +1,6 @@
         </main>
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-<?php require($_SERVER['DOCUMENT_ROOT'] . '/layout/_sidebar.php'); ?>
+<?php require($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_sidebar.php'); ?>
         </div>
       </div>
     </div>

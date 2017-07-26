@@ -3,12 +3,12 @@
 ?><!DOCTYPE html>
 <html lang="en">
   <head>
-<?php require($_SERVER['DOCUMENT_ROOT'] . '/layout/_head.php'); ?>
+<?php require($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_head.php'); ?>
   </head>
   <body class="top-navbar-fixed">
 <?php # Google Tag Manager (noscript) ?>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHZM4LT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<?php require($_SERVER['DOCUMENT_ROOT'] . '/layout/_topnav.php'); ?>
+<?php require($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_topnav.php'); ?>
     <div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
         <main class="col-xs-12 col-sm-9">
