@@ -5,8 +5,15 @@
   },
   "autoload": {
     "files": [ 
-      "src/classes/Config.php",
-      "src/classes/Database.php" 
+
+      "src/classes/Config.php"
+     ,"src/classes/Database.php"
+
+     ,"src/classes/Bullet.php" 
+     ,"src/classes/Department.php" 
+     ,"src/classes/Organization.php" 
+     ,"src/classes/Tenure.php" 
+     ,"src/classes/TenureType.php" 
     ]
   }
 }

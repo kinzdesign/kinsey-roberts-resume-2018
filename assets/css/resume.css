@@ -446,7 +446,7 @@ mark,
 .text-left {
   text-align: left; }
 
-.text-right {
+.text-right, .tenure-date-block {
   text-align: right; }
 
 .text-center {
@@ -558,7 +558,7 @@ ol {
   ol ol {
     margin-bottom: 0; }
 
-.list-unstyled {
+.list-unstyled, .list-tenures {
   padding-left: 0;
   list-style: none; }
 
@@ -632,7 +632,8 @@ blockquote {
       content: '\2014 \00A0'; }
 
 .blockquote-reverse,
-blockquote.pull-right {
+blockquote.pull-right,
+blockquote.tenure-date-block {
   padding-right: 15px;
   padding-left: 0;
   border-right: 5px solid #ecf0f1;
@@ -642,15 +643,21 @@ blockquote.pull-right {
   .blockquote-reverse small:before,
   .blockquote-reverse .small:before,
   blockquote.pull-right footer:before,
+  blockquote.tenure-date-block footer:before,
   blockquote.pull-right small:before,
-  blockquote.pull-right .small:before {
+  blockquote.tenure-date-block small:before,
+  blockquote.pull-right .small:before,
+  blockquote.tenure-date-block .small:before {
     content: ''; }
   .blockquote-reverse footer:after,
   .blockquote-reverse small:after,
   .blockquote-reverse .small:after,
   blockquote.pull-right footer:after,
+  blockquote.tenure-date-block footer:after,
   blockquote.pull-right small:after,
-  blockquote.pull-right .small:after {
+  blockquote.tenure-date-block small:after,
+  blockquote.pull-right .small:after,
+  blockquote.tenure-date-block .small:after {
     content: '\00A0 \2014'; }
 
 address {
@@ -2389,7 +2396,7 @@ tbody.collapse.in {
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box; }
-  .dropdown-menu.pull-right {
+  .dropdown-menu.pull-right, .dropdown-menu.tenure-date-block {
     right: 0;
     left: auto; }
   .dropdown-menu .divider {
@@ -2455,7 +2462,7 @@ tbody.collapse.in {
   top: 0;
   z-index: 990; }
 
-.pull-right > .dropdown-menu {
+.pull-right > .dropdown-menu, .tenure-date-block > .dropdown-menu {
   right: 0;
   left: auto; }
 
@@ -3695,7 +3702,8 @@ a.thumbnail.active {
     max-width: none; }
 
 .media-right,
-.media > .pull-right {
+.media > .pull-right,
+.media > .tenure-date-block {
   padding-left: 10px; }
 
 .media-left,
@@ -4791,7 +4799,7 @@ button.close {
   margin-left: auto;
   margin-right: auto; }
 
-.pull-right {
+.pull-right, .tenure-date-block {
   float: right !important; }
 
 .pull-left {
@@ -5278,5 +5286,16 @@ body {
     top: 0;
     width: 50%;
     /* 6 columns */ } }
+.tenure-dates {
+  font-style: italic; }
+
+.tenure-duration, .tenure-title {
+  font-weight: bold; }
+
+.tenure-notes {
+  font-weight: normal; }
+
+.tenure-duration, .tenure-title, .tenure-category {
+  font-size: 1.2em; }
 
 /*# sourceMappingURL=/assets/css/resume.css.map */
