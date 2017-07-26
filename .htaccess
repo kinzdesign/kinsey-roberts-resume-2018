@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^experience/([^/]+)/?$ tenure.php?slug=$1 [L]
+RewriteRule ^education/([^/]+)/?$ tenure.php?slug=$1 [L]
