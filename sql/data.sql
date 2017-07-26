@@ -86,10 +86,10 @@ UNLOCK TABLES;
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
 INSERT INTO `projects` VALUES
-  (1,1,'WSOM Project B','wsom-project-b',2),
-  (2,1,'WSOM Project A','wsom-project-a',1),
-  (3,2,'ITOG Project','itog-project',NULL),
-  (4,5,'MS Project','ms-project',NULL);
+  (1,1,'WSOM Project B','wsom-project-b','This was project b.',2),
+  (2,1,'WSOM Project A','wsom-project-a','Project A was captivating.',1),
+  (3,2,'ITOG Project','itog-project','Something about Student Affairs.',NULL),
+  (4,5,'MS Project','ms-project','Masters research project.',NULL);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 

@@ -12,6 +12,7 @@
      ,"src/classes/Bullet.php" 
      ,"src/classes/Department.php" 
      ,"src/classes/Organization.php" 
+     ,"src/classes/Project.php" 
      ,"src/classes/Tenure.php" 
      ,"src/classes/TenureType.php" 
     ]

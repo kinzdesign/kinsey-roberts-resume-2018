@@ -107,6 +107,7 @@ CREATE TABLE `projects` (
   `tenure` tinyint(3) unsigned NOT NULL,
   `title` varchar(160) DEFAULT NULL,
   `slug` varchar(160) DEFAULT NULL,
+  `synopsis` varchar(160) DEFAULT NULL,
   `displayorder` tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`),
