@@ -1,38 +1,42 @@
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/layout/_top.php'); ?>
-          <div class="jumbotron">
-            <h1><i class="fa fa-hand-peace-o"></i> Hello, world!</h1>
-            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
-          </div>
-          <div class="row">
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-            <div class="col-xs-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div>
-          </div>
+          <!-- <pre> -->
+<?php
+      $headers = TenureType::getAll();
+      foreach ($headers as $header) { ?>
+          <h2 class="head-tenure-type"><?php echo $header->name(); ?></h2>
+          <ul class="list-tenures">
+<?php   foreach($header->getTenures() as $tenure) { ?>
+            <li class="clearfix">
+              <div class="tenure-date-block">
+                <div class="tenure-duration"><?php echo $tenure->duration(); ?></div>
+                <div class="tenure-dates"><?php echo $tenure->start(); ?>&ndash;<?php echo $tenure->end(); ?></div>
+              </div>
+              <div class="tenure-title">
+                <?php 
+                  echo $tenure->title(); 
+                  if($tenure->category()) 
+                    echo " - {$tenure->category()}";
+                  if($tenure->notes())
+                    echo " <span class=\"tenure-notes\">({$tenure->notes()})</span>"; 
+                  echo "\n";
+                ?>
+              </div>
+              <a href="<?php echo $tenure->department()->url(); ?>" target="_blank">
+<?php     if($tenure->department()->organization()) { ?>
+                <span class="tenure-organization"><?php echo $tenure->department()->organization()->name(); ?>,</span>
+<?php     } ?>
+<?php     if($tenure->department()->parent()) { ?>
+                <span class="tenure-parent"><?php echo $tenure->department()->parent(); ?>,</span>
+<?php     } ?>
+                <span class="tenure-department"><?php echo $tenure->department()->name(); ?></span>
+              </a>
+              <ul class="list-tenure-bullets">
+<?php     foreach($tenure->bullets() as $bullet) { ?>
+                <li><?php echo $bullet->text(); ?></li>
+<?php     } ?>
+              </ul>
+            </li>
+<?php   } // end tenure ?>
+          </ul>
+<?php } // end header ?>
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/layout/_bottom.php'); ?>
