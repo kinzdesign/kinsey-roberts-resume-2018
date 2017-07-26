@@ -33,7 +33,8 @@ class Tenure {
           $start,
           $end,
           $months,
-          $bullets;
+          $bullets,
+          $projects;
 
   public function id() {
     return $this->id;
@@ -104,6 +105,13 @@ class Tenure {
     if(!$this->bullets)
       $this->bullets = Bullet::getByTenure($this);
     return $this->bullets;
+  }
+
+  public function projects() {
+    // lazy-load Project objects
+    if(!$this->projects)
+      $this->projects = Project::getByTenure($this);
+    return $this->projects;
   }
 
   /*
