@@ -1,6 +1,9 @@
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_top.php'); ?>
 <?php
-      $headers = TenureType::getAll();
+      if(isset($_GET['tenure-type']))
+        $headers = array(TenureType::getBySlug($_GET['tenure-type']));
+      else
+        $headers = TenureType::getAll();
       foreach ($headers as $header) { ?>
           <h2 class="head-tenure-type"><?php echo $header->name(); ?></h2>
           <ul class="list-tenures">
