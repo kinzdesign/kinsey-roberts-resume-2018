@@ -21,7 +21,8 @@ class Project {
           $tenureId, $tenure,
           $title,
           $synopsis,
-          $slug;
+          $slug,
+          $skills;
 
   public function id() {
     return $this->id;
@@ -48,6 +49,13 @@ class Project {
 
   public function slug() {
     return $this->slug;
+  }
+
+  public function skills() {
+    // lazy-load Skill objects
+    if(!$this->skills)
+      $this->skills = Skill::getByProject($this);
+    return $this->skills;
   }
 
   /*
@@ -89,6 +97,27 @@ class Project {
     return $arr;
   }
 
+  public static function getBySkillId($skillId) {
+    $arr = array();
+    $sql = self::SELECT . ' WHERE id IN (SELECT project FROM project_skills WHERE skill = ?) ' . self::ORDER;
+    $result = Database::execute($sql, $skillId);
+    if($result)
+      while($row = $result->fetchRow()) 
+        $arr[] = new self($row);
+    return $arr;
+  }
+
+  public static function getBySkill($skill) {
+    $arr = array();
+    if($skill) {
+      $sql = self::SELECT . ' WHERE id IN (SELECT project FROM project_skills WHERE skill = ?) ' . self::ORDER;
+      $result = Database::execute($sql, $skill->id(), $skill);
+      if($result)
+        while($row = $result->fetchRow()) 
+          $arr[] = new self($row, $skill);
+    }
+    return $arr;
+  }
   public static function getById($id) {
     $sql = self::SELECT . ' WHERE id = ? ' . self::ORDER;
     $result = Database::execute($sql, $id);
