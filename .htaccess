@@ -3,5 +3,4 @@ RewriteEngine On
 RewriteRule ^experience/$ index.php?tenure-type=experience [L]
 RewriteRule ^education/$ index.php?tenure-type=education [L]
 
-RewriteRule ^experience/([^/]+)/$ tenure.php?slug=$1 [L]
-RewriteRule ^education/([^/]+)/$ tenure.php?slug=$1 [L]
+RewriteRule ^([^(index\.php|/)]+)/$ tenure.php?slug=$1 [L]
