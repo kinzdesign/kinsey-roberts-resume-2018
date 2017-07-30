@@ -13,8 +13,8 @@ def update_timestamp(webroot, git)
     data = file.read
   end
   # update timestamp
-  data.gsub!(/public\s*static\s*function\s*buildTime\(\)\s*\{\s*return\s*'([0-9]{10})'\s*;\s*\}/) do |match|
-    "public static function buildTime() { return '#{timestamp}'; }"
+  data.gsub!(/public\s*static\s*function\s*getBuildTime\(\)\s*\{\s*return\s*'([0-9]{10})'\s*;\s*\}/) do |match|
+    "public static function getBuildTime() { return '#{timestamp}'; }"
   end
   write_file_with_feedback(webroot, config_path, data, git)
 end
