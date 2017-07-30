@@ -1,10 +1,17 @@
-<?php require($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_top.php'); ?>
-<?php
-      $slug = $_GET['slug'];
-      $tenure = Tenure::getBySlug($slug);
-      if(!$tenure) {
-        // TODO: 404
-      } else { // output contents ?>
+<?php 
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'); 
+  $slug = $_GET['slug'];
+  $tenure = Tenure::getBySlug($slug);
+  if(!$tenure) {
+    // handle 404
+    Page::error(404, "We could not find a tenure with slug '{$slug}'.", "Not Found");
+  } else { // output contents
+    // build title
+    $fullTitle = $tenure->title();
+    if($tenure->category()) 
+      $fullTitle = "$fullTitle - {$tenure->category()}";
+    Page::renderTop("$fullTitle | {$tenure->type()->name()}");
+?>
           <h2 class="head-tenure"><?php 
             echo $tenure->title(); 
             if($tenure->category()) 
@@ -30,7 +37,9 @@
           require($partialPath); 
         $projects = $tenure->projects();
         if($projects && is_array($projects) && count($projects)) { ?>
+
           <section>
+            <hr/>
             <h3>Projects</h3>
             <ul class="list-projects">
 <?php     foreach ($projects as $project) { ?>
@@ -40,10 +49,10 @@
                 if($project->synopsis())
                   echo "                <div class=\"project-synopsis\">{$project->synopsis()}</div>\n";
                 ?>
-            </li>
+              </li>
 <?php     } ?>
             </ul>
           </section>
 <?php   } // end projects
-      } // end contents ?>
-<?php require($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_bottom.php'); ?>
+  } // end contents 
+  Page::renderBottom();

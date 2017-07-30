@@ -1,10 +1,14 @@
-<?php require($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_top.php'); ?>
-<?php
-      if(isset($_GET['tenure-type']))
-        $headers = array(TenureType::getBySlug($_GET['tenure-type']));
-      else
-        $headers = TenureType::getAll();
-      foreach ($headers as $header) { ?>
+<?php 
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
+  if(isset($_GET['tenure-type'])) {
+    $type = TenureType::getBySlug($_GET['tenure-type']);
+    $headers = array($type);
+    Page::$title = $type->name();
+  } else {
+    $headers = TenureType::getAll();
+  }
+  Page::renderTop();
+  foreach ($headers as $header) { ?>
           <h2 class="head-tenure-type"><?php echo $header->name(); ?></h2>
           <ul class="list-tenures">
 <?php   foreach($header->getTenures() as $tenure) { ?>
@@ -40,5 +44,5 @@
             </li>
 <?php   } // end tenure ?>
           </ul>
-<?php } // end header ?>
-<?php require($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_bottom.php'); ?>
+<?php } // end header 
+  Page::renderBottom();
