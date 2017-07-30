@@ -35,24 +35,8 @@
 <?php   $partialPath = $_SERVER['DOCUMENT_ROOT'] . "/src/partials/tenures/_$slug.php";
         if(file_exists($partialPath)) 
           require($partialPath); 
-        $projects = $tenure->projects();
-        if($projects && is_array($projects) && count($projects)) { ?>
-
-          <section>
-            <hr/>
-            <h3>Projects</h3>
-            <ul class="list-projects">
-<?php     foreach ($projects as $project) { ?>
-              <li>
-                <?php 
-                  echo "<a href=\"{$project->url()}\">{$project->title()}</a>\n";
-                if($project->synopsis())
-                  echo "                <div class=\"project-synopsis\">{$project->synopsis()}</div>\n";
-                ?>
-              </li>
-<?php     } ?>
-            </ul>
-          </section>
-<?php   } // end projects
+        // render project list
+        require_once($_SERVER['DOCUMENT_ROOT'] . '/src/functions/project_list.php');
+        project_list($tenure->projects());
   } // end contents 
   Page::renderBottom();
