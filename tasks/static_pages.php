@@ -16,6 +16,8 @@ function download_page($path) {
 
 // build homepage
 download_page('/');
+// build error page
+download_page('/error/');
 // build tenure-type pages
 foreach (TenureType::getAll() as $type)
   download_page("/{$type->slug()}/");
