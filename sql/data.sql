@@ -113,8 +113,8 @@ UNLOCK TABLES;
 LOCK TABLES `skills` WRITE;
 /*!40000 ALTER TABLE `skills` DISABLE KEYS */;
 INSERT INTO `skills` VALUES
-  (1,1,'Skill AA','skill-aa',NULL,NULL),
-  (2,2,'Skill BA','skill-ba',NULL,NULL);
+  (1,1,'Skill CA','skill-ca',NULL,NULL),
+  (2,2,'Skill AA','skill-aa',NULL,NULL);
 /*!40000 ALTER TABLE `skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
