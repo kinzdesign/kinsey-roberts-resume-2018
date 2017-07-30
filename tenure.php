@@ -45,7 +45,7 @@
 <?php     foreach ($projects as $project) { ?>
               <li>
                 <?php 
-                  echo "<a href=\"/projects/{$project->slug()}/\">{$project->title()}</a>\n";
+                  echo "<a href=\"{$project->url()}\">{$project->title()}</a>\n";
                 if($project->synopsis())
                   echo "                <div class=\"project-synopsis\">{$project->synopsis()}</div>\n";
                 ?>

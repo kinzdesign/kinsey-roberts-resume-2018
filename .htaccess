@@ -1,4 +1,4 @@
 RewriteEngine On
 
-RewriteRule ^([^/]+)/$ index.php?tenure-type=$1 [L]
-RewriteRule ^([^/]+)/([^/]+)/$ tenure.php?slug=$2 [L]
+RewriteRule ^([^(/|\.)]+)/$ index.php?tenure-type=$1 [L,QSA]
+RewriteRule ^([^(/|\.)]+)/([^(/|\.)]+)/$ tenure.php?type=$1&slug=$2 [L,QSA]

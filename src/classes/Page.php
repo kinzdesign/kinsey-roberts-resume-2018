@@ -3,6 +3,14 @@ class Page {
 
   public static $title;
 
+  public static function isStatic() {
+    return isset($_GET['static']);
+  }
+
+  public static function cacheBreaker() {
+    return self::isStatic() ? ('?ts=' . Config::getBuildTime()) : '';
+  }
+
   public static function error($status_code, $message, $title = "Error") { 
     http_response_code($status_code);
     self::renderTop("{$title}!");

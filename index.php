@@ -18,7 +18,7 @@
                 <div class="tenure-dates"><?php echo $tenure->start(); ?>&ndash;<?php echo $tenure->end(); ?></div>
               </div>
               <div class="tenure-title">
-                <a href="<?php echo "/{$header->slug()}/{$tenure->slug()}/"; ?>">
+                <a href="<?php echo $tenure->url(); ?>">
                   <?php 
                     echo $tenure->title(); 
                     if($tenure->category()) 

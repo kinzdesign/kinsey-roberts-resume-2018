@@ -58,6 +58,11 @@ class Project {
     return $this->skills;
   }
 
+
+  public function url() {
+    return "/{$this->tenure()->slug()}/{$this->tenure()->type()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
+  }
+
   /*
    * data access
    */

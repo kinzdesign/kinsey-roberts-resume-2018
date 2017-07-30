@@ -38,6 +38,10 @@ class TenureType {
     return $this->tenures;
   }
 
+  public function url() {
+    return "/{$this->slug()}/" . Page::cacheBreaker();
+  }
+
   /*
    * data access
    */
