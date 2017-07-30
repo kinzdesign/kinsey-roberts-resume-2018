@@ -2,3 +2,4 @@ RewriteEngine On
 
 RewriteRule ^([^(/|\.)]+)/$ index.php?tenure-type=$1 [L,QSA]
 RewriteRule ^([^(/|\.)]+)/([^(/|\.)]+)/$ tenure.php?type=$1&slug=$2 [L,QSA]
+RewriteRule ^([^(/|\.)]+)/([^(/|\.)]+)/([^(/|\.)]+)/$ project.php?type=$1&tenure=$2&slug=$3 [L,QSA]

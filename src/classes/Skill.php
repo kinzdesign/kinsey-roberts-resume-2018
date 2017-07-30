@@ -58,6 +58,10 @@ class Skill {
     return $this->projects;
   }
 
+  public function url() {
+    return "/skills/{$this->slug()}/" . Page::cacheBreaker();
+  }
+  
   /*
    * data access
    */

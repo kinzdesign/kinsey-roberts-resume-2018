@@ -3,8 +3,9 @@
     if(!$projects || !is_array($projects) || !count($projects))
       return;
 ?>
+
+          <hr/>
           <section>
-            <hr/>
             <h3>Projects</h3>
             <ul class="list-projects">
 <?php     foreach ($projects as $project) { ?>

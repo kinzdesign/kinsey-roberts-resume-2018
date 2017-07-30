@@ -22,6 +22,9 @@ foreach (TenureType::getAll() as $type)
 // build tenure pages
 foreach (Tenure::getAll() as $tenure)
   download_page("/{$tenure->type()->slug()}/{$tenure->slug()}/");
+// build project pages
+foreach (Project::getAll() as $project) 
+  download_page("/{$project->tenure()->type()->slug()}/{$project->tenure()->slug()}/{$project->slug()}/");
 
 // copy assets
 exec("xcopy /I /S /H /Y /C {$cwd}\\..\\assets {$cwd}\\..\\static\\assets");
