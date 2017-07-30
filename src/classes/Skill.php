@@ -61,14 +61,14 @@ class Skill {
   public function url() {
     return "/skills/{$this->slug()}/" . Page::cacheBreaker();
   }
-  
+
   /*
    * data access
    */
 
-  const SELECT = "SELECT id, type, name, slug, synopsis " .
-    "FROM skills ";
-  const ORDER  = " ORDER BY type, displayorder ";
+  const SELECT = "SELECT s.id, s.type, s.name, s.slug, s.synopsis " .
+    "FROM skills s INNER JOIN skill_types t ON s.type = t.id ";
+  const ORDER  = " ORDER BY t.displayorder, s.displayorder ";
 
   public static function getAll() {
     $arr = array();
@@ -81,7 +81,7 @@ class Skill {
 
   public static function getByTypeId($typeId) {
     $arr = array();
-    $sql = self::SELECT . ' WHERE type = ? ' . self::ORDER;
+    $sql = self::SELECT . ' WHERE s.type = ? ' . self::ORDER;
     $result = Database::execute($sql, $typeId);
     if($result)
       while($row = $result->fetchRow()) 
@@ -92,7 +92,7 @@ class Skill {
   public static function getByType($type) {
     $arr = array();
     if($type) {
-      $sql = self::SELECT . ' WHERE type = ? ' . self::ORDER;
+      $sql = self::SELECT . ' WHERE s.type = ? ' . self::ORDER;
       $result = Database::execute($sql, $type->id(), $type);
       if($result)
         while($row = $result->fetchRow()) 
@@ -103,7 +103,7 @@ class Skill {
 
   public static function getByProjectId($projectId) {
     $arr = array();
-    $sql = self::SELECT . ' WHERE id IN (SELECT skill FROM project_skills WHERE project = ?) ' . self::ORDER;
+    $sql = self::SELECT . ' WHERE s.id IN (SELECT skill FROM project_skills WHERE project = ?) ' . self::ORDER;
     $result = Database::execute($sql, $projectId);
     if($result)
       while($row = $result->fetchRow()) 
@@ -114,7 +114,7 @@ class Skill {
   public static function getByProject($project) {
     $arr = array();
     if($project) {
-      $sql = self::SELECT . ' WHERE id IN (SELECT skill FROM project_skills WHERE project = ?) ' . self::ORDER;
+      $sql = self::SELECT . ' WHERE s.id IN (SELECT skill FROM project_skills WHERE project = ?) ' . self::ORDER;
       $result = Database::execute($sql, $project->id(), $project);
       if($result)
         while($row = $result->fetchRow()) 
@@ -124,7 +124,7 @@ class Skill {
   }
 
   public static function getById($id) {
-    $sql = self::SELECT . ' WHERE id = ? ' . self::ORDER;
+    $sql = self::SELECT . ' WHERE s.id = ? ' . self::ORDER;
     $result = Database::execute($sql, $id);
     if($result && $row = $result->fetchRow())
       return new self($row);
@@ -132,7 +132,7 @@ class Skill {
   }
 
   public static function getBySlug($slug) {
-    $sql = self::SELECT . ' WHERE slug = ? ' . self::ORDER;
+    $sql = self::SELECT . ' WHERE s.slug = ? ' . self::ORDER;
     $result = Database::execute($sql, $slug);
     if($result && $row = $result->fetchRow())
       return new self($row);
