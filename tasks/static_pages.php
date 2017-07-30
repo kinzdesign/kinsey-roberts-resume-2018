@@ -19,6 +19,9 @@ download_page('/');
 // build tenure-type pages
 foreach (TenureType::getAll() as $type)
   download_page("/{$type->slug()}/");
+// build tenure pages
+foreach (Tenure::getAll() as $tenure)
+  download_page("/{$tenure->type()->slug()}/{$tenure->slug()}/");
 
 // copy assets
 exec("xcopy /I /S /H /Y /C {$cwd}\\..\\assets {$cwd}\\..\\static\\assets");
