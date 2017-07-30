@@ -6,6 +6,7 @@
     // handle 404
     Page::error(404, "We could not find a project with slug '{$slug}'.", "Not Found");
   } else { // output contents
+    Page::$skills = $project->skills();
     Page::renderTop($project->title() . ' | Projects ');
 ?>
           <h2 class="head-tenure-type"><?php echo $project->title(); ?></h2>
@@ -27,9 +28,7 @@
         if(file_exists($partialPath)) {
           echo "          <hr/>\n";
           require($partialPath); 
+          echo "\n";
         }
-        // render project list
-        require_once($_SERVER['DOCUMENT_ROOT'] . '/src/functions/skill_list.php');
-        skill_list($project->skills());
   } // end contents 
   Page::renderBottom();

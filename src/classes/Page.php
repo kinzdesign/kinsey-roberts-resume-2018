@@ -2,6 +2,7 @@
 class Page {
 
   public static $title;
+  public static $skills = false;
 
   public static function isStatic() {
     return isset($_GET['static']);
