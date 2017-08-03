@@ -11,6 +11,18 @@
       return '/tenures.php';
     // process first argument
     $arg1 = $_GET['arg1'];
+    // handle projects
+    if($arg1 == 'projects')
+    {
+      // if present, second argument is project
+      if(isset($_GET['arg2']))
+      {
+        Page::$params['project'] = $_GET['arg2'];
+        return '/project.php';
+      }
+      // otherwise, list projects
+      return '/projects.php';
+    }
     // handle skills
     else if ($arg1 == 'skills')
     {
