@@ -1,1 +1,0 @@
-<p>WSOM project A intro</p>
