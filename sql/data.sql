@@ -71,11 +71,16 @@ UNLOCK TABLES;
 LOCK TABLES `project_skills` WRITE;
 /*!40000 ALTER TABLE `project_skills` DISABLE KEYS */;
 INSERT INTO `project_skills` VALUES
-  (1,2,NULL),
   (2,1,NULL),
-  (2,2,NULL),
+  (2,5,NULL),
+  (2,9,NULL),
+  (2,11,NULL),
   (3,1,NULL),
-  (4,1,NULL);
+  (3,5,NULL),
+  (3,7,NULL),
+  (3,13,NULL),
+  (3,14,NULL),
+  (3,16,NULL);
 /*!40000 ALTER TABLE `project_skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,10 +91,15 @@ UNLOCK TABLES;
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
 INSERT INTO `projects` VALUES
-  (1,1,'WSOM Project B','wsom-project-b','This was project b.',2),
-  (2,1,'WSOM Project A','wsom-project-a','Project A was captivating.',1),
-  (3,2,'ITOG Project','itog-project','Something about Student Affairs.',NULL),
-  (4,5,'MS Project','ms-project','Masters research project.',NULL);
+  (1,1,'Server Hardening','server-hardening',NULL,NULL),
+  (2,1,'Server Migration','server-migration',NULL,NULL),
+  (3,2,'Mailroom','mailroom',NULL,NULL),
+  (4,5,'Gamifying Genetics','gamifying-genetics',NULL,NULL),
+  (5,2,'Mobile Work Orders','mobile-work-orders',NULL,NULL),
+  (6,2,'Housing and Residence Life Database (HARLD)','harld',NULL,NULL),
+  (7,2,'Digital Signage','digital-signage',NULL,NULL),
+  (8,2,'Furniture Inventory','furniture-inventory',NULL,NULL),
+  (9,2,'Key and Badge Issuing','key-badge-issuing',NULL,NULL);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,9 +110,14 @@ UNLOCK TABLES;
 LOCK TABLES `skill_types` WRITE;
 /*!40000 ALTER TABLE `skill_types` DISABLE KEYS */;
 INSERT INTO `skill_types` VALUES
-  (1,'Type C','type-c',3),
-  (2,'Type A','type-a',1),
-  (3,'Type B','type-b',2);
+  (1,'Languages','languages',NULL),
+  (2,'Operating Systems','operating-systems',NULL),
+  (3,'Databases','databases',NULL),
+  (4,'Cloud Services','cloud-services',NULL),
+  (5,'.NET Framework','.net-framework',NULL),
+  (6,'Creative Tools','creative-tools',255),
+  (7,'Interpersonal Skills','interpersonal-skills',254),
+  (8,'Point of Service Hardware','point-of-service-hardware',NULL);
 /*!40000 ALTER TABLE `skill_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,8 +128,22 @@ UNLOCK TABLES;
 LOCK TABLES `skills` WRITE;
 /*!40000 ALTER TABLE `skills` DISABLE KEYS */;
 INSERT INTO `skills` VALUES
-  (1,1,'Skill CA','skill-ca',NULL,NULL),
-  (2,2,'Skill AA','skill-aa',NULL,NULL);
+  (1,1,'Microsoft C#','microsoft-c-sharp',NULL,NULL),
+  (2,1,'Adobe ColdFusion','adobe-coldfusion',NULL,NULL),
+  (3,2,'Microsoft Windows','microsoft-windows',NULL,NULL),
+  (4,2,'Ubuntu Linux','ubuntu-linux',NULL,NULL),
+  (5,3,'Microsoft SQL Server','microsoft-sql-server',NULL,NULL),
+  (6,4,'Heroku','heroku',NULL,NULL),
+  (7,5,'Windows Forms','windows-forms',NULL,NULL),
+  (8,6,'Adobe Photoshop','adobe-photoshop',NULL,NULL),
+  (9,7,'Coaching','coaching',NULL,NULL),
+  (10,3,'MySQL','mysql',NULL,NULL),
+  (11,5,'ASP.NET','asp-net',NULL,NULL),
+  (12,8,'Epson Receipt Printers','epson-receipt-printers',NULL,NULL),
+  (13,8,'Zebra Label Printers','zebra-label-printers',NULL,NULL),
+  (14,8,'Motorola Symbol Barcode Scanners','motorola-symbol-barcode-scanners',NULL,NULL),
+  (15,8,'MagTek Motorized Card Encoders','magtek-motorized-card-encoders',NULL,NULL),
+  (16,8,'Equinox Transaction Terminals','equinox-transaction-terminals',NULL,NULL);
 /*!40000 ALTER TABLE `skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
