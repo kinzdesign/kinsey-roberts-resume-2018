@@ -1,5 +1,6 @@
 RewriteEngine On
 
-RewriteRule ^([^(/|\.)]+)/$ index.php?tenure-type=$1 [L,QSA]
-RewriteRule ^([^(/|\.)]+)/([^(/|\.)]+)/$ tenure.php?type=$1&slug=$2 [L,QSA]
-RewriteRule ^([^(/|\.)]+)/([^(/|\.)]+)/([^(/|\.)]+)/$ project.php?type=$1&tenure=$2&slug=$3 [L,QSA]
+RewriteRule ^/?$ routes.php [L,QSA]
+RewriteRule ^([^(/|\.)]+)/$ routes.php?arg1=$1 [L,QSA]
+RewriteRule ^([^(/|\.)]+)/([^(/|\.)]+)/$ routes.php?arg1=$1&arg2=$2 [L,QSA]
+RewriteRule ^([^(/|\.)]+)/([^(/|\.)]+)/([^(/|\.)]+)/$ routes.php?arg1=$1&arg2=$2&arg3=$3 [L,QSA]

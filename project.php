@@ -1,6 +1,6 @@
 <?php 
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'); 
-  $slug = $_GET['slug'];
+  $slug = Page::$params['project'];
   $project = Project::getBySlug($slug);
   if(!$project) {
     // handle 404

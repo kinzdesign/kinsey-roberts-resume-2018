@@ -1,6 +1,6 @@
 <?php 
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'); 
-  $slug = $_GET['slug'];
+  $slug = Page::$params['tenure'];
   $tenure = Tenure::getBySlug($slug);
   if(!$tenure) {
     // handle 404

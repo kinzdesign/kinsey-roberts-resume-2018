@@ -1,7 +1,7 @@
 <?php 
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
-  if(isset($_GET['tenure-type'])) {
-    $type = TenureType::getBySlug($_GET['tenure-type']);
+  if(isset(Page::$params['tenure-type'])) {
+    $type = TenureType::getBySlug(Page::$params['tenure-type']);
     $headers = array($type);
     Page::$title = $type->name();
   } else {
