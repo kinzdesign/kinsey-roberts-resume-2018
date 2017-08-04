@@ -10,7 +10,7 @@
           <ul>
             <li>
               <h4>Package Arrival Email Timing</h4>
-              <p>Most packages were logged by front desk staff who would have to stop logging packages when a customer arrived. As smartphones became more prevalent, students increasingly showed up to retrieve their packages within minutes of the package being logged, sometimes before the package could even be shelved. The frequent task switching combined with ineffieceint searches through unsorted packages were slowing the operations of the Area Offices.</p>
+              <p>Most packages were logged by front desk staff who would have to stop logging packages when a customer arrived. As smartphones became more prevalent, students increasingly showed up to retrieve their packages within minutes of the package being logged, sometimes before the package could even be shelved. The frequent task switching combined with inefficient searches through unsorted packages were slowing the operations of the Area Offices.</p>
               <p>I refactored the data layer code to not send emails when the package was initially logged, leaving the notification stamp column null. Then I added a button to the desktop HARLD client that, when pressed, queried for all packages in that office without a notification stamp, sent the package arrival email, and set the notification stamp.</p>
               <p>Colloquially, pressing the button came to be known as "releasing the flood gates," but the wave of students got their packages faster since they were sorted and ready.</p>
             </li>
