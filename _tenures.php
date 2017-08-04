@@ -6,6 +6,7 @@
     Page::$title = $type->name();
   } else {
     $headers = TenureType::getAll();
+    Page::$showTopnav = false;
   }
   Page::renderTop();
   foreach ($headers as $header) { ?>
