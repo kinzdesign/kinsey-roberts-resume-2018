@@ -31,7 +31,7 @@ class TenureType {
     return $this->slug;
   }
 
-  public function getTenures() {
+  public function tenures() {
     // lazy-load Tenure array
     if(!$this->tenures)
       $this->tenures = Tenure::getByType($this);

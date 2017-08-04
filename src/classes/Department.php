@@ -50,7 +50,7 @@ class Department {
     return $this->url;
   }
 
-  public function getTenures() {
+  public function tenures() {
     // lazy-load Tenure array
     if(!$this->tenures)
       $this->tenures = Tenure::getByDepartment($this);

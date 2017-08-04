@@ -11,7 +11,7 @@
   foreach ($headers as $header) { ?>
           <h2 class="head-tenure-type"><?php echo $header->name(); ?></h2>
           <ul class="list-tenures">
-<?php   foreach($header->getTenures() as $tenure) { ?>
+<?php   foreach($header->tenures() as $tenure) { ?>
             <li class="clearfix">
               <div class="tenure-date-block">
                 <div class="tenure-duration"><?php echo $tenure->duration(); ?></div>
