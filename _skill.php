@@ -2,6 +2,7 @@
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'); 
   $slug = Page::$params['skill'];
   $skill = Skill::getBySlug($slug);
+  Page::$showSidebar = false;
   if(!$skill) {
     // handle 404
     Page::error(404, "We could not find a skill with slug '{$slug}'.", "Not Found");

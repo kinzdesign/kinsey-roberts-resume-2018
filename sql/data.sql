@@ -114,7 +114,7 @@ INSERT INTO `skill_types` VALUES
   (2,'Operating Systems','operating-systems',NULL),
   (3,'Databases','databases',NULL),
   (4,'Cloud Services','cloud-services',NULL),
-  (5,'.NET Framework','.net-framework',NULL),
+  (5,'.NET Framework','dot-net',NULL),
   (6,'Creative Tools','creative-tools',255),
   (7,'Interpersonal Skills','interpersonal-skills',254),
   (8,'Point of Service Hardware','point-of-service-hardware',NULL);

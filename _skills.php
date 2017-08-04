@@ -1,5 +1,6 @@
 <?php 
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
+  Page::$showSidebar = false;
   if(isset(Page::$params['skill-type'])) {
     $type = SkillType::getBySlug(Page::$params['skill-type']);
     $headers = array($type);

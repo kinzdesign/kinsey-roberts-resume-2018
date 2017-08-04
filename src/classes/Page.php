@@ -3,6 +3,7 @@ class Page {
 
   public static $title;
   public static $skills = false;
+  public static $showSidebar = true;
   public static $params = array();
 
   public static function isStatic() {

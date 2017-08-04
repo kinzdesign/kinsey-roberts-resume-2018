@@ -1,7 +1,9 @@
         </main>
+<?php if(Page::$showSidebar) { ?>
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_sidebar.php'); ?>
         </div>
+<?php } ?>
       </div>
     </div>
 <?php # jQuery (necessary for Bootstrap's JavaScript plugins), with local fallback ?>
