@@ -59,7 +59,7 @@ class Skill {
   }
 
   public function url() {
-    return "/skills/{$this->slug()}/" . Page::cacheBreaker();
+    return "/skills/{$this->type()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
   }
 
   /*
