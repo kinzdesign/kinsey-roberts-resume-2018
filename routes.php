@@ -8,7 +8,7 @@
   {
     // if no first argument (homepage), show full resume
     if(!isset($_GET['arg1']) || !$_GET['arg1'])
-      return '/tenures.php';
+      return '/_tenures.php';
     // process first argument
     $arg1 = $_GET['arg1'];
     // handle projects
@@ -18,10 +18,10 @@
       if(isset($_GET['arg2']))
       {
         Page::$params['project'] = $_GET['arg2'];
-        return '/project.php';
+        return '/_project.php';
       }
       // otherwise, list projects
-      return '/projects.php';
+      return '/_projects.php';
     }
     // handle skills
     else if ($arg1 == 'skills')
@@ -34,11 +34,11 @@
         if(isset($_GET['arg3']))
         {
           Page::$params['skill'] = $_GET['arg3'];
-          return '/skill.php';
+          return '/_skill.php';
         }
       }
       // if only one or two arguments, list skills
-      return '/skills.php';
+      return '/_skills.php';
     }
     // otherwise, first arg is tenure type
     else
@@ -52,13 +52,13 @@
         if(isset($_GET['arg3']))
         {
           Page::$params['project'] = $_GET['arg3'];
-          return '/project.php';
+          return '/_project.php';
         }
         // otherwise, it's just a tenure page
-        return '/tenure.php';
+        return '/_tenure.php';
       }
       // if only one argument, list tenures
-      return '/tenures.php';
+      return '/_tenures.php';
     }
 
   }
