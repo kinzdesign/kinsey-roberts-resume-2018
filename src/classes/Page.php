@@ -57,6 +57,15 @@ class Page {
     if(in_array($script, self::$scripts))
       return true;
     self::$scripts[] = $script;
+    return false;
+  }
+
+  public static function registerGoogleCharts() {
+    return self::registerScript('https://www.gstatic.com/charts/loader.js');
+  }
+
+  public static function registerChart($chart) {
+    Page::registerScript("/assets/charts/{$chart}.js?ts=" . Config::getBuildTime());
   }
 
   public static function renderScripts() {

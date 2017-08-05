@@ -1,7 +1,12 @@
-          <p>Increases in both online shopping (especially Amazon Prime) and the geographical market of Case Western Reserve University (among west coast and international students) were leading to increasing mailroom traffic for the Office of Housing and Residence Life's two Area Offices.</p>
+<?php
+  Page::registerGoogleCharts();
+  Page::registerChart('packagesByMonth');
+?>
+          <p>Increases in both online shopping and the geographical market of Case Western Reserve University were leading to increasing mailroom traffic for the Office of Housing and Residence Life's two Area Offices.</p>
+          <div id="chart_packages_by_month" style="width: 100%; height: 400px;"></div>
           <p>As the primary maintainer of the software used to log and manage packages - <a href="harld/">Housing And Residence Life Database (HARLD)</a> - I was tasked with identifying and alleviating bottlenecks in the package logging workflow.</p>
           <p>I worked closely with the staff who logged packages to find opportunities for improvement and designed new optimizations and features.</p>
-          <p>Through software, hardware, and process improvements, I was able to help the mailrooms cope with a 67% increase in mailroom traffic, from 51k packages in Fiscal Year 2008 to 85k packages in Fiscal Year 2013, without major staffing increases.</p>
+          <p>Through software, hardware, and process improvements, I was able to help the mailrooms cope with a 67% increase in mailroom traffic, from 51K packages in Fiscal Year 2008 to 85K packages in Fiscal Year 2013.</p>
           <hr/>
           <h3>Highlights</h3>
           <p>To give an idea of the scope of the issues created by such an increase, there were at least 3 physical remodels to expand the area offices in order to add additional shelves for packages. At peak times, the offices could handle over 400 packages per day, so a mere 9 second decrease in the time to log a package could save an hour of labor a day.</p>
