@@ -29,6 +29,15 @@ foreach (Project::getAll() as $project) {
   download_page("/{$project->tenure()->type()->slug()}/{$project->tenure()->slug()}/{$project->slug()}/");
   download_page("/projects/{$project->slug()}/");
 }
+// build skills root
+download_page('/skills/');
+// build skill-type pages
+foreach (SkillType::getAll() as $type)
+  download_page("/skills/{$type->slug()}/");
+// build skill pages
+foreach (Skill::getAll() as $skill)
+  download_page("/skills/{$skill->type()->slug()}/{$skill->slug()}/");
+
 // copy assets
 exec("xcopy /I /S /H /Y /C {$cwd}\\..\\assets {$cwd}\\..\\static\\assets");
 echo "   > copied assets\n";
