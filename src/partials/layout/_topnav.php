@@ -38,17 +38,20 @@
           </button>
           <a class="navbar-brand" href="/">Kinsey Roberts</a>
         </div>
-<?php # Collect the nav links and other content for toggling ?>
+<?php if(Page::$showTopnav) { ?>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav">
-            <?php navbarBeginDropdown('/experience/', 'Experience'); ?>
+<?php   foreach(TenureType::getAll() as $header) { ?>
+            <?php navbarBeginDropdown($header->url(), $header->name()); ?>
               <ul class="dropdown-menu">
-                <li><a href="#">Lead Web Developer</a></li>
-                <li><a href="#">Application Developer</a></li>
+<?php     foreach($header->tenures() as $tenure) { ?>
+                <li><a href="<?php echo $tenure->url(); ?>"><?php echo $tenure->title(); ?></a></li>
+<?php     } // end tenure ?>
               </ul>
             </li>
-            <?php navbarSimpleLink('/education/', 'Education'); ?>
+<?php   } // end header ?>
           </ul>
+<?php } ?>
         </div>
       </div>
     </nav>

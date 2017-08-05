@@ -114,6 +114,10 @@ class Tenure {
     return $this->projects;
   }
 
+  public function url() {
+    return "/{$this->type()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
+  }
+
   /*
    * data access
    */

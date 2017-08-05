@@ -15,5 +15,7 @@
     <![endif]-->
 <?php # Page title ?>
     <title><?php 
-      echo 'Kinsey Roberts' 
+      if(Page::$title)
+        echo Page::$title . ' | ';
+      echo 'Kinsey Roberts';
     ?></title>

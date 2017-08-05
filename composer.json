@@ -8,6 +8,7 @@
 
       "src/classes/Config.php"
      ,"src/classes/Database.php"
+     ,"src/classes/Page.php"
 
      ,"src/classes/Bullet.php" 
      ,"src/classes/Department.php" 

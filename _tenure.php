@@ -1,10 +1,17 @@
-<?php require($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_top.php'); ?>
-<?php
-      $slug = $_GET['slug'];
-      $tenure = Tenure::getBySlug($slug);
-      if(!$tenure) {
-        // TODO: 404
-      } else { // output contents ?>
+<?php 
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'); 
+  $slug = Page::$params['tenure'];
+  $tenure = Tenure::getBySlug($slug);
+  if(!$tenure) {
+    // handle 404
+    Page::error(404, "We could not find a tenure with slug '{$slug}'.", "Not Found");
+  } else { // output contents
+    // build title
+    $fullTitle = $tenure->title();
+    if($tenure->category()) 
+      $fullTitle = "$fullTitle - {$tenure->category()}";
+    Page::renderTop("$fullTitle | {$tenure->type()->name()}");
+?>
           <h2 class="head-tenure"><?php 
             echo $tenure->title(); 
             if($tenure->category()) 
@@ -24,9 +31,10 @@
             <span class="tenure-department"><?php echo $tenure->department()->name(); ?></span>
           </a>
           <div class="clearfix"></div>
-          <hr />
-<?php   $partialPath = $_SERVER['DOCUMENT_ROOT'] . "/src/partials/tenures/_$slug.php";
-        if(file_exists($partialPath)) 
-          require($partialPath); ?>          
-<?php } // end contents ?>
-<?php require($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_bottom.php'); ?>
+<?php   // render static content
+        Page::renderPartial('tenures', $slug, "          <hr/>\n", "\n");
+        // render project list
+        require_once($_SERVER['DOCUMENT_ROOT'] . '/src/functions/project_list.php');
+        project_list($tenure->projects());
+  } // end contents 
+  Page::renderBottom();
