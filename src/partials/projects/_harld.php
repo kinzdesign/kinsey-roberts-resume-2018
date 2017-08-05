@@ -1,3 +1,12 @@
+<?php
+  Page::registerGoogleCharts();
+  Page::registerChart('harldByYear');
+?>
+          <p></p>
+          <div class="row">
+            <div id="chart_harld_by_year" class="col-lg-6" style="height: 400px;"></div>
+            <div id="table_harld_by_year" class="col-lg-6" style="height: 400px;"></div>
+          </div>
           <p></p>
           <hr/>
           <h3>Highlights</h3>
