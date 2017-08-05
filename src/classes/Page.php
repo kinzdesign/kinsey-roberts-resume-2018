@@ -1,6 +1,8 @@
 <?php
 class Page {
 
+  private static $scripts = array();
+
   public static $title;
   public static $skills = false;
   public static $showSidebar = true;
@@ -48,5 +50,18 @@ class Page {
     if($suffix)
       echo $suffix;
     return true;
+  }
+
+  // returns whether or not the script was already registered
+  public static function registerScript($script) {
+    if(in_array($script, self::$scripts))
+      return true;
+    self::$scripts[] = $script;
+  }
+
+  public static function renderScripts() {
+    foreach (self::$scripts as $script) {
+      echo "    <script src=\"{$script}\"></script>\n";
+    }
   }
 }
