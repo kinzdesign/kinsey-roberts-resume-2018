@@ -24,11 +24,7 @@
           <span class="tenure-parent"><?php echo $project->tenure()->department()->parent(); ?>,</span>
 <?php   } ?>
           <span class="tenure-department"><?php echo $project->tenure()->department()->name(); ?></span>
-<?php   $partialPath = $_SERVER['DOCUMENT_ROOT'] . "/src/partials/projects/_$slug.php";
-        if(file_exists($partialPath)) {
-          echo "          <hr/>\n";
-          require($partialPath); 
-          echo "\n";
-        }
+<?php   // render static content
+        Page::renderPartial('projects', $slug, "          <hr/>\n", "\n");
   } // end contents 
   Page::renderBottom();

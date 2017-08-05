@@ -31,10 +31,8 @@
             <span class="tenure-department"><?php echo $tenure->department()->name(); ?></span>
           </a>
           <div class="clearfix"></div>
-          <hr />
-<?php   $partialPath = $_SERVER['DOCUMENT_ROOT'] . "/src/partials/tenures/_$slug.php";
-        if(file_exists($partialPath)) 
-          require($partialPath); 
+<?php   // render static content
+        Page::renderPartial('tenures', $slug, "          <hr/>\n", "\n");
         // render project list
         require_once($_SERVER['DOCUMENT_ROOT'] . '/src/functions/project_list.php');
         project_list($tenure->projects());

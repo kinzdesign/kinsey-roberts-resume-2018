@@ -11,11 +11,8 @@
     Page::renderTop("{$skill->name()} | {$skill->type()->name()} | Skills");
 ?>
           <h2 class="head-skill"><?php echo $skill->name(); ?></h2>
-<?php   $partialPath = $_SERVER['DOCUMENT_ROOT'] . "/src/partials/skills/_$slug.php";
-        if(file_exists($partialPath)) {
-          echo "          <hr />\n";
-          require($partialPath); 
-        }
+<?php   // render static content
+        Page::renderPartial('skills', $slug);
         // render project list
         require_once($_SERVER['DOCUMENT_ROOT'] . '/src/functions/project_list.php');
         project_list($skill->projects());

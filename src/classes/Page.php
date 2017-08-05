@@ -26,10 +26,27 @@ class Page {
   public static function renderTop($title = false) {
     if($title)
       self::$title = $title;
-    require_once($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_top.php');
+    self::renderPartial('layout', 'top');
   }
 
   public static function renderBottom() {
-    require_once($_SERVER['DOCUMENT_ROOT'] . '/src/partials/layout/_bottom.php');
+    self::renderPartial('layout', 'bottom');
+  }
+
+  public static function renderPartial($dir, $name, $prefix = false, $suffix = false) {
+    // compute path
+    $path = "{$_SERVER['DOCUMENT_ROOT']}/src/partials/{$dir}/_{$name}.php";
+    // ensure exists
+    if(!file_exists($path))
+      return false;
+    // output prefix if defined
+    if($prefix)
+      echo $prefix;
+    // include the partial
+    require_once($path);
+    // output suffix if defined
+    if($suffix)
+      echo $suffix;
+    return true;
   }
 }
