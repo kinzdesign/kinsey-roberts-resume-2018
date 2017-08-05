@@ -4,7 +4,7 @@
   if(isset(Page::$params['skill-type'])) {
     $type = SkillType::getBySlug(Page::$params['skill-type']);
     $headers = array($type);
-    Page::$title = $type->name();
+    Page::$title = $type->name() . ' | Skills';
   } else {
     $headers = SkillType::getAll();
     Page::$title = 'Skills';
