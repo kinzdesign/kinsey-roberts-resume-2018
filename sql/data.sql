@@ -125,14 +125,14 @@ UNLOCK TABLES;
 LOCK TABLES `skill_types` WRITE;
 /*!40000 ALTER TABLE `skill_types` DISABLE KEYS */;
 INSERT INTO `skill_types` VALUES
-  (1,'Languages','languages',NULL,'\0'),
-  (2,'Operating Systems','operating-systems',NULL,'\0'),
-  (3,'Databases','databases',NULL,'\0'),
-  (4,'Cloud Services','cloud-services',NULL,'\0'),
-  (5,'.NET Framework','dot-net',NULL,'\0'),
-  (6,'Creative Tools','creative-tools',255,'\0'),
-  (7,'Interpersonal Skills','interpersonal-skills',254,'\0'),
-  (8,'Point of Service Hardware','point-of-service-hardware',NULL,'\0');
+  (1,'Languages','languages',10,''),
+  (2,'Operating Systems','operating-systems',40,''),
+  (3,'Databases','databases',20,''),
+  (4,'Cloud Services','cloud-services',70,'\0'),
+  (5,'.NET Framework','dot-net',30,'\0'),
+  (6,'Creative Tools','creative-tools',80,'\0'),
+  (7,'Interpersonal Skills','interpersonal-skills',50,''),
+  (8,'Point of Service Hardware','point-of-service-hardware',60,'\0');
 /*!40000 ALTER TABLE `skill_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
