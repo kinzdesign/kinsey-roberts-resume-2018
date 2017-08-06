@@ -128,6 +128,7 @@ CREATE TABLE `skill_types` (
   `name` varchar(55) NOT NULL,
   `slug` varchar(55) NOT NULL,
   `displayorder` tinyint(4) unsigned DEFAULT NULL,
+  `expanded` bit(1) NOT NULL DEFAULT b'0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
