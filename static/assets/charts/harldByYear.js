@@ -18,6 +18,8 @@ function drawChartHarldByYear() {
     vAxis: {minValue: 0, position: 'after', format: 'short', textPosition: 'in' },
     isStacked: true,
     chartArea: { width: '90%', height: '75%' },
+    focusTarget: 'category',
+    pointSize: 8,
     legend: { position: 'top', maxLines: 3 }
   });
 

@@ -5286,6 +5286,31 @@ body {
     top: 0;
     width: 50%;
     /* 6 columns */ } }
+/* padding */
+.padding-top-large,
+.padding-both-large {
+  padding-top: 18px; }
+
+.padding-bottom-large,
+.padding-both-large {
+  padding-bottom: 18px; }
+
+.padding-top-small,
+.padding-both-small {
+  padding-top: 6px; }
+
+.padding-bottom-small,
+.padding-both-small {
+  padding-bottom: 6px; }
+
+.padding-top-xs,
+.padding-both-xs {
+  padding-top: 1px; }
+
+.padding-bottom-xs,
+.padding-both-xs {
+  padding-bottom: 1px; }
+
 .tenure-dates {
   font-style: italic; }
 

@@ -80,7 +80,22 @@ INSERT INTO `project_skills` VALUES
   (3,7,NULL),
   (3,13,NULL),
   (3,14,NULL),
-  (3,16,NULL);
+  (3,16,NULL),
+  (6,1,NULL),
+  (6,3,NULL),
+  (6,5,NULL),
+  (6,7,NULL),
+  (6,11,NULL),
+  (6,12,NULL),
+  (6,13,NULL),
+  (6,14,NULL),
+  (6,15,NULL),
+  (6,16,NULL),
+  (6,17,NULL),
+  (6,18,NULL),
+  (6,19,NULL),
+  (6,20,NULL),
+  (6,22,NULL);
 /*!40000 ALTER TABLE `project_skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,14 +125,14 @@ UNLOCK TABLES;
 LOCK TABLES `skill_types` WRITE;
 /*!40000 ALTER TABLE `skill_types` DISABLE KEYS */;
 INSERT INTO `skill_types` VALUES
-  (1,'Languages','languages',NULL),
-  (2,'Operating Systems','operating-systems',NULL),
-  (3,'Databases','databases',NULL),
-  (4,'Cloud Services','cloud-services',NULL),
-  (5,'.NET Framework','dot-net',NULL),
-  (6,'Creative Tools','creative-tools',255),
-  (7,'Interpersonal Skills','interpersonal-skills',254),
-  (8,'Point of Service Hardware','point-of-service-hardware',NULL);
+  (1,'Languages','languages',NULL,'\0'),
+  (2,'Operating Systems','operating-systems',NULL,'\0'),
+  (3,'Databases','databases',NULL,'\0'),
+  (4,'Cloud Services','cloud-services',NULL,'\0'),
+  (5,'.NET Framework','dot-net',NULL,'\0'),
+  (6,'Creative Tools','creative-tools',255,'\0'),
+  (7,'Interpersonal Skills','interpersonal-skills',254,'\0'),
+  (8,'Point of Service Hardware','point-of-service-hardware',NULL,'\0');
 /*!40000 ALTER TABLE `skill_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,7 +158,13 @@ INSERT INTO `skills` VALUES
   (13,8,'Zebra Label Printers','zebra-label-printers',NULL,NULL),
   (14,8,'Motorola Symbol Barcode Scanners','motorola-symbol-barcode-scanners',NULL,NULL),
   (15,8,'MagTek Motorized Card Encoders','magtek-motorized-card-encoders',NULL,NULL),
-  (16,8,'Equinox Transaction Terminals','equinox-transaction-terminals',NULL,NULL);
+  (16,8,'Equinox Transaction Terminals','equinox-transaction-terminals',NULL,NULL),
+  (17,5,'Telerik UI Controls','telerik-ui-controls',NULL,NULL),
+  (18,5,'CSLA.NET Data Objects','csla-net-data-objects',NULL,NULL),
+  (19,5,'Windows Phone 7','windows-phone-7',NULL,NULL),
+  (20,5,'Windows Pocket PC','windows-pocket-pc',NULL,NULL),
+  (21,5,'Windows Presentation Foundation','windows-presentation-foundation',NULL,NULL),
+  (22,5,'Windows Communication Foundation','windows-communication-foundation',NULL,NULL);
 /*!40000 ALTER TABLE `skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
