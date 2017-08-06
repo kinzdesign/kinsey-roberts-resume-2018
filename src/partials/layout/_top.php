@@ -20,3 +20,5 @@
       <div class="row">
         <main class="col-xs-12">
 <?php }
+      if(Page::$showBreadcrumbs && count(Page::$breadcrumbs) > 0)
+        Page::renderPartial('layout', 'breadcrumbs');

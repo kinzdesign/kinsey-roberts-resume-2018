@@ -25,10 +25,8 @@ foreach (TenureType::getAll() as $type)
 foreach (Tenure::getAll() as $tenure)
   download_page("/{$tenure->type()->slug()}/{$tenure->slug()}/");
 // build project pages
-foreach (Project::getAll() as $project) {
+foreach (Project::getAll() as $project)
   download_page("/{$project->tenure()->type()->slug()}/{$project->tenure()->slug()}/{$project->slug()}/");
-  download_page("/projects/{$project->slug()}/");
-}
 // build skills root
 download_page('/skills/');
 // build skill-type pages

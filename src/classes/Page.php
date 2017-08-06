@@ -3,8 +3,10 @@ class Page {
 
   private static $scripts = array();
 
+  public static $breadcrumbs = array('Home' => '/');
   public static $title;
   public static $skills = false;
+  public static $showBreadcrumbs = true;
   public static $showSidebar = true;
   public static $showTopnav = true;
   public static $params = array();

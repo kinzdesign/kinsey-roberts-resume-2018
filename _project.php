@@ -6,6 +6,10 @@
     // handle 404
     Page::error(404, "We could not find a project with slug '{$slug}'.", "Not Found");
   } else { // output contents
+    // add breadcrumbs
+    Page::$breadcrumbs[$project->tenure()->type()->name()] = $project->tenure()->type()->url();
+    Page::$breadcrumbs[$project->tenure()->title()] = $project->tenure()->url();
+    Page::$breadcrumbs[$project->title()] = $project->url();
     Page::$skills = $project->skills();
     Page::renderTop($project->title() . ' | Projects ');
 ?>

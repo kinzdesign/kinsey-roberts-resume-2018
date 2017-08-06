@@ -3,10 +3,12 @@
   if(isset(Page::$params['tenure-type'])) {
     $type = TenureType::getBySlug(Page::$params['tenure-type']);
     $headers = array($type);
+    Page::$breadcrumbs[$type->name()] = $type->url();
     Page::$title = $type->name();
   } else {
     $headers = TenureType::getAll();
     Page::$showTopnav = false;
+    Page::$showBreadcrumbs = false;
   }
   Page::renderTop();
   foreach ($headers as $header) { ?>

@@ -1,10 +1,12 @@
 <?php 
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
   Page::$showSidebar = false;
+  Page::$breadcrumbs['Skills'] = '/skills/';
   if(isset(Page::$params['skill-type'])) {
     $type = SkillType::getBySlug(Page::$params['skill-type']);
     $headers = array($type);
     Page::$title = $type->name() . ' | Skills';
+    Page::$breadcrumbs[$type->name()] = $type->url();
   } else {
     $headers = SkillType::getAll();
     Page::$title = 'Skills';

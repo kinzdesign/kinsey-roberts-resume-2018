@@ -44,6 +44,10 @@ class SkillType {
     return $this->skills;
   }
 
+  public function url() {
+    return "/skills/{$this->slug()}/";
+  }
+
   /*
    * data access
    */

@@ -10,6 +10,9 @@
     $fullTitle = $tenure->title();
     if($tenure->category()) 
       $fullTitle = "$fullTitle - {$tenure->category()}";
+    // add breadcrumbs
+    Page::$breadcrumbs[$tenure->type()->name()] = $tenure->type()->url();
+    Page::$breadcrumbs[$fullTitle] = $tenure->url();
     Page::renderTop("$fullTitle | {$tenure->type()->name()}");
 ?>
           <h2 class="head-tenure"><?php 
