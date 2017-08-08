@@ -4,7 +4,7 @@
 ?>
           <p>Increases in both online shopping and the geographical market of Case Western Reserve University were leading to increasing mailroom traffic for the Office of Housing and Residence Life's two Area Offices.</p>
           <div id="chart_packages_by_month" style="width: 100%; height: 400px;"></div>
-          <p>As the primary maintainer of the software used to log and manage packages - <a href="harld/">Housing And Residence Life Database (HARLD)</a> - I was tasked with identifying and alleviating bottlenecks in the package logging workflow.</p>
+          <p>As the primary maintainer of the software used to log and manage packages - <a href="<?php echo Project::getBySlug('harld')->url(); ?>">Housing And Residence Life Database (HARLD)</a> - I was tasked with identifying and alleviating bottlenecks in the package logging workflow.</p>
           <p>I worked closely with the staff who logged packages to find opportunities for improvement and designed new optimizations and features.</p>
           <p>Through software, hardware, and process improvements, I was able to help the mailrooms cope with a 67% increase in mailroom traffic, from 51K packages in Fiscal Year 2008 to 85K packages in Fiscal Year 2013.</p>
           <hr/>

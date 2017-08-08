@@ -81,7 +81,7 @@ function drawChartPackagesByMonth() {
   var options = {
     title: 'Mailroom Packages Logged per Month',
     vAxis: {minValue: 0, position: 'after', format: 'short', textPosition: 'in' },
-    isStacked: true,
+    focusTarget: 'category',
     legend: { position: 'none' },
     chartArea: { width: '100%', height: '80%' }
   };

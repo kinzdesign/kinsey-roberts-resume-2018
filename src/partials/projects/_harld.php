@@ -10,6 +10,8 @@
             <li>Communicated proactively with end users to identify pain points</li>
             <li>Observed end users to identify potential optimizations</li>
             <li>Expanded point-of-service class library to include new hardware</li>
+            <li>Imported, managed, and audited core data (e.g. buildings, rooms, faceplates, keys)</li>
+            <li>Managed role-based access for staff and student employees</li>
           </ul>
           <hr/>
           <h3>Summary</h3>
@@ -27,6 +29,22 @@
           <h3>Highlights</h3>
           <p>There were plenty of challenging and rewarding experiences while working on HARLD, but these are a few that stick out:</p>
           <ul>
+            <li>
+              <a href="<?php echo Project::getBySlug('mailroom')->url(); ?>"><h4>Optimized Growing Mailroom Operations</h4></a>
+              <p>Worked closely with end users to identify and smooth friction in the package logging and distribution processes</p>
+            </li>
+            <li>
+              <a href="<?php echo Project::getBySlug('key-badge-issuing')->url(); ?>"><h4>Automated Key, Card, and Badge Issuing</h4></a>
+              <p>Replaced manual, paper-based workflows with automated processes</p>
+            </li>
+            <li>
+              <a href="<?php echo Project::getBySlug('furniture-inventory')->url(); ?>"><h4></h4></a>
+              <p></p>
+            </li>
+            <li>
+              <a href="<?php echo Project::getBySlug('mobile-work-orders')->url(); ?>"><h4></h4></a>
+              <p></p>
+            </li>
             <li>
               <h4>Consolidated User Control Vendors to Save Money</h4>
               <p>The third version of the HARLD desktop client was originally written using Infragistics' UI controls for .NET, but all of our web infrastructure used Telerik's UI controls for ASP.NET and our Telerik license included the Windows Forms UI controls as well. I was told that historically neither vendor had been delivering excellence on both platforms. Over time, Telerik's desktop controls had matured into a very viable option, but my predecessor was well versed in Infragistics' syntaxes, so inertia kept them on the two-vendor solution.</p>

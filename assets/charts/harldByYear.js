@@ -19,7 +19,6 @@ function drawChartHarldByYear() {
     isStacked: true,
     chartArea: { width: '90%', height: '75%' },
     focusTarget: 'category',
-    pointSize: 8,
     legend: { position: 'top', maxLines: 3 }
   });
 
