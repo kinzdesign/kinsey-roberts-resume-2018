@@ -45,7 +45,7 @@
             <?php navbarBeginDropdown($header->url(), $header->name()); ?>
               <ul class="dropdown-menu">
 <?php     foreach($header->tenures() as $tenure) { ?>
-                <li><a href="<?php echo $tenure->url(); ?>"><?php echo $tenure->title(); ?></a></li>
+                <li><a href="<?php echo $tenure->url(); ?>"><?php echo $tenure->name(); ?></a></li>
 <?php     } // end tenure ?>
               </ul>
             </li>

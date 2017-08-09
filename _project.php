@@ -8,15 +8,15 @@
   } else { // output contents
     // add breadcrumbs
     Page::$breadcrumbs[$project->tenure()->type()->name()] = $project->tenure()->type()->url();
-    Page::$breadcrumbs[$project->tenure()->title()] = $project->tenure()->url();
-    Page::$breadcrumbs[$project->title()] = $project->url();
+    Page::$breadcrumbs[$project->tenure()->name()] = $project->tenure()->url();
+    Page::$breadcrumbs[$project->name()] = $project->url();
     Page::$skills = $project->skills();
-    Page::renderTop($project->title() . ' | Projects ');
+    Page::renderTop($project->name() . ' | Projects ');
 ?>
-          <h2 class="head-tenure-type"><?php echo $project->title(); ?></h2>
+          <h2 class="head-tenure-type"><?php echo $project->name(); ?></h2>
           <div class="tenure-title">
             <a href="<?php echo $project->tenure()->url(); ?>"><?php 
-                echo $project->tenure()->title(); 
+                echo $project->tenure()->name(); 
                 if($project->tenure()->category()) 
                   echo " - {$project->tenure()->category()}";
             ?></a>

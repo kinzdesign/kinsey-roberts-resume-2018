@@ -8,7 +8,7 @@ class Project {
     $this->id           = $row['id'];
     $this->tenureId     = $row['tenure'];
     $this->tenure       = $tenure;
-    $this->title        = $row['title'];
+    $this->name         = $row['name'];
     $this->slug         = $row['slug'];
     $this->synopsis     = $row['synopsis'];
   }
@@ -19,7 +19,7 @@ class Project {
 
   private $id,
           $tenureId, $tenure,
-          $title,
+          $name,
           $synopsis,
           $slug,
           $skills;
@@ -39,8 +39,8 @@ class Project {
     return $this->tenure;
   }
 
-  public function title() {
-    return $this->title;
+  public function name() {
+    return $this->name;
   }
 
   public function synopsis() {
@@ -66,7 +66,7 @@ class Project {
    * data access
    */
 
-  const SELECT = "SELECT id, tenure, title, slug, synopsis " .
+  const SELECT = "SELECT id, tenure, name, slug, synopsis " .
     "FROM projects ";
   const ORDER  = " ORDER BY tenure, displayorder ";
 

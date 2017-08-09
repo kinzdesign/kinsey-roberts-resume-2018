@@ -23,7 +23,7 @@
               <div class="tenure-title">
                 <a href="<?php echo $tenure->url(); ?>">
                   <?php 
-                    echo $tenure->title(); 
+                    echo $tenure->name(); 
                     if($tenure->category()) 
                       echo " - {$tenure->category()}";
                     if($tenure->notes())

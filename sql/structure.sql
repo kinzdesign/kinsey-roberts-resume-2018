@@ -105,7 +105,7 @@ DROP TABLE IF EXISTS `projects`;
 CREATE TABLE `projects` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `tenure` tinyint(3) unsigned NOT NULL,
-  `title` varchar(160) DEFAULT NULL,
+  `name` varchar(160) DEFAULT NULL,
   `slug` varchar(160) DEFAULT NULL,
   `synopsis` varchar(160) DEFAULT NULL,
   `displayorder` tinyint(3) unsigned DEFAULT NULL,
@@ -183,7 +183,7 @@ CREATE TABLE `tenures` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `type` tinyint(3) unsigned NOT NULL,
   `department` tinyint(3) unsigned NOT NULL,
-  `title` varchar(55) NOT NULL,
+  `name` varchar(55) NOT NULL,
   `slug` varchar(55) NOT NULL,
   `category` varchar(55) DEFAULT NULL,
   `notes` varchar(55) DEFAULT NULL,
