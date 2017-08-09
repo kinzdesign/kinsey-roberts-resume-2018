@@ -76,11 +76,11 @@ INSERT INTO `project_skills` VALUES
   (2,9,NULL),
   (2,11,NULL),
   (3,1,NULL),
-  (3,5,NULL),
-  (3,7,NULL),
   (3,13,NULL),
   (3,14,NULL),
-  (3,16,NULL),
+  (3,29,NULL),
+  (3,30,NULL),
+  (3,32,NULL),
   (6,1,NULL),
   (6,3,NULL),
   (6,5,NULL),
@@ -95,7 +95,24 @@ INSERT INTO `project_skills` VALUES
   (6,18,NULL),
   (6,19,NULL),
   (6,20,NULL),
-  (6,22,NULL);
+  (6,22,NULL),
+  (6,23,NULL),
+  (6,29,NULL),
+  (6,30,NULL),
+  (6,32,NULL),
+  (7,1,NULL),
+  (7,3,NULL),
+  (7,7,NULL),
+  (7,21,NULL),
+  (7,23,NULL),
+  (7,24,NULL),
+  (7,25,NULL),
+  (7,26,NULL),
+  (7,27,NULL),
+  (7,29,NULL),
+  (7,30,NULL),
+  (7,31,NULL),
+  (7,32,NULL);
 /*!40000 ALTER TABLE `project_skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,7 +149,9 @@ INSERT INTO `skill_types` VALUES
   (5,'.NET Framework','dot-net',30,'\0'),
   (6,'Creative Tools','creative-tools',80,'\0'),
   (7,'Interpersonal Skills','interpersonal-skills',50,''),
-  (8,'Point of Service Hardware','point-of-service-hardware',60,'\0');
+  (8,'Point of Service Hardware','point-of-service-hardware',60,'\0'),
+  (9,'Protocols','protocols',75,'\0'),
+  (10,'Administrative','administrative',75,'\0');
 /*!40000 ALTER TABLE `skill_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,7 +183,17 @@ INSERT INTO `skills` VALUES
   (19,5,'Windows Phone 7','windows-phone-7',NULL,NULL),
   (20,5,'Windows Pocket PC','windows-pocket-pc',NULL,NULL),
   (21,5,'Windows Presentation Foundation','windows-presentation-foundation',NULL,NULL),
-  (22,5,'Windows Communication Foundation','windows-communication-foundation',NULL,NULL);
+  (22,5,'Windows Communication Foundation','windows-communication-foundation',NULL,NULL),
+  (23,9,'RS-232 Serial','rs-232-serial',NULL,NULL),
+  (24,9,'SNMP','snmp',NULL,NULL),
+  (25,9,'RSS','rss',NULL,NULL),
+  (26,9,'iCal','ical',NULL,NULL),
+  (27,1,'XML','xml',NULL,NULL),
+  (28,1,'XSLT','xslt',NULL,NULL),
+  (29,10,'Equipment Selection','equipment-selection',NULL,NULL),
+  (30,10,'Budget Proposals','budget-proposals',NULL,NULL),
+  (31,10,'Vendor Relations','vendor-relations',NULL,NULL),
+  (32,10,'Procurement','procurement',NULL,NULL);
 /*!40000 ALTER TABLE `skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
