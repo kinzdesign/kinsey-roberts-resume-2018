@@ -2,8 +2,9 @@
 @ECHO OFF
 ECHO.
 ECHO  + Stashing unstaged changes...
-:: Config.php does wonky things if stashed
+:: Stage things that will be overwritten by build script (Config.php and /static/)
 git add ../src/classes/Config.php
-git stash --keep-index --include-untracked
+git add ../static
+git stash --keep-index --include-untracked build-script
 ECHO    ^> Done
 ECHO.
