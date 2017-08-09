@@ -21,8 +21,8 @@
           <p>The office was small and only had one developer, so I had to build strong relationships with stakeholders to discover needs, as well as research and learn various technologies to deliver the best product possible. </p>
           <p>I nurtured HARLD through a major growth spurt, with increasing traffic in existing workflows and the addition of new objects being tracked and managed. Note the massive uptick in package volume (in blue) beginning in 2011, as well as the addition of access badges (green) in 2009 and physical keys (purple) in 2010 in the graph below.</p>
           <div class="row padding-both-large">
-            <div id="chart_harld_by_year" class="col-lg-6" style="height: 400px;"></div>
-            <div id="table_harld_by_year" class="col-lg-6" style="height: 400px;"></div>
+            <div id="chart_harldByYear" class="col-lg-6" style="height: 400px;"></div>
+            <div id="table_harldByYear" class="col-lg-6" style="height: 400px;"></div>
           </div>
           
           <hr/>
@@ -38,12 +38,12 @@
               <p>Replaced manual, paper-based workflows with automated processes</p>
             </li>
             <li>
-              <a href="<?php echo Project::getBySlug('furniture-inventory')->url(); ?>"><h4></h4></a>
-              <p></p>
+              <a href="<?php echo Project::getBySlug('furniture-inventory')->url(); ?>"><h4>Built Dual-Client Furniture Inventory System</h4></a>
+              <p>Developed back-office GUI and handheld barcode-based data acquisition system</p>
             </li>
             <li>
-              <a href="<?php echo Project::getBySlug('mobile-work-orders')->url(); ?>"><h4></h4></a>
-              <p></p>
+              <a href="<?php echo Project::getBySlug('mobile-work-orders')->url(); ?>"><h4>Delivered Real-Time Access to Work Order Data</h4></a>
+              <p>Created a Windows Phone 7 app to allow maintenance workers to see, edit, and resolve work order in the field</p>
             </li>
             <li>
               <h4>Consolidated User Control Vendors to Save Money</h4>
@@ -64,7 +64,7 @@
                   </div>
                 </div>
               </div>
-              <h4>Equinox Transaction Terminals</h4>
+              <h4>Selected and Integrated Equinox Transaction Terminals</h4>
               <p>Students swiped their university ID card in a transaction terminal at the front desk to pull up their packages. For years, HARLD had used the TT3100 model, which were well beyond end-of-life. I was tasked with finding and integrating a replacement model.</p>
               <p>PCI DSS rules had evolved significantly and transaction terminals were designed much more securely, including some models that encoded the magnetic card data at the read head. We needed unencrypted access to the data on university ID cards, so I had to contact vendors to see what our options were. Given that we would only be ordering a couple dozen units, many vendors weren't forthcoming with pre-sale technical information. Hypercom (which would later be acquired by VeriFone and rebranded as Equinox Payments) was able to meet our needs with the L4150.</p>
               <p>The functionality of the two models was quite different. The old TT3100 were very much peripherals where the host computer directly controlled the transaction terminals (e.g. telling it what text to draw where). The new L4150 were standalone devices running Linux and the host computer merely told the terminal what to do in more general terms (e.g. telling it to show a predefined form). This required some creativity during the integration, especially since the signature data format was <em>vastly</em> different. The desktop HARLD client would need to be able to display both signature formats in order to handle legacy data, so I had to write a function to translate from one format to the other. This required implementing a BitStream class, as the data format had commands of varying bit-widths. </p>

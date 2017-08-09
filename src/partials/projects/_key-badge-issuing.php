@@ -1,6 +1,6 @@
 <?php
   Page::registerGoogleCharts();
-  Page::registerChart('keysBadges');
+  Page::registerChart('physicalAccessPerYear');
 ?>
           <h3>Responsibilities</h3>
           <ul>
@@ -9,7 +9,7 @@
           <hr/>
           <h3>Summary</h3>
           <p></p>
-          <div id="chart_keys_badges" style="width: 100%; height: 400px;"></div>
+          <div id="chart_physicalAccessPerYear" style="width: 100%; height: 400px;"></div>
           <hr/>
           <h3>Highlights</h3>
           <p></p>

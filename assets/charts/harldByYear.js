@@ -3,7 +3,7 @@ google.charts.setOnLoadCallback(drawChartHarldByYear);
 
 function drawChartHarldByYear() {
   var data = google.visualization.arrayToDataTable([
-    ['Year', 'Packages', 'Work Orders', 'Ledger Entries', 'Access Badges', 'Keys'],
+    ['Fiscal Year', 'Packages', 'Work Orders', 'Ledger Entries', 'Access Badges', 'Keys'],
     ['2008', 51005,  9868,  7570,    0,    0],
     ['2009', 51349, 10120, 10178, 6265,    0],
     ['2010', 52167, 13205, 10784, 7840, 4385],
@@ -12,9 +12,9 @@ function drawChartHarldByYear() {
     ['2013', 84938, 15980, 17266, 8476, 4937]
   ]);
 
-  var chart = new google.visualization.AreaChart(document.getElementById('chart_harld_by_year'));
+  var chart = new google.visualization.AreaChart(document.getElementById('chart_harldByYear'));
   chart.draw(data, {
-    title: 'HARLD Data Objects per Year',
+    title: 'HARLD Data Object Counts per Fiscal Year',
     vAxis: {minValue: 0, position: 'after', format: 'short', textPosition: 'in' },
     isStacked: true,
     chartArea: { width: '90%', height: '75%' },
@@ -22,7 +22,7 @@ function drawChartHarldByYear() {
     legend: { position: 'top', maxLines: 3 }
   });
 
-  var table = new google.visualization.Table(document.getElementById('table_harld_by_year'));
+  var table = new google.visualization.Table(document.getElementById('table_harldByYear'));
   table.draw(transposeDateDataTable(data), {
     width: '100%', 
     height: '100%'
