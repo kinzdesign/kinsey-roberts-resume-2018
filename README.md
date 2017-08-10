@@ -8,39 +8,39 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
 
 ## TO-DO
 * content
-  * tenure partials
-    * bs-biology
-    * ms-computer-science
-    * non-degree
-    * application-developer
-    * lead-web-developer
-  * project partials
-    * gamifying-genetics
-    * digital-signage
-    * furniture-inventory
-    * key-badge-issuing
-    * mobile-work-orders
-    * server-hardening
-    * server-migration
-    * hobsons-admissions
-  * skill partials?
-  * project synopses
-    * harld
-    * mailroom
-    * gamifying-genetics
-    * digital-signage
-    * furniture-inventory
-    * key-badge-issuing
-    * mobile-work-orders
-    * server-hardening
-    * server-migration
-    * hobsons-admissions
+    * tenure partials
+        * bs-biology
+        * ms-computer-science
+        * non-degree
+        * application-developer
+        * lead-web-developer
+    * project partials
+        * gamifying-genetics
+        * digital-signage
+        * furniture-inventory
+        * key-badge-issuing
+        * mobile-work-orders
+        * server-hardening
+        * server-migration
+        * hobsons-admissions
+    * skill partials?
+    * project synopses
+        * harld
+        * mailroom
+        * gamifying-genetics
+        * digital-signage
+        * furniture-inventory
+        * key-badge-issuing
+        * mobile-work-orders
+        * server-hardening
+        * server-migration
+        * hobsons-admissions
 * design
-  * colors
-  * fonts?
-  * breadcrumbs
-  * favicon
+    * colors
+    * fonts?
+    * breadcrumbs
+    * favicon
 * technical
-  * Schema.org markup
-  * critical path optimization
-  * LAB loader
+    * Schema.org markup
+    * critical path optimization
+    * LAB loader
