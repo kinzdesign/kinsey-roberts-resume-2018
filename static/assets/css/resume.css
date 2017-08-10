@@ -3848,6 +3848,28 @@ body {
 .padding-both-xs {
   padding-bottom: 1px; }
 
+/* icons */
+.fa {
+  font-family: FontAwesome; }
+
+.fa-plus-minus-circle:before {
+  content: "\f056"; }
+
+.collapsed > .fa-plus-minus-circle:before {
+  content: "\f055"; }
+
+.fa-chevron-down-right:before {
+  content: "\f078"; }
+
+.collapsed > .fa-chevron-down-right:before {
+  content: "\f054"; }
+
+.fa-chevron-circle-down-right:before {
+  content: "\f13a"; }
+
+.collapsed > .fa-chevron-circle-down-right:before {
+  content: "\f158"; }
+
 .tenure-dates {
   font-style: italic; }
 

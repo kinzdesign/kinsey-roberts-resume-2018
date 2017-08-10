@@ -204,8 +204,9 @@ UNLOCK TABLES;
 LOCK TABLES `tenure_types` WRITE;
 /*!40000 ALTER TABLE `tenure_types` DISABLE KEYS */;
 INSERT INTO `tenure_types` VALUES
-  (1,'Experience','experience',NULL),
-  (2,'Education','education',NULL);
+  (1,'Experience','experience',NULL,''),
+  (2,'Education','education',NULL,''),
+  (3,'Professional Development','professional-development',NULL,'\0');
 /*!40000 ALTER TABLE `tenure_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -216,11 +217,11 @@ UNLOCK TABLES;
 LOCK TABLES `tenures` WRITE;
 /*!40000 ALTER TABLE `tenures` DISABLE KEYS */;
 INSERT INTO `tenures` VALUES
-  (1,1,1,'Lead Web Developer','lead-web-developer',NULL,NULL,'2013-08-07',NULL),
-  (2,1,2,'Application Developer','application-developer',NULL,NULL,'2007-05-21','2013-08-06'),
-  (3,2,3,'Bachelor of Science','bs-biology','Biology','3.275 GPA','2003-08-25','2007-05-20'),
-  (4,2,4,'Non-Degree Studies','non-degree',NULL,'4.0 GPA','2010-08-23','2011-12-09'),
-  (5,2,4,'Master of Science','ms-computer-science','Computer Science','4.0 GPA','2012-01-17','2017-01-20');
+  (1,1,1,'Lead Web Developer','lead-web-developer',NULL,NULL,'2013-08-07',NULL,''),
+  (2,1,2,'Application Developer','application-developer',NULL,NULL,'2007-05-21','2013-08-06',''),
+  (3,2,3,'Bachelor of Science','bs-biology','Biology','3.275 GPA','2003-08-25','2007-05-20',''),
+  (4,2,4,'Non-Degree Studies','non-degree',NULL,'4.0 GPA','2010-08-23','2011-12-09','\0'),
+  (5,2,4,'Master of Science','ms-computer-science','Computer Science','4.0 GPA','2012-01-17','2017-01-20','');
 /*!40000 ALTER TABLE `tenures` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -17,6 +17,7 @@ class Tenure {
     $this->start        = $row['start'];
     $this->end          = $row['end'];
     $this->months       = $row['months'];
+    $this->showInNav    = $row['showInNav'] == 1;
   }
 
   /*
@@ -34,7 +35,8 @@ class Tenure {
           $end,
           $months,
           $bullets,
-          $projects;
+          $projects,
+          $showInNav;
 
   public function id() {
     return $this->id;
@@ -90,6 +92,10 @@ class Tenure {
     return $this->months;
   }
 
+  public function showInNav() {
+    return $this->showInNav;
+  }
+
   public function duration() {
     $y = intdiv($this->months, 12);
     $yLabel = $y > 0 ? 'years' : 'year';
@@ -122,7 +128,7 @@ class Tenure {
    * data access
    */
 
-  const SELECT = "SELECT id, type, department, name, slug, category, notes, " .
+  const SELECT = "SELECT id, type, department, name, slug, category, notes, showInNav, " .
     "MonthYearOrPresent(start) start, MonthYearOrPresent(end) end, " .
     "TIMESTAMPDIFF(MONTH, start, COALESCE(end, NOW())) AS months " .
     "FROM tenures ";

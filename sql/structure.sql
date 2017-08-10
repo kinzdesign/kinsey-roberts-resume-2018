@@ -167,6 +167,7 @@ CREATE TABLE `tenure_types` (
   `name` varchar(55) NOT NULL,
   `slug` varchar(55) NOT NULL,
   `displayorder` tinyint(3) unsigned DEFAULT NULL,
+  `showInNav` bit(1) NOT NULL DEFAULT b'1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -189,6 +190,7 @@ CREATE TABLE `tenures` (
   `notes` varchar(55) DEFAULT NULL,
   `start` date NOT NULL,
   `end` date DEFAULT NULL,
+  `showInNav` bit(1) NOT NULL DEFAULT b'1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`),
   KEY `type` (`type`),

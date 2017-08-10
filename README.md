@@ -44,5 +44,3 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
   * Schema.org markup
   * critical path optimization
   * LAB loader
-  * implement default expand/collapse in sidebar
-  * add showInNav to tenure_type, tenure

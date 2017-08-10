@@ -68,7 +68,7 @@ class Skill {
 
   const SELECT = "SELECT s.id, s.type, s.name, s.slug, s.synopsis " .
     "FROM skills s INNER JOIN skill_types t ON s.type = t.id ";
-  const ORDER  = " ORDER BY COALESCE(t.displayorder, t.id), s.displayorder ";
+  const ORDER  = " ORDER BY COALESCE(t.displayorder, t.id), COALESCE(s.displayorder, s.id) ";
 
   public static function getAll() {
     $arr = array();

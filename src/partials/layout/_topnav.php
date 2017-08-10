@@ -41,15 +41,19 @@
 <?php if(Page::$showTopnav) { ?>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav">
-<?php   foreach(TenureType::getAll() as $header) { ?>
-            <?php navbarBeginDropdown($header->url(), $header->name()); ?>
+<?php   foreach(TenureType::getAll() as $header) { 
+          if($header->showInNav()) {
+            navbarBeginDropdown($header->url(), $header->name()); ?>
               <ul class="dropdown-menu">
-<?php     foreach($header->tenures() as $tenure) { ?>
+<?php       foreach($header->tenures() as $tenure) {
+              if($tenure->showInNav()) { ?>
                 <li><a href="<?php echo $tenure->url(); ?>"><?php echo $tenure->name(); ?></a></li>
-<?php     } // end tenure ?>
+<?php         }
+            } // end tenure ?>
               </ul>
             </li>
-<?php   } // end header ?>
+<?php     }
+        } // end header ?>
           </ul>
 <?php } ?>
         </div>
