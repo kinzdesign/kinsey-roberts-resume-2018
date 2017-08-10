@@ -1,11 +1,18 @@
 <?php 
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
+  $headers = false;
+  // try to load tenure type if specified
   if(isset(Page::$params['tenure-type'])) {
     $type = TenureType::getBySlug(Page::$params['tenure-type']);
-    $headers = array($type);
-    Page::$breadcrumbs[$type->name()] = $type->url();
-    Page::$title = $type->name();
-  } else {
+    // ensure we got a type ('tenure-type' param could actually be an employer)
+    if($type) {
+      $headers = array($type);
+      Page::$breadcrumbs[$type->name()] = $type->url();
+      Page::$title = $type->name();
+    }
+  }
+  // if headers not loaded, get all
+  if(!$headers) {
     $headers = TenureType::getAll();
     Page::$showTopnav = false;
     Page::$showBreadcrumbs = false;

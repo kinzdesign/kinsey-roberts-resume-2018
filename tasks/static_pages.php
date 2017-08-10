@@ -35,6 +35,13 @@ foreach (SkillType::getAll() as $type)
 // build skill pages
 foreach (Skill::getAll() as $skill)
   download_page("/skills/{$skill->type()->slug()}/{$skill->slug()}/");
+// build employer pages
+download_page('/23andme/');
+download_page('/amazon/');
+download_page('/change-org/');
+download_page('/facebook/');
+download_page('/google/');
+download_page('/microsoft/');
 
 // copy assets
 exec("xcopy /I /S /H /Y /C {$cwd}\\..\\assets {$cwd}\\..\\static\\assets");
