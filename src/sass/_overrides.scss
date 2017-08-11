@@ -43,7 +43,8 @@ $link-color:            $brand-info !default;
 // //
 // //## Font, line-height, and color for body text, headings, and more.
 
-// $font-family-sans-serif:  "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$web-font-path: "https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans" !default;
+$font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 // $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 // //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 // $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
@@ -66,8 +67,8 @@ $link-color:            $brand-info !default;
 // $line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
 
 // //** By default, this inherits from the `<body>`.
-// $headings-font-family:    $font-family-base !default;
-// $headings-font-weight:    400 !default;
+$headings-font-family:    "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$headings-font-weight:    700 !default;
 // $headings-line-height:    1.1 !default;
 // $headings-color:          inherit !default;
 
@@ -868,3 +869,8 @@ $navbar-default-link-hover-bg:             darken($brand-primary, 10%) !default;
 // $dl-horizontal-breakpoint:    $grid-float-breakpoint !default;
 // //** Horizontal line color.
 // $hr-border:                   $gray-lighter !default;
+.navbar-brand {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  letter-spacing: 1px;
+}

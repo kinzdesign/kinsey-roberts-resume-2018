@@ -37,9 +37,9 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
         * server-migration
         * hobsons-admissions
 * design
-    * fonts?
     * breadcrumbs
     * favicon
+    * include tenure category in topnav
 * technical
     * Schema.org markup
     * critical path optimization
