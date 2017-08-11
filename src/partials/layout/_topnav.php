@@ -47,7 +47,11 @@
               <ul class="dropdown-menu">
 <?php       foreach($header->tenures() as $tenure) {
               if($tenure->showInNav()) { ?>
-                <li><a href="<?php echo $tenure->url(); ?>"><?php echo $tenure->name(); ?></a></li>
+                <li><a href="<?php echo $tenure->url(); ?>"><?php 
+                  echo $tenure->name(); 
+                  if($tenure->category()) 
+                    echo " - {$tenure->category()}";
+                ?></a></li>
 <?php         }
             } // end tenure ?>
               </ul>
