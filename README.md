@@ -8,6 +8,7 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
 
 ## TO-DO
 * content
+    * professional-development tenures
     * tenure partials
         * bs-biology
         * ms-computer-science
@@ -36,7 +37,6 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
         * server-migration
         * hobsons-admissions
 * design
-    * colors
     * fonts?
     * breadcrumbs
     * favicon

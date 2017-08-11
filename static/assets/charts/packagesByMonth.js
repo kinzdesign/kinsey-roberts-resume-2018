@@ -78,16 +78,25 @@ function drawChartPackagesByMonth() {
     [new Date(2013,  4),  3059],
     [new Date(2013,  5),  1815]
   ]);
-
   var options = {
     title: 'Mailroom Packages Logged per Month',
-    vAxis: {minValue: 0, position: 'after', format: 'short', textPosition: 'in' },
+    vAxis: {
+      minValue: 0,
+      format: 'short', 
+      textPosition: 'in',
+      viewWindowMode: 'maximized'
+    },
     focusTarget: 'category',
-    legend: { position: 'none' },
-    chartArea: { width: '100%', height: '80%' }
+    legend: { 
+      position: 'none' 
+    },
+    chartArea: { 
+      width: '100%', 
+      height: '80%' 
+    }
   };
   var formatter = new google.visualization.DateFormat({ 
-      pattern: "MMM yyyy"
+    pattern: "MMM yyyy"
   }); 
   formatter.format(data, 0);
   var chart = new google.visualization.AreaChart(document.getElementById('chart_packagesByMonth'));

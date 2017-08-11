@@ -1,5 +1,10 @@
 google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChartPackagesByMonth);
+google.charts.setOnLoadCallback(drawChartPackagesBoth);
+
+function drawChartPackagesBoth() {
+    drawChartPackagesByMonth();
+    drawChartPackagesByYear();
+}
 
 function drawChartPackagesByMonth() {
   var data = google.visualization.arrayToDataTable([
@@ -81,7 +86,7 @@ function drawChartPackagesByMonth() {
   var options = {
     title: 'Mailroom Packages Logged per Month',
     vAxis: {
-      minValue: 0,
+      minValue: 0, 
       format: 'short', 
       textPosition: 'in',
       viewWindowMode: 'maximized'
@@ -100,5 +105,36 @@ function drawChartPackagesByMonth() {
   }); 
   formatter.format(data, 0);
   var chart = new google.visualization.AreaChart(document.getElementById('chart_packagesByMonth'));
+  chart.draw(data, options);
+}
+
+function drawChartPackagesByYear() {
+  var data = google.visualization.arrayToDataTable([
+    ['Fiscal Year', 'Packages'],
+    ['FY08', 51005],
+    ['FY09', 51349],
+    ['FY10', 52167],
+    ['FY11', 63528],
+    ['FY12', 69527],
+    ['FY13', 84938]
+  ]);
+  var options = {
+    title: 'Mailroom Packages Logged per Fiscal Year',
+    vAxis: {
+      minValue: 0,
+      format: 'short', 
+      textPosition: 'in',
+      viewWindowMode: 'maximized'
+    },
+    focusTarget: 'category',
+    legend: { 
+      position: 'none' 
+    },
+    chartArea: { 
+      width: '100%', 
+      height: '80%' 
+    }
+  };
+  var chart = new google.visualization.AreaChart(document.getElementById('chart_packagesByYear'));
   chart.draw(data, options);
 }

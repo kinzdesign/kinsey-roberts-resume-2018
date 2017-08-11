@@ -5,7 +5,7 @@
           <h3>Responsibilities</h3>
           <ul>
             <li>Developed UI clients (desktop, web, and mobile) and cross-platform business objects</li>
-            <li>Provided tier 1.5 support to end users</li>
+            <li>Provided tier 1-3 support to end users ofthe software</li>
             <li>Delivered rapid bug fixes to keep the offices running</li>
             <li>Communicated proactively with end users to identify pain points</li>
             <li>Observed end users to identify potential optimizations</li>
