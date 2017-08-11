@@ -4,13 +4,8 @@
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans");
-.navbar-brand {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: 1px; }
-
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -3778,6 +3773,11 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   width: device-width; }
 body.top-navbar-fixed {
   padding-top: 70px; }
+
+.navbar-brand {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px; }
 
 /*
  * Style tweaks
