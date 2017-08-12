@@ -14,6 +14,7 @@ class Tenure {
     $this->slug         = $row['slug'];
     $this->category     = $row['category'];
     $this->synopsis     = $row['synopsis'];
+    $this->url          = $row['url'];
     $this->start        = $row['start'];
     $this->end          = $row['end'];
     $this->months       = $row['months'];
@@ -31,6 +32,7 @@ class Tenure {
           $slug,
           $category,
           $synopsis,
+          $url,
           $start,
           $end,
           $months,
@@ -97,12 +99,16 @@ class Tenure {
   }
 
   public function duration() {
+    if($this->months < 3)
+      return '';
     $y = intdiv($this->months, 12);
-    $yLabel = $y > 0 ? 'years' : 'year';
+    $yLabel = $y != 1 ? 'years' : 'year';
     $m = $this->months % 12;
-    $mLabel = $m > 0 ? 'months' : 'month';
+    $mLabel = $m != 1 ? 'months' : 'month';
     if($m == 0)
       return "$y $yLabel";
+    if($y == 0)
+      return "$m $mLabel";
     return "$y $yLabel, $m $mLabel";
   }
 
@@ -120,15 +126,19 @@ class Tenure {
     return $this->projects;
   }
 
+  public function hasUrl() {
+    return !(!$this->url);
+  }
+
   public function url() {
-    return "/{$this->type()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
+    return $this->url ?? ("/{$this->type()->slug()}/{$this->slug()}/" . Page::cacheBreaker());
   }
 
   /*
    * data access
    */
 
-  const SELECT = "SELECT id, type, department, name, slug, category, synopsis, showInNav, " .
+  const SELECT = "SELECT id, type, department, name, slug, category, synopsis, showInNav, url, " .
     "MonthYearOrPresent(start) start, MonthYearOrPresent(end) end, " .
     "TIMESTAMPDIFF(MONTH, start, COALESCE(end, NOW())) AS months " .
     "FROM tenures ";

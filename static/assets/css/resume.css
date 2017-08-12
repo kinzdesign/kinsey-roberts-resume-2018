@@ -558,7 +558,7 @@ ol {
   ol ol {
     margin-bottom: 0; }
 
-.list-unstyled, .list-tenures {
+.list-unstyled {
   padding-left: 0;
   list-style: none; }
 
@@ -3875,16 +3875,24 @@ body {
 .collapsed > .fa-chevron-circle-down-right:before {
   content: "\f158"; }
 
-.tenure-dates {
-  font-style: italic; }
-
-.tenure-duration, .tenure-title {
+.tenure-department {
+  font-size: 15px;
   font-weight: bold; }
 
-.tenure-synopsis {
-  font-weight: normal; }
+.tenure-title {
+  font-size: 19px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700; }
 
-.tenure-duration, .tenure-title, .tenure-category {
-  font-size: 1.2em; }
+.tenure-synopsis,
+.tenure-dates {
+  font-size: 13px;
+  margin: 0; }
+
+.tenure-synopsis {
+  font-style: italic; }
+
+.tenure-duration {
+  font-weight: bold; }
 
 /*# sourceMappingURL=/assets/css/resume.css.map */

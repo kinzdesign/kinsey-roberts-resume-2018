@@ -48,7 +48,7 @@ DROP TABLE IF EXISTS `departments`;
 CREATE TABLE `departments` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `organization` tinyint(3) unsigned NOT NULL,
-  `name` varchar(40) NOT NULL,
+  `name` varchar(60) NOT NULL,
   `parent` varchar(40) DEFAULT NULL,
   `url` varchar(120) DEFAULT NULL,
   PRIMARY KEY (`id`),

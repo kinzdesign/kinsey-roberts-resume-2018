@@ -23,7 +23,8 @@ foreach (TenureType::getAll() as $type)
   download_page("/{$type->slug()}/");
 // build tenure pages
 foreach (Tenure::getAll() as $tenure)
-  download_page("/{$tenure->type()->slug()}/{$tenure->slug()}/");
+  if(!$tenure->hasUrl())
+    download_page("/{$tenure->type()->slug()}/{$tenure->slug()}/");
 // build project pages
 foreach (Project::getAll() as $project)
   download_page("/{$project->tenure()->type()->slug()}/{$project->tenure()->slug()}/{$project->slug()}/");

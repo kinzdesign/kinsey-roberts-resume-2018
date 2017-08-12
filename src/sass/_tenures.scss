@@ -1,0 +1,24 @@
+.tenure-date-block {
+  @extend .pull-right;
+  @extend .text-right;
+}
+.tenure-department {
+  font-size: $font-size-h5;
+  font-weight: bold;
+}
+.tenure-title {
+  font-size: $font-size-h4;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+}
+.tenure-synopsis,
+.tenure-dates {
+  font-size: $font-size-small;
+  margin: 0;
+}
+.tenure-synopsis {
+  font-style: italic;
+}
+.tenure-duration {
+  font-weight: bold;
+}
