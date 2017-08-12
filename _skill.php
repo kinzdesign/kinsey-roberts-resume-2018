@@ -15,8 +15,11 @@
     Page::renderTop("{$skill->name()} | {$skill->type()->name()} | Skills");
 ?>
           <h2 class="head-skill"><?php echo $skill->name(); ?></h2>
-<?php   // render static content
-        Page::renderPartial('skills', $slug);
+<?php   // render static content if present
+        if(!Page::renderPartial('skills', $slug))
+          // otherwise output synopsis if present
+          if($skill->synopsis())
+            echo "<p>{$skill->synopsis()}</p>\n";
         // render project list
         require_once($_SERVER['DOCUMENT_ROOT'] . '/src/functions/project_list.php');
         project_list($skill->projects());

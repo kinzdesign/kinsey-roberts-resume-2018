@@ -28,7 +28,10 @@
           <span class="tenure-parent"><?php echo $project->tenure()->department()->parent(); ?>,</span>
 <?php   } ?>
           <span class="tenure-department"><?php echo $project->tenure()->department()->name(); ?></span>
-<?php   // render static content
-        Page::renderPartial('projects', $slug, "          <hr/>\n", "\n");
+<?php   // render static content if present
+        if(!Page::renderPartial('projects', $slug, "          <hr/>\n", "\n"))
+          // otherwise render synopsis
+          if($project->synopsis())
+            echo "          <hr/>\n          <p>{$project->synopsis()}</p>\n";
   } // end contents 
   Page::renderBottom();
