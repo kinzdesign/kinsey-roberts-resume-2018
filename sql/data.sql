@@ -226,9 +226,9 @@ LOCK TABLES `tenures` WRITE;
 INSERT INTO `tenures` VALUES
   (1,1,1,'Lead Web Developer','lead-web-developer','Analyst/Programmer 3',NULL,NULL,'2013-08-07',NULL,''),
   (2,1,2,'Application Developer','application-developer','Analyst/Programmer 3',NULL,NULL,'2012-10-01','2013-08-06',''),
-  (3,2,3,'Bachelor of Science','bs-biology','Biology','3.275 cumulative GPA',NULL,'2003-08-25','2007-05-20',''),
-  (4,2,4,'Non-Degree Studies','non-degree',NULL,'4.0 cumulative GPA',NULL,'2010-08-23','2011-12-09','\0'),
-  (5,2,4,'Master of Science','ms-computer-science','Computer Science','4.0 cumulative GPA',NULL,'2012-01-17','2017-01-20',''),
+  (3,2,3,'Bachelor of Science','bs-biology','Biology','<a href=\"/assets/pdfs/bs-biology-transcript.pdf\" target=\"_blank\">3.275 cumulative GPA</a>',NULL,'2003-08-25','2007-05-20',''),
+  (4,2,4,'Non-Degree Studies','non-degree',NULL,'<a href=\"/assets/pdfs/non-degree-transcript.pdf\" target=\"_blank\">4.0 cumulative GPA</a>',NULL,'2010-08-23','2011-12-09','\0'),
+  (5,2,4,'Master of Science','ms-computer-science','Computer Science','<a href=\"/assets/pdfs/ms-computer-science-transcript.pdf\" target=\"_blank\">4.0 cumulative GPA</a>',NULL,'2012-01-17','2017-01-20',''),
   (6,3,5,'HighEdWeb conference 2016','highedweb-2016','Memphis, TN',NULL,'https://2016.highedweb.org/','2016-10-16','2016-10-19','\0'),
   (7,3,5,'HighEdWeb conference 2015','highedweb-2015','Milwaukee, WI',NULL,'https://2015.highedweb.org/','2015-10-04','2015-10-07','\0'),
   (8,3,6,'Web 2.0 Expo conference 2010','web-2-0-expo-2010','San Francisco, CA',NULL,'https://conferences.oreilly.com/web2expo/webexsf2010','2010-05-03','2010-05-06','\0'),
