@@ -49,7 +49,11 @@ INSERT INTO `departments` VALUES
   (1,1,'University Technology','Weatherhead School of Management','https://weatherhead.case.edu/'),
   (2,1,'IT Operations Group','Division of Student Affairs','https://students.case.edu/'),
   (3,1,'College of Arts and Sciences',NULL,'http://artsci.case.edu'),
-  (4,1,'School of Graduate Studies',NULL,'https://case.edu/gradstudies/');
+  (4,1,'School of Graduate Studies',NULL,'https://case.edu/gradstudies/'),
+  (5,2,'HighEdWeb Professionals',NULL,'https://www.highedweb.org/'),
+  (6,3,'O&rsquo;Reilly Media',NULL,'https://www.oreilly.com/conferences/'),
+  (7,1,'Executive Education','Weatherhead School of Management','https://weatherhead.case.edu/executive-education/'),
+  (8,4,'Code PaLOUsa, Inc.',NULL,'http://www.codepalousa.com/');
 /*!40000 ALTER TABLE `departments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,7 +64,10 @@ UNLOCK TABLES;
 LOCK TABLES `organizations` WRITE;
 /*!40000 ALTER TABLE `organizations` DISABLE KEYS */;
 INSERT INTO `organizations` VALUES
-  (1,'Case Western Reserve University','10900 Euclid Avenue',NULL,'Cleveland','OH','44106');
+  (1,'Case Western Reserve University','10900 Euclid Avenue',NULL,'Cleveland','OH','44106'),
+  (2,'HighEdWeb Professionals','312 W. Commercial St.',NULL,'East Rochester','NY','14445'),
+  (3,'O&rsquo;Reilly Media','1005 Gravenstein Highway North',NULL,'Sebastopol','CA','95472'),
+  (4,'Code PaLOUsa, Inc.','',NULL,'Louisville','KY','40219');
 /*!40000 ALTER TABLE `organizations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -217,11 +224,20 @@ UNLOCK TABLES;
 LOCK TABLES `tenures` WRITE;
 /*!40000 ALTER TABLE `tenures` DISABLE KEYS */;
 INSERT INTO `tenures` VALUES
-  (1,1,1,'Lead Web Developer','lead-web-developer',NULL,NULL,'2013-08-07',NULL,''),
-  (2,1,2,'Application Developer','application-developer',NULL,NULL,'2007-05-21','2013-08-06',''),
-  (3,2,3,'Bachelor of Science','bs-biology','Biology','3.275 GPA','2003-08-25','2007-05-20',''),
-  (4,2,4,'Non-Degree Studies','non-degree',NULL,'4.0 GPA','2010-08-23','2011-12-09','\0'),
-  (5,2,4,'Master of Science','ms-computer-science','Computer Science','4.0 GPA','2012-01-17','2017-01-20','');
+  (1,1,1,'Lead Web Developer','lead-web-developer',NULL,NULL,NULL,'2013-08-07',NULL,''),
+  (2,1,2,'Application Developer','application-developer',NULL,NULL,NULL,'2007-05-21','2013-08-06',''),
+  (3,2,3,'Bachelor of Science','bs-biology','Biology','3.275 GPA',NULL,'2003-08-25','2007-05-20',''),
+  (4,2,4,'Non-Degree Studies','non-degree',NULL,'4.0 GPA',NULL,'2010-08-23','2011-12-09','\0'),
+  (5,2,4,'Master of Science','ms-computer-science','Computer Science','4.0 GPA',NULL,'2012-01-17','2017-01-20',''),
+  (6,3,5,'HighEdWeb conference 2016','highedweb-2016','Memphis, TN',NULL,'https://2016.highedweb.org/','2016-10-16','2016-10-19','\0'),
+  (7,3,5,'HighEdWeb conference 2015','highedweb-2015','Milwaukee, WI',NULL,'https://2015.highedweb.org/','2015-10-04','2015-10-07','\0'),
+  (8,3,6,'Web 2.0 Expo conference 2010','web-2-0-expo-2010','San Francisco, CA',NULL,'https://conferences.oreilly.com/web2expo/webexsf2010','2010-05-03','2010-05-06','\0'),
+  (9,3,6,'Fluent Web Platform conference 2014','fluent-web-platform-2014','San Francisco, CA',NULL,'https://conferences.oreilly.com/fluent/fluent2014','2014-03-11','2014-03-13','\0'),
+  (10,3,7,'Emotionally Intelligent Leader Certificate','emotionally-intelligent-leader-certificate',NULL,NULL,'https://weatherhead.case.edu/executive-education/certificates/emotionally-intelligent-leader','2013-10-28','2013-12-10','\0'),
+  (11,3,7,'Advancing Manager Certificate','advancing-manager-certificate',NULL,NULL,'https://weatherhead.case.edu/executive-education/certificates/advancing-manager','2014-10-15','2014-10-22','\0'),
+  (12,3,8,'Code PaLOUsa conference 2013','code-palousa-2013','Louisville, KY',NULL,'http://lanyrd.com/2013/codepalousa/','2013-04-01','2013-04-01','\0'),
+  (13,3,8,'Code PaLOUsa conference 2012','code-palousa-2012','Louisville, KY',NULL,'http://lanyrd.com/2012/codepalousa/','2012-03-01','2012-03-01','\0'),
+  (14,3,8,'Code PaLOUsa conference 2011','code-palousa-2011','Louisville, KY',NULL,'http://lanyrd.com/2011/codepalousa/','2011-03-01','2011-03-01','\0');
 /*!40000 ALTER TABLE `tenures` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

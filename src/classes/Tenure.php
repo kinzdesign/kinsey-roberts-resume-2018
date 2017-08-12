@@ -13,7 +13,7 @@ class Tenure {
     $this->name         = $row['name'];
     $this->slug         = $row['slug'];
     $this->category     = $row['category'];
-    $this->notes        = $row['notes'];
+    $this->synopsis     = $row['synopsis'];
     $this->start        = $row['start'];
     $this->end          = $row['end'];
     $this->months       = $row['months'];
@@ -30,7 +30,7 @@ class Tenure {
           $name,
           $slug,
           $category,
-          $notes,
+          $synopsis,
           $start,
           $end,
           $months,
@@ -76,8 +76,8 @@ class Tenure {
     return $this->category;
   }
 
-  public function notes() {
-    return $this->notes;
+  public function synopsis() {
+    return $this->synopsis;
   }
 
   public function start() {
@@ -128,7 +128,7 @@ class Tenure {
    * data access
    */
 
-  const SELECT = "SELECT id, type, department, name, slug, category, notes, showInNav, " .
+  const SELECT = "SELECT id, type, department, name, slug, category, synopsis, showInNav, " .
     "MonthYearOrPresent(start) start, MonthYearOrPresent(end) end, " .
     "TIMESTAMPDIFF(MONTH, start, COALESCE(end, NOW())) AS months " .
     "FROM tenures ";

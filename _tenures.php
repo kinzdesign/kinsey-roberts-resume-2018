@@ -33,8 +33,8 @@
                     echo $tenure->name(); 
                     if($tenure->category()) 
                       echo " - {$tenure->category()}";
-                    if($tenure->notes())
-                      echo " <span class=\"tenure-notes\">({$tenure->notes()})</span>"; 
+                    if($tenure->synopsis())
+                      echo " <span class=\"tenure-synopsis\">({$tenure->synopsis()})</span>"; 
                     echo "\n";
                   ?>
                 </a>
