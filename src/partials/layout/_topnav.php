@@ -12,7 +12,7 @@
     $accessible = $active ? ' <span class="sr-only">(current)</span>' : '';
 
     // open list item
-    echo "<li class=\"{$class}\">\r\n              <a href=\"$href\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">{$text}{$accessible}</a>\r\n";
+    echo "            <li class=\"{$class}\">\r\n              <a href=\"$href\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">{$text}{$accessible}</a>\r\n";
   }
 
   // outputs a simple link to the navbar

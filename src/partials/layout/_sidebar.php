@@ -27,6 +27,7 @@
                     <a role="button" data-toggle="collapse" href="#collapse-skill-type<?php echo $skill->typeId(); ?>" aria-expanded="true" aria-controls="collapse-skill-type<?php echo $skill->typeId(); ?>"<?php if(!$hadSkills && !$skill->type()->expanded()) echo ' class="collapsed"'; ?>>
                       <i class="fa fa-fw fa-chevron-down-right" title="Expand/Collapse Section"></i>
                       <?php echo $skill->type()->name(); ?>
+
                     </a>
                   </h4>
                 </div>
