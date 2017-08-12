@@ -35,7 +35,16 @@
           </a>
           <div class="clearfix"></div>
 <?php   // render static content
-        Page::renderPartial('tenures', $slug, "          <hr/>\n", "\n");
+        if(!Page::renderPartial('tenures', $slug, "          <hr/>\n", "\n")) {
+            // if no partial for this tenure, show bullets
+            if($tenure->bullets()) { ?>
+            <ul class="list-tenure-bullets">
+<?php         foreach($tenure->bullets() as $bullet) { ?>
+              <li><?php echo $bullet->text(); ?></li>
+<?php         } ?>
+            </ul>
+<?php       }
+          }
         // render project list
         require_once($_SERVER['DOCUMENT_ROOT'] . '/src/functions/project_list.php');
         project_list($tenure->projects());
