@@ -5,7 +5,7 @@ function drawChartDisplaysByYear() {
   var data = google.visualization.arrayToDataTable([
     ['Year', 'Residence Halls', 'Public Areas', 'Offices', 'TV Channels'],
     [new Date(2005, 8),  0, 0, 0, 0],
-    [new Date(2006, 8),  8, 4, 0, 0],
+    [new Date(2006, 8),  8, 0, 0, 0],
     [new Date(2007, 8), 11, 4, 0, 0],
     [new Date(2008, 8), 26, 6, 0, 0],
     [new Date(2009, 8), 26, 6, 0, 0],

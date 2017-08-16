@@ -77,49 +77,6 @@ UNLOCK TABLES;
 
 LOCK TABLES `project_skills` WRITE;
 /*!40000 ALTER TABLE `project_skills` DISABLE KEYS */;
-INSERT INTO `project_skills` VALUES
-  (2,1,NULL),
-  (2,5,NULL),
-  (2,9,NULL),
-  (2,11,NULL),
-  (3,1,NULL),
-  (3,13,NULL),
-  (3,14,NULL),
-  (3,29,NULL),
-  (3,30,NULL),
-  (3,32,NULL),
-  (6,1,NULL),
-  (6,3,NULL),
-  (6,5,NULL),
-  (6,7,NULL),
-  (6,11,NULL),
-  (6,12,NULL),
-  (6,13,NULL),
-  (6,14,NULL),
-  (6,15,NULL),
-  (6,16,NULL),
-  (6,17,NULL),
-  (6,18,NULL),
-  (6,19,NULL),
-  (6,20,NULL),
-  (6,22,NULL),
-  (6,23,NULL),
-  (6,29,NULL),
-  (6,30,NULL),
-  (6,32,NULL),
-  (7,1,NULL),
-  (7,3,NULL),
-  (7,7,NULL),
-  (7,21,NULL),
-  (7,23,NULL),
-  (7,24,NULL),
-  (7,25,NULL),
-  (7,26,NULL),
-  (7,27,NULL),
-  (7,29,NULL),
-  (7,30,NULL),
-  (7,31,NULL),
-  (7,32,NULL);
 /*!40000 ALTER TABLE `project_skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,11 +91,8 @@ INSERT INTO `projects` VALUES
   (2,1,'Server Migration','server-migration',NULL,NULL),
   (3,2,'Mailroom','mailroom',NULL,NULL),
   (4,5,'Gamifying Genetics','gamifying-genetics',NULL,NULL),
-  (5,2,'Mobile Work Orders','mobile-work-orders',NULL,NULL),
   (6,2,'Housing and Residence Life Database (HARLD)','harld',NULL,NULL),
-  (7,2,'Digital Signage','digital-signage',NULL,NULL),
-  (8,2,'Furniture Inventory','furniture-inventory',NULL,NULL),
-  (9,2,'Key and Badge Issuing','key-badge-issuing',NULL,NULL);
+  (7,2,'Digital Signage','digital-signage',NULL,NULL);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
