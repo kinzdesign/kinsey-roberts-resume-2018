@@ -8,7 +8,6 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
 
 ## TO-DO
 * content
-    * professional-development tenures
     * tenure partials
         * bs-biology
         * ms-computer-science
@@ -17,7 +16,6 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
         * lead-web-developer
     * project partials
         * gamifying-genetics
-        * digital-signage
         * furniture-inventory
         * key-badge-issuing
         * mobile-work-orders
@@ -43,3 +41,4 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
     * Schema.org markup
     * critical path optimization
     * LAB loader
+    * link interpolation in bullets

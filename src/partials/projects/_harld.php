@@ -5,7 +5,7 @@
           <h3>Responsibilities</h3>
           <ul>
             <li>Developed UI clients (desktop, web, and mobile) and cross-platform business objects</li>
-            <li>Provided tier 1-3 support to end users ofthe software</li>
+            <li>Provided tier 1-3 support to end users of the software</li>
             <li>Delivered rapid bug fixes to keep the offices running</li>
             <li>Communicated proactively with end users to identify pain points</li>
             <li>Observed end users to identify potential optimizations</li>
@@ -15,8 +15,8 @@
           </ul>
           <hr/>
           <h3>Summary</h3>
-          <p>HARLD is a custom multi-client, multi-platform system that powers the day-to-day operations of Case Western Reserve University's housing, residence life, greek life, and student conduct offices.</p>
-          <p>University staff were constantly being asked to do more with less as the university went through some financial stress during the economic downturn, and HARLD had already proven its worth by optimizing workflows and automating as much as possible. </p>
+          <p>HARLD is a custom multi-client, multi-platform system that powers the day-to-day operations of several departments related to students.</p>
+          <p>University staff were constantly being asked to do more with less as the university went through some financial stress during the economic downturn, and HARLD had already proven its worth by optimizing workflows and automating as much as possible.</p>
           <p>I inherited HARLD at a mature state and during my time as the primary developer for HARLD, I expanded its scope to meet the departments' needs, adding new features, modules, workflows, and clients to the software.</p>
           <p>The office was small and only had one developer, so I had to build strong relationships with stakeholders to discover needs, as well as research and learn various technologies to deliver the best product possible. </p>
           <p>I nurtured HARLD through a major growth spurt, with increasing traffic in existing workflows and the addition of new objects being tracked and managed. Note the massive uptick in package volume (in blue) beginning in 2011, as well as the addition of access badges (green) in 2009 and physical keys (purple) in 2010 in the graph below.</p>
@@ -34,15 +34,15 @@
               <p>Worked closely with end users to identify and smooth friction in the package logging and distribution processes</p>
             </li>
             <li>
-              <a href="<?php echo Project::getBySlug('key-badge-issuing')->url(); ?>"><h4>Automated Key, Card, and Badge Issuing</h4></a>
+              <h4>Automated Key, Card, and Badge Issuing</h4>
               <p>Replaced manual, paper-based workflows with automated processes</p>
             </li>
             <li>
-              <a href="<?php echo Project::getBySlug('furniture-inventory')->url(); ?>"><h4>Built Dual-Client Furniture Inventory System</h4></a>
+              <h4>Built Dual-Client Furniture Inventory System</h4>
               <p>Developed back-office GUI and handheld barcode-based data acquisition system</p>
             </li>
             <li>
-              <a href="<?php echo Project::getBySlug('mobile-work-orders')->url(); ?>"><h4>Delivered Real-Time Access to Work Order Data</h4></a>
+              <h4>Delivered Real-Time Access to Work Order Data</h4>
               <p>Created a Windows Phone 7 app to allow maintenance workers to see, edit, and resolve work order in the field</p>
             </li>
             <li>

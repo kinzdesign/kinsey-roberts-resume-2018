@@ -27,15 +27,24 @@ USE `resume`;
 LOCK TABLES `bullets` WRITE;
 /*!40000 ALTER TABLE `bullets` DISABLE KEYS */;
 INSERT INTO `bullets` VALUES
-  (1,1,'WSOM Bullet A',1),
-  (2,1,'WSOM Bullet B',2),
-  (3,1,'WSOM Bullet C',3),
-  (4,2,'DOSA Bullet A',1),
-  (5,2,'DOSA Bullet B',2),
-  (6,2,'DOSA Bullet C',3),
-  (7,3,'BS Bullet A',1),
-  (8,5,'MS Bullet B',2),
-  (9,5,'MS Bullet A',1);
+  (1,17,'Proved my worth as a student employee doing everything from network troubleshooting to software development to graphic design.',1),
+  (2,17,'Imagined and wrote the first version of a homegrown <a href=\"{project:digital-signage}\">digital signage platform</a>',2),
+  (3,16,'Provided individualized assistance and group training to end users',1),
+  (4,16,'Oversaw and developed a team of student employees',2),
+  (5,16,'Procured IT hardware, supplies, and professional services and allocated costs to departments',3),
+  (6,15,'Developed for desktop, web, and mobile platforms using Microsoft .NET Framework',1),
+  (7,15,'Owned multiple products as the sole full-time developer, including a flagship <a href=\"{project|harld}\">housing operations system</a> that managed room assignments, physical access, maintenance work orders, mailroom packages, furniture inventory, and more',2),
+  (8,15,'Grew digital signage from an 8 display pilot to <a href=\"{project|digital-signage}\">a ubiquitous 36+ installations across campus</a>',3),
+  (9,15,'Communicated with and observer end users to ease pain points and discover new optimizations',4),
+  (10,15,'Designed ad hoc and self-service SQL reports to support business needs and improve staff efficiency',5),
+  (11,2,'Promoted from Software Developer to reflect skills, experience, and performance',1),
+  (12,2,'Broadened existing products - adding new features and modules - and tackled additional projects',2),
+  (13,3,'Research-focused biology curriculum with substantial interdisciplinary breadth',1),
+  (14,3,'Contributed to epilepsy research in transgenic mice at the Neural Engineering Center',2),
+  (15,4,'Enrolled in undergraduate Computer Science courses to prepare for admission in the CS masters program',1),
+  (16,5,'Carried a 4.0 through computer science core and bioinformatics specialization',1),
+  (17,5,'Researched the impact of <a href=\"{project|gamifying-genetics}\">gamification on genetic literacy acquisition</a> through self-guided online learning',2),
+  (18,5,'Presented a poster on <a href=\"{project|intersectional-identities}\">capturing intersectional identities in demographic surveys</a>',3);
 /*!40000 ALTER TABLE `bullets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,7 +101,8 @@ INSERT INTO `projects` VALUES
   (3,2,'Mailroom','mailroom',NULL,NULL),
   (4,5,'Gamifying Genetics','gamifying-genetics',NULL,NULL),
   (6,2,'Housing and Residence Life Database (HARLD)','harld',NULL,NULL),
-  (7,2,'Digital Signage','digital-signage',NULL,NULL);
+  (7,2,'Digital Signage','digital-signage',NULL,NULL),
+  (10,5,'Intersectional Identities','intersectional-identities',NULL,NULL);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
