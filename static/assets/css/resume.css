@@ -3883,6 +3883,8 @@ body {
   font-size: 19px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700; }
+  .tenure-title.subtle {
+    font-size: 15px; }
 
 .tenure-synopsis,
 .tenure-dates {
@@ -3894,5 +3896,14 @@ body {
 
 .tenure-duration {
   font-weight: bold; }
+
+.list-departments > li {
+  margin-top: 12px; }
+
+.list-tenures > li {
+  margin-top: 10px; }
+
+.list-tenure-bullets > li {
+  margin-top: 8px; }
 
 /*# sourceMappingURL=/assets/css/resume.css.map */

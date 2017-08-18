@@ -57,13 +57,14 @@
 <?php     if($tenure->duration() != '0 year') 
             echo "                    <div class=\"tenure-duration\">{$tenure->duration()}</div>\n"; ?>
                     <div class="tenure-dates"><?php 
+          $hasBullets = $tenure->bullets() && count($tenure->bullets());
           if($tenure->start() == $tenure->end())
             echo $tenure->end();
           else
             echo "{$tenure->start()}&ndash;{$tenure->end()}"; 
                     ?></div>
                   </div>
-                  <div class="tenure-title">
+                  <div class="tenure-title<?php if(!$hasBullets) echo ' subtle'; ?>">
                     <a href="<?php 
                       echo $tenure->url();
                       if($tenure->hasUrl())
@@ -79,11 +80,13 @@
                   </div>
 <?php     if($tenure->synopsis())
                       echo "                  <p class=\"tenure-synopsis\">{$tenure->synopsis()}</p>\n";  ?>
+<?php     if($hasBullets) { ?>
                   <ul class="list-tenure-bullets">
-<?php     foreach($tenure->bullets() as $bullet) { ?>
+<?php       foreach($tenure->bullets() as $bullet) { ?>
                     <li><?php echo $bullet->text(); ?></li>
-<?php     } ?>
+<?php       } ?>
                   </ul>
+<?php     } ?>
                   <div class="clearfix"></div>
                 </li>
 <?php     if($tenure->department() != $prevDept) { ?>

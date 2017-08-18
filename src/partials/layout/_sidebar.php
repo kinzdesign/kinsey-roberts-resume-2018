@@ -23,13 +23,13 @@
       // open current panel ?>
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="head-skill-type<?php echo $skill->typeId(); ?>">
-                  <h4 class="panel-title">
+                  <div class="panel-title">
                     <a role="button" data-toggle="collapse" href="#collapse-skill-type<?php echo $skill->typeId(); ?>" aria-expanded="true" aria-controls="collapse-skill-type<?php echo $skill->typeId(); ?>"<?php if(!$hadSkills && !$skill->type()->expanded()) echo ' class="collapsed"'; ?>>
                       <i class="fa fa-fw fa-chevron-down-right" title="Expand/Collapse Section"></i>
                       <?php echo $skill->type()->name(); ?>
 
                     </a>
-                  </h4>
+                  </div>
                 </div>
                 <div id="collapse-skill-type<?php echo $skill->typeId(); ?>" class="panel-collapse collapse <?php if($hadSkills || $skill->type()->expanded()) echo 'in'; ?>" role="tabpanel" aria-labelledby="head-skill-type<?php echo $skill->typeId(); ?>">
                   <div class="panel-body">

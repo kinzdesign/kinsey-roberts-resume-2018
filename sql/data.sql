@@ -39,10 +39,10 @@ INSERT INTO `bullets` VALUES
   (10,15,'Designed ad hoc and self-service SQL reports to support business needs and improve staff efficiency',5),
   (11,2,'Promoted from Software Developer to reflect skills, experience, and performance',1),
   (12,2,'Broadened existing products - adding new features and modules - and tackled additional projects',2),
-  (13,3,'Research-focused biology curriculum with substantial interdisciplinary breadth',1),
+  (13,3,'Research-focused biology curriculum with substantial interdisciplinary breadth, <a href=\"/assets/pdfs/bs-biology-transcript.pdf\" target=\"_blank\">earned a 3.275 GPA</a>',1),
   (14,3,'Contributed to epilepsy research in transgenic mice at the Neural Engineering Center',2),
-  (15,4,'Enrolled in undergraduate Computer Science courses to prepare for admission in the CS masters program',1),
-  (16,5,'Carried a 4.0 through computer science core and bioinformatics specialization',1),
+  (15,4,'Excelled in undergraduate computer science courses in preparation for admission in the CS masters program, <a href=\"/assets/pdfs/non-degree-transcript.pdf\" target=\"_blank\">earning an A in each course</a>',1),
+  (16,5,'Maintained a <a href=\"/assets/pdfs/ms-computer-science-transcript.pdf\" target=\"_blank\">4.0 cumulative GPA</a> through computer science core and bioinformatics specialization',1),
   (17,5,'Researched the impact of <a href=\"{project|gamifying-genetics}\">gamification on genetic literacy acquisition</a> through self-guided online learning',2),
   (18,5,'Presented a poster on <a href=\"{project|intersectional-identities}\">capturing intersectional identities in demographic surveys</a>',3);
 /*!40000 ALTER TABLE `bullets` ENABLE KEYS */;
@@ -62,7 +62,8 @@ INSERT INTO `departments` VALUES
   (5,2,'HighEdWeb Professionals',NULL,'https://www.highedweb.org/'),
   (6,3,'O&rsquo;Reilly Media',NULL,'https://www.oreilly.com/conferences/'),
   (7,1,'Executive Education','Weatherhead School of Management','https://weatherhead.case.edu/executive-education/'),
-  (8,4,'Code PaLOUsa, Inc.',NULL,'http://www.codepalousa.com/');
+  (8,4,'Code PaLOUsa, Inc.',NULL,'http://www.codepalousa.com/'),
+  (9,1,'Web Developers Group','University Technology','https://www.case.edu/utech/');
 /*!40000 ALTER TABLE `departments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,6 +87,61 @@ UNLOCK TABLES;
 
 LOCK TABLES `project_skills` WRITE;
 /*!40000 ALTER TABLE `project_skills` DISABLE KEYS */;
+INSERT INTO `project_skills` VALUES
+  (2,1,NULL),
+  (2,5,NULL),
+  (2,9,NULL),
+  (2,11,NULL),
+  (3,1,NULL),
+  (3,13,NULL),
+  (3,14,NULL),
+  (3,29,NULL),
+  (3,30,NULL),
+  (3,32,NULL),
+  (4,4,NULL),
+  (4,6,NULL),
+  (4,10,NULL),
+  (4,30,NULL),
+  (4,33,NULL),
+  (4,36,NULL),
+  (4,37,NULL),
+  (4,39,NULL),
+  (4,40,NULL),
+  (4,41,NULL),
+  (6,1,NULL),
+  (6,3,NULL),
+  (6,5,NULL),
+  (6,7,NULL),
+  (6,11,NULL),
+  (6,12,NULL),
+  (6,13,NULL),
+  (6,14,NULL),
+  (6,15,NULL),
+  (6,16,NULL),
+  (6,17,NULL),
+  (6,18,NULL),
+  (6,19,NULL),
+  (6,20,NULL),
+  (6,22,NULL),
+  (6,23,NULL),
+  (6,29,NULL),
+  (6,30,NULL),
+  (6,32,NULL),
+  (7,1,NULL),
+  (7,3,NULL),
+  (7,7,NULL),
+  (7,21,NULL),
+  (7,23,NULL),
+  (7,24,NULL),
+  (7,25,NULL),
+  (7,26,NULL),
+  (7,27,NULL),
+  (7,29,NULL),
+  (7,30,NULL),
+  (7,31,NULL),
+  (7,32,NULL),
+  (10,42,NULL),
+  (10,43,NULL);
 /*!40000 ALTER TABLE `project_skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,12 +173,13 @@ INSERT INTO `skill_types` VALUES
   (2,'Operating Systems','operating-systems',40,''),
   (3,'Databases','databases',20,''),
   (4,'Cloud Services','cloud-services',70,'\0'),
-  (5,'.NET Framework','dot-net',30,'\0'),
+  (5,'.NET Framework','dot-net',35,'\0'),
   (6,'Creative Tools','creative-tools',80,'\0'),
   (7,'Interpersonal Skills','interpersonal-skills',50,''),
   (8,'Point of Service Hardware','point-of-service-hardware',60,'\0'),
   (9,'Protocols','protocols',75,'\0'),
-  (10,'Administrative','administrative',75,'\0');
+  (10,'Administrative','administrative',75,'\0'),
+  (11,'JavaScript','javascript',30,'\0');
 /*!40000 ALTER TABLE `skill_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,7 +221,18 @@ INSERT INTO `skills` VALUES
   (29,10,'Equipment Selection','equipment-selection',NULL,NULL),
   (30,10,'Budget Proposals','budget-proposals',NULL,NULL),
   (31,10,'Vendor Relations','vendor-relations',NULL,NULL),
-  (32,10,'Procurement','procurement',NULL,NULL);
+  (32,10,'Procurement','procurement',NULL,NULL),
+  (33,4,'Amazon Mechanical Turk (AMT)','amazon-mechanical-turk-amt',NULL,NULL),
+  (34,4,'Amazon Simple Storage Solution (S3)','amazon-simple-storage-solution-s3',NULL,NULL),
+  (35,4,'Amazon Elastic Cloud Compute (EC2)','amazon-elastic-cloud-compute-ec2',NULL,NULL),
+  (36,4,'Amazon Relational Database Service (RDS)','amazon-relational-database-service-rds',NULL,NULL),
+  (37,4,'Amazon Route 53 DNS','amazon-route-53-dns',NULL,NULL),
+  (38,1,'PHP','php',NULL,NULL),
+  (39,11,'AngularJS','angularjs',NULL,NULL),
+  (40,11,'AngularJS Material','angularjs-material',NULL,NULL),
+  (41,11,'Node.js','node-js',NULL,NULL),
+  (42,6,'Adobe Illustrator','adobe-illustrator',NULL,NULL),
+  (43,6,'Adobe InDesign','adobe-indesign',NULL,NULL);
 /*!40000 ALTER TABLE `skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -190,21 +258,22 @@ LOCK TABLES `tenures` WRITE;
 INSERT INTO `tenures` VALUES
   (1,1,1,'Lead Web Developer','lead-web-developer','Analyst/Programmer 3',NULL,NULL,'2013-08-07',NULL,''),
   (2,1,2,'Application Developer','application-developer','Analyst/Programmer 3',NULL,NULL,'2012-10-01','2013-08-06',''),
-  (3,2,3,'Bachelor of Science','bs-biology','Biology','<a href=\"/assets/pdfs/bs-biology-transcript.pdf\" target=\"_blank\">3.275 cumulative GPA</a>',NULL,'2003-08-25','2007-05-20',''),
-  (4,2,4,'Non-Degree Studies','non-degree',NULL,'<a href=\"/assets/pdfs/non-degree-transcript.pdf\" target=\"_blank\">4.0 cumulative GPA</a>',NULL,'2010-08-23','2011-12-09','\0'),
-  (5,2,4,'Master of Science','ms-computer-science','Computer Science','<a href=\"/assets/pdfs/ms-computer-science-transcript.pdf\" target=\"_blank\">4.0 cumulative GPA</a>',NULL,'2012-01-17','2017-01-20',''),
+  (3,2,3,'Bachelor of Science','bs-biology','Biology',NULL,NULL,'2003-08-25','2007-05-20',''),
+  (4,2,4,'Non-Degree Studies','non-degree',NULL,NULL,NULL,'2010-08-23','2011-12-09','\0'),
+  (5,2,4,'Master of Science','ms-computer-science','Computer Science',NULL,NULL,'2012-01-17','2017-01-20',''),
   (6,3,5,'HighEdWeb conference 2016','highedweb-2016','Memphis, TN',NULL,'https://2016.highedweb.org/','2016-10-16','2016-10-19','\0'),
   (7,3,5,'HighEdWeb conference 2015','highedweb-2015','Milwaukee, WI',NULL,'https://2015.highedweb.org/','2015-10-04','2015-10-07','\0'),
   (8,3,6,'Web 2.0 Expo conference 2010','web-2-0-expo-2010','San Francisco, CA',NULL,'https://conferences.oreilly.com/web2expo/webexsf2010','2010-05-03','2010-05-06','\0'),
   (9,3,6,'Fluent: The Web Platform conference 2014','fluent-web-platform-2014','San Francisco, CA',NULL,'https://conferences.oreilly.com/fluent/fluent2014','2014-03-11','2014-03-13','\0'),
   (10,3,7,'Emotionally Intelligent Leader Certificate','emotionally-intelligent-leader-certificate',NULL,NULL,'https://weatherhead.case.edu/executive-education/certificates/emotionally-intelligent-leader','2013-10-28','2013-12-10','\0'),
   (11,3,7,'Fundamentals of Management Certificate','fundamentals-of-management-certificate',NULL,NULL,'https://weatherhead.case.edu/executive-education/certificates/fundamentals-of-management','2014-10-15','2014-10-22','\0'),
-  (12,3,8,'Code PaLOUsa conference 2013','code-palousa-2013',NULL,NULL,'http://lanyrd.com/2013/codepalousa/','2013-04-01','2013-04-01','\0'),
-  (13,3,8,'Code PaLOUsa conference 2012','code-palousa-2012',NULL,NULL,'http://lanyrd.com/2012/codepalousa/','2012-03-01','2012-03-01','\0'),
-  (14,3,8,'Code PaLOUsa conference 2011','code-palousa-2011',NULL,NULL,'http://lanyrd.com/2011/codepalousa/','2011-03-01','2011-03-01','\0'),
+  (12,3,8,'Code PaLOUsa conference 2013','code-palousa-2013','Louisville, KY',NULL,'http://lanyrd.com/2013/codepalousa/','2013-04-01','2013-04-01','\0'),
+  (13,3,8,'Code PaLOUsa conference 2012','code-palousa-2012','Louisville, KY',NULL,'http://lanyrd.com/2012/codepalousa/','2012-03-01','2012-03-01','\0'),
+  (14,3,8,'Code PaLOUsa conference 2011','code-palousa-2011','Louisville, KY',NULL,'http://lanyrd.com/2011/codepalousa/','2011-03-01','2011-03-01','\0'),
   (15,1,2,'Software Developer','software-developer','Analyst/Programmer 2',NULL,NULL,'2008-06-01','2012-10-01','\0'),
   (16,1,2,'Training and Support Manager','training-and-support-manager',NULL,NULL,NULL,'2007-05-21','2008-06-01','\0'),
-  (17,1,2,'Information Systems Assistant','information-systems-assistant','Student Employee',NULL,NULL,'2006-05-01','2007-05-20','\0');
+  (17,1,2,'Information Systems Assistant','information-systems-assistant','Student Employee',NULL,NULL,'2006-05-01','2007-05-20','\0'),
+  (18,3,9,'Founder','founder',NULL,NULL,NULL,'2016-09-16',NULL,'\0');
 /*!40000 ALTER TABLE `tenures` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

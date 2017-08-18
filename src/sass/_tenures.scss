@@ -10,6 +10,10 @@
   font-size: $font-size-h4;
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
+
+  &.subtle {
+    font-size: $font-size-h5;
+  }
 }
 .tenure-synopsis,
 .tenure-dates {
@@ -21,4 +25,13 @@
 }
 .tenure-duration {
   font-weight: bold;
+}
+.list-departments > li {
+    margin-top: 12px;
+}
+.list-tenures > li {
+    margin-top: 10px;
+}
+.list-tenure-bullets > li {
+    margin-top: 8px;
 }
