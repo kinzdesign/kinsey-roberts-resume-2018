@@ -11,4 +11,7 @@ class Config {
   public static function dbPass() { return getenv('DB_PASS'); }
   public static function dbDatabase() { return getenv('DB_DATABASE'); }
 
+  public static function localHost() { return getenv('LOCAL_HOST'); }
+  public static function staticHost() { return getenv('STATIC_HOST'); }
+  public static function hostUrl() { return Page::isStatic() ? self::staticHost() : self::localHost(); }
 }
