@@ -7,7 +7,7 @@ function download_page($path) {
   // ensure directory exists
   $dir = "../static{$path}";
   if(!file_exists($dir))  
-    mkdir($dir);
+    mkdir($dir, 0777, true);
   // download and save contents to static
   file_put_contents("../static{$path}index.html", file_get_contents("http://localhost{$path}?static=true"));
   echo "   > created /static{$path}\n";
