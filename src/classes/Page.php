@@ -5,6 +5,7 @@ class Page {
 
   public static $breadcrumbs = array('Home' => '/');
   public static $title;
+  public static $cssFile = 'resume';
   public static $skills = false;
   public static $showBreadcrumbs = true;
   public static $showSidebar = true;
