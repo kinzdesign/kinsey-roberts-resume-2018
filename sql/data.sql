@@ -41,10 +41,11 @@ INSERT INTO `bullets` VALUES
   (12,2,'Broadened existing products - adding new features and modules - and tackled additional projects',2),
   (13,3,'Research-focused biology curriculum with substantial interdisciplinary breadth, <a href=\"/assets/pdfs/bs-biology-transcript.pdf\" target=\"_blank\">earned a 3.275 GPA</a>',1),
   (14,3,'Contributed to epilepsy research in transgenic mice at the Neural Engineering Center',2),
-  (15,4,'Excelled in undergraduate computer science courses in preparation for admission in the CS masters program, <a href=\"/assets/pdfs/non-degree-transcript.pdf\" target=\"_blank\">earning an A in each course</a>',1),
-  (16,5,'Maintained a <a href=\"/assets/pdfs/ms-computer-science-transcript.pdf\" target=\"_blank\">4.0 cumulative GPA</a> through computer science core and bioinformatics specialization',1),
+  (15,4,'Excelled in undergraduate computer science courses in preparation for admission in the CS masters program, <a href=\"{pdf|non-degree-transcript}\" target=\"_blank\">earning an A in each course</a>',1),
+  (16,5,'Maintained a <a href=\"{pdf|ms-computer-science-transcript}\" target=\"_blank\">4.0 cumulative GPA</a> through computer science core and bioinformatics specialization',1),
   (17,5,'Researched the impact of <a href=\"{project|gamifying-genetics}\">gamification on genetic literacy acquisition</a> through self-guided online learning',2),
-  (18,5,'Presented a poster on <a href=\"{project|intersectional-identities}\">capturing intersectional identities in demographic surveys</a>',3);
+  (18,5,'Presented a poster on <a href=\"{project|intersectional-identities}\">capturing intersectional identities in demographic surveys</a>',3),
+  (19,18,'Built new avenues for collaboration and knowledge sharing during an IT reorganization/centralization by founding a campus-wide web developers group',NULL);
 /*!40000 ALTER TABLE `bullets` ENABLE KEYS */;
 UNLOCK TABLES;
 

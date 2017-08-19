@@ -13,7 +13,7 @@ class Tenure {
     $this->name         = $row['name'];
     $this->slug         = $row['slug'];
     $this->category     = $row['category'];
-    $this->synopsis     = $row['synopsis'];
+    $this->synopsis     = Page::interpolateLinks($row['synopsis']);
     $this->url          = $row['url'];
     $this->start        = $row['start'];
     $this->end          = $row['end'];

@@ -8,7 +8,7 @@ class Bullet {
     $this->id             = $row['id'];
     $this->tenureId       = $row['tenure'];
     $this->tenure         = $tenure;
-    $this->text           = $row['text'];
+    $this->text           = Page::interpolateLinks($row['text']);
   }
 
   /*

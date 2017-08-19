@@ -10,7 +10,7 @@ class Project {
     $this->tenure       = $tenure;
     $this->name         = $row['name'];
     $this->slug         = $row['slug'];
-    $this->synopsis     = $row['synopsis'];
+    $this->synopsis     = Page::interpolateLinks($row['synopsis']);
   }
 
   /*
