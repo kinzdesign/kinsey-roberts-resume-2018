@@ -30,7 +30,7 @@
           <p>There were plenty of challenging and rewarding experiences while working on HARLD, but these are a few that stick out:</p>
           <ul>
             <li>
-              <a href="<?php echo Project::getBySlug('mailroom')->url(); ?>"><h4>Optimized Growing Mailroom Operations</h4></a>
+              <a href="<?php echo Project::getBySlug('mailroom')->url(); ?>" data-category="Project - HARLD" data-action="Body Click - Mailroom"><h4>Optimized Growing Mailroom Operations</h4></a>
               <p>Worked closely with end users to identify and smooth friction in the package logging and distribution processes</p>
             </li>
             <li>

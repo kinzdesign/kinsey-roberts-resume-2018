@@ -25,7 +25,7 @@
             <div class="tenure-duration"><?php echo $tenure->duration(); ?></div>
             <div class="tenure-dates"><?php echo $tenure->start(); ?>&ndash;<?php echo $tenure->end(); ?></div>
           </div>
-          <a href="<?php echo $tenure->department()->url(); ?>" target="_blank">
+          <a href="<?php echo $tenure->department()->url(); ?>" target="_blank" data-category="Tenure - <?php echo $tenure->name(); ?>" data-action="Department Click - <?php echo $tenure->department()->name(); ?>">
 <?php     if($tenure->department()->organization()) { ?>
             <span class="tenure-organization"><?php echo $tenure->department()->organization()->name(); ?>,</span>
 <?php     } ?>

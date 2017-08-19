@@ -15,7 +15,7 @@
 ?>
           <h2 class="head-tenure-type"><?php echo $project->name(); ?></h2>
           <div class="tenure-title">
-            <a href="<?php echo $project->tenure()->url(); ?>"><?php 
+            <a href="<?php echo $project->tenure()->url(); ?>" data-category="Project - <?php echo $project->name(); ?>" data-action="Tenure Click - <?php echo $project->tenure()->name(); ?>"><?php 
                 echo $project->tenure()->name(); 
                 if($project->tenure()->category()) 
                   echo " - {$project->tenure()->category()}";

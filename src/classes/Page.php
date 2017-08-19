@@ -87,19 +87,28 @@ class Page {
         switch ($matches[1]) {
           // return project link
           case 'project':
-            return Project::getBySlug($matches[2])->url();
+            $project = Project::getBySlug($matches[2]);
+            if($project)
+              return $project->url() . "\" data-category=\"Interpolated Link\" data-action=\"Project Click - {$project->name()}";
+            break;
           // return skill link
           case 'skill':
-            return Skill::getBySlug($matches[2])->url();
+            $skill = Skill::getBySlug($matches[2]);
+            if($skill)
+              return $skill->url() . "\" data-category=\"Interpolated Link\" data-action=\"Skill Click - {$skill->name()}";
+            break;
           // return tenure link
           case 'tenure':
-            return Tenure::getBySlug($matches[2])->url();
+            $tenure = Tenure::getBySlug($matches[2]);
+            if($tenure)
+              return $tenure->url() . "\" data-category=\"Interpolated Link\" data-action=\"Tenure Click - {$tenure->name()}";
+            break;
           // return asset link
           case 'asset':
-            return '/assets/' . $matches[2] . self::cacheBreaker();
+            return '/assets/' . $matches[2] . self::cacheBreaker(). "\" data-category=\"Interpolated Link\" data-action=\"Asset Click - {$matches[2]}";
           // return pdf link
           case 'pdf':
-            return '/pdf/' . $matches[2] . '/' . self::cacheBreaker();
+            return '/pdf/' . $matches[2] . '/' . self::cacheBreaker() . "\" data-category=\"Interpolated Link\" data-action=\"PDF Click - {$matches[2]}";
         }
       }
       // if not handled, return raw text

@@ -24,7 +24,7 @@
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="head-skill-type<?php echo $skill->typeId(); ?>">
                   <div class="panel-title">
-                    <a role="button" data-toggle="collapse" href="#collapse-skill-type<?php echo $skill->typeId(); ?>" aria-expanded="true" aria-controls="collapse-skill-type<?php echo $skill->typeId(); ?>"<?php if(!$hadSkills && !$skill->type()->expanded()) echo ' class="collapsed"'; ?>>
+                    <a role="button" data-toggle="collapse" href="#collapse-skill-type<?php echo $skill->typeId(); ?>" aria-expanded="true" aria-controls="collapse-skill-type<?php echo $skill->typeId(); ?>"<?php if(!$hadSkills && !$skill->type()->expanded()) echo ' class="collapsed"'; ?> data-category="Skill List" data-action="Category Toggle - <?php echo $skill->type()->name() ?>">
                       <i class="fa fa-fw fa-chevron-down-right" title="Expand/Collapse Section"></i>
                       <?php echo $skill->type()->name(); ?>
 
@@ -36,7 +36,7 @@
                     <ul>
 <?php 
     } // end header ?>
-                      <li><a href="<?php echo $skill->url() ?>"><?php echo $skill->name(); ?></a></li>
+                      <li><a href="<?php echo $skill->url() ?>" data-category="Skills List" data-action="Skill Click - <?php echo $skill->name(); ?>"><?php echo $skill->name(); ?></a></li>
 <?php
   $prevType = $skill->typeId();
   } // end skill 

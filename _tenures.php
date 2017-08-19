@@ -65,7 +65,7 @@
                       echo $tenure->url();
                       if($tenure->hasUrl())
                         echo "\" target=\"_blank";
-                    ?>" >
+                    ?>" data-category="Tenures<?php if(isset($type) && $type) echo " - {$type->name()}" ?>" data-action="Tenure Click - <?php echo $tenure->name(); ?>">
                       <?php 
           echo $tenure->name(); 
           if($tenure->category()) 

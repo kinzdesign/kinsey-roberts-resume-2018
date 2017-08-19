@@ -16,7 +16,7 @@
           <h2 class="head-skill-type"><?php echo $header->name(); ?></h2>
           <ul class="list-skills">
 <?php   foreach($header->skills() as $skill) { ?>
-            <li><?php echo "<a href=\"{$skill->url()}\">{$skill->name()}</a>"; ?></li>
+            <li><?php echo "<a href=\"{$skill->url()}\" data-category=\"Skills List". (isset($type) ? " - {$type->name()}" : '') . "\" data-action=\"Skill Click - {$skill->name()}\">{$skill->name()}</a>"; ?></li>
 <?php   } // end skill ?>
           </ul>
 <?php } // end header 

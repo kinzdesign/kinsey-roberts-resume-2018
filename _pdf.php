@@ -39,18 +39,18 @@
 <body>
 <?php Page::renderPartial('layout', 'gtm-body'); ?>
   <div class="wrapper">
-<?php echoBanner($slug, $linkText); ?>
+<?php echoBanner($slug, $linkText, $docName); ?>
     <div class="main">
       <iframe src="http://docs.google.com/gview?url=<?php echo Config::hostUrl() . "/assets/pdfs/{$slug}"; ?>.pdf&amp;embedded=true" frameborder="0"></iframe>
     </div>
-<?php echoBanner($slug, $linkText); ?>
+<?php echoBanner($slug, $linkText, $docName); ?>
   </div>
 </body>
 </html><?php }
 
-function echoBanner($slug, $linkText) { ?>
+function echoBanner($slug, $linkText, $docName) { ?>
     <div class="banner">
-      <a href="/assets/pdfs/<?php echo $slug; ?>.pdf" target="_blank">
+      <a href="/assets/pdfs/<?php echo $slug; ?>.pdf" target="_blank" data-category="PDF Viewer" data-action="Download Click<?php if(isset($docName) && $docName) echo " - {$docName}"; ?>">
         <p>
           <i class="fa fa-fw fa-download" title="<?php echo $linkText; ?>"></i>
           <?php echo $linkText; ?>
