@@ -38,7 +38,8 @@ class Tenure {
           $months,
           $bullets,
           $projects,
-          $showInNav;
+          $showInNav,
+          $skills;
 
   public function id() {
     return $this->id;
@@ -72,6 +73,13 @@ class Tenure {
 
   public function slug() {
     return $this->slug;
+  }
+
+  public function skills() {
+    // lazy-load Skill objects
+    if(!$this->skills)
+      $this->skills = Skill::getByTenure($this);
+    return $this->skills;
   }
 
   public function category() {

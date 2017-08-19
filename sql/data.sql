@@ -233,7 +233,14 @@ INSERT INTO `skills` VALUES
   (40,11,'AngularJS Material','angularjs-material',NULL,NULL),
   (41,11,'Node.js','node-js',NULL,NULL),
   (42,6,'Adobe Illustrator','adobe-illustrator',NULL,NULL),
-  (43,6,'Adobe InDesign','adobe-indesign',NULL,NULL);
+  (43,6,'Adobe InDesign','adobe-indesign',NULL,NULL),
+  (44,1,'Regular Expressions','regular-expressions',NULL,NULL),
+  (45,1,'HTML5','html5',NULL,NULL),
+  (46,1,'CSS3','css3',NULL,NULL),
+  (47,1,'JavaScript','javascript',NULL,NULL),
+  (48,1,'Sass','sass',NULL,NULL),
+  (49,1,'XPath','xpath',NULL,NULL),
+  (50,11,'jQuery','jquery',NULL,NULL);
 /*!40000 ALTER TABLE `skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
