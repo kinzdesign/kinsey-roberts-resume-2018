@@ -17,8 +17,9 @@ def compile_assets()
   # compile sass
   compile_sass(webroot, "resume", sass_cache_dir, git)
   compile_sass(webroot, "resume-critical", sass_cache_dir, git)
+  compile_sass(webroot, "pdf-viewer", sass_cache_dir, git)
 
-  # # compile javascript
+  # compile javascript
   concat_javascript(webroot, "resume", git)
 
   # update timestamp to expire caches

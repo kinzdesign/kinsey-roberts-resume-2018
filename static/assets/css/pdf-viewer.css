@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans");
+html, body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+strong {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700; }
+
+.wrapper {
+  display: table;
+  empty-cells: show;
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%; }
+
+.banner {
+  display: table-row;
+  overflow: auto;
+  background-color: #4a148c;
+  color: white;
+  text-align: center; }
+  .banner p {
+    margin: 12px 0; }
+  .banner a, .banner a:link, .banner a:active, .banner a:visited {
+    color: #fff;
+    text-decoration: none; }
+  .banner a:hover {
+    color: #fff;
+    text-decoration: none; }
+  .banner:hover {
+    background-color: #320e5f; }
+
+.main {
+  display: table-row;
+  height: 100%;
+  overflow: hidden; }
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: block; }
+
+/*# sourceMappingURL=/assets/css/pdf-viewer.css.map */

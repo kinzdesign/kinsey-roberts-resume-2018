@@ -28,6 +28,11 @@
       // if only one or two arguments, list skills
       return '/_skills.php';
     }
+    // handle PDF viewers
+    else if ($arg1 == 'pdf') {
+        Page::$params['pdf'] = $_GET['arg2'];
+        return '/_pdf.php';
+    }
     // otherwise, first arg is tenure type
     else
     {
