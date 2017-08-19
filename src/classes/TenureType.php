@@ -9,6 +9,7 @@ class TenureType {
     $this->name = $row['name'];
     $this->slug = $row['slug'];
     $this->showInNav    = $row['showInNav'] == 1;
+    $this->showDuration = $row['showDuration'] == 1;
   }
 
   /*
@@ -19,7 +20,8 @@ class TenureType {
           $name,
           $slug,
           $tenures,
-          $showInNav;
+          $showInNav,
+          $showDuration;
 
   public function id() {
     return $this->id;
@@ -37,6 +39,10 @@ class TenureType {
     return $this->showInNav;
   }
 
+  public function showDuration() {
+    return $this->showDuration;
+  }
+
   public function tenures() {
     // lazy-load Tenure array
     if(!$this->tenures)
@@ -52,7 +58,7 @@ class TenureType {
    * data access
    */
 
-  const SELECT = "SELECT id, name, slug, showInNav FROM tenure_types ";
+  const SELECT = "SELECT id, name, slug, showInNav, showDuration FROM tenure_types ";
   const ORDER  = " ORDER BY displayorder ";
 
   public static function getAll() {

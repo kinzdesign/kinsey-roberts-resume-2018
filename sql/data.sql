@@ -251,9 +251,9 @@ UNLOCK TABLES;
 LOCK TABLES `tenure_types` WRITE;
 /*!40000 ALTER TABLE `tenure_types` DISABLE KEYS */;
 INSERT INTO `tenure_types` VALUES
-  (1,'Experience','experience',NULL,''),
-  (2,'Education','education',NULL,''),
-  (3,'Professional Development','professional-development',NULL,'\0');
+  (1,'Experience','experience',NULL,'',''),
+  (2,'Education','education',NULL,'','\0'),
+  (3,'Professional Development','professional-development',NULL,'\0','\0');
 /*!40000 ALTER TABLE `tenure_types` ENABLE KEYS */;
 UNLOCK TABLES;
 

@@ -54,7 +54,7 @@
           $prevDept = $tenure->department()->id(); ?>
                 <li>
                   <div class="tenure-date-block">
-<?php     if($tenure->duration() != '0 year') 
+<?php     if($header->showDuration()) 
             echo "                    <div class=\"tenure-duration\">{$tenure->duration()}</div>\n"; ?>
                     <div class="tenure-dates"><?php 
           $hasBullets = $tenure->bullets() && count($tenure->bullets());
