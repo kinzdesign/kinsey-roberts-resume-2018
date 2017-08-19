@@ -32,13 +32,9 @@
             <li>
               <div class="tenure-department">
                 <?php 
-            if($tenure->department()->url())
-              echo "<a href=\"{$tenure->department()->url()}\" target=\"_blank\">";
             echo $tenure->department()->name(); 
             if($tenure->department()->parent()) 
               echo ", {$tenure->department()->parent()}";
-            if($tenure->department()->url())
-              echo "</a>";
             if($tenure->department()->organization() && $tenure->department()->organization()->name() != $tenure->department()->name()) {
               echo $tenure->department()->parent() ? "<br />\n                " : '';
               echo $tenure->department()->organization()->name();
