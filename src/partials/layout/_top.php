@@ -6,8 +6,7 @@
 <?php Page::renderPartial('layout', 'head'); ?>
   </head>
   <body class="top-navbar-fixed">
-<?php # Google Tag Manager (noscript) ?>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHZM4LT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<?php Page::renderPartial('layout', 'gtm-body'); ?>
 <?php Page::renderPartial('layout', 'topnav'); ?>
     <div class="container">
 <?php if(Page::$showSidebar) { ?>
