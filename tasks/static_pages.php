@@ -13,6 +13,12 @@ function download_page($path) {
   echo "   > created /static{$path}\n";
 }
 
+function endswith($haystack, $needle) {
+    $h = strlen($haystack);
+    $n = strlen($needle);
+    if ($n > $h) return false;
+    return substr_compare($haystack, $needle, $h - $n, $n) === 0;
+}
 
 // build homepage
 download_page('/');
@@ -36,6 +42,10 @@ foreach (SkillType::getAll() as $type)
 // build skill pages
 foreach (Skill::getAll() as $skill)
   download_page("/skills/{$skill->type()->slug()}/{$skill->slug()}/");
+// build PDF viewer pages
+foreach ((new DirectoryIterator("$cwd/../assets/pdfs/")) as $file)
+  if ($file->getExtension() == 'pdf')
+    download_page('/pdf/' . substr($file->getFilename(), 0, -4) . '/');
 // build employer pages
 download_page('/23andme/');
 download_page('/amazon/');
