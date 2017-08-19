@@ -39,7 +39,7 @@ INSERT INTO `bullets` VALUES
   (10,15,'Designed ad hoc and self-service SQL reports to support business needs and improve staff efficiency',5),
   (11,2,'Promoted from Software Developer to reflect skills, experience, and performance',1),
   (12,2,'Broadened existing products - adding new features and modules - and tackled additional projects',2),
-  (13,3,'Research-focused biology curriculum with substantial interdisciplinary breadth, <a href=\"/assets/pdfs/bs-biology-transcript.pdf\" target=\"_blank\">earned a 3.275 GPA</a>',1),
+  (13,3,'Research-focused biology curriculum with substantial interdisciplinary breadth, <a href=\"{pdf|bs-biology-transcript}\" target=\"_blank\">earned a 3.275 GPA</a>',1),
   (14,3,'Contributed to epilepsy research in transgenic mice at the Neural Engineering Center',2),
   (15,4,'Excelled in undergraduate computer science courses in preparation for admission in the CS masters program, <a href=\"{pdf|non-degree-transcript}\" target=\"_blank\">earning an A in each course</a>',1),
   (16,5,'Maintained a <a href=\"{pdf|ms-computer-science-transcript}\" target=\"_blank\">4.0 cumulative GPA</a> through computer science core and bioinformatics specialization',1),

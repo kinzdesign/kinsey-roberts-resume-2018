@@ -99,7 +99,7 @@ class Page {
             return '/assets/' . $matches[2] . self::cacheBreaker();
           // return pdf link
           case 'pdf':
-            return '/assets/pdf/' . $matches[2] . '.pdf' . self::cacheBreaker();
+            return '/pdf/' . $matches[2] . '/' . self::cacheBreaker();
         }
       }
       // if not handled, return raw text
