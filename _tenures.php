@@ -31,6 +31,8 @@
 <?php       } ?>
             <li>
               <div class="tenure-department">
+<?php     if($header->showDuration()) 
+            echo "                    <div class=\"department-duration\">{$tenure->department()->duration()}</div>\n"; ?>              <div class="tenure-department">
                 <?php 
             echo $tenure->department()->name(); 
             if($tenure->department()->parent()) 
@@ -50,8 +52,6 @@
           $prevDept = $tenure->department()->id(); ?>
                 <li>
                   <div class="tenure-date-block">
-<?php     if($header->showDuration()) 
-            echo "                    <div class=\"tenure-duration\">{$tenure->duration()}</div>\n"; ?>
                     <div class="tenure-dates"><?php 
           $hasBullets = $tenure->bullets() && count($tenure->bullets());
           if($tenure->start() == $tenure->end())
