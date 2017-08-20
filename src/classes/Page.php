@@ -1,7 +1,7 @@
 <?php
 class Page {
 
-  private static $scripts = array();
+  private static $scripts = array('https://use.fontawesome.com/ced7440677.js');
 
   public static $breadcrumbs = array('Home' => '/');
   public static $title;
