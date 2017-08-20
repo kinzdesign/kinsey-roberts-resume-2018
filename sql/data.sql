@@ -27,8 +27,6 @@ USE `resume`;
 LOCK TABLES `bullets` WRITE;
 /*!40000 ALTER TABLE `bullets` DISABLE KEYS */;
 INSERT INTO `bullets` VALUES
-  (1,17,'Proved my worth as a student employee doing everything from network troubleshooting to software development to graphic design.',1),
-  (2,17,'Imagined and wrote the first version of a homegrown <a href=\"{project:digital-signage}\">digital signage platform</a>',2),
   (3,16,'Provided individualized assistance and group training to end users',1),
   (4,16,'Oversaw and developed a team of student employees',2),
   (5,16,'Procured IT hardware, supplies, and professional services and allocated costs to departments',3),
@@ -280,7 +278,6 @@ INSERT INTO `tenures` VALUES
   (14,3,8,'Code PaLOUsa conference 2011','code-palousa-2011','Louisville, KY',NULL,'http://lanyrd.com/2011/codepalousa/','2011-03-01','2011-03-01','\0'),
   (15,1,2,'Software Developer','software-developer','Analyst/Programmer 2',NULL,NULL,'2008-06-01','2012-10-01','\0'),
   (16,1,2,'Training and Support Manager','training-and-support-manager',NULL,NULL,NULL,'2007-05-21','2008-06-01','\0'),
-  (17,1,2,'Information Systems Assistant','information-systems-assistant','Student Employee',NULL,NULL,'2006-05-01','2007-05-20','\0'),
   (18,3,9,'Founder','founder',NULL,NULL,NULL,'2016-09-16',NULL,'\0');
 /*!40000 ALTER TABLE `tenures` ENABLE KEYS */;
 UNLOCK TABLES;

@@ -1,3 +1,4 @@
+.department-duration,
 .tenure-date-block {
   @extend .pull-right;
   @extend .text-right;
@@ -19,15 +20,21 @@
 .tenure-dates {
   font-size: $font-size-small;
   margin: 0;
-}
-.tenure-synopsis {
   font-style: italic;
 }
+.department-duration,
 .tenure-duration {
   font-weight: bold;
 }
 .list-departments > li {
-    margin-top: 12px;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid #ddd;
+
+  &:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
 }
 .list-tenures > li {
     margin-top: 10px;

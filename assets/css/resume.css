@@ -446,7 +446,8 @@ mark,
 .text-left {
   text-align: left; }
 
-.text-right, .tenure-date-block {
+.text-right, .department-duration,
+.tenure-date-block {
   text-align: right; }
 
 .text-center {
@@ -633,6 +634,7 @@ blockquote {
 
 .blockquote-reverse,
 blockquote.pull-right,
+blockquote.department-duration,
 blockquote.tenure-date-block {
   padding-right: 15px;
   padding-left: 0;
@@ -643,20 +645,26 @@ blockquote.tenure-date-block {
   .blockquote-reverse small:before,
   .blockquote-reverse .small:before,
   blockquote.pull-right footer:before,
+  blockquote.department-duration footer:before,
   blockquote.tenure-date-block footer:before,
   blockquote.pull-right small:before,
+  blockquote.department-duration small:before,
   blockquote.tenure-date-block small:before,
   blockquote.pull-right .small:before,
+  blockquote.department-duration .small:before,
   blockquote.tenure-date-block .small:before {
     content: ''; }
   .blockquote-reverse footer:after,
   .blockquote-reverse small:after,
   .blockquote-reverse .small:after,
   blockquote.pull-right footer:after,
+  blockquote.department-duration footer:after,
   blockquote.tenure-date-block footer:after,
   blockquote.pull-right small:after,
+  blockquote.department-duration small:after,
   blockquote.tenure-date-block small:after,
   blockquote.pull-right .small:after,
+  blockquote.department-duration .small:after,
   blockquote.tenure-date-block .small:after {
     content: '\00A0 \2014'; }
 
@@ -2351,7 +2359,8 @@ tbody.collapse.in {
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box; }
-  .dropdown-menu.pull-right, .dropdown-menu.tenure-date-block {
+  .dropdown-menu.pull-right, .dropdown-menu.department-duration,
+  .dropdown-menu.tenure-date-block {
     right: 0;
     left: auto; }
   .dropdown-menu .divider {
@@ -2417,7 +2426,8 @@ tbody.collapse.in {
   top: 0;
   z-index: 990; }
 
-.pull-right > .dropdown-menu, .tenure-date-block > .dropdown-menu {
+.pull-right > .dropdown-menu, .department-duration > .dropdown-menu,
+.tenure-date-block > .dropdown-menu {
   right: 0;
   left: auto; }
 
@@ -3336,7 +3346,8 @@ tbody.collapse.in {
   margin-left: auto;
   margin-right: auto; }
 
-.pull-right, .tenure-date-block {
+.pull-right, .department-duration,
+.tenure-date-block {
   float: right !important; }
 
 .pull-left {
@@ -3889,16 +3900,20 @@ body {
 .tenure-synopsis,
 .tenure-dates {
   font-size: 13px;
-  margin: 0; }
-
-.tenure-synopsis {
+  margin: 0;
   font-style: italic; }
 
+.department-duration,
 .tenure-duration {
   font-weight: bold; }
 
 .list-departments > li {
-  margin-top: 12px; }
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid #ddd; }
+  .list-departments > li:first-child {
+    border-top: none;
+    padding-top: 0; }
 
 .list-tenures > li {
   margin-top: 10px; }

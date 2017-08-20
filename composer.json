@@ -19,6 +19,7 @@
      ,"src/classes/Tenure.php" 
      ,"src/classes/TenureType.php" 
      
+     ,"src/functions/duration_string.php" 
      ,"src/functions/project_list.php" 
     ]
   }

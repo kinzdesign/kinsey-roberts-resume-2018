@@ -21,7 +21,8 @@ class Department {
           $name,
           $parent,
           $url,
-          $tenures;
+          $tenures,
+          $months;
 
   public function id() {
     return $this->id;
@@ -55,6 +56,20 @@ class Department {
     if(!$this->tenures)
       $this->tenures = Tenure::getByDepartment($this);
     return $this->tenures;
+  }
+
+  public function months() {
+    if(!$this->months)
+     $this->months = Database::getOne( 
+      'SELECT  TIMESTAMPDIFF(MONTH, MIN(t.start), MAX(COALESCE(t.end, NOW()))) AS months ' .
+      'FROM    tenures AS t ' .
+              'INNER JOIN departments AS d ON t.department = d.id ' .
+      'WHERE   d.id = ? ', $this->id());
+    return $this->months;
+  }
+
+  public function duration() {
+    return duration_string($this->months());
   }
 
   /*
