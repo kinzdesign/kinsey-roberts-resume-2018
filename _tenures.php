@@ -32,7 +32,7 @@
             <li>
               <div class="tenure-department">
 <?php     if($header->showDuration()) 
-            echo "                    <div class=\"department-duration\">{$tenure->department()->duration()}</div>\n"; ?>              <div class="tenure-department">
+            echo "                <div class=\"department-duration\">{$tenure->department()->duration()}</div>\n"; ?>
                 <?php 
             echo $tenure->department()->name(); 
             if($tenure->department()->parent()) 
@@ -46,6 +46,7 @@
             if($tenure->department()->organization()->state())
               echo ", {$tenure->department()->organization()->state()}";
                 ?>
+
               </div>            
               <ul class="list-tenures">
 <?php     }
