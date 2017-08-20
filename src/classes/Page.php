@@ -1,7 +1,7 @@
 <?php
 class Page {
 
-  private static $scripts = array('https://use.fontawesome.com/ced7440677.js');
+  private static $scripts = array();
 
   public static $breadcrumbs = array('Home' => '/');
   public static $title;
@@ -11,6 +11,11 @@ class Page {
   public static $showSidebar = true;
   public static $showTopnav = true;
   public static $params = array();
+  
+  public static $jsFontAwesome = true;
+  public static $jsJQuery = true;
+  public static $jsResume = true;
+
 
   public static function isStatic() {
     return isset($_GET['static']);
