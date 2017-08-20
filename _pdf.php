@@ -7,7 +7,10 @@
     // handle 404
     Page::error(404, "We could not find a PDF with slug '{$slug}'.", "Not Found");
   } else { // output contents
+    // use stripped-down CSS and JS
     Page::$cssFile = 'pdf-viewer';
+    Page::$jsJQuery = false;
+    Page::$jsResume = false;
     // per-document page titles
     $docName = false;
     switch ($slug) {
@@ -45,6 +48,7 @@
     </div>
 <?php echoBanner($slug, $linkText, $docName); ?>
   </div>
+<?php Page::renderPartial('layout', 'scripts'); ?>
 </body>
 </html><?php }
 
