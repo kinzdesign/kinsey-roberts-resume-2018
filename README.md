@@ -41,4 +41,3 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
 * technical
     * Schema.org markup
     * critical path optimization
-    * LAB loader
