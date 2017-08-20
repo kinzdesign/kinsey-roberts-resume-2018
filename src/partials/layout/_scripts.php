@@ -1,3 +1,6 @@
+<?php // use LABjs for parallel JS loading, CDN with local fallback ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/labjs/2.0.3/LAB.min.js"></script>
+    <script>window.$LAB || document.write('<script src="/assets/js/vendor/LAB.min.js"><\/script>')</script>
 <?php 
   // jQuery (necessary for Bootstrap's JavaScript plugins), with local fallback 
   if(Page::$jsJQuery || Page::$jsResume) {
