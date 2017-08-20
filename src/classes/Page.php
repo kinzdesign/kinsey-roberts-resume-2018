@@ -11,6 +11,11 @@ class Page {
   public static $showSidebar = true;
   public static $showTopnav = true;
   public static $params = array();
+  
+  public static $jsFontAwesome = true;
+  public static $jsJQuery = true;
+  public static $jsResume = true;
+
 
   public static function isStatic() {
     return isset($_GET['static']);
@@ -69,12 +74,6 @@ class Page {
 
   public static function registerChart($chart) {
     Page::registerScript("/assets/charts/{$chart}.js" . self::cacheBreaker(true));
-  }
-
-  public static function renderScripts() {
-    foreach (self::$scripts as $script) {
-      echo "    <script src=\"{$script}\"></script>\n";
-    }
   }
 
   // interpoltes links of the form {noun|sulg} or {noun:slug}
