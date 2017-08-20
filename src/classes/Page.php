@@ -71,12 +71,6 @@ class Page {
     Page::registerScript("/assets/charts/{$chart}.js" . self::cacheBreaker(true));
   }
 
-  public static function renderScripts() {
-    foreach (self::$scripts as $script) {
-      echo "    <script src=\"{$script}\"></script>\n";
-    }
-  }
-
   // interpoltes links of the form {noun|sulg} or {noun:slug}
   // e.g. {project|mailroom}  or {tenure:application-developer}
   public static function interpolateLinks($s) {
