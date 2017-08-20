@@ -18,6 +18,8 @@
      ,"src/classes/SkillType.php" 
      ,"src/classes/Tenure.php" 
      ,"src/classes/TenureType.php" 
+     
+     ,"src/functions/project_list.php" 
     ]
   }
 }

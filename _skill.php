@@ -21,7 +21,6 @@
           if($skill->synopsis())
             echo "<p>{$skill->synopsis()}</p>\n";
         // render project list
-        require_once($_SERVER['DOCUMENT_ROOT'] . '/src/functions/project_list.php');
         project_list($skill->projects());
   } // end contents 
   Page::renderBottom();

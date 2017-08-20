@@ -47,7 +47,6 @@
           }
         }
         // render project list
-        require_once($_SERVER['DOCUMENT_ROOT'] . '/src/functions/project_list.php');
         project_list($tenure->projects());
   } // end contents 
   Page::renderBottom();
