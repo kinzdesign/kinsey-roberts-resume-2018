@@ -6,8 +6,8 @@
   }
   $prevType = -1;
 ?>
-          <aside>
-            <h3>Skills<?php if($hadSkills) echo ' Used'; ?></h3>
+          <aside class="sidebar">
+            <h4>Skills<?php if($hadSkills) echo ' Used'; ?></h4>
             <div class="panel-group" role="tablist" aria-multiselectable="true">
 <?php
   foreach (Page::$skills as $skill) {
@@ -25,8 +25,8 @@
                 <div class="panel-heading" role="tab" id="head-skill-type<?php echo $skill->typeId(); ?>">
                   <div class="panel-title">
                     <a role="button" data-toggle="collapse" href="#collapse-skill-type<?php echo $skill->typeId(); ?>" aria-expanded="true" aria-controls="collapse-skill-type<?php echo $skill->typeId(); ?>"<?php if(!$hadSkills && !$skill->type()->expanded()) echo ' class="collapsed"'; ?> data-category="Skill List" data-action="Category Toggle - <?php echo $skill->type()->name() ?>">
-                      <i class="fa fa-fw fa-chevron-down-right" title="Expand/Collapse Section"></i>
-                      <?php echo $skill->type()->name(); ?>
+                      <i class="fa fa-fw fa-chevron-down-right" title="Expand/Collapse Section"></i><?php 
+                      echo $skill->type()->name(); ?>
 
                     </a>
                   </div>

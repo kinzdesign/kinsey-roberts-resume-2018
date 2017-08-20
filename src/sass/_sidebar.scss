@@ -1,0 +1,21 @@
+.sidebar {
+  .panel-heading {
+    padding: 4px;
+    font-size: $font-size-h5;
+
+    .fa {
+      font-size: 0.7em;
+      margin: 0 5px;
+      vertical-align: 0.15em;
+    }
+  }
+  .panel-body {
+    padding: 8px;
+    padding-left: 32px;
+
+    ul {
+      @extend .list-unstyled;
+      margin-bottom: 0;
+    }
+  }
+}

@@ -559,7 +559,7 @@ ol {
   ol ol {
     margin-bottom: 0; }
 
-.list-unstyled {
+.list-unstyled, .sidebar .panel-body ul {
   padding-left: 0;
   list-style: none; }
 
@@ -3886,9 +3886,21 @@ body {
 .collapsed > .fa-chevron-circle-down-right:before {
   content: "\f158"; }
 
+.sidebar .panel-heading {
+  padding: 4px;
+  font-size: 15px; }
+  .sidebar .panel-heading .fa {
+    font-size: 0.7em;
+    margin: 0 5px;
+    vertical-align: 0.15em; }
+.sidebar .panel-body {
+  padding: 8px;
+  padding-left: 32px; }
+  .sidebar .panel-body ul {
+    margin-bottom: 0; }
+
 .tenure-department {
-  font-size: 15px;
-  font-weight: bold; }
+  font-size: 15px; }
 
 .tenure-title {
   font-size: 19px;
