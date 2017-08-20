@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -2963,21 +2962,6 @@ tbody.collapse.in {
     .navbar-inverse .btn-link[disabled]:hover, .navbar-inverse .btn-link[disabled]:focus, fieldset[disabled] .navbar-inverse .btn-link:hover, fieldset[disabled] .navbar-inverse .btn-link:focus {
       color: #ccc; }
 
-.breadcrumb {
-  padding: 8px 15px;
-  margin-bottom: 21px;
-  list-style: none;
-  background-color: #ecf0f1;
-  border-radius: 4px; }
-  .breadcrumb > li {
-    display: inline-block; }
-    .breadcrumb > li + li:before {
-      content: "/ ";
-      padding: 0 5px;
-      color: #ccc; }
-  .breadcrumb > .active {
-    color: #95a5a6; }
-
 .alert {
   padding: 15px;
   margin-bottom: 21px;
@@ -3885,6 +3869,68 @@ body {
 
 .collapsed > .fa-chevron-circle-down-right:before {
   content: "\f158"; }
+
+.breadcrumb {
+  list-style: none;
+  overflow: hidden;
+  padding-left: 0; }
+  .breadcrumb li {
+    float: left; }
+    .breadcrumb li a {
+      color: black;
+      text-decoration: none;
+      padding: 5px 0 5px 45px;
+      position: relative;
+      display: block;
+      float: left; }
+      .breadcrumb li a:after, .breadcrumb li a:before {
+        content: " ";
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+        position: absolute;
+        top: 50%;
+        margin-top: -30px;
+        left: 100%; }
+      .breadcrumb li a:after {
+        border-left-width: 30px;
+        border-left-style: solid;
+        z-index: 2; }
+      .breadcrumb li a:before {
+        border-left: 30px solid white;
+        margin-left: 1px;
+        z-index: 1; }
+    .breadcrumb li:first-child a {
+      padding-left: 10px; }
+    .breadcrumb li:nth-child(1) a {
+      background: #c2d8fa; }
+      .breadcrumb li:nth-child(1) a:after {
+        border-left-color: #c2d8fa; }
+    .breadcrumb li:nth-child(2) a {
+      background: #d0e1fb; }
+      .breadcrumb li:nth-child(2) a:after {
+        border-left-color: #d0e1fb; }
+    .breadcrumb li:nth-child(3) a {
+      background: #dfeafc; }
+      .breadcrumb li:nth-child(3) a:after {
+        border-left-color: #dfeafc; }
+    .breadcrumb li:nth-child(4) a {
+      background: #edf3fe; }
+      .breadcrumb li:nth-child(4) a:after {
+        border-left-color: #edf3fe; }
+    .breadcrumb li:last-child a {
+      background: #ecf0f1 !important;
+      pointer-events: none;
+      cursor: default; }
+      .breadcrumb li:last-child a:after {
+        border-left-color: #ecf0f1; }
+    .breadcrumb li a:hover {
+      background: #0d47a1;
+      color: white; }
+      .breadcrumb li a:hover:after {
+        border-left-color: #0d47a1 !important; }
 
 .sidebar .panel-heading {
   padding: 4px;

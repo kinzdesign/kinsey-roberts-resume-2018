@@ -36,7 +36,6 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
         * server-migration
         * hobsons-admissions
 * design
-    * breadcrumbs
     * favicon
     * topnav
 * technical
