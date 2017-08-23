@@ -43,7 +43,12 @@ INSERT INTO `bullets` VALUES
   (16,5,'Maintained a <a href=\"{pdf|ms-computer-science-transcript}\" target=\"_blank\">4.0 cumulative GPA</a> through computer science core and bioinformatics specialization',1),
   (17,5,'Researched the impact of <a href=\"{project|gamifying-genetics}\">gamification on genetic literacy acquisition</a> through self-guided online learning',2),
   (18,5,'Presented a poster on <a href=\"{project|intersectional-identities}\">capturing intersectional identities in demographic surveys</a>',3),
-  (19,18,'Built new avenues for collaboration and knowledge sharing during an IT reorganization/centralization by founding a campus-wide web developers group',NULL);
+  (19,18,'Built new avenues for collaboration and knowledge sharing during an IT reorganization/centralization by founding a campus-wide web developers group',NULL),
+  (20,24,'Elected to Vice President from 2011-2013 and President from 2013 to present',NULL),
+  (21,20,'Facilitated educational sessions for incoming students covering implicit bias, microaggressions, intent vs. impact, and intersectionality.',NULL),
+  (22,19,'Compiled campus responses to the <a href=\"https://www.campusprideindex.org/\" target=\"_blank\" data-category=\"External Link\" data-action=\"Campus Pride Index\">Campus Pride Index</a> survey in 2007, 2008, and 2016, with input from 20+ campus offices.',1),
+  (23,19,'Provided actionable recommendations on how to increase Campus Pride Index ranking by improving the campus climate in ways small and large',2),
+  (24,19,'Redesigned LGBT Resources webpage (2008), prepared website content for LGBT Center dedication (2010)',3);
 /*!40000 ALTER TABLE `bullets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,7 +67,10 @@ INSERT INTO `departments` VALUES
   (6,3,'O&rsquo;Reilly Media',NULL,'https://www.oreilly.com/conferences/'),
   (7,1,'Executive Education','Weatherhead School of Management','https://weatherhead.case.edu/executive-education/'),
   (8,4,'Code PaLOUsa, Inc.',NULL,'http://www.codepalousa.com/'),
-  (9,1,'Web Developers Group','University Technology','https://www.case.edu/utech/');
+  (9,1,'University Technology',NULL,'https://www.case.edu/utech/'),
+  (10,1,'LGBT Center',NULL,'https://www.case.edu/lgbt/'),
+  (11,1,'Office of Multicultural Affairs',NULL,'https://students.case.edu/departments/oma/'),
+  (14,5,'University View Condominium Association',NULL,NULL);
 /*!40000 ALTER TABLE `departments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -76,7 +84,8 @@ INSERT INTO `organizations` VALUES
   (1,'Case Western Reserve University','10900 Euclid Avenue',NULL,'Cleveland','OH','44106'),
   (2,'HighEdWeb Professionals','312 W. Commercial St.',NULL,'East Rochester','NY','14445'),
   (3,'O&rsquo;Reilly Media','1005 Gravenstein Highway North',NULL,'Sebastopol','CA','95472'),
-  (4,'Code PaLOUsa, Inc.','',NULL,'Louisville','KY','40219');
+  (4,'Code PaLOUsa, Inc.','',NULL,'Louisville','KY','40219'),
+  (5,'University View Condominium Association',NULL,NULL,'Cleveland','OH','44106');
 /*!40000 ALTER TABLE `organizations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -249,9 +258,10 @@ UNLOCK TABLES;
 LOCK TABLES `tenure_types` WRITE;
 /*!40000 ALTER TABLE `tenure_types` DISABLE KEYS */;
 INSERT INTO `tenure_types` VALUES
-  (1,'Experience','experience',NULL,'',''),
-  (2,'Education','education',NULL,'','\0'),
-  (3,'Professional Development','professional-development',NULL,'\0','\0');
+  (1,'Experience','experience',1,'',''),
+  (2,'Education','education',2,'','\0'),
+  (3,'Professional Development','professional-development',3,'\0','\0'),
+  (4,'Volunteer Experience','volunteer-experience',4,'\0','');
 /*!40000 ALTER TABLE `tenure_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -278,7 +288,10 @@ INSERT INTO `tenures` VALUES
   (14,3,8,'Code PaLOUsa conference 2011','code-palousa-2011','Louisville, KY',NULL,'http://lanyrd.com/2011/codepalousa/','2011-03-01','2011-03-01','\0'),
   (15,1,2,'Software Developer','software-developer','Analyst/Programmer 2',NULL,NULL,'2008-06-01','2012-10-01','\0'),
   (16,1,2,'Training and Support Manager','training-and-support-manager',NULL,NULL,NULL,'2007-05-21','2008-06-01','\0'),
-  (18,3,9,'Founder','founder',NULL,NULL,NULL,'2016-09-16',NULL,'\0');
+  (18,4,9,'Web Developers Group','web-developers-group','Founder',NULL,NULL,'2016-09-16',NULL,'\0'),
+  (19,4,10,'LGBTQA Committee','lgbtqa-committee','Member',NULL,'https://case.edu/lgbt/committee/','2007-08-01',NULL,'\0'),
+  (20,4,11,'Diversity 360','diversity-360','Facilitator',NULL,'https://students.case.edu/diversity/training/diversity360/','2016-02-03',NULL,'\0'),
+  (24,4,14,'Board Member','board-member',NULL,NULL,NULL,'2011-01-01',NULL,'\0');
 /*!40000 ALTER TABLE `tenures` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

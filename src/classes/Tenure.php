@@ -140,7 +140,7 @@ class Tenure {
     "MonthYearOrPresent(start) start, MonthYearOrPresent(end) end, " .
     "TIMESTAMPDIFF(MONTH, start, COALESCE(end, NOW())) AS months " .
     "FROM tenures ";
-  const ORDER  = " ORDER BY COALESCE(end, '2099-01-01') DESC ";
+  const ORDER  = " ORDER BY COALESCE(end, '2099-01-01') DESC, tenures.start DESC ";
 
   public static function getAll() {
     $arr = array();

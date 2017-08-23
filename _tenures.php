@@ -38,7 +38,7 @@
             if($tenure->department()->parent()) 
               echo ", {$tenure->department()->parent()}";
             if($tenure->department()->organization() && $tenure->department()->organization()->name() != $tenure->department()->name()) {
-              echo $tenure->department()->parent() ? "<br />\n                " : '';
+              echo $tenure->department()->parent() ? "<br />\n                " : ', ';
               echo $tenure->department()->organization()->name();
             }
             if($tenure->department()->organization()->city())

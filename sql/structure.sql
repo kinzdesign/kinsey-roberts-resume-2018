@@ -66,7 +66,7 @@ DROP TABLE IF EXISTS `organizations`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `organizations` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) NOT NULL,
+  `name` varchar(40) NOT NULL,
   `street1` varchar(30) DEFAULT NULL,
   `street2` varchar(30) DEFAULT NULL,
   `city` varchar(30) DEFAULT NULL,
