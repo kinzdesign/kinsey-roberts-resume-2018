@@ -13,6 +13,16 @@ function download_page($path) {
   echo "   > created /static{$path}\n";
 }
 
+function copy_page($from, $to) {
+  // ensure directory exists
+  $dir = "../static{$to}";
+  if(!file_exists($dir))  
+    mkdir($dir, 0777, true);
+  // download and save contents to static
+  copy("../static{$from}index.html", "../static{$to}index.html");
+  echo "   > copied  /static{$from} to /static{$to}\n";
+}
+
 function endswith($haystack, $needle) {
     $h = strlen($haystack);
     $n = strlen($needle);
@@ -47,12 +57,12 @@ foreach ((new DirectoryIterator("$cwd/../assets/pdfs/")) as $file)
   if ($file->getExtension() == 'pdf')
     download_page('/pdf/' . substr($file->getFilename(), 0, -4) . '/');
 // build employer pages
-download_page('/23andme/');
-download_page('/amazon/');
-download_page('/change-org/');
-download_page('/facebook/');
-download_page('/google/');
-download_page('/microsoft/');
+copy_page('/', '/23andme/');
+copy_page('/', '/amazon/');
+copy_page('/', '/change-org/');
+copy_page('/', '/facebook/');
+copy_page('/', '/google/');
+copy_page('/', '/microsoft/');
 
 // copy assets
 exec("xcopy /I /S /H /Y /C {$cwd}\\..\\assets {$cwd}\\..\\static\\assets");
