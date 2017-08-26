@@ -106,3 +106,4 @@
             </address>
             <p>Last Edited on 2017-08-26</p>
           </section>
+<?php Page::renderBottom();
