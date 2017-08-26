@@ -97,12 +97,12 @@
 <section>
   <h3>Contacting Us</h3>
   <p>If there are any questions regarding this privacy policy, you may contact us using the information below.</p>
-  <p>
+  <address>
     Kinsey Roberts<br/>
     1494 E 115th St #9<br/>
     Cleveland, OH 44106<br/>
     United States<br/>
     <a href="mailto:kinsey.q.roberts@gmail.com" data-category="Contact" data-action="Privacy Policy - Email">kinsey.q.roberts@gmail.com</a>
-  </p>
+  </address>
   <p>Last Edited on 2017-08-26</p>
 </section>
