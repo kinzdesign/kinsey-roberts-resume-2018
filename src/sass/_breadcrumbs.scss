@@ -1,5 +1,7 @@
 $arrow-size: 30px !default;
-$breadcrumb-background-color: $brand-info !default;
+$breadcrumb-background-color: $brand-warning !default;
+$breadcrumb-background-start: 38% !default;
+$breadcrumb-background-multiplier: 3 !default;
 // adapted from http://techinterviewpuzzles.appspot.com/articles/CSS/6-graceful-css-breadcrumb-Navigation-designs
 .breadcrumb { 
   list-style: none; 
@@ -48,7 +50,7 @@ $breadcrumb-background-color: $brand-info !default;
 
     // region colors
     @for $i from 1 through 4 {
-      $nth-pct: 50 + ($i * 3);
+      $nth-pct: $breadcrumb-background-start + ($i * $breadcrumb-background-multiplier);
       $nth-bg: lighten($breadcrumb-background-color, $nth-pct);
       &:nth-child(#{$i}) a {
          background: $nth-bg; 
