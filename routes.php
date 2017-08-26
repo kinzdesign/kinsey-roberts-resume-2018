@@ -30,8 +30,12 @@
     }
     // handle PDF viewers
     else if ($arg1 == 'pdf') {
-        Page::$params['pdf'] = $_GET['arg2'];
-        return '/_pdf.php';
+      Page::$params['pdf'] = $_GET['arg2'];
+      return '/_pdf.php';
+    }
+    // handle privacy page
+    else if ($arg1 == 'privacy') {
+      return '/_privacy.php';
     }
     // otherwise, first arg is tenure type
     else

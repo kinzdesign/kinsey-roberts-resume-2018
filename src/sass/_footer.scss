@@ -1,0 +1,19 @@
+.footer {
+  width: 100%;
+  padding: 1.5em 0;
+  background-color: black;
+  color: white;
+  font-size: $font-size-small;
+
+  a, a:hover, a:active, a:link, a:visited {
+    color: white;
+  }
+
+  .footer-center {
+    text-align: center;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+}
