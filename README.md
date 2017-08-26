@@ -37,7 +37,6 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
 * design
     * favicon
     * topnav
-    * fix breadcrumbs on mobile (maybe just revert to default layout?)
 * technical
     * Schema.org markup
     * critical path optimization
