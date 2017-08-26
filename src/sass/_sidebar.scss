@@ -1,7 +1,15 @@
 .sidebar {
+  .panel-group {
+    border-radius: $border-radius-base;
+  }
+  .panel-group, .panel-heading {
+    border: 1px solid #f0f0f0; // lighten($brand-primary, $brand-primary-max-lighten - 3);
+  }
   .panel-heading {
+    border-radius: 0;
     padding: 4px;
     font-size: $font-size-h5;
+    background-color: #f5f5f5; // lighten($brand-primary, $brand-primary-max-lighten);
 
     .fa {
       font-size: 0.7em;

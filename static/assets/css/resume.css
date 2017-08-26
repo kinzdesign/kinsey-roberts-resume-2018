@@ -3933,9 +3933,15 @@ body {
       .breadcrumb li a:hover:after {
         border-left-color: #0d47a1 !important; }
 
+.sidebar .panel-group {
+  border-radius: 4px; }
+.sidebar .panel-group, .sidebar .panel-heading {
+  border: 1px solid #f0f0f0; }
 .sidebar .panel-heading {
+  border-radius: 0;
   padding: 4px;
-  font-size: 15px; }
+  font-size: 15px;
+  background-color: #f5f5f5; }
   .sidebar .panel-heading .fa {
     font-size: 0.7em;
     margin: 0 5px;
