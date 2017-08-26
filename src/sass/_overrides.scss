@@ -21,6 +21,8 @@ $brand-info:            #0d47a1 !default; // blue   900
 $brand-warning:         #e65100 !default; // orange 900
 $brand-danger:          #b71c1c !default; // red    900
 
+// lightening $brand-primary beyond this level yields white
+$brand-primary-max-lighten: 65%;
 
 // //== Scaffolding
 // //
