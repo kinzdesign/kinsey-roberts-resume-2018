@@ -3986,4 +3986,17 @@ body {
 .list-tenure-bullets > li {
   margin-top: 8px; }
 
+.footer {
+  width: 100%;
+  padding: 1.5em 0;
+  background-color: black;
+  color: white;
+  font-size: 13px; }
+  .footer a, .footer a:hover, .footer a:active, .footer a:link, .footer a:visited {
+    color: white; }
+  .footer .footer-center {
+    text-align: center; }
+  .footer .footer-right {
+    text-align: right; }
+
 /*# sourceMappingURL=/assets/css/resume.css.map */

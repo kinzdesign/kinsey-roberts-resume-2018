@@ -6,9 +6,11 @@
 <?php } ?>
       </div>
     </div>
+<?php Page::renderPartial('layout', 'footer'); ?>
+
 <?php 
-  if(!Page::isStatic())
-    Page::renderPartial('layout', 'breakpoints'); 
+  // if(!Page::isStatic())
+  //   Page::renderPartial('layout', 'breakpoints'); 
   Page::renderPartial('layout', 'scripts'); 
 ?>
   </body>
