@@ -1,3 +1,5 @@
+$offcanvas-mobile-width: 95% !default;
+$offcanvas-transition: all .25s ease-out;
 /*
  * Style tweaks
  * --------------------------------------------------
@@ -6,17 +8,14 @@ html,
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
-
 /*
  * Off Canvas
  * --------------------------------------------------
  */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: $screen-sm) {
   .row-offcanvas {
     position: relative;
-    -webkit-transition: all .25s ease-out;
-         -o-transition: all .25s ease-out;
-            transition: all .25s ease-out;
+    @include transition($offcanvas-transition);
   }
 
   .row-offcanvas-right {
@@ -29,25 +28,50 @@ body {
 
   .row-offcanvas-right
   .sidebar-offcanvas {
-    right: -50%; /* 6 columns */
+    right: -$offcanvas-mobile-width;
   }
 
   .row-offcanvas-left
   .sidebar-offcanvas {
-    left: -50%; /* 6 columns */
+    left: -$offcanvas-mobile-width;
   }
 
   .row-offcanvas-right.active {
-    right: 50%; /* 6 columns */
+    right: $offcanvas-mobile-width;
   }
 
   .row-offcanvas-left.active {
-    left: 50%; /* 6 columns */
+    left: $offcanvas-mobile-width;
   }
 
   .sidebar-offcanvas {
     position: absolute;
     top: 0;
-    width: 50%; /* 6 columns */
+    width: $offcanvas-mobile-width;
+  }
+}
+
+.btn-offcanvas {
+  margin-top: -2em;
+  padding: 0.5em;
+  padding-top: 1.75em;
+
+  &:focus {
+    border-width: 0;
+    outline: none;
+  }
+  &:before {
+    content: 'Show ';
+  }
+}
+
+.row-offcanvas.active .btn-offcanvas {
+  @include transition($offcanvas-transition);
+  @include rotate(-90deg);
+  margin-top: 2em;
+  padding-top: 2.75em;
+
+  &:before {
+    content: 'Hide ';
   }
 }

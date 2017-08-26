@@ -13,7 +13,7 @@
       <div class="row row-offcanvas row-offcanvas-right">
         <main class="col-xs-12 col-sm-9">
           <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+            <button type="button" class="btn btn-warning btn-xs btn-offcanvas" data-toggle="offcanvas"><?php echo Page::$skillsHeader; ?></button>
           </p>
 <?php } else { ?>
       <div class="row">
