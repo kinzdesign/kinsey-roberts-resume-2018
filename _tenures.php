@@ -16,6 +16,9 @@
     $headers = TenureType::getAll();
     Page::$showTopnav = false;
     Page::$showBreadcrumbs = false;
+    // show all skills
+    Page::$skills = Skill::getAll();
+    Page::$skillsHeader = 'Skills';
   }
   Page::renderTop();
   foreach ($headers as $header) {

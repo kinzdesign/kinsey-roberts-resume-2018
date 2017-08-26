@@ -7,8 +7,8 @@ class Page {
   public static $title;
   public static $cssFile = 'resume';
   public static $skills = false;
+  public static $skillsHeader = 'Skills Used';
   public static $showBreadcrumbs = true;
-  public static $showSidebar = true;
   public static $showTopnav = true;
   public static $params = array();
   
@@ -16,7 +16,10 @@ class Page {
   public static $jsJQuery = true;
   public static $jsResume = true;
 
-
+  public static function showSidebar() {
+   return Page::$skills && count(Page::$skills) > 0;
+  }
+  
   public static function isStatic() {
     return isset($_GET['static']);
   }

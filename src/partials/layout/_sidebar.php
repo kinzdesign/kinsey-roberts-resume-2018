@@ -7,7 +7,7 @@
   $prevType = -1;
 ?>
           <aside class="sidebar">
-            <h4>Skills<?php if($hadSkills) echo ' Used'; ?></h4>
+            <h4><?php echo Page::$skillsHeader; ?></h4>
             <div class="panel-group" role="tablist" aria-multiselectable="true">
 <?php
   foreach (Page::$skills as $skill) {

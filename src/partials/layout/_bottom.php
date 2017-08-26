@@ -1,5 +1,5 @@
         </main>
-<?php if(Page::$showSidebar) { ?>
+<?php if(Page::showSidebar()) { ?>
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
 <?php Page::renderPartial('layout', 'sidebar'); ?>
         </div>

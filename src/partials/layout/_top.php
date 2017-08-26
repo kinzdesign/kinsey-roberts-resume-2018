@@ -9,7 +9,7 @@
 <?php Page::renderPartial('layout', 'gtm-body'); ?>
 <?php Page::renderPartial('layout', 'topnav'); ?>
     <div class="container">
-<?php if(Page::$showSidebar) { ?>
+<?php if(Page::showSidebar()) { ?>
       <div class="row row-offcanvas row-offcanvas-right">
         <main class="col-xs-12 col-sm-9">
           <p class="pull-right visible-xs">
