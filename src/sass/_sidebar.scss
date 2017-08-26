@@ -1,4 +1,10 @@
 .sidebar {
+  @media screen and (min-width: $screen-sm) {
+    h3 {
+      font-size: $font-size-h4;
+    }
+  }
+
   .panel-group {
     border-radius: $border-radius-base;
   }

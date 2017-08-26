@@ -38,9 +38,6 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
     * favicon
     * topnav
     * fix breadcrumbs on mobile (maybe just revert to default layout?)
-    * make sidebar wider on mobile
-    * fix "Toggle nav" text for sidebar button
-    * on project (and tenure?) pages @ xs breakpoint: render skills in body instead of off-canvas sidebar
 * technical
     * Schema.org markup
     * critical path optimization

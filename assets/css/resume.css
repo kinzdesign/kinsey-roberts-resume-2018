@@ -3951,6 +3951,9 @@ body {
       .breadcrumb li a:hover:after {
         border-left-color: #e65100 !important; }
 
+@media screen and (min-width: 768px) {
+  .sidebar h3 {
+    font-size: 19px; } }
 .sidebar .panel-group {
   border-radius: 4px; }
 .sidebar .panel-group, .sidebar .panel-heading {

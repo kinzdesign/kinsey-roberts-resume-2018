@@ -19,6 +19,7 @@
     // show all skills
     Page::$skills = Skill::getAll();
     Page::$skillsHeader = 'Skills';
+    Page::$offCanvasSidebar = true;
   }
   Page::renderTop();
   foreach ($headers as $header) {
