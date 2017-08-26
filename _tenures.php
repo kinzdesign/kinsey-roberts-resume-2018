@@ -62,18 +62,24 @@
                     ?></div>
                   </div>
                   <div class="tenure-title<?php if(!$hasBullets) echo ' subtle'; ?>">
-                    <a href="<?php 
-                      echo $tenure->url();
-                      if($tenure->hasUrl())
-                        echo "\" target=\"_blank";
-                    ?>" data-category="Tenures<?php if(isset($type) && $type) echo " - {$type->name()}" ?>" data-action="Tenure Click - <?php echo $tenure->name(); ?>">
-                      <?php 
+<?php     if($tenure->showLink() || $tenure->hasUrl()) {
+            echo '                    <a href="';
+            echo $tenure->url();
+            if($tenure->hasUrl())
+              echo '" target="_blank';
+            echo '" data-category="Tenures';
+            if(isset($type) && $type)
+              echo " - {$type->name()}";
+            $external = $tenure->hasUrl() ? ' (external)' : '';
+            echo "\" data-action=\"Tenure Click{$external} - {$tenure->name()}\">";
+          } 
           echo $tenure->name(); 
           if($tenure->category()) 
             echo " - {$tenure->category()}";
-          echo "\n";
-                      ?>
-                    </a>
+          if($tenure->showLink() || $tenure->hasUrl())
+            echo '</a>';
+?>
+
                   </div>
 <?php     if($tenure->synopsis())
                       echo "                  <p class=\"tenure-synopsis\">{$tenure->synopsis()}</p>\n";  ?>

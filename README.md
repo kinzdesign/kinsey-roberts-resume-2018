@@ -38,6 +38,7 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
 * design
     * favicon
     * topnav
+    * suppress sidebar on tenure/project pages w/o associated skills (e.g. /volunteer-experience/board-member/)
 * technical
     * Schema.org markup
     * critical path optimization

@@ -124,12 +124,26 @@ class Tenure {
     return $this->projects;
   }
 
+  public function hasPartial() {
+    return Page::partialExists('tenure', $this->slug());
+  }
+
+  public function showLink() {
+    return 
+      $this->synopsis() ||
+      $this->hasPartial() || 
+      ($this->bullets() && count($this->bullets()) > 0) ||
+      ($this->projects() && count($this->projects()) > 0);
+  }
+
   public function hasUrl() {
     return !(!$this->url);
   }
 
   public function url() {
-    return $this->url ?? ("/{$this->type()->slug()}/{$this->slug()}/" . Page::cacheBreaker());
+    if($this->showLink())
+      return "/{$this->type()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
+    return $this->url;
   }
 
   /*

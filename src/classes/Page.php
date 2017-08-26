@@ -43,6 +43,13 @@ class Page {
     self::renderPartial('layout', 'bottom');
   }
 
+  public static function partialExists($dir, $name) {
+    // compute path
+    $path = "{$_SERVER['DOCUMENT_ROOT']}/src/partials/{$dir}/_{$name}.php";
+    // return whether exists
+    return file_exists($path);
+  }
+
   public static function renderPartial($dir, $name, $prefix = false, $suffix = false) {
     // compute path
     $path = "{$_SERVER['DOCUMENT_ROOT']}/src/partials/{$dir}/_{$name}.php";
