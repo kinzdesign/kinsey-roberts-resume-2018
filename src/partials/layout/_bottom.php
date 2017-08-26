@@ -6,6 +6,10 @@
 <?php } ?>
       </div>
     </div>
-<?php Page::renderPartial('layout', 'scripts'); ?>
+<?php 
+  if(!Page::isStatic())
+    Page::renderPartial('layout', 'breakpoints'); 
+  Page::renderPartial('layout', 'scripts'); 
+?>
   </body>
 </html>
