@@ -38,8 +38,8 @@
           </button>
           <a class="navbar-brand" href="/" data-category="Topnav" data-action="Click - Home">Kinsey Roberts</a>
         </div>
-<?php if(Page::$showTopnav) { ?>
         <div class="collapse navbar-collapse" id="navbar-collapse">
+<?php if(Page::$showTopnav) { ?>
           <ul class="nav navbar-nav">
 <?php   foreach(TenureType::getAll() as $header) { 
           if($header->showInNav()) {
@@ -60,6 +60,14 @@
         } // end header ?>
           </ul>
 <?php } ?>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="mailto:kinsey.q.roberts@gmail.com" data-category="Contact" data-action="Topnav - Email">
+                <i class="fa fa-envelope-o" title="Email"></i>
+                kinsey.q.roberts@gmail.com
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>

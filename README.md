@@ -8,7 +8,6 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
 
 ## TO-DO
 * content
-    * contact information
     * tenure partials
         * bs-biology
         * ms-computer-science
