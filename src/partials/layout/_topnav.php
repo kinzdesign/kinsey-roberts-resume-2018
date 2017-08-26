@@ -57,7 +57,9 @@
               </ul>
             </li>
 <?php     }
-        } // end header ?>
+        } // end header
+        // add skills
+        navbarSimpleLink('/skills/', 'Skills'); ?>
           </ul>
 <?php } ?>
           <ul class="nav navbar-nav navbar-right">
