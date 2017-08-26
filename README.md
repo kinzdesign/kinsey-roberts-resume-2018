@@ -35,9 +35,11 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
         * server-migration
         * hobsons-admissions
 * design
-    * favicon
     * chart colors?
 * technical
     * Schema.org markup
     * critical path optimization
     * remarketing tags
+    * DNT for GTM embed
+    * DNT for FontAwesome CDN
+    * DNT for Google CDN

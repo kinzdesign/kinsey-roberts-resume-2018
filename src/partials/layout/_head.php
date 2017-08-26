@@ -17,3 +17,5 @@
         echo Page::$title . ' | ';
       echo 'Kinsey Roberts';
     ?></title>
+<?php Page::renderPartial('layout', 'favicons'); ?>
+

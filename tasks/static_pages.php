@@ -66,4 +66,8 @@ copy_page('/', '/microsoft/');
 
 // copy assets
 exec("xcopy /I /S /H /Y /C {$cwd}\\..\\assets {$cwd}\\..\\static\\assets");
-echo "   > copied assets\n";
+echo "   > copied  /assets/ to /static/assets/\n";
+
+// copy favicon
+copy("../favicon.ico", "../static/favicon.ico");
+echo "   > copied  /favicon.ico to /static/favicon.ico\n";
