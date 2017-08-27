@@ -21,6 +21,7 @@ def compile_assets()
 
   # compile javascript
   concat_javascript(webroot, "resume", git)
+  concat_javascript(webroot, "gtm", git)
 
   # update timestamp to expire caches
   update_timestamp(webroot, git)
