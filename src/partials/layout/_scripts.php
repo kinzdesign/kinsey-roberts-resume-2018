@@ -1,10 +1,10 @@
-<?php // use LABjs for parallel JS loading, CDN with local fallback ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/labjs/2.0.3/LAB.min.js"></script>
-    <script>window.$LAB || document.write('<script src="/assets/js/vendor/LAB.min.js"><\/script>')</script>
+<?php // use LABjs for parallel JS loading, use local fallback or if DNT specified ?>
+    <script>if(!_dntEnabled()) document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/labjs/2.0.3/LAB.min.js"><\/script>');</script>
+    <script>window.$LAB || document.write('<script src="/assets/js/vendor/LAB.min.js"><\/script>');</script>
 <?php 
 
   // register FontAwesome CDN loader
-  if(Page::$jsFontAwesome)
+  if(Page::$jsFontAwesome) 
     Page::registerScript('https://use.fontawesome.com/ced7440677.js');
 
 ?>
