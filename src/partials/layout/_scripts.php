@@ -34,11 +34,16 @@
         }   
         
         if (idx == null) idx = 0;  
-        $LAB.script(scripts.src[idx]).wait(testAndFallback);
-        var fallback_timeout = setTimeout(testAndFallback, scripts.timeout); 
+<?php # don't load external scripts if DNT enabled ?>
+        if(_dntEnabled() && scripts.src[idx].startsWith('http')) {
+          loadOrFallback(scripts,idx+1);
+        } else {
+          $LAB.script(scripts.src[idx]).wait(testAndFallback);
+          var fallback_timeout = setTimeout(testAndFallback, scripts.timeout); 
+        }
       }
       loadOrFallback({
-        src: [  "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js",
+        src: [ "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js",
           "/assets/js/vendor/jquery.min.js" ],
         tester: function() { jQuery(""); },
         success: function() {
