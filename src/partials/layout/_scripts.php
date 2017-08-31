@@ -1,13 +1,6 @@
 <?php // use LABjs for parallel JS loading, use local fallback or if DNT specified ?>
     <script>if(!_dntEnabled()) document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/labjs/2.0.3/LAB.min.js"><\/script>');</script>
     <script>window.$LAB || document.write('<script src="/assets/js/vendor/LAB.min.js"><\/script>');</script>
-<?php 
-
-  // register FontAwesome CDN loader
-  if(Page::$jsFontAwesome) 
-    Page::registerScript('https://use.fontawesome.com/ced7440677.js');
-
-?>
     <script>
 <?php 
   // jQuery (necessary for Bootstrap's JavaScript plugins), with local fallback 
@@ -64,12 +57,16 @@
   } // end jQuery
 
   // parallel load any remaining scripts
-  if(count(Page::$scripts) > 0) {
+  if(count(Page::$scripts) > 0 || Page::$jsFontAwesome) {
     echo '      $LAB';
     // emit each script
     foreach (Page::$scripts as $script) {
       echo "\r\n        .script('{$script}')";
     }
+    // emit FontAwesome CDN loader, respecting DNT
+    if(Page::$jsFontAwesome) 
+      echo "\r\n        .script(_dntEnabled() ? '/assets/js/font-awesome.js' : 'https://use.fontawesome.com/ced7440677.js')";
+
     echo ';';
   }
 ?>
