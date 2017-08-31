@@ -36,7 +36,6 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
         * hobsons-admissions
 * design
     * chart colors?
-    * footer margin-top
 * technical
     * Schema.org markup
     * critical path optimization
