@@ -1,13 +1,6 @@
-<?php // use LABjs for parallel JS loading, CDN with local fallback ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/labjs/2.0.3/LAB.min.js"></script>
-    <script>window.$LAB || document.write('<script src="/assets/js/vendor/LAB.min.js"><\/script>')</script>
-<?php 
-
-  // register FontAwesome CDN loader
-  if(Page::$jsFontAwesome)
-    Page::registerScript('https://use.fontawesome.com/ced7440677.js');
-
-?>
+<?php // use LABjs for parallel JS loading, use local fallback or if DNT specified ?>
+    <script>if(!_dntEnabled()) document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/labjs/2.0.3/LAB.min.js"><\/script>');</script>
+    <script>window.$LAB || document.write('<script src="/assets/js/vendor/LAB.min.js"><\/script>');</script>
     <script>
 <?php 
   // jQuery (necessary for Bootstrap's JavaScript plugins), with local fallback 
@@ -34,11 +27,16 @@
         }   
         
         if (idx == null) idx = 0;  
-        $LAB.script(scripts.src[idx]).wait(testAndFallback);
-        var fallback_timeout = setTimeout(testAndFallback, scripts.timeout); 
+<?php # don't load external scripts if DNT enabled ?>
+        if(_dntEnabled() && scripts.src[idx].startsWith('http')) {
+          loadOrFallback(scripts,idx+1);
+        } else {
+          $LAB.script(scripts.src[idx]).wait(testAndFallback);
+          var fallback_timeout = setTimeout(testAndFallback, scripts.timeout); 
+        }
       }
       loadOrFallback({
-        src: [  "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js",
+        src: [ "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js",
           "/assets/js/vendor/jquery.min.js" ],
         tester: function() { jQuery(""); },
         success: function() {
@@ -59,12 +57,16 @@
   } // end jQuery
 
   // parallel load any remaining scripts
-  if(count(Page::$scripts) > 0) {
+  if(count(Page::$scripts) > 0 || Page::$jsFontAwesome) {
     echo '      $LAB';
     // emit each script
     foreach (Page::$scripts as $script) {
       echo "\r\n        .script('{$script}')";
     }
+    // emit FontAwesome CDN loader, respecting DNT
+    if(Page::$jsFontAwesome) 
+      echo "\r\n        .script(_dntEnabled() ? '/assets/js/font-awesome.js' : 'https://use.fontawesome.com/ced7440677.js')";
+
     echo ';';
   }
 ?>
