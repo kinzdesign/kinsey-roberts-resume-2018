@@ -91,7 +91,7 @@
               echo " - {$type->name()}";
             $external = $tenure->hasUrl() ? ' (external)' : '';
             echo "\" data-action=\"Tenure Click{$external} - {$tenure->name()}\">";
-            if($tenure->type()->emitJobTitle() && !$tenure->end())
+            if($tenure->type()->emitJobTitle() && $tenure->end() == 'present')
               echo '<span itemprop="jobTitle">';
           } 
           echo $tenure->name(); 
