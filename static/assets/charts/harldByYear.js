@@ -3,25 +3,36 @@ google.charts.setOnLoadCallback(drawChartHarldByYear);
 
 function drawChartHarldByYear() {
   var data = google.visualization.arrayToDataTable([
-    ['Year', 'Packages', 'Work Orders', 'Ledger Entries', 'Access Badges', 'Keys'],
-    ['2008', 51005,  9868,  7570,    0,    0],
-    ['2009', 51349, 10120, 10178, 6265,    0],
-    ['2010', 52167, 13205, 10784, 7840, 4385],
-    ['2011', 63528, 13036, 12982, 8120, 4623],
-    ['2012', 69527, 15219, 16718, 7591, 4251],
-    ['2013', 84938, 15980, 17266, 8476, 4937]
+    ['Fiscal Year', 'Packages', 'Work Orders', 'Ledger Entries', 'Access Badges', 'Keys'],
+    ['FY08', 51005,  9868,  7570,    0,    0],
+    ['FY09', 51349, 10120, 10178, 6265,    0],
+    ['FY10', 52167, 13205, 10784, 7840, 4385],
+    ['FY11', 63528, 13036, 12982, 8120, 4623],
+    ['FY12', 69527, 15219, 16718, 7591, 4251],
+    ['FY13', 84938, 15980, 17266, 8476, 4937]
   ]);
-
-  var chart = new google.visualization.AreaChart(document.getElementById('chart_harld_by_year'));
+  var chart = new google.visualization.AreaChart(document.getElementById('chart_harldByYear'));
   chart.draw(data, {
-    title: 'HARLD Data Objects per Year',
-    vAxis: {minValue: 0, position: 'after', format: 'short', textPosition: 'in' },
+    title: 'HARLD Data Object Counts per Fiscal Year',
+    vAxis: {
+      minValue: 0,
+      format: 'short', 
+      textPosition: 'in',
+      viewWindowMode: 'maximized'
+    },
     isStacked: true,
-    chartArea: { width: '90%', height: '75%' },
-    legend: { position: 'top', maxLines: 3 }
+    chartArea: { 
+      width: '100%', 
+      height: '75%' 
+    },
+    focusTarget: 'category',
+    colors: ['#1565c0', '#c62828', '#ef6c00', '#558b2f', '#6a1b9a'],
+    legend: { 
+      position: 'top', 
+      maxLines: 3 
+    }
   });
-
-  var table = new google.visualization.Table(document.getElementById('table_harld_by_year'));
+  var table = new google.visualization.Table(document.getElementById('table_harldByYear'));
   table.draw(transposeDateDataTable(data), {
     width: '100%', 
     height: '100%'

@@ -1,3 +1,3 @@
 .sass-cache
 sql/mysql.cnf
-vendor/
+/vendor/

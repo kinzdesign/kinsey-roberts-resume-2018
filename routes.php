@@ -11,20 +11,8 @@
       return '/_tenures.php';
     // process first argument
     $arg1 = $_GET['arg1'];
-    // handle projects
-    if($arg1 == 'projects')
-    {
-      // if present, second argument is project
-      if(isset($_GET['arg2']))
-      {
-        Page::$params['project'] = $_GET['arg2'];
-        return '/_project.php';
-      }
-      // otherwise, list projects
-      return '/_projects.php';
-    }
     // handle skills
-    else if ($arg1 == 'skills')
+    if ($arg1 == 'skills')
     {
       // if present, second argument is skill type
       if(isset($_GET['arg2']))
@@ -39,6 +27,15 @@
       }
       // if only one or two arguments, list skills
       return '/_skills.php';
+    }
+    // handle PDF viewers
+    else if ($arg1 == 'pdf') {
+      Page::$params['pdf'] = $_GET['arg2'];
+      return '/_pdf.php';
+    }
+    // handle privacy page
+    else if ($arg1 == 'privacy') {
+      return '/_privacy.php';
     }
     // otherwise, first arg is tenure type
     else

@@ -7,13 +7,17 @@
     Page::error(404, "We could not find a tenure with slug '{$slug}'.", "Not Found");
   } else { // output contents
     // build title
-    $fullTitle = $tenure->title();
+    $fullTitle = $tenure->name();
     if($tenure->category()) 
       $fullTitle = "$fullTitle - {$tenure->category()}";
+    // add breadcrumbs
+    Page::$breadcrumbs[$tenure->type()->name()] = $tenure->type()->url();
+    Page::$breadcrumbs[$fullTitle] = $tenure->url();
+    Page::$skills = $tenure->skills();
     Page::renderTop("$fullTitle | {$tenure->type()->name()}");
 ?>
           <h2 class="head-tenure"><?php 
-            echo $tenure->title(); 
+            echo $tenure->name(); 
             if($tenure->category()) 
               echo " - {$tenure->category()}";
           ?></h2>
@@ -21,7 +25,7 @@
             <div class="tenure-duration"><?php echo $tenure->duration(); ?></div>
             <div class="tenure-dates"><?php echo $tenure->start(); ?>&ndash;<?php echo $tenure->end(); ?></div>
           </div>
-          <a href="<?php echo $tenure->department()->url(); ?>" target="_blank">
+          <a href="<?php echo $tenure->department()->url(); ?>" target="_blank" data-category="Tenure - <?php echo $tenure->name(); ?>" data-action="Department Click - <?php echo $tenure->department()->name(); ?>">
 <?php     if($tenure->department()->organization()) { ?>
             <span class="tenure-organization"><?php echo $tenure->department()->organization()->name(); ?>,</span>
 <?php     } ?>
@@ -32,9 +36,17 @@
           </a>
           <div class="clearfix"></div>
 <?php   // render static content
-        Page::renderPartial('tenures', $slug, "          <hr/>\n", "\n");
+        if(!Page::renderPartial('tenures', $slug, "          <hr/>\n", "\n")) {
+            // if no partial for this tenure, show bullets
+          if($tenure->bullets()) { ?>
+          <ul class="list-tenure-bullets">
+<?php       foreach($tenure->bullets() as $bullet) { ?>
+            <li><?php echo $bullet->text(); ?></li>
+<?php       } ?>
+          </ul><?php
+          }
+        }
         // render project list
-        require_once($_SERVER['DOCUMENT_ROOT'] . '/src/functions/project_list.php');
         project_list($tenure->projects());
   } // end contents 
   Page::renderBottom();

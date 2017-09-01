@@ -10,13 +10,15 @@ class Tenure {
     $this->type         = $type;
     $this->departmentId = $row['department'];
     $this->department   = $department;
-    $this->title        = $row['title'];
+    $this->name         = $row['name'];
     $this->slug         = $row['slug'];
     $this->category     = $row['category'];
-    $this->notes        = $row['notes'];
+    $this->synopsis     = Page::interpolateLinks($row['synopsis']);
+    $this->url          = $row['url'];
     $this->start        = $row['start'];
     $this->end          = $row['end'];
     $this->months       = $row['months'];
+    $this->showInNav    = $row['showInNav'] == 1;
   }
 
   /*
@@ -26,15 +28,18 @@ class Tenure {
   private $id,
           $typeId, $type,
           $departmentId, $department,
-          $title,
+          $name,
           $slug,
           $category,
-          $notes,
+          $synopsis,
+          $url,
           $start,
           $end,
           $months,
           $bullets,
-          $projects;
+          $projects,
+          $showInNav,
+          $skills;
 
   public function id() {
     return $this->id;
@@ -62,20 +67,27 @@ class Tenure {
     return $this->department;
   }
 
-  public function title() {
-    return $this->title;
+  public function name() {
+    return $this->name;
   }
 
   public function slug() {
     return $this->slug;
   }
 
+  public function skills() {
+    // lazy-load Skill objects
+    if(!$this->skills)
+      $this->skills = Skill::getByTenure($this);
+    return $this->skills;
+  }
+
   public function category() {
     return $this->category;
   }
 
-  public function notes() {
-    return $this->notes;
+  public function synopsis() {
+    return $this->synopsis;
   }
 
   public function start() {
@@ -90,14 +102,12 @@ class Tenure {
     return $this->months;
   }
 
+  public function showInNav() {
+    return $this->showInNav;
+  }
+
   public function duration() {
-    $y = intdiv($this->months, 12);
-    $yLabel = $y > 0 ? 'years' : 'year';
-    $m = $this->months % 12;
-    $mLabel = $m > 0 ? 'months' : 'month';
-    if($m == 0)
-      return "$y $yLabel";
-    return "$y $yLabel, $m $mLabel";
+    return duration_string($this->months());
   }
 
   public function bullets() {
@@ -114,19 +124,37 @@ class Tenure {
     return $this->projects;
   }
 
+  public function hasPartial() {
+    return Page::partialExists('tenure', $this->slug());
+  }
+
+  public function showLink() {
+    return 
+      $this->synopsis() ||
+      $this->hasPartial() || 
+      ($this->bullets() && count($this->bullets()) > 0) ||
+      ($this->projects() && count($this->projects()) > 0);
+  }
+
+  public function hasUrl() {
+    return !(!$this->url);
+  }
+
   public function url() {
-    return "/{$this->type()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
+    if($this->showLink())
+      return "/{$this->type()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
+    return $this->url;
   }
 
   /*
    * data access
    */
 
-  const SELECT = "SELECT id, type, department, title, slug, category, notes, " .
+  const SELECT = "SELECT id, type, department, name, slug, category, synopsis, showInNav, url, " .
     "MonthYearOrPresent(start) start, MonthYearOrPresent(end) end, " .
     "TIMESTAMPDIFF(MONTH, start, COALESCE(end, NOW())) AS months " .
     "FROM tenures ";
-  const ORDER  = " ORDER BY COALESCE(end, '2099-01-01') DESC ";
+  const ORDER  = " ORDER BY COALESCE(end, '2099-01-01') DESC, tenures.start DESC ";
 
   public static function getAll() {
     $arr = array();

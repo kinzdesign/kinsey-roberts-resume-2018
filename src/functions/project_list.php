@@ -11,7 +11,7 @@
 <?php     foreach ($projects as $project) { ?>
               <li>
                 <?php 
-                  echo "<a href=\"{$project->url()}\">{$project->title()}</a>\n";
+                  echo "<a href=\"{$project->url()}\" data-category=\"Project List\" data-action=\"Project Click - {$project->name()}\">{$project->name()}</a>\n";
                 if($project->synopsis())
                   echo "                <div class=\"project-synopsis\">{$project->synopsis()}</div>\n";
                 ?>

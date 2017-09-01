@@ -2,10 +2,17 @@
 @import "bootstrap";
 // IE10 viewport hack for Surface/desktop Windows 8 bug
 @import "ie10-viewport";
-// body padding for fixed navbar at top
-@import "top-navbar-fixed";
+// navbar overrides
+@import "navbar";
 // off-canvas sidebar
 @import "offcanvas";
+// typography overrides
+@import "typography";
+// iconography overrides
+@import "icons";
 
 // section specific styles
-@import "homepage";
+@import "breadcrumbs";
+@import "sidebar";
+@import "tenures";
+@import "footer";

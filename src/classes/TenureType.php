@@ -8,6 +8,8 @@ class TenureType {
     $this->id   = $row['id'];
     $this->name = $row['name'];
     $this->slug = $row['slug'];
+    $this->showInNav    = $row['showInNav'] == 1;
+    $this->showDuration = $row['showDuration'] == 1;
   }
 
   /*
@@ -17,7 +19,9 @@ class TenureType {
   private $id,
           $name,
           $slug,
-          $tenures;
+          $tenures,
+          $showInNav,
+          $showDuration;
 
   public function id() {
     return $this->id;
@@ -31,6 +35,14 @@ class TenureType {
     return $this->slug;
   }
 
+  public function showInNav() {
+    return $this->showInNav;
+  }
+
+  public function showDuration() {
+    return $this->showDuration;
+  }
+
   public function tenures() {
     // lazy-load Tenure array
     if(!$this->tenures)
@@ -41,12 +53,12 @@ class TenureType {
   public function url() {
     return "/{$this->slug()}/" . Page::cacheBreaker();
   }
-
+  
   /*
    * data access
    */
 
-  const SELECT = "SELECT id, name, slug FROM tenure_types ";
+  const SELECT = "SELECT id, name, slug, showInNav, showDuration FROM tenure_types ";
   const ORDER  = " ORDER BY displayorder ";
 
   public static function getAll() {

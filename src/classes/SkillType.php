@@ -6,8 +6,9 @@ class SkillType {
    */
   private function __construct($row, $type = false) {
     $this->id           = $row['id'];
-    $this->name        = $row['name'];
+    $this->name         = $row['name'];
     $this->slug         = $row['slug'];
+    $this->expanded     = $row['expanded'];
   }
 
   /*
@@ -17,6 +18,7 @@ class SkillType {
   private $id,
           $name,
           $slug,
+          $expanded,
           $skills;
 
   public function id() {
@@ -31,6 +33,10 @@ class SkillType {
     return $this->slug;
   }
 
+  public function expanded() {
+    return $this->expanded;
+  }
+
   public function skills() {
     // lazy-load Skill objects
     if(!$this->skills)
@@ -38,11 +44,15 @@ class SkillType {
     return $this->skills;
   }
 
+  public function url() {
+    return "/skills/{$this->slug()}/";
+  }
+
   /*
    * data access
    */
 
-  const SELECT = "SELECT id, name, slug " .
+  const SELECT = "SELECT id, name, slug, expanded " .
     "FROM skill_types ";
   const ORDER  = " ORDER BY displayorder ";
 

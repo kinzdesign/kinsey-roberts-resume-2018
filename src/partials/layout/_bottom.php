@@ -1,16 +1,19 @@
         </main>
-<?php if(Page::$showSidebar) { ?>
+<?php if(Page::showSidebar()) {
+        if(Page::$offCanvasSidebar) { ?>
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+<?php   } else { ?>
+        <div class="col-xs-12 col-sm-3" id="sidebar">
+          <a name="skills"></a>
+<?php   } ?>
 <?php Page::renderPartial('layout', 'sidebar'); ?>
         </div>
 <?php } ?>
       </div>
     </div>
-<?php # jQuery (necessary for Bootstrap's JavaScript plugins), with local fallback ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
-<?php # Latest compiled and minified JavaScript ?>
-    <script src="/assets/js/resume.min.js?ts=<?php Config::echoBuildTime() ?>"></script>
-<?php Page::renderScripts(); ?>
+<?php 
+  Page::renderPartial('layout', 'footer');
+  Page::renderPartial('layout', 'scripts'); 
+?>
   </body>
 </html>

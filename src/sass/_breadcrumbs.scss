@@ -1,0 +1,80 @@
+$breadcrumb-height: 30px !default;
+$breadcrumb-background-color: $brand-warning !default;
+$breadcrumb-background-start: 38% !default;
+$breadcrumb-background-multiplier: 3 !default;
+// adapted from http://techinterviewpuzzles.appspot.com/articles/CSS/6-graceful-css-breadcrumb-Navigation-designs
+.breadcrumb { 
+  list-style: none; 
+  overflow: hidden; 
+  padding-left: 0;
+  li { 
+    float: left; 
+
+    a {
+      color: black;
+      text-decoration: none; 
+      padding: 5px 0 5px (1.5 * $breadcrumb-height);
+      position: relative; 
+      display: block;
+      float: left;
+      height: $breadcrumb-height;
+      
+      &:after, 
+      &:before { 
+        content: " "; 
+        display: block; 
+        width: $breadcrumb-height; 
+        height: $breadcrumb-height;
+        border-radius: 0 100% 100% 0;
+        position: absolute;
+        top: 0;
+        left: 100%;
+      }
+      &:after { 
+        z-index: 2; 
+      }
+      &:before { 
+        border-left: $breadcrumb-height solid white;
+        margin-left: 1px;
+        z-index: 1; 
+      }
+    }
+
+    &:first-child a {
+      padding-left: 10px;
+    }
+
+    // region colors
+    @for $i from 1 through 4 {
+      $nth-pct: $breadcrumb-background-start + ($i * $breadcrumb-background-multiplier);
+      $nth-bg: lighten($breadcrumb-background-color, $nth-pct);
+      &:nth-child(#{$i}) a {
+         background: $nth-bg; 
+
+        &:after { 
+          background-color: $nth-bg; 
+        }
+      }
+    }
+
+    &:last-child a {
+      background: $gray-lighter !important;
+      pointer-events: none;
+      cursor: default;
+
+      &:after {
+        background-color: $gray-lighter;
+      }
+    }
+
+    // hover color
+    a:hover { 
+      background: $breadcrumb-background-color; 
+      color: white;
+      
+      &:after { 
+        background-color: $breadcrumb-background-color !important; 
+      }
+    }
+  }
+}

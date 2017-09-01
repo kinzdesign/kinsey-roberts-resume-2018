@@ -1,0 +1,43 @@
+.department-duration,
+.tenure-date-block {
+  @extend .pull-right;
+  @extend .text-right;
+}
+.tenure-department {
+  font-size: $font-size-h5;
+}
+.tenure-title {
+  font-size: $font-size-h4;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+
+  &.subtle {
+    font-size: $font-size-h5;
+  }
+}
+.tenure-synopsis,
+.tenure-dates {
+  font-size: $font-size-small;
+  margin: 0;
+  font-style: italic;
+}
+.department-duration,
+.tenure-duration {
+  font-weight: bold;
+}
+.list-departments > li {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid #ddd;
+
+  &:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+}
+.list-tenures > li {
+    margin-top: 10px;
+}
+.list-tenure-bullets > li {
+    margin-top: 8px;
+}

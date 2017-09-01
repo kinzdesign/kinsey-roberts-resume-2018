@@ -10,7 +10,7 @@ class Skill {
     $this->type         = $type;
     $this->name         = $row['name'];
     $this->slug         = $row['slug'];
-    $this->synopsis     = $row['synopsis'];
+    $this->synopsis     = Page::interpolateLinks($row['synopsis']);
   }
 
   /*
@@ -68,7 +68,10 @@ class Skill {
 
   const SELECT = "SELECT s.id, s.type, s.name, s.slug, s.synopsis " .
     "FROM skills s INNER JOIN skill_types t ON s.type = t.id ";
-  const ORDER  = " ORDER BY COALESCE(t.displayorder, t.id), s.displayorder ";
+  const ORDER  = " ORDER BY COALESCE(t.displayorder, t.id), COALESCE(s.displayorder, s.id) ";
+
+  const PROJECT_SELECT = self::SELECT . ' WHERE s.id IN (SELECT skill FROM project_skills WHERE project = ?) ' . self::ORDER;
+  const TENURE_SELECT = self::SELECT . ' WHERE s.id IN (SELECT skill FROM project_skills WHERE project IN (SELECT id FROM projects WHERE tenure = ?)) ' . self::ORDER;
 
   public static function getAll() {
     $arr = array();
@@ -101,10 +104,10 @@ class Skill {
     return $arr;
   }
 
+
   public static function getByProjectId($projectId) {
     $arr = array();
-    $sql = self::SELECT . ' WHERE s.id IN (SELECT skill FROM project_skills WHERE project = ?) ' . self::ORDER;
-    $result = Database::execute($sql, $projectId);
+    $result = Database::execute(self::PROJECT_SELECT, $projectId);
     if($result)
       while($row = $result->fetchRow()) 
         $arr[] = new self($row);
@@ -114,11 +117,30 @@ class Skill {
   public static function getByProject($project) {
     $arr = array();
     if($project) {
-      $sql = self::SELECT . ' WHERE s.id IN (SELECT skill FROM project_skills WHERE project = ?) ' . self::ORDER;
-      $result = Database::execute($sql, $project->id(), $project);
+      $result = Database::execute(self::PROJECT_SELECT, $project->id(), $project);
       if($result)
         while($row = $result->fetchRow()) 
           $arr[] = new self($row, false, $project);
+    }
+    return $arr;
+  }
+
+  public static function getByTenureId($tenureId) {
+    $arr = array();
+    $result = Database::execute(self::TENURE_SELECT, $tenureId);
+    if($result)
+      while($row = $result->fetchRow()) 
+        $arr[] = new self($row);
+    return $arr;
+  }
+
+  public static function getByTenure($tenure) {
+    $arr = array();
+    if($tenure) {
+      $result = Database::execute(self::TENURE_SELECT, $tenure->id());
+      if($result)
+        while($row = $result->fetchRow()) 
+          $arr[] = new self($row, false);
     }
     return $arr;
   }

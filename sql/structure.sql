@@ -48,7 +48,7 @@ DROP TABLE IF EXISTS `departments`;
 CREATE TABLE `departments` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `organization` tinyint(3) unsigned NOT NULL,
-  `name` varchar(40) NOT NULL,
+  `name` varchar(60) NOT NULL,
   `parent` varchar(40) DEFAULT NULL,
   `url` varchar(120) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -66,7 +66,7 @@ DROP TABLE IF EXISTS `organizations`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `organizations` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) NOT NULL,
+  `name` varchar(40) NOT NULL,
   `street1` varchar(30) DEFAULT NULL,
   `street2` varchar(30) DEFAULT NULL,
   `city` varchar(30) DEFAULT NULL,
@@ -105,7 +105,7 @@ DROP TABLE IF EXISTS `projects`;
 CREATE TABLE `projects` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `tenure` tinyint(3) unsigned NOT NULL,
-  `title` varchar(160) DEFAULT NULL,
+  `name` varchar(160) DEFAULT NULL,
   `slug` varchar(160) DEFAULT NULL,
   `synopsis` varchar(160) DEFAULT NULL,
   `displayorder` tinyint(3) unsigned DEFAULT NULL,
@@ -128,6 +128,7 @@ CREATE TABLE `skill_types` (
   `name` varchar(55) NOT NULL,
   `slug` varchar(55) NOT NULL,
   `displayorder` tinyint(4) unsigned DEFAULT NULL,
+  `expanded` bit(1) NOT NULL DEFAULT b'0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -166,6 +167,8 @@ CREATE TABLE `tenure_types` (
   `name` varchar(55) NOT NULL,
   `slug` varchar(55) NOT NULL,
   `displayorder` tinyint(3) unsigned DEFAULT NULL,
+  `showInNav` bit(1) NOT NULL DEFAULT b'1',
+  `showDuration` bit(1) NOT NULL DEFAULT b'1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -182,12 +185,14 @@ CREATE TABLE `tenures` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `type` tinyint(3) unsigned NOT NULL,
   `department` tinyint(3) unsigned NOT NULL,
-  `title` varchar(55) NOT NULL,
+  `name` varchar(55) NOT NULL,
   `slug` varchar(55) NOT NULL,
   `category` varchar(55) DEFAULT NULL,
-  `notes` varchar(55) DEFAULT NULL,
+  `synopsis` varchar(160) DEFAULT NULL,
+  `url` varchar(120) DEFAULT NULL,
   `start` date NOT NULL,
   `end` date DEFAULT NULL,
+  `showInNav` bit(1) NOT NULL DEFAULT b'1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`),
   KEY `type` (`type`),

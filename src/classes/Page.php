@@ -3,18 +3,30 @@ class Page {
 
   private static $scripts = array();
 
+  public static $breadcrumbs = array('Home' => '/');
   public static $title;
+  public static $cssFile = 'resume';
   public static $skills = false;
-  public static $showSidebar = true;
+  public static $offCanvasSidebar = false;
+  public static $skillsHeader = 'Skills Used';
+  public static $showBreadcrumbs = true;
   public static $showTopnav = true;
   public static $params = array();
+  
+  public static $jsFontAwesome = true;
+  public static $jsJQuery = true;
+  public static $jsResume = true;
 
+  public static function showSidebar() {
+   return Page::$skills && count(Page::$skills) > 0;
+  }
+  
   public static function isStatic() {
     return isset($_GET['static']);
   }
 
-  public static function cacheBreaker() {
-    return self::isStatic() ? ('?ts=' . Config::getBuildTime()) : '';
+  public static function cacheBreaker($force = false) {
+    return ($force || self::isStatic()) ? ('?ts=' . Config::getBuildTime()) : '';
   }
 
   public static function error($status_code, $message, $title = "Error") { 
@@ -33,6 +45,13 @@ class Page {
 
   public static function renderBottom() {
     self::renderPartial('layout', 'bottom');
+  }
+
+  public static function partialExists($dir, $name) {
+    // compute path
+    $path = "{$_SERVER['DOCUMENT_ROOT']}/src/partials/{$dir}/_{$name}.php";
+    // return whether exists
+    return file_exists($path);
   }
 
   public static function renderPartial($dir, $name, $prefix = false, $suffix = false) {
@@ -65,12 +84,45 @@ class Page {
   }
 
   public static function registerChart($chart) {
-    Page::registerScript("/assets/charts/{$chart}.js?ts=" . Config::getBuildTime());
+    Page::registerScript("/assets/charts/{$chart}.js" . self::cacheBreaker(true));
   }
 
-  public static function renderScripts() {
-    foreach (self::$scripts as $script) {
-      echo "    <script src=\"{$script}\"></script>\n";
-    }
+  // interpoltes links of the form {noun|sulg} or {noun:slug}
+  // e.g. {project|mailroom}  or {tenure:application-developer}
+  public static function interpolateLinks($s) {
+    return preg_replace_callback("/\{([^\}\|:]+)[\|:]([^\}\|:]+)\}/", function ($matches) {
+      // make sure we got matches
+      if($matches && count($matches) > 2) {
+        // switch on  noun
+        switch ($matches[1]) {
+          // return project link
+          case 'project':
+            $project = Project::getBySlug($matches[2]);
+            if($project)
+              return $project->url() . "\" data-category=\"Interpolated Link\" data-action=\"Project Click - {$project->name()}";
+            break;
+          // return skill link
+          case 'skill':
+            $skill = Skill::getBySlug($matches[2]);
+            if($skill)
+              return $skill->url() . "\" data-category=\"Interpolated Link\" data-action=\"Skill Click - {$skill->name()}";
+            break;
+          // return tenure link
+          case 'tenure':
+            $tenure = Tenure::getBySlug($matches[2]);
+            if($tenure)
+              return $tenure->url() . "\" data-category=\"Interpolated Link\" data-action=\"Tenure Click - {$tenure->name()}";
+            break;
+          // return asset link
+          case 'asset':
+            return '/assets/' . $matches[2] . self::cacheBreaker(). "\" data-category=\"Interpolated Link\" data-action=\"Asset Click - {$matches[2]}";
+          // return pdf link
+          case 'pdf':
+            return '/pdf/' . $matches[2] . '/' . self::cacheBreaker() . "\" data-category=\"Interpolated Link\" data-action=\"PDF Click - {$matches[2]}";
+        }
+      }
+      // if not handled, return raw text
+      return $matches[0];
+    }, $s);
   }
 }
