@@ -27,6 +27,7 @@ function drawChartDisplaysByYear() {
       height: '75%' 
     },
     focusTarget: 'category',
+    colors: ['#1565c0', '#c62828', '#ff8f00', '#558b2f'],
     legend: { 
       position: 'top', 
       maxLines: 3 

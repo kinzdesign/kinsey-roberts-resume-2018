@@ -26,6 +26,7 @@ function drawChartHarldByYear() {
       height: '75%' 
     },
     focusTarget: 'category',
+    colors: ['#1565c0', '#c62828', '#ef6c00', '#558b2f', '#6a1b9a'],
     legend: { 
       position: 'top', 
       maxLines: 3 

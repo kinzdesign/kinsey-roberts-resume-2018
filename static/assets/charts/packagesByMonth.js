@@ -90,6 +90,7 @@ function drawChartPackagesByMonth() {
     legend: { 
       position: 'none' 
     },
+    colors: ['#1565c0'],
     chartArea: { 
       width: '100%', 
       height: '80%' 

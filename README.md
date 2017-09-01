@@ -34,8 +34,6 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
         * server-hardening
         * server-migration
         * hobsons-admissions
-* design
-    * chart colors?
 * technical
     * Schema.org markup
     * critical path optimization
