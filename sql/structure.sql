@@ -67,8 +67,7 @@ DROP TABLE IF EXISTS `organizations`;
 CREATE TABLE `organizations` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(40) NOT NULL,
-  `street1` varchar(30) DEFAULT NULL,
-  `street2` varchar(30) DEFAULT NULL,
+  `street` varchar(30) DEFAULT NULL,
   `city` varchar(30) DEFAULT NULL,
   `state` varchar(2) DEFAULT NULL,
   `zip` varchar(5) DEFAULT NULL,
@@ -169,6 +168,9 @@ CREATE TABLE `tenure_types` (
   `displayorder` tinyint(3) unsigned DEFAULT NULL,
   `showInNav` bit(1) NOT NULL DEFAULT b'1',
   `showDuration` bit(1) NOT NULL DEFAULT b'1',
+  `emitJobTitle` bit(1) NOT NULL DEFAULT b'0',
+  `schemaProperty` varchar(45) DEFAULT NULL,
+  `schemaType` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

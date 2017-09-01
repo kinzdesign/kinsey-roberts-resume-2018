@@ -34,21 +34,31 @@
             </li>
 <?php       } ?>
             <li>
-              <div class="tenure-department">
+              <div class="tenure-department" itemscope itemprop="<?php echo $tenure->type()->schemaProperty(); ?>" itemtype="<?php echo $tenure->type()->schemaType(); ?>">
 <?php     if($header->showDuration()) 
             echo "                <div class=\"department-duration\">{$tenure->department()->duration()}</div>\n"; ?>
                 <?php 
-            echo $tenure->department()->name(); 
+            echo "<span itemscope itemprop=\"department\" itemtype=\"http://schema.org/Organization\"><span itemprop=\"name\">{$tenure->department()->name()}"; 
             if($tenure->department()->parent()) 
               echo ", {$tenure->department()->parent()}";
+            echo "</span></span>";
             if($tenure->department()->organization() && $tenure->department()->organization()->name() != $tenure->department()->name()) {
               echo $tenure->department()->parent() ? "<br />\n                " : ', ';
-              echo $tenure->department()->organization()->name();
+              echo "<span itemprop=\"name\">{$tenure->department()->organization()->name()}</span>";
             }
+            if($tenure->department()->url())
+              echo "<span itemprop=\"url\" class=\"hidden\" aria-hidden=\"true\">{$tenure->department()->url()}</span>";
+            echo '<span itemscope itemprop="address" itemtype="http://schema.org/PostalAddress">';
+            if($tenure->department()->organization()->street())
+              echo "<span itemprop=\"streetAddress\" class=\"hidden\" aria-hidden=\"true\">{$tenure->department()->organization()->street()}</span>";
             if($tenure->department()->organization()->city())
-              echo ", {$tenure->department()->organization()->city()}";
+              echo ", <span itemprop=\"addressLocality\">{$tenure->department()->organization()->city()}</span>";
             if($tenure->department()->organization()->state())
-              echo ", {$tenure->department()->organization()->state()}";
+              echo ", <span itemprop=\"addressRegion\">{$tenure->department()->organization()->state()}</span>";
+            if($tenure->department()->organization()->zip())
+              echo "<span itemprop=\"postalCode\" class=\"hidden\" aria-hidden=\"true\">{$tenure->department()->organization()->zip()}</span>";
+            echo "<span itemprop=\"addressCountry\" class=\"hidden\" aria-hidden=\"true\">US</span>";
+            echo '</span>';
                 ?>
 
               </div>            
@@ -76,10 +86,14 @@
               echo " - {$type->name()}";
             $external = $tenure->hasUrl() ? ' (external)' : '';
             echo "\" data-action=\"Tenure Click{$external} - {$tenure->name()}\">";
+            if($tenure->type()->emitJobTitle() && !$tenure->end())
+              echo '<span itemprop="jobTitle">';
           } 
           echo $tenure->name(); 
           if($tenure->category()) 
             echo " - {$tenure->category()}";
+          if($tenure->type()->emitJobTitle() && !$tenure->end())
+            echo '</span>';
           if($tenure->showLink() || $tenure->hasUrl())
             echo '</a>';
 ?>

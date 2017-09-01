@@ -36,7 +36,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/" data-category="Topnav" data-action="Click - Home">Kinsey Roberts</a>
+          <a class="navbar-brand" href="/" data-category="Topnav" data-action="Click - Home">
+            <span itemprop="honorificPrefix" class="hidden">Mx.</span>
+            <span itemprop="givenName">Kinsey</span>
+            <span itemprop="familyName">Roberts</span>
+          </a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
 <?php if(Page::$showTopnav) { ?>
@@ -66,7 +70,7 @@
             <li>
               <a href="mailto:kinsey.q.roberts@gmail.com" data-category="Contact" data-action="Topnav - Email">
                 <i class="fa fa-envelope-o" title="Email"></i>
-                kinsey.q.roberts@gmail.com
+                <span itemprop="email">kinsey.q.roberts@gmail.com</span>
               </a>
             </li>
           </ul>
