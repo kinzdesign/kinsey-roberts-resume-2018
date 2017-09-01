@@ -63,6 +63,7 @@
 <?php     }
         } // end header
         // add skills
+        echo '            ';
         navbarSimpleLink('/skills/', 'Skills'); ?>
           </ul>
 <?php } ?>
