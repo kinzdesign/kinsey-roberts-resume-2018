@@ -10,6 +10,7 @@ class TenureType {
     $this->slug             = $row['slug'];
     $this->showInNav        = $row['showInNav'] == 1;
     $this->showDuration     = $row['showDuration'] == 1;
+    $this->emitJobTitle     = $row['emitJobTitle'] == 1;
     $this->schemaProperty   = $row['schemaProperty'];
     $this->schemaType       = $row['schemaType'];
   }
@@ -24,6 +25,7 @@ class TenureType {
           $tenures,
           $showInNav,
           $showDuration,
+          $emitJobTitle,
           $schemaProperty,
           $schemaType;
 
@@ -45,6 +47,10 @@ class TenureType {
 
   public function showDuration() {
     return $this->showDuration;
+  }
+
+  public function emitJobTitle() {
+    return $this->emitJobTitle;
   }
 
   public function schemaProperty() {
@@ -70,7 +76,7 @@ class TenureType {
    * data access
    */
 
-  const SELECT = "SELECT id, name, slug, showInNav, showDuration, schemaProperty, schemaType FROM tenure_types ";
+  const SELECT = "SELECT id, name, slug, showInNav, showDuration, emitJobTitle, schemaProperty, schemaType FROM tenure_types ";
   const ORDER  = " ORDER BY displayorder ";
 
   public static function getAll() {
