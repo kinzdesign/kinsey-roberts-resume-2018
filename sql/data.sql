@@ -259,7 +259,7 @@ LOCK TABLES `tenure_types` WRITE;
 /*!40000 ALTER TABLE `tenure_types` DISABLE KEYS */;
 INSERT INTO `tenure_types` VALUES
   (1,'Experience','experience',1,'','','','worksFor','http://schema.org/Organization'),
-  (2,'Education','education',2,'','\0','','alumniOf','http://schema.org/EducationalOrganization'),
+  (2,'Education','education',2,'','\0','\0','alumniOf','http://schema.org/EducationalOrganization'),
   (3,'Professional Development','professional-development',3,'\0','\0','\0','affiliation','http://schema.org/Organization'),
   (4,'Volunteer Experience','volunteer-experience',4,'\0','','\0','affiliation','http://schema.org/Organization');
 /*!40000 ALTER TABLE `tenure_types` ENABLE KEYS */;
