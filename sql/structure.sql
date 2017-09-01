@@ -169,6 +169,8 @@ CREATE TABLE `tenure_types` (
   `displayorder` tinyint(3) unsigned DEFAULT NULL,
   `showInNav` bit(1) NOT NULL DEFAULT b'1',
   `showDuration` bit(1) NOT NULL DEFAULT b'1',
+  `schemaProperty` varchar(45) DEFAULT NULL,
+  `schemaType` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
