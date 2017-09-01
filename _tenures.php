@@ -56,7 +56,7 @@
             if($tenure->department()->organization()->state())
               echo ", <span itemprop=\"addressRegion\">{$tenure->department()->organization()->state()}</span>";
             if($tenure->department()->organization()->zip())
-              echo ", <span itemprop=\"postalCode\" class=\"hidden\" aria-hidden=\"true\">{$tenure->department()->organization()->zip()}</span>";
+              echo "<span itemprop=\"postalCode\" class=\"hidden\" aria-hidden=\"true\">{$tenure->department()->organization()->zip()}</span>";
             echo "<span itemprop=\"addressCountry\" class=\"hidden\" aria-hidden=\"true\">US</span>";
             echo '</span>';
                 ?>
