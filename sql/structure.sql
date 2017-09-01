@@ -67,8 +67,7 @@ DROP TABLE IF EXISTS `organizations`;
 CREATE TABLE `organizations` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(40) NOT NULL,
-  `street1` varchar(30) DEFAULT NULL,
-  `street2` varchar(30) DEFAULT NULL,
+  `street` varchar(30) DEFAULT NULL,
   `city` varchar(30) DEFAULT NULL,
   `state` varchar(2) DEFAULT NULL,
   `zip` varchar(5) DEFAULT NULL,

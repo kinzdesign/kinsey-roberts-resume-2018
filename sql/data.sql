@@ -81,11 +81,11 @@ UNLOCK TABLES;
 LOCK TABLES `organizations` WRITE;
 /*!40000 ALTER TABLE `organizations` DISABLE KEYS */;
 INSERT INTO `organizations` VALUES
-  (1,'Case Western Reserve University','10900 Euclid Avenue',NULL,'Cleveland','OH','44106'),
-  (2,'HighEdWeb Professionals','312 W. Commercial St.',NULL,'East Rochester','NY','14445'),
-  (3,'O&rsquo;Reilly Media','1005 Gravenstein Highway North',NULL,'Sebastopol','CA','95472'),
-  (4,'Code PaLOUsa, Inc.','',NULL,'Louisville','KY','40219'),
-  (5,'University View Condominium Association',NULL,NULL,'Cleveland','OH','44106');
+  (1,'Case Western Reserve University','10900 Euclid Avenue','Cleveland','OH','44106'),
+  (2,'HighEdWeb Professionals','312 W. Commercial St.','East Rochester','NY','14445'),
+  (3,'O&rsquo;Reilly Media','1005 Gravenstein Highway North','Sebastopol','CA','95472'),
+  (4,'Code PaLOUsa, Inc.','','Louisville','KY','40219'),
+  (5,'University View Condominium Association',NULL,'Cleveland','OH','44106');
 /*!40000 ALTER TABLE `organizations` ENABLE KEYS */;
 UNLOCK TABLES;
 

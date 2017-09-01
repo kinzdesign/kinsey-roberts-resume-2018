@@ -7,8 +7,7 @@ class Organization {
   private function __construct($row) {
     $this->id             = $row['id'];
     $this->name           = $row['name'];
-    $this->street1        = $row['street1'];
-    $this->street2        = $row['street2'];
+    $this->street         = $row['street'];
     $this->city           = $row['city'];
     $this->state          = $row['state'];
     $this->zip            = $row['zip'];
@@ -20,8 +19,7 @@ class Organization {
 
   private $id,
           $name,
-          $street1,
-          $street2,
+          $street,
           $city,
           $state,
           $zip;
@@ -34,12 +32,8 @@ class Organization {
     return $this->name;
   }
 
-  public function street1() {
-    return $this->street1;
-  }
-
-  public function street2() {
-    return $this->street2;
+  public function street() {
+    return $this->street;
   }
 
   public function city() {
@@ -58,7 +52,7 @@ class Organization {
    * data access
    */
 
-  const SELECT = "SELECT id, name, street1, name, street2, city, state, zip FROM organizations ";
+  const SELECT = "SELECT id, name, street, city, state, zip FROM organizations ";
   const ORDER  = " ORDER BY name";
 
   public static function getAll() {
