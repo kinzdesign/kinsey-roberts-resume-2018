@@ -1,9 +1,19 @@
-          <ol class="breadcrumb">
+          <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
 <?php 
-  foreach(Page::$breadcrumbs as $name => $url)
-    if($name == 'Home')
-      echo "            <li><a href=\"$url\" data-category=\"Breadcrumb\" data-action=\"Click - Home\" title=\"Home\"><i class=\"fa fa-lg fa-fw fa-home\" title=\"Home\"></i></a></li>\n";
-    else
-      echo "            <li><a href=\"$url\" data-category=\"Breadcrumb\" data-action=\"Click - {$name}\">$name</a></li>\n";
+  $i = 0;
+  foreach(Page::$breadcrumbs as $name => $url) {
+    $i++;
+    echo "            <li itemprop=\"itemListElement\" itemscope itemtype=\"http://schema.org/ListItem\">\r\n";
+    echo "              <meta itemprop=\"position\" content=\"{$i}\" />\r\n";
+    echo "              <a href=\"$url\" data-category=\"Breadcrumb\" data-action=\"Click - {$name}\" itemscope itemtype=\"http://schema.org/Thing\" itemprop=\"item\">\r\n";
+    if($name == 'Home') {
+      echo "                <i class=\"fa fa-lg fa-fw fa-home\" aria-hidden=\"true\"></i>\r\n";
+      echo "                <span itemprop=\"name\" class=\"hidden\">$name</span>\r\n";
+    } else {
+      echo "                <span itemprop=\"name\">$name</span>\r\n";
+    }
+    echo "              </a>\r\n";
+    echo "            </li>\r\n";
+  }
 ?>
           </ol>

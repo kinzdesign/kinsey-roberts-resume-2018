@@ -5,11 +5,14 @@ class TenureType {
    * data access
    */
   private function __construct($row) {
-    $this->id   = $row['id'];
-    $this->name = $row['name'];
-    $this->slug = $row['slug'];
-    $this->showInNav    = $row['showInNav'] == 1;
-    $this->showDuration = $row['showDuration'] == 1;
+    $this->id               = $row['id'];
+    $this->name             = $row['name'];
+    $this->slug             = $row['slug'];
+    $this->showInNav        = $row['showInNav'] == 1;
+    $this->showDuration     = $row['showDuration'] == 1;
+    $this->emitJobTitle     = $row['emitJobTitle'] == 1;
+    $this->schemaProperty   = $row['schemaProperty'];
+    $this->schemaType       = $row['schemaType'];
   }
 
   /*
@@ -21,7 +24,10 @@ class TenureType {
           $slug,
           $tenures,
           $showInNav,
-          $showDuration;
+          $showDuration,
+          $emitJobTitle,
+          $schemaProperty,
+          $schemaType;
 
   public function id() {
     return $this->id;
@@ -43,6 +49,18 @@ class TenureType {
     return $this->showDuration;
   }
 
+  public function emitJobTitle() {
+    return $this->emitJobTitle;
+  }
+
+  public function schemaProperty() {
+    return $this->schemaProperty;
+  }
+
+  public function schemaType() {
+    return $this->schemaType;
+  }
+
   public function tenures() {
     // lazy-load Tenure array
     if(!$this->tenures)
@@ -58,7 +76,7 @@ class TenureType {
    * data access
    */
 
-  const SELECT = "SELECT id, name, slug, showInNav, showDuration FROM tenure_types ";
+  const SELECT = "SELECT id, name, slug, showInNav, showDuration, emitJobTitle, schemaProperty, schemaType FROM tenure_types ";
   const ORDER  = " ORDER BY displayorder ";
 
   public static function getAll() {
