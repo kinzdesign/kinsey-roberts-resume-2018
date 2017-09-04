@@ -38,16 +38,16 @@
 <?php     if($header->showDuration()) 
             echo "                <div class=\"department-duration\">{$tenure->department()->duration()}</div>\n"; ?>
 <?php 
-            echo "                <span itemscope itemprop=\"department\" itemtype=\"http://schema.org/Organization\">\r\n";
-            echo "                  <span itemprop=\"name\">\r\n";
-            echo "                    {$tenure->department()->name()}"; 
+            echo "                <span itemscope itemprop=\"department\" itemtype=\"http://schema.org/Organization\">";
+            echo "<span itemprop=\"name\">";
+            echo "{$tenure->department()->name()}"; 
             if($tenure->department()->parent()) 
-              echo ",\r\n                    {$tenure->department()->parent()}";
-            echo "\r\n                  </span>\r\n";
-            echo "                </span>";
+              echo ", {$tenure->department()->parent()}";
+            echo "</span>";
+            echo "</span>";
             if($tenure->department()->organization() && $tenure->department()->organization()->name() != $tenure->department()->name()) {
               echo $tenure->department()->parent() ? "\r\n                <br />\r\n" : ",\r\n";
-              echo "                <span itemprop=\"name\">{$tenure->department()->organization()->name()}</span>\r\n";
+              echo "                <span itemprop=\"name\">{$tenure->department()->organization()->name()}</span>,\r\n";
             } else {
               echo "\r\n";
             }
@@ -57,7 +57,7 @@
             if($tenure->department()->organization()->street())
               echo "\r\n                  <span itemprop=\"streetAddress\" class=\"hidden\" aria-hidden=\"true\">{$tenure->department()->organization()->street()}</span>";
             if($tenure->department()->organization()->city())
-              echo ",\r\n                  <span itemprop=\"addressLocality\">{$tenure->department()->organization()->city()}</span>";
+              echo "\r\n                  <span itemprop=\"addressLocality\">{$tenure->department()->organization()->city()}</span>";
             if($tenure->department()->organization()->state())
               echo ",\r\n                  <span itemprop=\"addressRegion\">{$tenure->department()->organization()->state()}</span>";
             if($tenure->department()->organization()->zip())
