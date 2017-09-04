@@ -22,10 +22,9 @@
       // open current panel ?>
               <div class="panel-heading" role="tab" id="head-skill-type<?php echo $skill->typeId(); ?>">
                 <div class="panel-title">
-                  <a role="button" data-toggle="collapse" href="#collapse-skill-type<?php echo $skill->typeId(); ?>" aria-expanded="true" aria-controls="collapse-skill-type<?php echo $skill->typeId(); ?>"<?php if(!$hadSkills && !$skill->type()->expanded()) echo ' class="collapsed"'; ?> data-category="Skill List" data-action="Category Toggle - <?php echo $skill->type()->name() ?>">
-                    <i class="fa fa-fw fa-chevron-down-right" title="Expand/Collapse Section"></i><?php 
-                    echo $skill->type()->name(); ?>
-
+                  <a role="button" data-toggle="collapse" href="#collapse-skill-type<?php echo $skill->typeId(); ?>" aria-expanded="true" aria-controls="collapse-skill-type<?php echo $skill->typeId(); ?>"<?php if(!$hadSkills && !$skill->type()->expanded()) echo ' class="collapsed"'; ?> data-category="Skill List" data-action="Category Toggle - <?php echo $skill->type()->name() ?>" aria-label="Expand/Collapse: <?php echo $skill->type()->name(); ?>" title="Expand/Collapse: <?php echo $skill->type()->name(); ?>">
+                    <i class="fa fa-fw fa-chevron-down-right"></i>
+                    <?php echo $skill->type()->name(); ?>
                   </a>
                 </div>
               </div>

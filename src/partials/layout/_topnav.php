@@ -70,7 +70,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li>
               <a href="mailto:kinsey.q.roberts@gmail.com" data-category="Contact" data-action="Topnav - Email">
-                <i class="fa fa-envelope-o" title="Email"></i>
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
                 <span itemprop="email">kinsey.q.roberts@gmail.com</span>
               </a>
             </li>
