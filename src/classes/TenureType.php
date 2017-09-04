@@ -71,7 +71,11 @@ class TenureType {
   public function url() {
     return "/{$this->slug()}/" . Page::cacheBreaker();
   }
-  
+
+  public function queueBreadcrumb() {
+    Page::$breadcrumbs[$this->name()] = $this->url();
+  }
+
   /*
    * data access
    */

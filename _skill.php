@@ -7,9 +7,9 @@
     Page::error(404, "We could not find a skill with slug '{$slug}'.", "Not Found");
   } else { // output contents
     // add breadcrumbs
-    Page::$breadcrumbs['Skills'] = '/skills/';
-    Page::$breadcrumbs[$skill->type()->name()] = $skill->type()->url();
-    Page::$breadcrumbs[$skill->name()] = $skill->url();
+    Skill::queueSkillsBreadcrumb();
+    $skill->type()->queueBreadcrumb();
+    $skill->queueBreadcrumb();
     // build title
     Page::renderTop("{$skill->name()} | {$skill->type()->name()} | Skills");
 ?>

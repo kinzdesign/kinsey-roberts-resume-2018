@@ -7,7 +7,7 @@
     // ensure we got a type ('tenure-type' param could actually be an employer)
     if($type) {
       $headers = array($type);
-      Page::$breadcrumbs[$type->name()] = $type->url();
+      $type->AddBreadcrumb();
       Page::$title = $type->name();
     }
   }

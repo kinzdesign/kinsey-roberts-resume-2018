@@ -62,6 +62,14 @@ class Skill {
     return "/skills/{$this->type()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
   }
 
+  public function queueBreadcrumb() {
+    Page::$breadcrumbs[$this->name()] = $this->url();
+  }
+
+  public static function queueSkillsBreadcrumb() {
+    Page::$breadcrumbs['Skills'] = '/skills/';
+  }
+
   /*
    * data access
    */

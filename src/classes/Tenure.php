@@ -146,6 +146,16 @@ class Tenure {
     return $this->url;
   }
 
+  public function extendedName() {
+    return $this->category() 
+      ? "{$this->name()} - {$this->category()}" 
+      : $this->name();
+  }
+
+  public function queueBreadcrumb() {
+    Page::$breadcrumbs[$this->extendedName()] = $this->url();
+  }
+
   /*
    * data access
    */

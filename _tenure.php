@@ -6,15 +6,11 @@
     // handle 404
     Page::error(404, "We could not find a tenure with slug '{$slug}'.", "Not Found");
   } else { // output contents
-    // build title
-    $fullTitle = $tenure->name();
-    if($tenure->category()) 
-      $fullTitle = "$fullTitle - {$tenure->category()}";
     // add breadcrumbs
-    Page::$breadcrumbs[$tenure->type()->name()] = $tenure->type()->url();
-    Page::$breadcrumbs[$fullTitle] = $tenure->url();
+    $tenure->type()->queueBreadcrumb();
+    $tenure->queueBreadcrumb();
     Page::$skills = $tenure->skills();
-    Page::renderTop("$fullTitle | {$tenure->type()->name()}");
+    Page::renderTop("{$tenure->extendedName()} | {$tenure->type()->name()}");
 ?>
           <h2 class="head-tenure" itemprop="jobTitle"><?php 
             echo $tenure->name(); 

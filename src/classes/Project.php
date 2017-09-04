@@ -62,6 +62,10 @@ class Project {
     return "/{$this->tenure()->type()->slug()}/{$this->tenure()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
   }
 
+  public function queueBreadcrumb() {
+    Page::$breadcrumbs[$this->name()] = $this->url();
+  }
+
   /*
    * data access
    */
