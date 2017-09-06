@@ -23,3 +23,12 @@
 .collapsed > .fa-chevron-circle-down-right:before {
   content: "\f158"; // fa-chevron-circle-right when collapsed
 }
+.panel-body {
+  .fa-ul {
+    margin-left: 0;
+
+    li {
+      margin-bottom: 0.5em;
+    }
+  }
+}

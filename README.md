@@ -15,22 +15,16 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
         * application-developer
         * lead-web-developer
     * project partials
-        * gamifying-genetics
-        * furniture-inventory
-        * key-badge-issuing
-        * mobile-work-orders
         * server-hardening
         * server-migration
+        * intersectional-identities
         * hobsons-admissions
-    * skill partials?
     * project synopses
         * harld
         * mailroom
         * gamifying-genetics
+        * intersectional-identities
         * digital-signage
-        * furniture-inventory
-        * key-badge-issuing
-        * mobile-work-orders
         * server-hardening
         * server-migration
         * hobsons-admissions

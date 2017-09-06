@@ -46,7 +46,7 @@ INSERT INTO `bullets` VALUES
   (19,18,'Built new avenues for collaboration and knowledge sharing during an IT reorganization/centralization by founding a campus-wide web developers group',NULL),
   (20,24,'Elected to Vice President from 2011-2013 and President from 2013 to present',NULL),
   (21,20,'Facilitated educational sessions for incoming students covering implicit bias, microaggressions, intent vs. impact, and intersectionality.',NULL),
-  (22,19,'Compiled campus responses to the <a href=\"https://www.campusprideindex.org/\" target=\"_blank\" data-category=\"External Link\" data-action=\"Campus Pride Index\">Campus Pride Index</a> survey in 2007, 2008, and 2016, with input from 20+ campus offices.',1),
+  (22,19,'Compiled campus responses to the <a href=\"https://www.campusprideindex.org/\" target=\"_blank\" data-category=\"External Link\" data-action=\"Campus Pride Index\">Campus Pride Index</a> survey in 2007 and 2017, with input from 20+ campus offices.',1),
   (23,19,'Provided actionable recommendations on how to increase Campus Pride Index ranking by improving the campus climate in ways small and large',2),
   (24,19,'Redesigned LGBT Resources webpage (2008), prepared website content for LGBT Center dedication (2010)',3);
 /*!40000 ALTER TABLE `bullets` ENABLE KEYS */;
@@ -113,6 +113,7 @@ INSERT INTO `project_skills` VALUES
   (4,33,NULL),
   (4,36,NULL),
   (4,37,NULL),
+  (4,38,NULL),
   (4,39,NULL),
   (4,40,NULL),
   (4,41,NULL),
