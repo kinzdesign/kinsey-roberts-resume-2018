@@ -5,4 +5,6 @@
     <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#4a148c">
     <link rel="shortcut icon" href="/favicon.ico">
     <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
-    <meta name="theme-color" content="#e65100">
+    <meta name="theme-color" content="#4a148c">
+    <meta name="msapplication-navbutton-color" content="#4a148c"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="#4a148c"/>
