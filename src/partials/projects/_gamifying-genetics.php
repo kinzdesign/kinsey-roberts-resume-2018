@@ -4,36 +4,40 @@
                 <h3 class="panel-title">Deliverables</h3>
               </div>
               <div class="panel-body">
-                <ul class="fa-ul">
+                <ul class="list-sm-padding list-margin-bottom">
                   <li>
                     <a href="http://bit.ly/kr-research-report" data-action="Body Click - Manuscript" target="_blank" data-category="Project - Gamifying Genetics">
-                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
                       Manuscript
                     </a>
                   </li>
                   <li>
                     <a href="http://bit.ly/kr-research-slides" data-action="Body Click - Slides" target="_blank" data-category="Project - Gamifying Genetics">
-                      <i class="fa fa-file-powerpoint-o" aria-hidden="true"></i>
                       Defense Presentation
                     </a>
                   </li>
-
+                  <li>
+                    <a href="https://kr-research-data.herokuapp.com/" data-action="Body Click - Data Site" target="_blank" data-category="Project - Gamifying Genetics">
+                      Data Analysis Tools (Live)
+                    </a>
+                  </li>
                   <li>
                     <a href="https://bitbucket.org/kinzdesign/helicase-mean/src" data-action="Body Click - Worker UX Repo" target="_blank" data-category="Project - Gamifying Genetics">
-                      <i class="fa fa-bitbucket" aria-hidden="true"></i>
                       Worker-Facing UX Code
                     </a>
                   </li>
                   <li>
                     <a href="https://bitbucket.org/kinzdesign/helicase-admin-php/src" data-action="Body Click - Admin Repo" target="_blank" data-category="Project - Gamifying Genetics">
-                      <i class="fa fa-bitbucket" aria-hidden="true"></i>
                       Administrative Tools Code
                     </a>
                   </li>
                   <li>
                     <a href="https://bitbucket.org/kinzdesign/helicase-data-php/src" data-action="Body Click - Data Repo" target="_blank" data-category="Project - Gamifying Genetics">
-                      <i class="fa fa-bitbucket" aria-hidden="true"></i>
                       Data Analysis Tools Code
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://helicase.herokuapp.com/" data-action="Body Click - Alpha Project" target="_blank" data-category="Project - Gamifying Genetics">
+                      Precursor Project on Gene Network Visualization
                     </a>
                   </li>
               </div>

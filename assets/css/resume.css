@@ -3889,11 +3889,6 @@ body {
 .collapsed > .fa-chevron-circle-down-right:before {
   content: "\f158"; }
 
-.panel-body .fa-ul {
-  margin-left: 0; }
-  .panel-body .fa-ul li {
-    margin-bottom: 0.5em; }
-
 .breadcrumb {
   list-style: none;
   overflow: hidden;
@@ -4022,5 +4017,10 @@ body {
     text-align: center; }
   .footer .footer-right {
     text-align: right; }
+
+.list-deliverables {
+  padding-left: 20px; }
+  .list-deliverables .list-margin-bottom li {
+    margin-bottom: 0.5em; }
 
 /*# sourceMappingURL=/assets/css/resume.css.map */
