@@ -167,7 +167,8 @@ INSERT INTO `projects` VALUES
   (4,5,'Gamifying Genetics','gamifying-genetics',NULL,NULL),
   (6,2,'Housing and Residence Life Database (HARLD)','harld',NULL,NULL),
   (7,2,'Digital Signage','digital-signage',NULL,NULL),
-  (10,5,'Intersectional Identities','intersectional-identities',NULL,NULL);
+  (10,5,'Intersectional Identities','intersectional-identities',NULL,NULL),
+  (11,1,'Hobsons Admissions','hobsons-admissions',NULL,NULL);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 

@@ -6,13 +6,13 @@
               <div class="panel-body">
                 <ul class="fa-ul">
                   <li>
-                    <a href="" data-action="Body Click - Manuscript" target="_blank" data-category="Project - Gamifying Genetics">
+                    <a href="http://bit.ly/kr-research-report" data-action="Body Click - Manuscript" target="_blank" data-category="Project - Gamifying Genetics">
                       <i class="fa fa-file-text-o" aria-hidden="true"></i>
                       Manuscript
                     </a>
                   </li>
                   <li>
-                    <a href="https://docs.google.com/presentation/d/1VnUPDqUBFuRlauaON7OHGLlNKtsAHTYns2s28pLq_vs/edit#slide=id.p" data-action="Body Click - Slides" target="_blank" data-category="Project - Gamifying Genetics">
+                    <a href="http://bit.ly/kr-research-slides" data-action="Body Click - Slides" target="_blank" data-category="Project - Gamifying Genetics">
                       <i class="fa fa-file-powerpoint-o" aria-hidden="true"></i>
                       Defense Presentation
                     </a>
