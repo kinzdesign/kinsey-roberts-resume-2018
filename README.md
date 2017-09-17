@@ -14,9 +14,6 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
         * non-degree
         * application-developer
         * lead-web-developer
-    * project partials
-        * server-hardening
-        * server-migration
     * project synopses
         * harld
         * mailroom
