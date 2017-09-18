@@ -66,6 +66,10 @@ class Project {
     Page::$breadcrumbs[$this->name()] = $this->url();
   }
 
+  public static function queueProjectsBreadcrumb() {
+    Page::$breadcrumbs['Projects'] = '/projects/';
+  }
+
   /*
    * data access
    */

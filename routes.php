@@ -33,6 +33,10 @@
       Page::$params['pdf'] = $_GET['arg2'];
       return '/_pdf.php';
     }
+    // handle project list page
+    else if ($arg1 == 'projects') {
+      return '/_projects.php';
+    }
     // handle privacy page
     else if ($arg1 == 'privacy') {
       return '/_privacy.php';
