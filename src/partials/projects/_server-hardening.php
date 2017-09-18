@@ -6,7 +6,7 @@
           <h3>Phases</h3>
           <ol>
             <li>
-              <strong>Found and mitigated vulnerabilities in existing code</strong>
+              <strong>Find and mitigate vulnerabilities in existing code</strong>
               <ul>
                 <li>Researched common ColdFusion vulnerabilities</li>
                 <li>Built a list of potentially risky tokens to search for in our code</li>
@@ -16,7 +16,7 @@
               </ul>
             </li>
             <li>
-              <strong>Upgraded ColdFusion from 9 to 11</strong>
+              <strong>Upgrade ColdFusion from 9 to 11</strong>
               <ul>
                 <li>Worked with sysadmin to spin up a new VM as a staging server</li>
                 <li>Installed the latest version of ColdFusion and all available updates</li>
@@ -36,6 +36,6 @@
               </ul>
             </li>
             <li>
-              <strong><a href="<?php echo Project::getBySlug('server-migration')->url(); ?>" data-category="Project - Server Hardening" data-action="Body Click - Server Migration">Transitioning away from ColdFusion</a></strong>
+              <strong><a href="<?php echo Project::getBySlug('server-migration')->url(); ?>" data-category="Project - Server Hardening" data-action="Body Click - Server Migration">Transition away from ColdFusion</a></strong>
             </li>
           </ol>
