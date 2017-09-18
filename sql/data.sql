@@ -293,7 +293,8 @@ INSERT INTO `tenures` VALUES
   (18,4,9,'Web Developers Group','web-developers-group','Founder',NULL,NULL,'2016-09-16',NULL,'\0'),
   (19,4,10,'LGBTQA Committee','lgbtqa-committee','Member',NULL,'https://case.edu/lgbt/committee/','2007-08-01',NULL,'\0'),
   (20,4,11,'Diversity 360','diversity-360','Facilitator',NULL,'https://students.case.edu/diversity/training/diversity360/','2016-02-03',NULL,'\0'),
-  (24,4,14,'Board Member','board-member',NULL,NULL,NULL,'2011-01-01',NULL,'\0');
+  (24,4,14,'Board Member','board-member',NULL,NULL,NULL,'2011-01-01',NULL,'\0'),
+  (25,3,5,'HighEdWeb conference 2017','highedweb-2017','Hartford, CT',NULL,'https://2017.highedweb.org/','2017-10-08','2017-10-11','\0');
 /*!40000 ALTER TABLE `tenures` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
