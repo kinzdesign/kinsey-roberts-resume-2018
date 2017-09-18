@@ -4,7 +4,7 @@
   Page::renderTop('Projects');
   $projects = Project::getAll();
   echo "          <h2>Projects</h2>\r\n";
-  echo "          <ul>\r\n";
+  echo "          <ul class=\"project-list\">\r\n";
   foreach ($projects as $project) {
     echo "            <li>\r\n";
     echo "              <a href=\"{$project->url()}\" class=\"project-list-name\" data-category=\"Projects List\" data-action=\"Project Click - {$project->name()}\">\r\n";

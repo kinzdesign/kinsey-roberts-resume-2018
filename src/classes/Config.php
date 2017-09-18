@@ -2,7 +2,7 @@
 class Config {
 
   // timestamp of last build
-  public static function getBuildTime() { return '1505693178'; }
+  public static function getBuildTime() { return '1505694175'; }
   public static function echoBuildTime() { echo self::getBuildTime(); }
 
   // get database configuration variables
