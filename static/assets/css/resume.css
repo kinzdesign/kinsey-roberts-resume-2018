@@ -3948,6 +3948,16 @@ body {
       .breadcrumb li a:hover:after {
         background-color: #e65100 !important; }
 
+.project-list > li {
+  margin-bottom: 0.75em; }
+
+.project-list-name {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700; }
+
+.project-list-synopsis {
+  font-style: italic; }
+
 @media screen and (min-width: 768px) {
   .sidebar h3 {
     font-size: 19px; } }

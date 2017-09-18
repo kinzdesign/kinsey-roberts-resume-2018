@@ -78,9 +78,9 @@ class Project {
     "FROM projects ";
   const ORDER  = " ORDER BY tenure, displayorder ";
 
-  public static function getAll() {
+  public static function getAll($order = self::ORDER) {
     $arr = array();
-    $result = Database::execute(self::SELECT . self::ORDER);
+    $result = Database::execute(self::SELECT . $order);
     if($result)
       while($row = $result->fetchRow()) 
         $arr[] = new self($row);

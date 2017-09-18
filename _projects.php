@@ -2,7 +2,7 @@
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'); 
   Project::queueProjectsBreadcrumb();
   Page::renderTop('Projects');
-  $projects = Project::getAll();
+  $projects = Project::getAll(' ORDER BY COALESCE(displayorder, 254), name');
   echo "          <h2>Projects</h2>\r\n";
   echo "          <ul class=\"project-list\">\r\n";
   foreach ($projects as $project) {
