@@ -14,12 +14,3 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
         * non-degree
         * application-developer
         * lead-web-developer
-    * project synopses
-        * harld
-        * mailroom
-        * gamifying-genetics
-        * intersectional-identities
-        * digital-signage
-        * server-hardening
-        * server-migration
-        * hobsons-admissions
