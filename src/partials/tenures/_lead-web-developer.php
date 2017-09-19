@@ -1,1 +1,0 @@
-<p>Weatherhead intro</p>
