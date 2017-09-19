@@ -14,7 +14,7 @@
       <div class="row row-offcanvas row-offcanvas-right">
         <main class="col-xs-12 col-sm-9">
           <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-warning btn-xs btn-offcanvas" data-toggle="offcanvas"><?php echo Page::$skillsHeader; ?></button>
+            <button type="button" class="btn btn-warning btn-xs btn-offcanvas" data-toggle="offcanvas">Skills</button>
           </p>
 <?php   } else { ?>
       <div class="row">

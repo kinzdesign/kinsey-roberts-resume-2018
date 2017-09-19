@@ -14,11 +14,11 @@
   // if headers not loaded, get all
   if(!$headers) {
     $headers = TenureType::getAll();
+    Page::$isHomepage = true;
     Page::$showTopnav = false;
     Page::$showBreadcrumbs = false;
     // show all skills
     Page::$skills = Skill::getAll();
-    Page::$skillsHeader = 'Skills';
     Page::$offCanvasSidebar = true;
   }
   Page::renderTop();

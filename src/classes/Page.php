@@ -8,7 +8,7 @@ class Page {
   public static $cssFile = 'resume';
   public static $skills = false;
   public static $offCanvasSidebar = false;
-  public static $skillsHeader = 'Skills Used';
+  public static $isHomepage = false;
   public static $showBreadcrumbs = true;
   public static $showTopnav = true;
   public static $params = array();

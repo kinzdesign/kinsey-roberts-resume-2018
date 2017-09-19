@@ -3871,23 +3871,11 @@ body {
   font-family: FontAwesome;
   font-style: normal; }
 
-.fa-plus-minus-circle:before {
-  content: "\f056"; }
+.fa-chevron-up-down:before {
+  content: "\f077"; }
 
-.collapsed > .fa-plus-minus-circle:before {
-  content: "\f055"; }
-
-.fa-chevron-down-right:before {
+.collapsed > .fa-chevron-up-down:before {
   content: "\f078"; }
-
-.collapsed > .fa-chevron-down-right:before {
-  content: "\f054"; }
-
-.fa-chevron-circle-down-right:before {
-  content: "\f13a"; }
-
-.collapsed > .fa-chevron-circle-down-right:before {
-  content: "\f158"; }
 
 .breadcrumb {
   list-style: none;
