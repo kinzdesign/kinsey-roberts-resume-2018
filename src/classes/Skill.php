@@ -55,7 +55,7 @@ class Skill {
 
   public function projects() {
     // lazy-load Project objects
-    if(!$this->projects)
+    if($this->hasProjects && !$this->projects)
       $this->projects = Project::getBySkill($this);
     return $this->projects;
   }
