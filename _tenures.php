@@ -75,7 +75,7 @@
                     <div class="tenure-dates"><?php 
           $hasBullets = $tenure->bullets() && count($tenure->bullets());
           // hide start time if same as end or durations are disabled for the tenure type
-          if($tenure->start() == $tenure->end() || !$header->showDuration())
+          if($tenure->start() == $tenure->end() || !$header->showStartDate())
             echo $tenure->end();
           else
             echo "{$tenure->start()}&ndash;{$tenure->end()}"; 
