@@ -48,6 +48,10 @@ class SkillType {
     return "/skills/{$this->slug()}/";
   }
 
+  public function queueBreadcrumb() {
+    Page::$breadcrumbs[$this->name()] = $this->url();
+  }
+
   /*
    * data access
    */

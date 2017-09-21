@@ -11,6 +11,7 @@ class Skill {
     $this->name         = $row['name'];
     $this->slug         = $row['slug'];
     $this->synopsis     = Page::interpolateLinks($row['synopsis']);
+    $this->hasProjects  = $row['hasProjects'] == '1';
   }
 
   /*
@@ -22,7 +23,8 @@ class Skill {
           $name,
           $synopsis,
           $slug,
-          $projects;
+          $projects,
+          $hasProjects;
 
   public function id() {
     return $this->id;
@@ -53,20 +55,33 @@ class Skill {
 
   public function projects() {
     // lazy-load Project objects
-    if(!$this->projects)
+    if($this->hasProjects && !$this->projects)
       $this->projects = Project::getBySkill($this);
     return $this->projects;
+  }
+
+  public function hasProjects() {
+    return $this->hasProjects;
   }
 
   public function url() {
     return "/skills/{$this->type()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
   }
 
+  public function queueBreadcrumb() {
+    Page::$breadcrumbs[$this->name()] = $this->url();
+  }
+
+  public static function queueSkillsBreadcrumb() {
+    Page::$breadcrumbs['Skills'] = '/skills/';
+  }
+
   /*
    * data access
    */
 
-  const SELECT = "SELECT s.id, s.type, s.name, s.slug, s.synopsis " .
+  const SELECT = "SELECT s.id, s.type, s.name, s.slug, s.synopsis, " .
+    "EXISTS(SELECT * FROM project_skills ps WHERE ps.skill = s.id) AS hasProjects " .
     "FROM skills s INNER JOIN skill_types t ON s.type = t.id ";
   const ORDER  = " ORDER BY COALESCE(t.displayorder, t.id), COALESCE(s.displayorder, s.id) ";
 

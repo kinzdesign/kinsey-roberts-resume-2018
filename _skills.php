@@ -1,11 +1,11 @@
 <?php 
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
-  Page::$breadcrumbs['Skills'] = '/skills/';
+  Skill::queueSkillsBreadcrumb();
   if(isset(Page::$params['skill-type'])) {
     $type = SkillType::getBySlug(Page::$params['skill-type']);
     $headers = array($type);
     Page::$title = $type->name() . ' | Skills';
-    Page::$breadcrumbs[$type->name()] = $type->url();
+    $type->queueBreadcrumb();
   } else {
     $headers = SkillType::getAll();
     Page::$title = 'Skills';

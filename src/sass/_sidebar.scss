@@ -30,6 +30,11 @@
     ul {
       @extend .list-unstyled;
       margin-bottom: 0;
+
+      li {
+        line-height: 0.95;
+        margin-bottom: 0.6em;
+      }
     }
   }
 }

@@ -7,9 +7,11 @@ class TenureType {
   private function __construct($row) {
     $this->id               = $row['id'];
     $this->name             = $row['name'];
+    $this->shortName        = $row['shortName'];
     $this->slug             = $row['slug'];
     $this->showInNav        = $row['showInNav'] == 1;
     $this->showDuration     = $row['showDuration'] == 1;
+    $this->showStartDate    = $row['showStartDate'] == 1;
     $this->emitJobTitle     = $row['emitJobTitle'] == 1;
     $this->schemaProperty   = $row['schemaProperty'];
     $this->schemaType       = $row['schemaType'];
@@ -21,10 +23,12 @@ class TenureType {
 
   private $id,
           $name,
+          $shortName,
           $slug,
           $tenures,
           $showInNav,
           $showDuration,
+          $showStartDate,
           $emitJobTitle,
           $schemaProperty,
           $schemaType;
@@ -37,6 +41,10 @@ class TenureType {
     return $this->name;
   }
 
+  public function shortName() {
+    return $this->shortName;
+  }
+
   public function slug() {
     return $this->slug;
   }
@@ -47,6 +55,10 @@ class TenureType {
 
   public function showDuration() {
     return $this->showDuration;
+  }
+
+  public function showStartDate() {
+    return $this->showStartDate;
   }
 
   public function emitJobTitle() {
@@ -71,12 +83,17 @@ class TenureType {
   public function url() {
     return "/{$this->slug()}/" . Page::cacheBreaker();
   }
-  
+
+  public function queueBreadcrumb() {
+    Page::$breadcrumbs[$this->name()] = $this->url();
+  }
+
   /*
    * data access
    */
 
-  const SELECT = "SELECT id, name, slug, showInNav, showDuration, emitJobTitle, schemaProperty, schemaType FROM tenure_types ";
+  const SELECT = "SELECT id, name, slug, shortName, showInNav, showDuration, showStartDate, emitJobTitle, schemaProperty, schemaType ".
+  "FROM tenure_types ";
   const ORDER  = " ORDER BY displayorder ";
 
   public static function getAll() {

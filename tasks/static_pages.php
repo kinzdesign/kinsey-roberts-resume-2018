@@ -41,6 +41,8 @@ foreach (TenureType::getAll() as $type)
 foreach (Tenure::getAll() as $tenure)
   if($tenure->showLink() && !$tenure->hasUrl())
     download_page("/{$tenure->type()->slug()}/{$tenure->slug()}/");
+// build projects root
+download_page('/projects/');
 // build project pages
 foreach (Project::getAll() as $project)
   download_page("/{$project->tenure()->type()->slug()}/{$project->tenure()->slug()}/{$project->slug()}/");

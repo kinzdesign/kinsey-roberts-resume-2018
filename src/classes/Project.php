@@ -62,6 +62,14 @@ class Project {
     return "/{$this->tenure()->type()->slug()}/{$this->tenure()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
   }
 
+  public function queueBreadcrumb() {
+    Page::$breadcrumbs[$this->name()] = $this->url();
+  }
+
+  public static function queueProjectsBreadcrumb() {
+    Page::$breadcrumbs['Projects'] = '/projects/';
+  }
+
   /*
    * data access
    */
@@ -70,9 +78,9 @@ class Project {
     "FROM projects ";
   const ORDER  = " ORDER BY tenure, displayorder ";
 
-  public static function getAll() {
+  public static function getAll($order = self::ORDER) {
     $arr = array();
-    $result = Database::execute(self::SELECT . self::ORDER);
+    $result = Database::execute(self::SELECT . $order);
     if($result)
       while($row = $result->fetchRow()) 
         $arr[] = new self($row);

@@ -4,26 +4,22 @@
     return (0 === strpos($_SERVER["SCRIPT_NAME"], $href));
   }
 
-  function navbarBeginDropdown($href, $text) {
-    // see if tab is active
-    $active = isActive($href);
-    // build class and accessible strings
-    $class = $active ? 'active dropdown' : 'dropdown';
-    $accessible = $active ? ' <span class="sr-only">(current)</span>' : '';
-
-    // open list item
-    echo "            <li class=\"{$class}\">\r\n              <a href=\"$href\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\" data-category=\"Topnav\" data-action=\"Dropdown Click - {$text}\">{$text}{$accessible}</a>\r\n";
-  }
-
   // outputs a simple link to the navbar
-  function navbarSimpleLink($href, $text) {
+  function navbarSimpleLink($href, $text, $shortText = false) {
     // see if tab is active
     $active = isActive($href);
     // build class and accessible strings
     $class = $active ? ' class="active"' : '';
     $accessible = $active ? ' <span class="sr-only">(current)</span>' : '';
     // echo markup
-    echo "<li{$class}><a href=\"$href\" data-category=\"Topnav\" data-action=\"Click - {$text}\">$text</a></li>\r\n";
+    echo "            <li{$class}><a href=\"$href\" data-category=\"Topnav\" data-action=\"Click - {$text}\">";
+    if($shortText)
+      echo 
+        "<span class=\"navbar-short-text\" aria-hidden=\"true\">$shortText</span>" .
+        "<span class=\"navbar-full-text\" aria-hidden=\"false\">$text</span>";
+    else
+      echo $text;
+    echo "</a></li>\r\n";
   }
 ?>
     <nav class="navbar navbar-fixed-top navbar-default">
@@ -45,33 +41,28 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
 <?php if(Page::$showTopnav) { ?>
           <ul class="nav navbar-nav">
-<?php   foreach(TenureType::getAll() as $header) { 
+<?php   // add skills and projects
+        navbarSimpleLink('/projects/', 'Projects');
+        navbarSimpleLink('/skills/', 'Skills');
+        foreach(TenureType::getAll() as $header) { 
           if($header->showInNav()) {
-            navbarBeginDropdown($header->url(), $header->name()); ?>
-              <ul class="dropdown-menu">
-<?php       foreach($header->tenures() as $tenure) {
-              if($tenure->showInNav()) { ?>
-                <li><a href="<?php echo $tenure->url(); ?>" data-category="Topnav" data-action="Tenure Click - <?php echo $tenure->name(); ?>"><?php 
-                  echo $tenure->name(); 
-                  if($tenure->category()) 
-                    echo " - {$tenure->category()}";
-                ?></a></li>
-<?php         }
-            } // end tenure ?>
-              </ul>
-            </li>
+            navbarSimpleLink($header->url(), $header->name(), $header->shortName()); ?>
 <?php     }
         } // end header
-        // add skills
-        echo '            ';
-        navbarSimpleLink('/skills/', 'Skills'); ?>
+ ?>
           </ul>
 <?php } ?>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="mailto:kinsey.q.roberts@gmail.com" data-category="Contact" data-action="Topnav - Email">
-                <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                <span itemprop="email">kinsey.q.roberts@gmail.com</span>
+              <a href="mailto:kinsey.q.roberts@gmail.com" data-category="Contact" data-action="Topnav - Email" title="Email kinsey.q.roberts@gmail.com">
+                <i class="fa fa-lg fa-fw fa-envelope-o hidden-xs" aria-hidden="true"></i>
+                <span class="sr-only">Email </span><span class="visible-xs-inline visible-sm-inline" itemprop="email">kinsey.q.roberts@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/kinsey-roberts-66166512" target="_blank" data-category="Contact" data-action="Topnav - LinkedIn" title="LinkedIn Profile">
+                <i class="fa fa-lg fa-fw fa-linkedin hidden-xs" aria-hidden="true"></i>
+                <span class="visible-xs-inline visible-sm-inline">LinkedIn Profile</span>
               </a>
             </li>
           </ul>
