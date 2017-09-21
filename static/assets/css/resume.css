@@ -3845,7 +3845,8 @@ body {
   .sidebar-offcanvas {
     position: absolute;
     top: 0;
-    width: 95%; } }
+    width: 95%;
+    padding-right: 35px; } }
 .btn-offcanvas {
   margin-top: -2em;
   padding: 0.5em;
@@ -3995,6 +3996,9 @@ body {
   padding-left: 32px; }
   .sidebar .panel-body ul {
     margin-bottom: 0; }
+    .sidebar .panel-body ul li {
+      line-height: 0.95;
+      margin-bottom: 0.6em; }
 
 .tenure-department {
   font-size: 15px; }

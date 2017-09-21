@@ -12,13 +12,13 @@
 <?php if(Page::showSidebar()) { 
         if(Page::$offCanvasSidebar) { ?>
       <div class="row row-offcanvas row-offcanvas-right">
-        <main class="col-xs-12 col-sm-9">
+        <main class="col-xs-12 col-sm-8 col-md-9">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-warning btn-xs btn-offcanvas" data-toggle="offcanvas">Skills</button>
           </p>
 <?php   } else { ?>
       <div class="row">
-        <main class="col-xs-12 col-sm-9">
+        <main class="col-xs-12 col-sm-8 col-md-9">
 <?php   } ?>
 <?php } else { ?>
       <div class="row">
