@@ -38,8 +38,8 @@
           echo "                <span class=\"tenure-department\" itemprop=\"name\">{$tenure->department()->name()}</span>\r\n"; ?>
               </span>
 <?php     if($tenure->department()->url())
-            echo "           </a>\r\n"; 
-            echo "           <span itemscope itemprop=\"address\" itemtype=\"http://schema.org/PostalAddress\" class=\"hidden\" aria-hidden=\"true\">";
+            echo "              ".Page::externalLinkIcon()."\r\n            </a>\r\n"; 
+            echo "           <span itemscope itemprop=\"address\" itemtype=\"http://schema.org/PostalAddress\" class=\"hidden\" aria-hidden=\"true\">\r\n";
             if($tenure->department()->organization()->street())
               echo "             <span itemprop=\"streetAddress\">{$tenure->department()->organization()->street()}</span>\r\n";
             if($tenure->department()->organization()->city())

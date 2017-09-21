@@ -101,7 +101,7 @@
           if($tenure->type()->emitJobTitle() && !$tenure->end())
             echo '</span>';
           if(!$tenure->showLink() && $tenure->hasUrl())
-            Page::externalLinkIcon();
+            echo Page::externalLinkIcon();
           if($tenure->showLink() || $tenure->hasUrl())
             echo '</a>';
 ?>

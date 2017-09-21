@@ -1,7 +1,5 @@
 <?php
 class Page {
-  const EXT_LINK_ICO = '<i class="fa fa-external-link" aria-hidden="true"></i><span class="sr-only"> (External Link)</span>';
-
   private static $scripts = array();
 
   public static $breadcrumbs = array('Home' => '/');
@@ -123,7 +121,7 @@ class Page {
           // return external link icon
           case 'ico':
             if($matches[2] == 'ext')
-              return self::EXT_LINK_ICO;
+              return self::externalLinkIcon();
         }
       }
       // if not handled, return raw text
@@ -131,8 +129,7 @@ class Page {
     }, $s);
   }
 
-
   public static function externalLinkIcon() {
-    echo self::EXT_LINK_ICO;
+    return '<i class="fa fa-external-link" aria-hidden="true"></i><span class="sr-only"> (External Link)</span>';
   }
 }

@@ -45,8 +45,8 @@
           if($project->tenure()->department()->url())
             echo "                <span itemprop=\"url\" class=\"hidden\" aria-hidden=\"true\">{$project->tenure()->department()->url()}</span>\r\n";
           echo "              </span>\r\n";
-          if($project->tenure()->department()->url())
-            echo "            </a>\r\n"; 
+          if($project->tenure()->department()->url()) 
+            echo "              ".Page::externalLinkIcon()."\r\n            </a>\r\n"; 
           echo "            <span itemscope itemprop=\"address\" itemtype=\"http://schema.org/PostalAddress\" class=\"hidden\" aria-hidden=\"true\">\r\n";
           if($project->tenure()->department()->organization()->street())
             echo "              <span itemprop=\"streetAddress\">{$project->tenure()->department()->organization()->street()}</span>\r\n";
