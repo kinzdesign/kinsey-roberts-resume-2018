@@ -165,6 +165,7 @@ CREATE TABLE `tenure_types` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(55) NOT NULL,
   `slug` varchar(55) NOT NULL,
+  `shortName` varchar(55) DEFAULT NULL,
   `displayorder` tinyint(3) unsigned DEFAULT NULL,
   `showInNav` bit(1) NOT NULL DEFAULT b'1',
   `showDuration` bit(1) NOT NULL DEFAULT b'1',

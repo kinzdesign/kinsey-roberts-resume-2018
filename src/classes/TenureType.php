@@ -7,6 +7,7 @@ class TenureType {
   private function __construct($row) {
     $this->id               = $row['id'];
     $this->name             = $row['name'];
+    $this->shortName        = $row['shortName'];
     $this->slug             = $row['slug'];
     $this->showInNav        = $row['showInNav'] == 1;
     $this->showDuration     = $row['showDuration'] == 1;
@@ -22,6 +23,7 @@ class TenureType {
 
   private $id,
           $name,
+          $shortName,
           $slug,
           $tenures,
           $showInNav,
@@ -37,6 +39,10 @@ class TenureType {
 
   public function name() {
     return $this->name;
+  }
+
+  public function shortName() {
+    return $this->shortName;
   }
 
   public function slug() {
@@ -86,7 +92,8 @@ class TenureType {
    * data access
    */
 
-  const SELECT = "SELECT id, name, slug, showInNav, showDuration, showStartDate, emitJobTitle, schemaProperty, schemaType FROM tenure_types ";
+  const SELECT = "SELECT id, name, slug, shortName, showInNav, showDuration, showStartDate, emitJobTitle, schemaProperty, schemaType ".
+  "FROM tenure_types ";
   const ORDER  = " ORDER BY displayorder ";
 
   public static function getAll() {
