@@ -7,3 +7,37 @@ body.top-navbar-fixed {
   font-weight: $headings-font-weight;
   letter-spacing: 1px;
 }
+
+.navbar-toggle {
+  float: left;
+  margin-left: 1em;
+}
+
+/*  hide topnav icons on xs, 
+    keep regular size on sm,
+    enlarge on md and lg */
+.navbar-right > li > a > .fa {
+  display: none;
+
+  @media (min-width: $grid-float-breakpoint) {
+    display: inline-block;
+    font-size: 1.33333333em;
+    line-height: .75em;
+    vertical-align: -15%;  
+  }
+}
+
+.navbar-full-text {
+  display: inline;
+
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: none;
+  }
+}
+.navbar-short-text {
+  display: none;
+
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: inline;
+  }
+}
