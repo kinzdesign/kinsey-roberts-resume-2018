@@ -1,5 +1,6 @@
 <?php
 class Page {
+  const EXT_LINK_ICO = '<i class="fa fa-external-link" aria-hidden="true"></i><span class="sr-only"> (External Link)</span>';
 
   private static $scripts = array();
 
@@ -119,10 +120,19 @@ class Page {
           // return pdf link
           case 'pdf':
             return '/pdf/' . $matches[2] . '/' . self::cacheBreaker() . "\" data-category=\"Interpolated Link\" data-action=\"PDF Click - {$matches[2]}";
+          // return external link icon
+          case 'ico':
+            if($matches[2] == 'ext')
+              return self::EXT_LINK_ICO;
         }
       }
       // if not handled, return raw text
       return $matches[0];
     }, $s);
+  }
+
+
+  public static function externalLinkIcon() {
+    echo self::EXT_LINK_ICO;
   }
 }

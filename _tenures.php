@@ -85,7 +85,7 @@
 <?php     if($tenure->showLink() || $tenure->hasUrl()) {
             echo '                    <a href="';
             echo $tenure->url();
-            if($tenure->hasUrl())
+            if(!$tenure->showLink() && $tenure->hasUrl())
               echo '" target="_blank';
             echo '" data-category="Tenures';
             if(isset($type) && $type)
@@ -100,6 +100,8 @@
             echo " - {$tenure->category()}";
           if($tenure->type()->emitJobTitle() && !$tenure->end())
             echo '</span>';
+          if(!$tenure->showLink() && $tenure->hasUrl())
+            Page::externalLinkIcon();
           if($tenure->showLink() || $tenure->hasUrl())
             echo '</a>';
 ?>

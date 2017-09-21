@@ -18,6 +18,8 @@ class Tenure {
     $this->start        = $row['start'];
     $this->end          = $row['end'];
     $this->months       = $row['months'];
+    $this->hasBullets   = $row['hasBullets'] == 1;
+    $this->hasProjects  = $row['hasProjects'] == 1;
     $this->showInNav    = $row['showInNav'] == 1;
   }
 
@@ -37,7 +39,9 @@ class Tenure {
           $end,
           $months,
           $bullets,
+          $hasBullets,
           $projects,
+          $hasProjects,
           $showInNav,
           $skills;
 
@@ -112,16 +116,24 @@ class Tenure {
 
   public function bullets() {
     // lazy-load Bullet objects
-    if(!$this->bullets)
+    if($this->hasBullets && !$this->bullets)
       $this->bullets = Bullet::getByTenure($this);
     return $this->bullets;
   }
 
+  public function hasBullets() {
+    return $this->hasBullets;
+  }
+
   public function projects() {
     // lazy-load Project objects
-    if(!$this->projects)
+    if($this->hasProjects() && !$this->projects)
       $this->projects = Project::getByTenure($this);
     return $this->projects;
+  }
+
+  public function hasProjects() {
+    return $this->hasProjects;
   }
 
   public function hasPartial() {
@@ -132,8 +144,7 @@ class Tenure {
     return 
       $this->synopsis() ||
       $this->hasPartial() || 
-      ($this->bullets() && count($this->bullets()) > 0) ||
-      ($this->projects() && count($this->projects()) > 0);
+      $this->hasProjects();
   }
 
   public function hasUrl() {
@@ -162,9 +173,11 @@ class Tenure {
 
   const SELECT = "SELECT id, type, department, name, slug, category, synopsis, showInNav, url, " .
     "MonthYearOrPresent(start) start, MonthYearOrPresent(end) end, " .
-    "TIMESTAMPDIFF(MONTH, start, COALESCE(end, NOW())) AS months " .
+    "TIMESTAMPDIFF(MONTH, start, COALESCE(end, NOW())) AS months, " .
+    "EXISTS(SELECT * FROM projects p WHERE tenures.id = p.tenure) AS hasProjects, " .
+    "EXISTS(SELECT * FROM bullets b WHERE tenures.id = b.tenure) AS hasBullets " .
     "FROM tenures ";
-  const ORDER  = " ORDER BY COALESCE(end, '2099-01-01') DESC, tenures.start DESC ";
+  const ORDER  = " ORDER BY COALESCE(end, start) DESC, tenures.start DESC ";
 
   public static function getAll() {
     $arr = array();

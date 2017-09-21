@@ -10,3 +10,9 @@
 .collapsed > .fa-chevron-up-down:before {
   content: "\f078"; // fa-chevron-down when collapsed
 }
+
+.fa-external-link {
+  color: $gray !important;
+  font-size: 0.75em !important;
+  padding-left: 0.4em;
+}

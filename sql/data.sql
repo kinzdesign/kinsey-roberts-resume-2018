@@ -44,9 +44,8 @@ INSERT INTO `bullets` VALUES
   (17,5,'Researched the impact of <a href=\"{project|gamifying-genetics}\">gamification on genetic literacy acquisition</a> through self-guided online learning',2),
   (18,5,'Presented a poster on <a href=\"{project|intersectional-identities}\">capturing intersectional identities in demographic surveys</a>',3),
   (19,18,'Built new avenues for collaboration and knowledge sharing during an IT reorganization/centralization by founding a campus-wide web developers group',NULL),
-  (20,24,'Elected to Vice President from 2011-2013 and President from 2013 to present',NULL),
   (21,20,'Facilitated educational sessions for incoming students covering implicit bias, microaggressions, intent vs. impact, and intersectionality.',NULL),
-  (22,19,'Compiled campus responses to the <a href=\"https://www.campusprideindex.org/\" target=\"_blank\" data-category=\"External Link\" data-action=\"Campus Pride Index\">Campus Pride Index</a> survey in 2007 and 2017, with input from 20+ campus offices.',1),
+  (22,19,'Compiled campus responses to the <a href=\"https://www.campusprideindex.org/\" target=\"_blank\" data-category=\"External Link\" data-action=\"Campus Pride Index\">Campus Pride Index</a>{ico|ext} survey in 2007 and 2017, with input from 20+ campus offices.',1),
   (23,19,'Provided actionable recommendations on how to increase Campus Pride Index ranking by improving the campus climate in ways small and large',2),
   (24,19,'Redesigned LGBT Resources webpage (2008), prepared website content for LGBT Center dedication (2010)',3);
 /*!40000 ALTER TABLE `bullets` ENABLE KEYS */;
@@ -163,10 +162,10 @@ LOCK TABLES `projects` WRITE;
 INSERT INTO `projects` VALUES
   (1,1,'Server Hardening','server-hardening','Developed a three-phase plan to address a web server that was breached before my arrival.',NULL),
   (2,1,'Server Migration','server-migration','Built core infrastructure and trained fellow staff to transition from Adobe ColdFusion to Microsoft ASP.NET.',NULL),
-  (3,2,'Mailroom','mailroom','Optimized mailroom workflows to handle a 67% increase in packages over 4 years.',NULL),
+  (3,15,'Mailroom','mailroom','Optimized mailroom workflows to handle a 67% increase in packages over 4 years.',NULL),
   (4,5,'Gamifying Genetics','gamifying-genetics','Investigated how people learn about science and genetics online and the effects of game-play elements on the process.',NULL),
-  (6,2,'Housing and Residence Life Database (HARLD)','harld','Expanded software that powered day-to-day operations of university housing, residence life, greek life, and associated offices.',NULL),
-  (7,2,'Digital Signage','digital-signage','Devised a digital signage platform to inform members of the campus community in public areas.',NULL),
+  (6,15,'Housing and Residence Life Database (HARLD)','harld','Expanded software that powered day-to-day operations of university housing, residence life, greek life, and associated offices.',NULL),
+  (7,15,'Digital Signage','digital-signage','Devised a digital signage platform to inform members of the campus community in public areas.',NULL),
   (10,5,'Intersectional Identities','intersectional-identities','Demonstrated a granular demographics form to allow more diverse self-expression.',NULL),
   (11,1,'Hobsons Admissions','hobsons-admissions','Took over support of an admissions management system while our business analyst position was vacant.',NULL);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
@@ -291,10 +290,11 @@ INSERT INTO `tenures` VALUES
   (15,1,2,'Software Developer','software-developer','Analyst/Programmer 2',NULL,NULL,'2008-06-01','2012-10-01','\0'),
   (16,1,2,'Training and Support Manager','training-and-support-manager',NULL,NULL,NULL,'2007-05-21','2008-06-01','\0'),
   (18,4,9,'Web Developers Group','web-developers-group','Founder',NULL,NULL,'2016-09-16',NULL,'\0'),
-  (19,4,10,'LGBTQA Committee','lgbtqa-committee','Member',NULL,'https://case.edu/lgbt/committee/','2007-08-01',NULL,'\0'),
+  (19,4,10,'LGBTQA Committee','lgbtqa-committee','Member',NULL,'https://case.edu/lgbt/committee/','2007-06-14',NULL,'\0'),
   (20,4,11,'Diversity 360','diversity-360','Facilitator',NULL,'https://students.case.edu/diversity/training/diversity360/','2016-02-03',NULL,'\0'),
-  (24,4,14,'Board Member','board-member',NULL,NULL,NULL,'2011-01-01',NULL,'\0'),
-  (25,3,5,'HighEdWeb conference 2017','highedweb-2017','Hartford, CT',NULL,'https://2017.highedweb.org/','2017-10-08','2017-10-11','\0');
+  (24,4,14,'President','president',NULL,NULL,NULL,'2013-01-24',NULL,'\0'),
+  (25,3,5,'HighEdWeb conference 2017','highedweb-2017','Hartford, CT',NULL,'https://2017.highedweb.org/','2017-10-08','2017-10-11','\0'),
+  (26,4,14,'Vice President','vice-president',NULL,NULL,NULL,'2011-01-24','2013-01-24','\0');
 /*!40000 ALTER TABLE `tenures` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
