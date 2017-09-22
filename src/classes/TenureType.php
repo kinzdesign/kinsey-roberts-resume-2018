@@ -12,9 +12,9 @@ class TenureType {
     $this->showInNav        = $row['showInNav'] == 1;
     $this->showDuration     = $row['showDuration'] == 1;
     $this->showStartDate    = $row['showStartDate'] == 1;
-    $this->emitJobTitle     = $row['emitJobTitle'] == 1;
-    $this->schemaProperty   = $row['schemaProperty'];
-    $this->schemaType       = $row['schemaType'];
+    $this->nameProperty     = $row['nameProperty'];
+    $this->deptProperty     = $row['deptProperty'];
+    $this->deptType         = $row['deptType'];
   }
 
   /*
@@ -29,9 +29,9 @@ class TenureType {
           $showInNav,
           $showDuration,
           $showStartDate,
-          $emitJobTitle,
-          $schemaProperty,
-          $schemaType;
+          $nameProperty,
+          $deptProperty,
+          $deptType;
 
   public function id() {
     return $this->id;
@@ -61,16 +61,16 @@ class TenureType {
     return $this->showStartDate;
   }
 
-  public function emitJobTitle() {
-    return $this->emitJobTitle;
+  public function nameProperty() {
+    return $this->nameProperty;
   }
 
-  public function schemaProperty() {
-    return $this->schemaProperty;
+  public function deptProperty() {
+    return $this->deptProperty;
   }
 
-  public function schemaType() {
-    return $this->schemaType;
+  public function deptType() {
+    return $this->deptType;
   }
 
   public function tenures() {
@@ -92,7 +92,7 @@ class TenureType {
    * data access
    */
 
-  const SELECT = "SELECT id, name, slug, shortName, showInNav, showDuration, showStartDate, emitJobTitle, schemaProperty, schemaType ".
+  const SELECT = "SELECT id, name, slug, shortName, showInNav, showDuration, showStartDate, nameProperty, deptProperty, deptType ".
   "FROM tenure_types ";
   const ORDER  = " ORDER BY displayorder ";
 

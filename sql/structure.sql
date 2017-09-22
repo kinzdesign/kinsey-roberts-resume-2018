@@ -170,9 +170,9 @@ CREATE TABLE `tenure_types` (
   `showInNav` bit(1) NOT NULL DEFAULT b'1',
   `showDuration` bit(1) NOT NULL DEFAULT b'1',
   `showStartDate` bit(1) NOT NULL DEFAULT b'1',
-  `emitJobTitle` bit(1) NOT NULL DEFAULT b'0',
-  `schemaProperty` varchar(45) DEFAULT NULL,
-  `schemaType` varchar(45) DEFAULT NULL,
+  `nameProperty` varchar(45) DEFAULT NULL,
+  `deptProperty` varchar(45) DEFAULT NULL,
+  `deptType` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

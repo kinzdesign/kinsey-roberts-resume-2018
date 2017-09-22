@@ -260,11 +260,11 @@ UNLOCK TABLES;
 LOCK TABLES `tenure_types` WRITE;
 /*!40000 ALTER TABLE `tenure_types` DISABLE KEYS */;
 INSERT INTO `tenure_types` VALUES
-  (1,'Experience','experience',NULL,1,'','','','','worksFor','http://schema.org/Organization'),
-  (2,'Education','education',NULL,2,'','\0','','\0','alumniOf','http://schema.org/EducationalOrganization'),
-  (3,'Professional Development','professional-development','Conferences',3,'','\0','\0','\0','affiliation','http://schema.org/Organization'),
-  (4,'Volunteer Experience','volunteer-experience','Volunteer',4,'','','','\0','memberOf','http://schema.org/Organization'),
-  (5,'Awards','awards',NULL,5,'','\0','\0','\0','affiliation','http://schema.org/Organization');
+  (1,'Experience','experience',NULL,1,'','','','jobTitle','worksFor','http://schema.org/Organization'),
+  (2,'Education','education',NULL,2,'','\0','',NULL,'alumniOf','http://schema.org/EducationalOrganization'),
+  (3,'Professional Development','professional-development','Conferences',3,'','\0','\0',NULL,'affiliation','http://schema.org/Organization'),
+  (4,'Volunteer Experience','volunteer-experience','Volunteer',4,'','','',NULL,'memberOf','http://schema.org/Organization'),
+  (5,'Awards','awards',NULL,5,'','\0','\0','award','affiliation','http://schema.org/Organization');
 /*!40000 ALTER TABLE `tenure_types` ENABLE KEYS */;
 UNLOCK TABLES;
 

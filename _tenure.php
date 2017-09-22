@@ -12,7 +12,7 @@
     Page::$skills = $tenure->skills();
     Page::renderTop("{$tenure->extendedName()} | {$tenure->type()->name()}");
 ?>
-          <h2 class="head-tenure" itemprop="jobTitle"><?php 
+          <h2 class="head-tenure" itemprop="<?php echo $project->tenure()->type()->nameProperty(); ?>"><?php 
             echo $tenure->name(); 
             if($tenure->category()) 
               echo " - {$tenure->category()}";
@@ -21,7 +21,7 @@
             <div class="tenure-duration"><?php echo $tenure->duration(); ?></div>
             <div class="tenure-dates"><?php echo $tenure->start(); ?>&ndash;<?php echo $tenure->end(); ?></div>
           </div>
-<?php     echo "          <span itemscope itemprop=\"{$tenure->type()->schemaProperty()}\" itemType=\"{$tenure->type()->schemaType()}\">\r\n";
+<?php     echo "          <span itemscope itemprop=\"{$tenure->type()->deptProperty()}\" itemType=\"{$tenure->type()->deptType()}\">\r\n";
           if($tenure->department()->url()) {
             echo "            <a href=\"{$tenure->department()->url()}\" target=\"_blank\" data-category=\"Tenure - {$tenure->name()}\" data-action=\"Department Click - {$tenure->department()->name()}\">\r\n";
           }

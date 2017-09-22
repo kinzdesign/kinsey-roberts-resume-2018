@@ -34,7 +34,7 @@
             </li>
 <?php       } ?>
             <li>
-              <div class="tenure-department" itemscope itemprop="<?php echo $tenure->type()->schemaProperty(); ?>" itemtype="<?php echo $tenure->type()->schemaType(); ?>">
+              <div class="tenure-department" itemscope itemprop="<?php echo $tenure->type()->deptProperty(); ?>" itemtype="<?php echo $tenure->type()->deptType(); ?>">
 <?php     if($header->showDuration()) 
             echo "                <div class=\"department-duration\">{$tenure->department()->duration()}</div>\n"; ?>
 <?php 
@@ -92,13 +92,13 @@
               echo " - {$type->name()}";
             $external = $tenure->hasUrl() ? ' (external)' : '';
             echo "\" data-action=\"Tenure Click{$external} - {$tenure->name()}\">";
-            if($tenure->type()->emitJobTitle() && $tenure->end() == 'present')
-              echo '<span itemprop="jobTitle">';
           } 
+          if($tenure->type()->nameProperty())
+            echo '<span itemprop="'.$tenure->type()->nameProperty().'">';
           echo $tenure->name(); 
           if($tenure->category()) 
             echo " - {$tenure->category()}";
-          if($tenure->type()->emitJobTitle() && !$tenure->end())
+          if($tenure->type()->nameProperty())
             echo '</span>';
           if(!$tenure->showLink() && $tenure->hasUrl())
             echo Page::externalLinkIcon();
