@@ -69,7 +69,8 @@ INSERT INTO `departments` VALUES
   (9,1,'University Technology',NULL,'https://www.case.edu/utech/'),
   (10,1,'LGBT Center',NULL,'https://www.case.edu/lgbt/'),
   (11,1,'Office of Multicultural Affairs',NULL,'https://students.case.edu/departments/oma/'),
-  (14,5,'University View Condominium Association',NULL,NULL);
+  (14,5,'University View Condominium Association',NULL,NULL),
+  (15,1,'CWRU Pride, LGBT Alumni Network',NULL,'https://case.edu/alumni/lgbt/');
 /*!40000 ALTER TABLE `departments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -261,8 +262,9 @@ LOCK TABLES `tenure_types` WRITE;
 INSERT INTO `tenure_types` VALUES
   (1,'Experience','experience',NULL,1,'','','','','worksFor','http://schema.org/Organization'),
   (2,'Education','education',NULL,2,'','\0','','\0','alumniOf','http://schema.org/EducationalOrganization'),
-  (3,'Professional Development','professional-development',NULL,3,'','\0','\0','\0','affiliation','http://schema.org/Organization'),
-  (4,'Volunteer Experience','volunteer-experience','Volunteer',4,'','','','\0','affiliation','http://schema.org/Organization');
+  (3,'Professional Development','professional-development','Conferences',3,'','\0','\0','\0','affiliation','http://schema.org/Organization'),
+  (4,'Volunteer Experience','volunteer-experience','Volunteer',4,'','','','\0','memberOf','http://schema.org/Organization'),
+  (5,'Awards','awards',NULL,5,'','\0','\0','\0','affiliation','http://schema.org/Organization');
 /*!40000 ALTER TABLE `tenure_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -294,7 +296,8 @@ INSERT INTO `tenures` VALUES
   (20,4,11,'Diversity 360','diversity-360','Facilitator',NULL,'https://students.case.edu/diversity/training/diversity360/','2016-02-03',NULL,'\0'),
   (24,4,14,'President','president',NULL,NULL,NULL,'2013-01-24',NULL,'\0'),
   (25,3,5,'HighEdWeb conference 2017','highedweb-2017','Hartford, CT',NULL,'https://2017.highedweb.org/','2017-10-08','2017-10-11','\0'),
-  (26,4,14,'Vice President','vice-president',NULL,NULL,NULL,'2011-01-24','2013-01-24','\0');
+  (26,4,14,'Vice President','vice-president',NULL,NULL,NULL,'2011-01-24','2013-01-24','\0'),
+  (28,5,15,'CWRU Pride Alumni Award','cwru-pride-alumni-award',NULL,NULL,'/pdf/cwru-pride-alumni-award/','2017-10-06','2017-10-06','\0');
 /*!40000 ALTER TABLE `tenures` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
