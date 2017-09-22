@@ -12,7 +12,7 @@
     Page::$skills = $tenure->skills();
     Page::renderTop("{$tenure->extendedName()} | {$tenure->type()->name()}");
 ?>
-          <h2 class="head-tenure" itemprop="<?php echo $project->tenure()->type()->nameProperty(); ?>"><?php 
+          <h2 class="head-tenure" itemprop="<?php echo $tenure->type()->nameProperty(); ?>"><?php 
             echo $tenure->name(); 
             if($tenure->category()) 
               echo " - {$tenure->category()}";

@@ -70,7 +70,11 @@ INSERT INTO `departments` VALUES
   (10,1,'LGBT Center',NULL,'https://www.case.edu/lgbt/'),
   (11,1,'Office of Multicultural Affairs',NULL,'https://students.case.edu/departments/oma/'),
   (14,5,'University View Condominium Association',NULL,NULL),
-  (15,1,'CWRU Pride, LGBT Alumni Network',NULL,'https://case.edu/alumni/lgbt/');
+  (15,1,'CWRU Pride, LGBT Alumni Network',NULL,'https://case.edu/alumni/lgbt/'),
+  (16,1,'Student Affairs Professional Development Committee',NULL,NULL),
+  (17,1,'Office of Student Affairs',NULL,'https://students.case.edu/'),
+  (18,1,'Dr. Dorothy Pijan Student Leadership Awards',NULL,'https://students.case.edu/traditions/awards/leadership/'),
+  (19,1,'Office of Student Activities and Leadership',NULL,'https://students.case.edu/departments/activities/');
 /*!40000 ALTER TABLE `departments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -297,7 +301,11 @@ INSERT INTO `tenures` VALUES
   (24,4,14,'President','president',NULL,NULL,NULL,'2013-01-24',NULL,'\0'),
   (25,3,5,'HighEdWeb conference 2017','highedweb-2017','Hartford, CT',NULL,'https://2017.highedweb.org/','2017-10-08','2017-10-11','\0'),
   (26,4,14,'Vice President','vice-president',NULL,NULL,NULL,'2011-01-24','2013-01-24','\0'),
-  (28,5,15,'CWRU Pride Alumni Award','cwru-pride-alumni-award',NULL,NULL,'/pdf/cwru-pride-alumni-award/','2017-10-06','2017-10-06','\0');
+  (28,5,15,'CWRU Pride Alumni Award','cwru-pride-alumni-award',NULL,NULL,'/pdf/cwru-pride-alumni-award/','2017-10-06','2017-10-06','\0'),
+  (29,5,16,'Outstanding New Professional Staff','outstanding-new-professional-staff',NULL,NULL,NULL,'2011-05-25','2011-05-25','\0'),
+  (30,5,17,'Exceptional Support and Commitment to University-Wide Traditions','exceptional-support-and-commitment-to-university-wide-traditions',NULL,NULL,NULL,'2013-05-01','2013-05-01','\0'),
+  (31,5,18,'Outstanding Student Club/Organization Member','outstanding-student-club/organization-member',NULL,NULL,'https://students.case.edu/traditions/awards/leadership/2007.html','2007-05-01','2007-05-01','\0'),
+  (32,5,19,'Student Who Makes a Difference','student-who-makes-a-difference',NULL,NULL,NULL,'2006-02-01','2006-02-01','\0');
 /*!40000 ALTER TABLE `tenures` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
