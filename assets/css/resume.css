@@ -3906,10 +3906,14 @@ body {
 .collapsed > .fa-chevron-up-down:before {
   content: "\f078"; }
 
-.fa-external-link {
+.fa-external-link, .fa-file-pdf-o {
   color: #95a5a6 !important;
   font-size: 0.75em !important;
   padding-left: 0.4em; }
+
+.fa-file-pdf-o {
+  position: relative;
+  top: -0.17em; }
 
 .breadcrumb {
   list-style: none;

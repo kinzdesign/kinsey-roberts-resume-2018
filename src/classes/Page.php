@@ -122,6 +122,8 @@ class Page {
           case 'ico':
             if($matches[2] == 'ext')
               return self::externalLinkIcon();
+            if($matches[2] == 'pdf')
+              return self::pdfIcon();
         }
       }
       // if not handled, return raw text
@@ -131,5 +133,9 @@ class Page {
 
   public static function externalLinkIcon() {
     return '<i class="fa fa-external-link" aria-hidden="true"></i><span class="sr-only"> (External Link)</span>';
+  }
+
+  public static function pdfIcon() {
+    return '<i class="fa fa-file-pdf-o" aria-hidden="true"></i><span class="sr-only"> (PDF)</span>';
   }
 }
