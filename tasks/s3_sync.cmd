@@ -2,6 +2,6 @@
 @ECHO OFF
 ECHO.
 ECHO  + Syncing /static/ to S3...
-aws s3 sync ../static s3://resume.kinzdesign.com
+aws s3 sync ../static s3://kinseyroberts.me
 ECHO    ^> Done
 ECHO.
