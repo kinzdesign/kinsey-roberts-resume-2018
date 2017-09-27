@@ -58,13 +58,6 @@ foreach (Skill::getAll() as $skill)
 foreach ((new DirectoryIterator("$cwd/../assets/pdfs/")) as $file)
   if ($file->getExtension() == 'pdf')
     download_page('/pdf/' . substr($file->getFilename(), 0, -4) . '/');
-// build employer pages
-copy_page('/', '/23andme/');
-copy_page('/', '/amazon/');
-copy_page('/', '/change-org/');
-copy_page('/', '/facebook/');
-copy_page('/', '/google/');
-copy_page('/', '/microsoft/');
 
 // copy assets
 exec("xcopy /I /S /H /Y /C {$cwd}\\..\\assets {$cwd}\\..\\static\\assets");
