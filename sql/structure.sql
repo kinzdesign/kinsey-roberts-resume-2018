@@ -30,7 +30,7 @@ DROP TABLE IF EXISTS `bullets`;
 CREATE TABLE `bullets` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `tenure` tinyint(3) unsigned NOT NULL,
-  `text` varchar(255) NOT NULL,
+  `text` varchar(350) NOT NULL,
   `displayorder` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `experience` (`tenure`),

@@ -28,26 +28,32 @@ LOCK TABLES `bullets` WRITE;
 /*!40000 ALTER TABLE `bullets` DISABLE KEYS */;
 INSERT INTO `bullets` VALUES
   (3,16,'Provided individualized assistance and group training to end users',1),
-  (4,16,'Oversaw and developed a team of student employees',2),
+  (4,16,'Oversaw and developed a team of 3-6 student employees',2),
   (5,16,'Procured IT hardware, supplies, and professional services and allocated costs to departments',3),
   (6,15,'Developed for desktop, web, and mobile platforms using Microsoft .NET Framework',1),
   (7,15,'Owned multiple products as the sole full-time developer, including a flagship <a href=\"{project|harld}\">housing operations system</a> that managed room assignments, physical access, maintenance work orders, mailroom packages, furniture inventory, and more',2),
-  (8,15,'Grew digital signage from an 8 display pilot to <a href=\"{project|digital-signage}\">a ubiquitous 36+ installations across campus</a>',3),
+  (8,15,'Grew custom digital signage platform from an 8 display pilot to campus ubiquity with <a href=\"{project|digital-signage}\">36+ installations across campus</a>',3),
   (9,15,'Communicated with and observer end users to ease pain points and discover new optimizations',4),
   (10,15,'Designed ad hoc and self-service SQL reports to support business needs and improve staff efficiency',5),
   (11,2,'Promoted from Software Developer to reflect skills, experience, and performance',1),
   (12,2,'Broadened existing products - adding new features and modules - and tackled additional projects',2),
   (13,3,'Research-focused biology curriculum with substantial interdisciplinary breadth, <a href=\"{pdf|bs-biology-transcript}\" target=\"_blank\">earned a 3.275 GPA{ico|pdf}</a>',1),
   (14,3,'Contributed to epilepsy research in transgenic mice at the Neural Engineering Center',2),
-  (15,4,'Excelled in undergraduate computer science courses in preparation for admission in the CS masters program, <a href=\"{pdf|non-degree-transcript}\" target=\"_blank\">earning an A in each course{ico|pdf}</a>',1),
+  (15,4,'Excelled in undergraduate computer science courses in preparation for admission in the computer science masters program, <a href=\"{pdf|non-degree-transcript}\" target=\"_blank\">earning an A in each course{ico|pdf}</a>',1),
   (16,5,'Maintained a <a href=\"{pdf|ms-computer-science-transcript}\" target=\"_blank\">4.0 cumulative GPA{ico|pdf}</a> through computer science core and bioinformatics specialization',1),
   (17,5,'Researched the impact of <a href=\"{project|gamifying-genetics}\">gamification on genetic literacy acquisition</a> through self-guided online learning',2),
   (18,5,'Presented a poster on <a href=\"{project|intersectional-identities}\">capturing intersectional identities in demographic surveys</a>',3),
   (19,18,'Built new avenues for collaboration and knowledge sharing during an IT reorganization/centralization by founding a campus-wide web developers group',NULL),
-  (21,20,'Facilitated educational sessions for incoming students covering implicit bias, microaggressions, intent vs. impact, and intersectionality.',NULL),
-  (22,19,'Compiled campus responses to the <a href=\"https://www.campusprideindex.org/\" target=\"_blank\" data-category=\"External Link\" data-action=\"Campus Pride Index\">Campus Pride Index</a>{ico|ext} survey in 2007 and 2017, with input from 20+ campus offices.',1),
+  (21,20,'Facilitated educational sessions for incoming students covering implicit bias, microaggressions, intent vs. impact, and intersectionality',NULL),
+  (22,19,'Compiled input from 20+ campus offices to complete the campus responses to the <a href=\"https://www.campusprideindex.org/campuses/details/19?campus=case-western-reserve-university\" target=\"_blank\" data-category=\"External Link\" data-action=\"Campus Pride Index\">Campus Pride Index</a>{ico|ext} survey in 2007 and 2017',1),
   (23,19,'Provided actionable recommendations on how to increase Campus Pride Index ranking by improving the campus climate in ways small and large',2),
-  (24,19,'Redesigned LGBT Resources webpage (2008), prepared website content for LGBT Center dedication (2010)',3);
+  (24,19,'Redesigned and expanded LGBT Resources webpage (2008), prepared website content for LGBT Center dedication (2010), maintained the site in the interim',3),
+  (25,1,'Maintained the business school\'s web presence, spanning 3 servers, 21 domains, 108 subdomains, and >16K pages',NULL),
+  (26,1,'Introduced new-to-the-team development practices including Sass, source control, and object-oriented programming (OOP)',NULL),
+  (27,1,'Collaborated closely with marketing and admissions to imagine, design, and execute web and email campaigns',NULL),
+  (28,1,'<a href=\"{project|server-hardening}\">Hardened web server configuration and code</a> to remediate a breach and reduce the risk of future intrusions',NULL),
+  (29,1,'Led the <a href=\"{project|server-migration}\">migration from ColdFusion to ASP.NET</a>, developing both code and people in the process',NULL),
+  (30,1,'Stepped up to <a href=\"{project|hobsons-admissions}\">support the admissions team with their CRM</a> when a colleague moved on to a new position; delivered on asks that even the vendor thought were impossible',NULL);
 /*!40000 ALTER TABLE `bullets` ENABLE KEYS */;
 UNLOCK TABLES;
 
