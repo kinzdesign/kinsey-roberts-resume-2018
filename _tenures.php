@@ -11,8 +11,9 @@
       Page::$title = $type->name();
     }
   }
+  $isHomepage = !$headers;
   // if headers not loaded, get all
-  if(!$headers) {
+  if($isHomepage) {
     $headers = TenureType::getAll();
     Page::$isHomepage = true;
     Page::$showTopnav = false;
@@ -22,8 +23,12 @@
     Page::$offCanvasSidebar = true;
   }
   Page::renderTop();
+  // output hidden header for screen reader on homepage
+  if($isHomepage) 
+    echo "          <h1 class=\"sr-only\">Kinsey Roberts</h1>\r\n";
   foreach ($headers as $header) {
           $prevDept = false; ?>
+
           <h2 class="head-tenure-type"><?php echo $header->name(); ?></h2>
           <ul class="list-departments">
 <?php   foreach($header->tenures() as $tenure) { 
