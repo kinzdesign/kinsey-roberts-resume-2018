@@ -34,6 +34,7 @@ body.top-navbar-fixed {
     display: none;
   }
 }
+
 .navbar-short-text {
   display: none;
 
@@ -49,5 +50,13 @@ body.top-navbar-fixed {
     display: inline-block;
     float: right;
     padding-top: 21px;
+  }
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: lighten($brand-primary, 45%);
+
+  &:hover {
+    color: #fff;
   }
 }

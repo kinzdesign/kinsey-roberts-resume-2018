@@ -3810,6 +3810,11 @@ body.top-navbar-fixed {
       float: right;
       padding-top: 21px; } }
 
+.navbar-default .navbar-nav > li > a {
+  color: #be96f0; }
+  .navbar-default .navbar-nav > li > a:hover {
+    color: #fff; }
+
 /*
  * Style tweaks
  * --------------------------------------------------
