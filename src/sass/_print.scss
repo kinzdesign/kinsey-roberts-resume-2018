@@ -35,6 +35,10 @@
     height: auto;
   }
 
+  .list-departments, .list-tenures, .list-tenure-bullets {
+    padding-left: 20px;
+  }
+
   /* hides */
 
   .breadcrumb,
@@ -58,6 +62,11 @@
     font-size: 10pt;
   }
 
+  abbr[title] {
+    border-bottom: none;
+  }
+
+  abbr[title]:after,
   a[href]:after {
     content: "";
   }
