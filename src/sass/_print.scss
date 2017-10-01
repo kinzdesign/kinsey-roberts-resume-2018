@@ -5,7 +5,7 @@
   h1, h2, h3, h4 {
     font-size: 14pt;
   }
-  h5, h6, .tenure-title {
+  h5, h6, .tenure-title, .tenure-title.subtle {
     font-size: 12pt;
   }
 
@@ -35,7 +35,7 @@
     height: auto;
   }
 
-  .list-departments, .list-tenures, .list-tenure-bullets {
+  ul {
     padding-left: 20px;
   }
 
@@ -55,6 +55,16 @@
     margin-top: 12px;
     padding-top: 0;
     border-top: none;
+  }
+
+  .list-departments.duration>li {
+    padding-top: 10px;
+    margin-top: 10px;
+
+    &:first-child {
+      padding-top: 0;
+      margin-top: 0;
+    }
   }
 
   .list-tenure-bullets>li {

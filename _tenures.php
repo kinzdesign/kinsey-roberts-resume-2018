@@ -30,7 +30,7 @@
           $prevDept = false; ?>
 
           <h2 class="head-tenure-type"><?php echo $header->name(); ?></h2>
-          <ul class="list-departments <?php if($header->showDuration()) echo ' duration' ?>">
+          <ul class="list-departments list-unstyled <?php if($header->showDuration()) echo ' duration' ?>">
 <?php   foreach($header->tenures() as $tenure) { 
           if($tenure->department()->id() != $prevDept) { 
             if($prevDept) { ?>

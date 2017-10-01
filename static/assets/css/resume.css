@@ -4073,17 +4073,23 @@ abbr[title], acronym[title], abbr[data-original-title] {
   .footer .footer-right {
     text-align: right; }
 
-.list-deliverables {
-  padding-left: 20px; }
-  .list-deliverables .list-margin-bottom li {
-    margin-bottom: 0.5em; }
+ul {
+  padding-left: 24px; }
+
+.list-deliverables .list-margin-bottom li {
+  margin-bottom: 0.5em; }
+
+ul.list-unstyled > li > ul, .sidebar .panel-body ul > li > ul {
+  list-style-type: circle; }
+  ul.list-unstyled > li > ul > li > ul, .sidebar .panel-body ul > li > ul > li > ul {
+    list-style-type: disc; }
 
 @media print {
   /* font sizes */
   h1, h2, h3, h4 {
     font-size: 14pt; }
 
-  h5, h6, .tenure-title {
+  h5, h6, .tenure-title, .tenure-title.subtle {
     font-size: 12pt; }
 
   .tenure-department {
@@ -4106,7 +4112,7 @@ abbr[title], acronym[title], abbr[data-original-title] {
     padding-bottom: 0;
     height: auto; }
 
-  .list-departments, .list-tenures, .list-tenure-bullets {
+  ul {
     padding-left: 20px; }
 
   /* hides */
@@ -4123,6 +4129,13 @@ abbr[title], acronym[title], abbr[data-original-title] {
     margin-top: 12px;
     padding-top: 0;
     border-top: none; }
+
+  .list-departments.duration > li {
+    padding-top: 10px;
+    margin-top: 10px; }
+    .list-departments.duration > li:first-child {
+      padding-top: 0;
+      margin-top: 0; }
 
   .list-tenure-bullets > li {
     margin-top: 2px;
