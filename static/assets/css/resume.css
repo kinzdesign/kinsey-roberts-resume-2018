@@ -3804,12 +3804,12 @@ body.top-navbar-fixed {
 
 .print-only-email {
   display: none; }
+  @media print {
+    .print-only-email {
+      display: inline-block;
+      float: right;
+      padding-top: 21px; } }
 
-@media print {
-  .print-only-email {
-    display: inline-block;
-    float: right;
-    padding-top: 21px; } }
 /*
  * Style tweaks
  * --------------------------------------------------
@@ -3902,6 +3902,10 @@ body {
 .padding-bottom-xs,
 .padding-both-xs {
   padding-bottom: 1px; }
+
+abbr[title], acronym[title], abbr[data-original-title] {
+  border-bottom: 1px dotted #b4bcc2;
+  text-decoration: none; }
 
 /* icons */
 .fa {
