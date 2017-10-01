@@ -41,3 +41,13 @@ body.top-navbar-fixed {
     display: inline;
   }
 }
+
+.print-only-email {
+  display: none;
+
+  @media print {
+    display: inline-block;
+    float: right;
+    padding-top: 21px;
+  }
+}

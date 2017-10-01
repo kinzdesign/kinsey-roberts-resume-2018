@@ -3802,6 +3802,14 @@ body.top-navbar-fixed {
     .navbar-short-text {
       display: inline; } }
 
+.print-only-email {
+  display: none; }
+  @media print {
+    .print-only-email {
+      display: inline-block;
+      float: right;
+      padding-top: 21px; } }
+
 /*
  * Style tweaks
  * --------------------------------------------------

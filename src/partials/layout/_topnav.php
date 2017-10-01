@@ -24,6 +24,8 @@
 ?>
     <nav class="navbar navbar-fixed-top navbar-default">
       <div class="container">
+<?php # Print-only email address ?>
+      <span class="print-only-email" aria-hidden="true">kinsey.q.roberts@gmail.com</span>
 <?php # Brand and toggle get grouped for better mobile display ?>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
