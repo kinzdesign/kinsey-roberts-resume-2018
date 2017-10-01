@@ -88,7 +88,7 @@
                   </div>
                   <div class="tenure-title<?php if(!$hasBullets) echo ' subtle'; ?>">
 <?php     if($tenure->showLink() || $tenure->hasUrl()) {
-            $isExternal = $tenure->hasUrl() && strpos(':', $tenure->url());
+            $isExternal = !$tenure->showLink() && $tenure->hasUrl() && strpos($tenure->url(), ':');
             echo '                    <a href="';
             echo $tenure->url();
             if($isExternal)
@@ -106,7 +106,7 @@
             echo " - {$tenure->category()}";
           if($tenure->type()->nameProperty())
             echo '</span>';
-          if(!$tenure->showLink() && $tenure->hasUrl() && strpos($tenure->url(), ':'))
+          if($isExternal && $tenure->hasUrl())
             echo Page::externalLinkIcon();
           else if (!$tenure->showLink() && $tenure->hasUrl() && strpos($tenure->url(), 'pdf'))
             echo Page::pdfIcon();
