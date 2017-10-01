@@ -3903,6 +3903,10 @@ body {
 .padding-both-xs {
   padding-bottom: 1px; }
 
+abbr[title], acronym[title], abbr[data-original-title] {
+  border-bottom: 1px dotted #b4bcc2;
+  text-decoration: none; }
+
 /* icons */
 .fa {
   font-family: FontAwesome;

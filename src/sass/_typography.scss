@@ -27,3 +27,7 @@
   padding-bottom: $padding-xs-vertical;
 }
 
+abbr[title], acronym[title], abbr[data-original-title] {
+    border-bottom: 1px dotted $gray-light;
+    text-decoration: none;
+}
