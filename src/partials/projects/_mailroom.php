@@ -15,7 +15,7 @@
           <p>I worked closely with the staff who logged packages to find opportunities for improvement and designed new optimizations and features.</p>
           <p>Through software, hardware, and process improvements, I was able to help the mailrooms cope with a 67% increase in mailroom traffic, from 51K packages in Fiscal Year 2008 to 85K packages in Fiscal Year 2013.</p>
           <hr/>
-          <h3>Highlights</h3>
+          <h2>Highlights</h2>
           <p>To give an idea of the scope of the issues created by such an increase, there were at least 3 physical remodels to expand the area offices in order to add additional shelves for packages. At peak times, the offices could handle over 400 packages per day, so a mere 9 second decrease in the time to log a package could save an hour of labor a day.</p>
           <p>I visited the area offices frequently, talking to staff about pain points, observing packages being logged, and occasionally sat down and logged a hundred or so packages. These experiences taught me the importance of keeping your end users front-of-mind throughout the development process.
           </p>

@@ -13,7 +13,7 @@
     Page::$skills = $project->skills();
     Page::renderTop($project->name() . ' | Projects ');
 ?>
-          <h2 class="head-tenure-type"><?php echo $project->name(); ?></h2>
+          <h1 class="head-tenure-type"><?php echo $project->name(); ?></h1>
           <div class="tenure-title">
             <a href="<?php echo $project->tenure()->url(); ?>" data-category="Project - <?php echo $project->name(); ?>" data-action="Tenure Click - <?php echo $project->tenure()->name(); ?>">
               <span itemprop="<?php echo $project->tenure()->type()->nameProperty(); ?>">

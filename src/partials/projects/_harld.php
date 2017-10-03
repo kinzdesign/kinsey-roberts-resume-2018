@@ -2,7 +2,7 @@
   Page::registerGoogleCharts();
   Page::registerChart('harldByYear');
 ?>
-          <h3>Responsibilities</h3>
+          <h2>Responsibilities</h2>
           <ul>
             <li>Developed UI clients (desktop, web, and mobile) and cross-platform business objects</li>
             <li>Provided tier 1-3 support to end users of the software</li>
@@ -14,7 +14,7 @@
             <li>Managed role-based access for staff and student employees</li>
           </ul>
           <hr/>
-          <h3>Summary</h3>
+          <h2>Summary</h2>
           <p>HARLD is a custom multi-client, multi-platform system that powers the day-to-day operations of several departments related to students.</p>
           <p>University staff were constantly being asked to do more with less as the university went through some financial stress during the economic downturn, and HARLD had already proven its worth by optimizing workflows and automating as much as possible.</p>
           <p>I inherited HARLD at a mature state and during my time as the primary developer for HARLD, I expanded its scope to meet the departments' needs, adding new features, modules, workflows, and clients to the software.</p>
@@ -26,7 +26,7 @@
           </div>
           
           <hr/>
-          <h3>Highlights</h3>
+          <h2>Highlights</h2>
           <p>There were plenty of challenging and rewarding experiences while working on HARLD, but these are a few that stick out:</p>
           <ul>
             <li>

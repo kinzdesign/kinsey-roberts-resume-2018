@@ -3,7 +3,7 @@
           <p>Intruders had been able to upload malicious code via an improperly sanitized file upload form where someone forgot to validate the file extension before writing to the file system. According to my research, this was a common attack vector against ColdFusion servers, so I checked all of our file upload forms to ensure that all were following security best practices. Our susceptibility to such a common attack did not bode well for the overall security of our code, so once the file uploads we locked down, I outlined a three-phase plan to reduce our risk: fix high-risk vulnerabilities, upgrade ColdFusion, and eventually transition to another language.</p>
           <p>The first two phases are completed and the third is well underway. Aside from some hiccups around the go-live of phase two, the process has gone smoothly. I have developed procedures, documentation, and tools to assist throughout the process and provided education and training to fellow staff.</p>
 
-          <h3>Phases</h3>
+          <h2>Phases</h2>
           <ol>
             <li>
               <strong>Find and mitigate vulnerabilities in existing code</strong>

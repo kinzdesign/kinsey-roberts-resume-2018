@@ -12,11 +12,11 @@
     Page::$skills = $tenure->skills();
     Page::renderTop("{$tenure->extendedName()} | {$tenure->type()->name()}");
 ?>
-          <h2 class="head-tenure" itemprop="<?php echo $tenure->type()->nameProperty(); ?>"><?php 
+          <h1 class="head-tenure" itemprop="<?php echo $tenure->type()->nameProperty(); ?>"><?php 
             echo $tenure->name(); 
             if($tenure->category()) 
               echo " - {$tenure->category()}";
-          ?></h2>
+          ?></h1>
           <div class="tenure-date-block">
             <div class="tenure-duration"><?php echo $tenure->duration(); ?></div>
             <div class="tenure-dates"><?php echo $tenure->start(); ?>&ndash;<?php echo $tenure->end(); ?></div>

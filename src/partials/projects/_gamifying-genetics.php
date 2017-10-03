@@ -1,7 +1,7 @@
           <div class="col-sm-6 col-md-4 pull-right">
             <div class="panel panel-info">
               <div class="panel-heading">
-                <h3 class="panel-title">Deliverables</h3>
+                <h2 class="panel-title">Deliverables</h2>
               </div>
               <div class="panel-body">
                 <ul class="list-sm-padding list-margin-bottom">
@@ -48,7 +48,7 @@
           <p>I decided to focus on the latter, looking for ways to improve genetic literacy. Taking inspiration from Luminosity, I decided to focus on gamification as a motivator, having people earn points as they progressed through self-paced online educational modules. My initial vision of a massive "map" of information to be discovered exceeded the scope of a masters project and providing rich social interactions would require gathering personal data that would have made IRB approval more difficult. I distilled the concept down to a small proof-of-concept that could be tested by anonymous workers on Amazon Mechanical Turk (AMT), my protocol was granted an exemption from full IRB review, and my advisor provided funding to have 100 AMT workers test it.</p>
           <p>The small sample size and lack of longitudinal follow-up make these results preliminary, at best, but workers performed better on a test of genetic knowledge after completing the exercise than they did before. Additionally, workers in the gamified cohort reported higher confidence in their answers to mini quizzes throughout the exercise, leading to higher point scores than the control cohort.</p>
 
-          <h3>Highlights</h3>
+          <h2>Highlights</h2>
           <ul>
             <li>Used project as a reason to learn AngularJS and Material Design</li>
             <li>Wrote a scheduled script to automatically pay AMT workers several times a day</li>

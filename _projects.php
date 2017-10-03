@@ -3,7 +3,7 @@
   Project::queueProjectsBreadcrumb();
   Page::renderTop('Projects');
   $projects = Project::getAll(' ORDER BY COALESCE(displayorder, 254), name');
-  echo "          <h2>Projects</h2>\r\n";
+  echo "          <h1>Projects</h1>\r\n";
   echo "          <ul class=\"project-list\">\r\n";
   foreach ($projects as $project) {
     echo "            <li>\r\n";

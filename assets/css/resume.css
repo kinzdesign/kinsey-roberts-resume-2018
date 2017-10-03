@@ -404,22 +404,22 @@ h6, .h6 {
     font-size: 75%; }
 
 h1, .h1 {
-  font-size: 39px; }
-
-h2, .h2 {
   font-size: 32px; }
 
-h3, .h3 {
-  font-size: 26px; }
+h2, .h2 {
+  font-size: 25px; }
 
-h4, .h4 {
+h3, .h3 {
   font-size: 19px; }
 
-h5, .h5 {
+h4, .h4 {
   font-size: 15px; }
 
+h5, .h5 {
+  font-size: 14px; }
+
 h6, .h6 {
-  font-size: 13px; }
+  font-size: 12px; }
 
 p {
   margin: 0 0 10.5px; }
@@ -4003,7 +4003,7 @@ abbr[title], acronym[title], abbr[data-original-title] {
 
 @media screen and (min-width: 768px) {
   .sidebar h3 {
-    font-size: 19px; } }
+    font-size: 15px; } }
 .sidebar .panel-group {
   border-radius: 4px; }
 .sidebar .panel-group, .sidebar .panel-heading {
@@ -4011,7 +4011,7 @@ abbr[title], acronym[title], abbr[data-original-title] {
 .sidebar .panel-heading {
   border-radius: 0;
   padding: 4px;
-  font-size: 15px;
+  font-size: 14px;
   background-color: #f5f5f5; }
   .sidebar .panel-heading .fa {
     font-size: 0.7em;
@@ -4027,14 +4027,14 @@ abbr[title], acronym[title], abbr[data-original-title] {
       margin-bottom: 0.6em; }
 
 .tenure-department {
-  font-size: 15px; }
+  font-size: 14px; }
 
 .tenure-title {
-  font-size: 19px;
+  font-size: 15px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700; }
   .tenure-title.subtle {
-    font-size: 15px; }
+    font-size: 14px; }
 
 .tenure-synopsis,
 .tenure-dates {
@@ -4081,7 +4081,7 @@ abbr[title], acronym[title], abbr[data-original-title] {
 ul {
   padding-left: 24px; }
 
-.list-deliverables .list-margin-bottom li {
+.list-margin-bottom li {
   margin-bottom: 0.5em; }
 
 ul.list-unstyled > li > ul, .sidebar .panel-body ul > li > ul {
