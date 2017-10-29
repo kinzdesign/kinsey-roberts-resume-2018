@@ -56,15 +56,15 @@
 <?php } ?>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="mailto:kinsey.q.roberts@gmail.com" data-category="Contact" data-action="Topnav - Email" title="Email kinsey.q.roberts@gmail.com">
-                <i class="fa fa-lg fa-fw fa-envelope-o hidden-xs" aria-hidden="true"></i>
-                <span class="sr-only">Email </span><span class="visible-xs-inline visible-sm-inline" itemprop="email">kinsey.q.roberts@gmail.com</span>
-              </a>
-            </li>
-            <li>
               <a href="https://www.linkedin.com/in/kinsey-roberts-66166512" target="_blank" data-category="Contact" data-action="Topnav - LinkedIn" title="LinkedIn Profile">
                 <i class="fa fa-lg fa-fw fa-linkedin hidden-xs" aria-hidden="true"></i>
                 <span class="visible-xs-inline visible-sm-inline">LinkedIn Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:kinsey.q.roberts@gmail.com" data-category="Contact" data-action="Topnav - Email" title="Email kinsey.q.roberts@gmail.com">
+                <i class="fa fa-lg fa-fw fa-envelope-o hidden-xs" aria-hidden="true"></i>
+                <span class="sr-only">Email </span><span class="visible-xs-inline visible-sm-inline" itemprop="email">kinsey.q.roberts@gmail.com</span>
               </a>
             </li>
           </ul>

@@ -3815,6 +3815,9 @@ body.top-navbar-fixed {
   .navbar-default .navbar-nav > li > a:hover {
     color: #fff; }
 
+.navbar-right .fa-envelope-o {
+  color: #fff; }
+
 /*
  * Style tweaks
  * --------------------------------------------------
