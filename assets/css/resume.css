@@ -3908,6 +3908,18 @@ body {
 .padding-both-xs {
   padding-bottom: 1px; }
 
+.padding-all-large {
+  padding: 18px 27px; }
+
+.padding-all-small {
+  padding: 6px 9px; }
+
+.bg-success, .bg-warning, .bg-danger {
+  color: #fff; }
+
+figcaption {
+  font-style: italic; }
+
 abbr[title], acronym[title], abbr[data-original-title] {
   border-bottom: 1px dotted #b4bcc2;
   text-decoration: none; }
@@ -4083,6 +4095,8 @@ ul {
 
 .list-margin-bottom li {
   margin-bottom: 0.5em; }
+.list-margin-bottom ul, .list-margin-bottom ol {
+  margin-top: 0.5em; }
 
 ul.list-unstyled > li > ul, .sidebar .panel-body ul > li > ul {
   list-style-type: circle; }

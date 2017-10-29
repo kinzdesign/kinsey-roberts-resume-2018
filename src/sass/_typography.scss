@@ -27,6 +27,22 @@
   padding-bottom: $padding-xs-vertical;
 }
 
+.padding-all-large {
+  padding: $padding-large-vertical $padding-large-horizontal;
+}
+
+.padding-all-small {
+  padding: $padding-small-vertical $padding-small-horizontal;
+}
+
+.bg-success, .bg-warning, .bg-danger {
+  color: #fff;
+}
+
+figcaption {
+  font-style: italic;
+}
+
 abbr[title], acronym[title], abbr[data-original-title] {
     border-bottom: 1px dotted $gray-light;
     text-decoration: none;

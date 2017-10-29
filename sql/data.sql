@@ -170,12 +170,15 @@ LOCK TABLES `projects` WRITE;
 INSERT INTO `projects` VALUES
   (1,1,'Server Hardening','server-hardening','Developed a three-phase plan to address a web server that was breached before my arrival',NULL),
   (2,1,'Server Migration','server-migration','Built core infrastructure and trained fellow staff to transition from Adobe ColdFusion to Microsoft ASP.NET',NULL),
-  (3,15,'Mailroom','mailroom','Optimized mailroom workflows to handle a 67% increase in packages over 4 years',NULL),
+  (3,15,'Optimized Growing Mailroom Operations','mailroom','Optimized mailroom workflows to handle a 67% increase in packages over 4 years',NULL),
   (4,5,'Gamifying Genetics','gamifying-genetics','Investigated how people learn about science and genetics online and the effects of game-play elements on the process',NULL),
   (6,15,'Housing and Residence Life Database (HARLD)','harld','Expanded software that powered day-to-day operations of university housing, residence life, greek life, and associated offices',NULL),
   (7,15,'Digital Signage','digital-signage','Devised a digital signage platform to inform members of the campus community in public areas',NULL),
-  (10,5,'Intersectional Identities','intersectional-identities','Demonstrated a granular demographics form to allow more diverse self-expression',NULL),
-  (11,1,'Hobsons Admissions','hobsons-admissions','Took over support of an admissions management system while our business analyst position was vacant',NULL);
+  (10,5,'Intersectional Identities Poster','intersectional-identities','Demonstrated a granular demographics form to allow more diverse self-expression',NULL),
+  (11,1,'Hobsons Admissions','hobsons-admissions','Took over support of an admissions management system while our business analyst position was vacant',NULL),
+  (12,15,'Automated Card, Badge, and Key Issuing','physical-security','Rendered manual, paper-based procedures obsolete by incorporating physical security functionality into housing office software',NULL),
+  (13,15,'Dual-Client Furniture Inventory System','furniture-inventory','Developed a handheld barcode-based data acquisition client and back-office <abbr title=\"Graphical User Interface\">GUI</abbr>',NULL),
+  (14,15,'Mobile Work Order Client','mobile-work-orders','Created a Windows Phone 7 app to allow maintenance workers to see, edit, and resolve work orders in the field',NULL);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 

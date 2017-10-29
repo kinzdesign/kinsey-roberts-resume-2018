@@ -1,7 +1,7 @@
           <div class="col-sm-6 col-md-4 pull-right">
             <div class="panel panel-info">
               <div class="panel-heading">
-                <h2 class="panel-title">Deliverables</h2>
+                <h2 class="panel-title">Artifacts</h2>
               </div>
               <div class="panel-body">
                 <ul class="list-sm-padding list-margin-bottom">
@@ -43,15 +43,9 @@
               </div>
             </div>
           </div>
-          <p>In bioinformatics courses, we read papers about ideas and techniques with vast clinical implications. I often wondered how these discoveries could be translated to widespread usage in a population with low scientific literacy, generally, and especially low genetic literacy. How could a lay person give <em>truly</em> informed consent for some of these procedures without a decent understanding of genetics?</p>
-          <p>This nagging question eventually encouraged me to take a step back and look at the situation from a broader perspective when deciding on a focus for my masters project. Any potential contributions I could make to the <em>theory</em> side of the problem would face the same <em>societal</em> hurdles.</p>
-          <p>I decided to focus on the latter, looking for ways to improve genetic literacy. Taking inspiration from Luminosity, I decided to focus on gamification as a motivator, having people earn points as they progressed through self-paced online educational modules. My initial vision of a massive "map" of information to be discovered exceeded the scope of a masters project and providing rich social interactions would require gathering personal data that would have made IRB approval more difficult. I distilled the concept down to a small proof-of-concept that could be tested by anonymous workers on Amazon Mechanical Turk (AMT), my protocol was granted an exemption from full IRB review, and my advisor provided funding to have 100 AMT workers test it.</p>
-          <p>The small sample size and lack of longitudinal follow-up make these results preliminary, at best, but workers performed better on a test of genetic knowledge after completing the exercise than they did before. Additionally, workers in the gamified cohort reported higher confidence in their answers to mini quizzes throughout the exercise, leading to higher point scores than the control cohort.</p>
-
-          <h2>Highlights</h2>
-          <ul>
-            <li>Used project as a reason to learn AngularJS and Material Design</li>
-            <li>Wrote a scheduled script to automatically pay AMT workers several times a day</li>
-            <li>Built data analysis and visualization tools in PHP to simplify data interpretation and figure generation</li>
-            <li>Developed a demographics questionnaire to better <a href="<?php echo Project::getBySlug('intersectional-identities')->url(); ?>" data-category="Project - Gamifying Genetics" data-action="Body Click - Intersectional Identities">capture intersectional identities</a> and allow greater self-determination and -expression</li>
-          </ul>
+          <p>The papers we read in Bioinformatics classes fascinated me. The ways researchers reverse-engineered generics often blew my mind. With many of these discoveries, I wondered how they could be translated for clinical use. Few people have the scientific literacy to give informed consent to such procedures.</p>
+          <p>As I was deciding what project I should pursue for my masters program, this concern kept popping up. In time, I decided to face the lack of scientific literacy head-on.</p>
+          <p>Taking inspiration from Luminosity, I decided to focus on gamification as a motivator. People would earn points as they progressed through self-paced online educational modules. I envisioned a massive "map" of information for users to explore. In this vision, rich social interactions would keep users engaged and returning.</p>
+          <p>Starting from this hypothetical end product, I worked backwards to a proof of concept. I needed something small enough that the experience was reproducible across participants. I chose to scrap the social aspects from the proof of concept as they would complicate <abbr title="Institutional Review Board">IRB</abbr> approval. My adviser suggested Amazon Mechanical Turk (AMT) for participant recruitment. I proposed a budget to have 100 participants test the proof of concept and my adviser funded it. I wrote a protocol that the <abbr title="Institutional Review Board">IRB</abbr> exempted from full review and built the website for my study.</p>
+          <p>During data collection, I developed a <abbr title="script that automatically runs at scheduled times">cron job</abbr> that automatically paid participants. As I began to look at the data, I started writing <abbr title="Structured Query Language">SQL</abbr> and <abbr title="Hypertext Preprocessor">PHP</abbr> to format data for analysis in other programs. As this became tedious, I started moving the analysis into <abbr title="Hypertext Preprocessor">PHP</abbr>. Soon, I could run <em>t</em>-tests on any query I composed. Then I added visualizations using Google Charts. Unable to find a <abbr title="Hypertext Preprocessor">PHP</abbr> implementation of <abbr title="Analysis of Variation">ANOVA</abbr> for unequal sample sizes, I wrote one. Implementing multivariate regressions was beyond my skill, so I wrote <abbr title="Hypertext Preprocessor">PHP</abbr> scripts to farm it out to R in real-time.</p>
+          <p>Despite the small sample size, some patterns emerged. On average, scores on a test of genetic knowledge increased after participation. Participants in the gamified cohort reported higher confidence in their answers to questions. This added confidence led to higher scores among the gamified cohort.</p>

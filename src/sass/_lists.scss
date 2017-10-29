@@ -6,6 +6,9 @@ ul {
   li {
     margin-bottom: 0.5em;
   }
+  ul, ol {
+    margin-top: 0.5em;
+  }
 }
 
 ul.list-unstyled > li > ul {
