@@ -176,9 +176,7 @@ INSERT INTO `projects` VALUES
   (7,15,'Digital Signage','digital-signage','Devised a digital signage platform to inform members of the campus community in public areas',NULL),
   (10,5,'Intersectional Identities Poster','intersectional-identities','Demonstrated a granular demographics form to allow more diverse self-expression',NULL),
   (11,1,'Hobsons Admissions','hobsons-admissions','Took over support of an admissions management system while our business analyst position was vacant',NULL),
-  (12,15,'Automated Card, Badge, and Key Issuing','physical-security','Rendered manual, paper-based procedures obsolete by incorporating physical security functionality into housing office software',NULL),
-  (13,15,'Dual-Client Furniture Inventory System','furniture-inventory','Developed a handheld barcode-based data acquisition client and back-office <abbr title=\"Graphical User Interface\">GUI</abbr>',NULL),
-  (14,15,'Mobile Work Order Client','mobile-work-orders','Created a Windows Phone 7 app to allow maintenance workers to see, edit, and resolve work orders in the field',NULL);
+  (12,15,'Automated Card, Badge, and Key Issuing','physical-security','Rendered manual, paper-based procedures obsolete by incorporating physical security functionality into housing office software',NULL);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 

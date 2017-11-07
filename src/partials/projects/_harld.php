@@ -22,7 +22,5 @@
 <?php
   emitProjectListItem('mailroom');
   emitProjectListItem('physical-security');
-  emitProjectListItem('furniture-inventory');
-  emitProjectListItem('mobile-work-orders');
 ?>
           </ul>
