@@ -27,28 +27,30 @@ USE `resume`;
 LOCK TABLES `bullets` WRITE;
 /*!40000 ALTER TABLE `bullets` DISABLE KEYS */;
 INSERT INTO `bullets` VALUES
-  (3,16,'Provided individualized assistance and group training to end users',1),
-  (4,16,'Oversaw and developed a team of student employees',2),
-  (5,16,'Procured IT hardware, supplies, and professional services and allocated costs to departments',3),
-  (6,15,'Developed for desktop, web, and mobile platforms using Microsoft .NET Framework',1),
-  (7,15,'Owned multiple products as the sole full-time developer, including a flagship <a href=\"{project|harld}\">housing operations system</a> that managed room assignments, physical access, maintenance work orders, mailroom packages, furniture inventory, and more',2),
-  (8,15,'Grew digital signage from an 8 display pilot to <a href=\"{project|digital-signage}\">a ubiquitous 36+ installations across campus</a>',3),
-  (9,15,'Communicated with and observer end users to ease pain points and discover new optimizations',4),
-  (10,15,'Designed ad hoc and self-service SQL reports to support business needs and improve staff efficiency',5),
-  (11,2,'Promoted from Software Developer to reflect skills, experience, and performance',1),
-  (12,2,'Broadened existing products - adding new features and modules - and tackled additional projects',2),
-  (13,3,'Research-focused biology curriculum with substantial interdisciplinary breadth, <a href=\"{pdf|bs-biology-transcript}\" target=\"_blank\">earned a 3.275 GPA</a>',1),
-  (14,3,'Contributed to epilepsy research in transgenic mice at the Neural Engineering Center',2),
-  (15,4,'Excelled in undergraduate computer science courses in preparation for admission in the CS masters program, <a href=\"{pdf|non-degree-transcript}\" target=\"_blank\">earning an A in each course</a>',1),
-  (16,5,'Maintained a <a href=\"{pdf|ms-computer-science-transcript}\" target=\"_blank\">4.0 cumulative GPA</a> through computer science core and bioinformatics specialization',1),
-  (17,5,'Researched the impact of <a href=\"{project|gamifying-genetics}\">gamification on genetic literacy acquisition</a> through self-guided online learning',2),
+  (4,16,'Trained a staff of 3-6 students on network/hardware/software troubleshooting, repair, and support',2),
+  (6,15,'Developed for desktop, web, and mobile platforms using Microsoft .NET Framework and C#',1),
+  (7,15,'Owned multiple products as the sole full-time developer, including a flagship <a href=\"{project|harld}\">housing operations system</a>',2),
+  (8,15,'Grew custom digital signage platform from an 8 display pilot to <a href=\"{project|digital-signage}\">&ge;&thinsp;36 installations across campus</a>',4),
+  (9,15,'Communicated with and observed end users to ease pain points and discover new software optimizations',5),
+  (10,15,'Designed ad hoc and self-service <abbr title=\"Structured Query Language\">SQL</abbr> reports to support business needs and improve staff efficiency',6),
+  (11,2,'Promoted from Software Developer to reflect increased skills, experience, and performance',1),
+  (13,3,'Research-focused biology curriculum with substantial interdisciplinary breadth, <a href=\"{pdf|bs-biology-transcript}\" target=\"_blank\">earned a 3.275 <abbr title=\"Grade Point Average\">GPA</abbr>{ico|pdf}</a>',1),
+  (14,3,'Contributed to epilepsy research in transgenic mice at the Neural Engineering Center in <abbr title=\"Biomedical Engineering\">BME</abbr> department',2),
+  (15,4,'Excelled in undergraduate <abbr title=\"Computer Science\">CS</abbr> courses in preparation for the <abbr title=\"Master of Science in Computer Science\">MS in CS</abbr> program; <a href=\"{pdf|non-degree-transcript}\" target=\"_blank\">earned an A in each{ico|pdf}</a>',1),
+  (16,5,'Maintained a <a href=\"{pdf|ms-computer-science-transcript}\" target=\"_blank\">4.0 cumulative <abbr title=\"Grade Point Average\">GPA</abbr>{ico|pdf}</a> through computer science core and bioinformatics specialization',1),
+  (17,5,'Researched impact of <a href=\"{project|gamifying-genetics}\">gamification on genetic literacy acquisition</a> during self-guided online learning',2),
   (18,5,'Presented a poster on <a href=\"{project|intersectional-identities}\">capturing intersectional identities in demographic surveys</a>',3),
-  (19,18,'Built new avenues for collaboration and knowledge sharing during an IT reorganization/centralization by founding a campus-wide web developers group',NULL),
-  (20,24,'Elected to Vice President from 2011-2013 and President from 2013 to present',NULL),
-  (21,20,'Facilitated educational sessions for incoming students covering implicit bias, microaggressions, intent vs. impact, and intersectionality.',NULL),
-  (22,19,'Compiled campus responses to the <a href=\"https://www.campusprideindex.org/\" target=\"_blank\" data-category=\"External Link\" data-action=\"Campus Pride Index\">Campus Pride Index</a> survey in 2007 and 2017, with input from 20+ campus offices.',1),
-  (23,19,'Provided actionable recommendations on how to increase Campus Pride Index ranking by improving the campus climate in ways small and large',2),
-  (24,19,'Redesigned LGBT Resources webpage (2008), prepared website content for LGBT Center dedication (2010)',3);
+  (19,18,'Built new avenues for collaboration and knowledge sharing during an <abbr title=\"Information Technology\">IT</abbr> reorganization/centralization',NULL),
+  (21,20,'Facilitated educational sessions covering implicit bias, microaggressions, intent vs. impact, and more',NULL),
+  (22,19,'Completed 2007 and 2017 <a href=\"https://www.campusprideindex.org/campuses/details/19?campus=case-western-reserve-university\" target=\"_blank\" data-category=\"External Link\" data-action=\"Campus Pride Index\">Campus Pride Index</a>{ico|ext} surveys; identified opportunities for improvement',2),
+  (24,19,'Expanded the <abbr title=\"Lesbian Gay Bisexual Transgender\">LGBT</abbr> Resources webpage in 2008, rebranded for opening of <abbr title=\"Lesbian Gay Bisexual Transgender\">LGBT</abbr> Center in 2010',1),
+  (25,1,'Maintained school\'s web presence, spanning 21 domains, 108 subdomains, and &ge;<abbr title=\"16,000\">16K</abbr> pages',NULL),
+  (26,1,'Introduced new-to-the-team development practices including Sass, source control, and <abbr title=\"Object-Oriented Programming\">OOP</abbr>',NULL),
+  (27,1,'Collaborated with marketing to imagine, design, and execute web and email campaigns',NULL),
+  (28,1,'<a href=\"{project|server-hardening}\">Hardened web server configuration and code</a> to remediate a breach and reduce vulnerability',NULL),
+  (29,1,'Led the <a href=\"{project|server-migration}\">migration from ColdFusion to ASP.NET</a>, developing both code and people in the process',NULL),
+  (30,1,'Stepped up to <a href=\"{project|hobsons-admissions}\">support the admissions team with their <abbr title=\"Customer Relationship Management system\">CRM</abbr></a> while our <abbr title=\"Business Analyst\">BA</abbr> position was vacant',NULL),
+  (31,15,'<a href=\"{project|harld}\">Optimized mailroom procedures</a> to handle 67% increase in mailroom traffic from <abbr title=\"Fiscal Year 2008 (7/2007-6/2008)\">FY08</abbr> to <abbr title=\"Fiscal Year 2013 (7/2012-6/2013)\">FY13</abbr>',3);
 /*!40000 ALTER TABLE `bullets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,12 +67,17 @@ INSERT INTO `departments` VALUES
   (4,1,'Department of Electrical Engineering and Computer Science','Case School of Engineering','http://engineering.case.edu/eecs/'),
   (5,2,'HighEdWeb Professionals',NULL,'https://www.highedweb.org/'),
   (6,3,'O&rsquo;Reilly Media',NULL,'https://www.oreilly.com/conferences/'),
-  (7,1,'Executive Education','Weatherhead School of Management','https://weatherhead.case.edu/executive-education/'),
+  (7,1,'Weatherhead Executive Education',NULL,'https://weatherhead.case.edu/executive-education/'),
   (8,4,'Code PaLOUsa, Inc.',NULL,'http://www.codepalousa.com/'),
   (9,1,'University Technology',NULL,'https://www.case.edu/utech/'),
   (10,1,'LGBT Center',NULL,'https://www.case.edu/lgbt/'),
   (11,1,'Office of Multicultural Affairs',NULL,'https://students.case.edu/departments/oma/'),
-  (14,5,'University View Condominium Association',NULL,NULL);
+  (14,5,'University View Condominium Association',NULL,NULL),
+  (15,1,'CWRU Pride, LGBT Alumni Network',NULL,'https://case.edu/alumni/lgbt/'),
+  (16,1,'Student Affairs Professional Development Committee',NULL,NULL),
+  (17,1,'Office of Student Affairs',NULL,'https://students.case.edu/'),
+  (18,1,'Dr. Dorothy Pijan Student Leadership Awards',NULL,'https://students.case.edu/traditions/awards/leadership/'),
+  (19,1,'Office of Student Activities and Leadership',NULL,'https://students.case.edu/departments/activities/');
 /*!40000 ALTER TABLE `departments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,14 +168,15 @@ UNLOCK TABLES;
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
 INSERT INTO `projects` VALUES
-  (1,1,'Server Hardening','server-hardening','Developed a three-phase plan to address a web server that was breached before my arrival.',NULL),
-  (2,1,'Server Migration','server-migration','Built core infrastructure and trained fellow staff to transition from Adobe ColdFusion to Microsoft ASP.NET.',NULL),
-  (3,2,'Mailroom','mailroom','Optimized mailroom workflows to handle a 67% increase in packages over 4 years.',NULL),
-  (4,5,'Gamifying Genetics','gamifying-genetics','Investigated how people learn about science and genetics online and the effects of game-play elements on the process.',NULL),
-  (6,2,'Housing and Residence Life Database (HARLD)','harld','Expanded software that powered day-to-day operations of university housing, residence life, greek life, and associated offices.',NULL),
-  (7,2,'Digital Signage','digital-signage','Devised a digital signage platform to inform members of the campus community in public areas.',NULL),
-  (10,5,'Intersectional Identities','intersectional-identities','Demonstrated a granular demographics form to allow more diverse self-expression.',NULL),
-  (11,1,'Hobsons Admissions','hobsons-admissions','Took over support of an admissions management system while our business analyst position was vacant.',NULL);
+  (1,1,'Server Hardening','server-hardening','Developed a three-phase plan to address a web server that was breached before my arrival',NULL),
+  (2,1,'Server Migration','server-migration','Built core infrastructure and trained fellow staff to transition from Adobe ColdFusion to Microsoft ASP.NET',NULL),
+  (3,15,'Optimized Growing Mailroom Operations','mailroom','Optimized mailroom workflows to handle a 67% increase in packages over 4 years',NULL),
+  (4,5,'Gamifying Genetics','gamifying-genetics','Investigated how people learn about science and genetics online and the effects of game-play elements on the process',NULL),
+  (6,15,'Housing and Residence Life Database (HARLD)','harld','Expanded software that powered day-to-day operations of university housing, residence life, greek life, and associated offices',NULL),
+  (7,15,'Digital Signage','digital-signage','Devised a digital signage platform to inform members of the campus community in public areas',NULL),
+  (10,5,'Intersectional Identities Poster','intersectional-identities','Demonstrated a granular demographics form to allow more diverse self-expression',NULL),
+  (11,1,'Hobsons Admissions','hobsons-admissions','Took over support of an admissions management system while our business analyst position was vacant',NULL),
+  (12,15,'Automated Card, Badge, and Key Issuing','physical-security','Rendered manual, paper-based procedures obsolete by incorporating physical security functionality into housing office software',NULL);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -260,10 +268,11 @@ UNLOCK TABLES;
 LOCK TABLES `tenure_types` WRITE;
 /*!40000 ALTER TABLE `tenure_types` DISABLE KEYS */;
 INSERT INTO `tenure_types` VALUES
-  (1,'Experience','experience',NULL,1,'','','','','worksFor','http://schema.org/Organization'),
-  (2,'Education','education',NULL,2,'','\0','','\0','alumniOf','http://schema.org/EducationalOrganization'),
-  (3,'Professional Development','professional-development',NULL,3,'','\0','\0','\0','affiliation','http://schema.org/Organization'),
-  (4,'Volunteer Experience','volunteer-experience','Volunteer',4,'','','','\0','affiliation','http://schema.org/Organization');
+  (1,'Experience','experience',NULL,1,'','','','jobTitle','worksFor','http://schema.org/Organization'),
+  (2,'Education','education',NULL,2,'','\0','',NULL,'alumniOf','http://schema.org/EducationalOrganization'),
+  (3,'Professional Development','professional-development','Conferences',3,'','\0','\0',NULL,'affiliation','http://schema.org/Organization'),
+  (4,'Volunteer Experience','volunteer-experience','Volunteer',4,'','','',NULL,'memberOf','http://schema.org/Organization'),
+  (5,'Awards','awards',NULL,5,'','\0','\0','award','affiliation','http://schema.org/Organization');
 /*!40000 ALTER TABLE `tenure_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -291,10 +300,16 @@ INSERT INTO `tenures` VALUES
   (15,1,2,'Software Developer','software-developer','Analyst/Programmer 2',NULL,NULL,'2008-06-01','2012-10-01','\0'),
   (16,1,2,'Training and Support Manager','training-and-support-manager',NULL,NULL,NULL,'2007-05-21','2008-06-01','\0'),
   (18,4,9,'Web Developers Group','web-developers-group','Founder',NULL,NULL,'2016-09-16',NULL,'\0'),
-  (19,4,10,'LGBTQA Committee','lgbtqa-committee','Member',NULL,'https://case.edu/lgbt/committee/','2007-08-01',NULL,'\0'),
+  (19,4,10,'LGBTQA Committee','lgbtqa-committee','Member',NULL,'https://case.edu/lgbt/committee/','2007-06-14',NULL,'\0'),
   (20,4,11,'Diversity 360','diversity-360','Facilitator',NULL,'https://students.case.edu/diversity/training/diversity360/','2016-02-03',NULL,'\0'),
-  (24,4,14,'Board Member','board-member',NULL,NULL,NULL,'2011-01-01',NULL,'\0'),
-  (25,3,5,'HighEdWeb conference 2017','highedweb-2017','Hartford, CT',NULL,'https://2017.highedweb.org/','2017-10-08','2017-10-11','\0');
+  (24,4,14,'President','president',NULL,NULL,NULL,'2013-01-24',NULL,'\0'),
+  (25,3,5,'HighEdWeb conference 2017','highedweb-2017','Hartford, CT',NULL,'https://2017.highedweb.org/','2017-10-08','2017-10-11','\0'),
+  (26,4,14,'Vice President','vice-president',NULL,NULL,NULL,'2011-01-24','2013-01-24','\0'),
+  (28,5,15,'CWRU Pride Alumni Award','cwru-pride-alumni-award',NULL,NULL,'/pdf/cwru-pride-alumni-award/','2017-10-06','2017-10-06','\0'),
+  (29,5,16,'Outstanding New Professional Staff','outstanding-new-professional-staff',NULL,NULL,NULL,'2011-05-25','2011-05-25','\0'),
+  (30,5,17,'Exceptional Support and Commitment to University-Wide Traditions','exceptional-support-and-commitment-to-university-wide-traditions',NULL,NULL,NULL,'2013-05-01','2013-05-01','\0'),
+  (31,5,18,'Outstanding Student Club/Organization Member','outstanding-student-club/organization-member',NULL,NULL,'https://students.case.edu/traditions/awards/leadership/2007.html','2007-05-01','2007-05-01','\0'),
+  (32,5,19,'Student Who Makes a Difference','student-who-makes-a-difference',NULL,NULL,NULL,'2006-02-01','2006-02-01','\0');
 /*!40000 ALTER TABLE `tenures` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

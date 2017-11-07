@@ -2,7 +2,7 @@
   Page::registerGoogleCharts();
   Page::registerChart('packagesBoth');
 ?>
-          <p>Increases in both online shopping and the geographical market of Case Western Reserve University were leading to increasing mailroom traffic for the Office of Housing and Residence Life's two Area Offices.</p>
+          <p>All packages for students living on campus were delivered to one of two Housing Area Offices. These offices logged and stored packages until students retrieved them. Mailroom traffic grew as online shopping and <abbr title="Case Western Reserve University">CWRU</abbr>'s geographical reach increased. Traffic was bursty, with spikes at the beginning of each semester.</p>
           <div class="row">
             <div class="col-md-4 col-lg-5">
               <div id="chart_packagesByYear" style="width: 100%; height: 300px;"></div>
@@ -11,45 +11,49 @@
               <div id="chart_packagesByMonth" style="width: 100%; height: 300px;"></div>
             </div>
           </div>
-          <p>As the primary maintainer of the software used to log and manage packages - <a href="<?php echo Project::getBySlug('harld')->url(); ?>" data-category="Project - Mailroom" data-action="Body Click - HARLD">Housing And Residence Life Database (HARLD)</a> - I was tasked with identifying and alleviating bottlenecks in the package logging workflow.</p>
-          <p>I worked closely with the staff who logged packages to find opportunities for improvement and designed new optimizations and features.</p>
-          <p>Through software, hardware, and process improvements, I was able to help the mailrooms cope with a 67% increase in mailroom traffic, from 51K packages in Fiscal Year 2008 to 85K packages in Fiscal Year 2013.</p>
+          <p>A piece of software called <a href="<?php echo Project::getBySlug('harld')->url(); ?>" data-category="Project - Mailroom" data-action="Body Click - HARLD">Housing And Residence Life Database (HARLD)</a> managed packages. The mailroom integration occurred years before I began to maintain <abbr title="Housing and Residence Life Database">HARLD</abbr>. The package workflow was revolutionary when new, but had begun to show stress under load. It was now my responsibility to  identify and ease bottlenecks in the process.</p>
+          <p>I began by building strong relationships with the Area Office staff. Talking to and visiting them on a regular basis allowed me to know their pain points. At times, I would even sit down and help log a couple hundred packages to gain first-hand experience. Below, I detail a few optimizations I developed during my tenure.</p>
+          <p>These optimizations pared down the time it took to log and distribute packages. Shaving off a few mere seconds here and there seems minor. Multiplied by up to 400 packages per day in peak season, those seconds could add up to hours of labor saved in a week. My optimizations helped the Area Offices cope with a 67% increase in packages over five years. To be fair, it also took several renovations to create space to handle the extra 34,000 packages per year.</p>
           <hr/>
-          <h3>Highlights</h3>
-          <p>To give an idea of the scope of the issues created by such an increase, there were at least 3 physical remodels to expand the area offices in order to add additional shelves for packages. At peak times, the offices could handle over 400 packages per day, so a mere 9 second decrease in the time to log a package could save an hour of labor a day.</p>
-          <p>I visited the area offices frequently, talking to staff about pain points, observing packages being logged, and occasionally sat down and logged a hundred or so packages. These experiences taught me the importance of keeping your end users front-of-mind throughout the development process.
-          </p>
+          <h2>Highlights</h2>
           <ul>
             <li>
-              <h4>Package Arrival Email Timing</h4>
-              <p>Most packages were logged by front desk staff who would have to stop logging packages when a customer arrived. As smartphones became more prevalent, students increasingly showed up to retrieve their packages within minutes of the package being logged, sometimes before the package could even be shelved. The frequent task switching combined with inefficient searches through unsorted packages were slowing the operations of the Area Offices.</p>
-              <p>I refactored the data layer code to not send emails when the package was initially logged, leaving the notification stamp column null. Then I added a button to the desktop HARLD client that, when pressed, queried for all packages in that office without a notification stamp, sent the package arrival email, and set the notification stamp.</p>
-              <p>Colloquially, pressing the button came to be known as "releasing the flood gates," but the wave of students got their packages faster since they were sorted and ready.</p>
+              <h3>Package Notification Emails</h3>
+              <p>If you can focus on logging packages, it is easy to fall into an efficient rhythm. As I observed student staff, I noticed that most logged batches of packages then shelved them in bulk. This allowed them to pile packages by building or shelf and reduce the steps they had to take.</p>
+              <p>This all fell apart if someone came in to pick up a package while packages were being logged. Front desk staff had to look at the arrival time to guess whether the package was already on the shelf. If not, the people logging packages had to stop to check their piles for the package.</p>
+              <p><abbr title="Housing and Residence Life Database">HARLD</abbr> sent a notification email as soon as each package was logged. Before smartphones, it usually took people a while to see the email. Once that email started to &ldquo;ding&rdquo; in pockets, people started showing up almost immediately.</p>
+              <p>Area Office staff requested a 15 minute delay before sending each email. Neither my supervisor nor I could come up with an elegant approach for this, so we took a step back. Was there a different way to solve the same problem? What if we sent all the notifications in bulk instead of queuing each individual message?</p>
+              <p>The Area Office staff liked the idea and I got to work. I removed the code that sent the notification email during package logging. This left the notification time column null. Then I added a button that queried for packages with a null notification time and sent the emails. This also allowed <abbr title="Housing and Residence Life Database">HARLD</abbr> to send one email to a person who received many packages in the same batch.</p>
+              <p>Clicking the new button came to be referred to as &ldquo;releasing the flood gates.&rdquo; The resulting wave of people got their packages faster since everything was sorted.</p>
             </li>
             <li>
-              <div class="col-sm-3 col-md-6 pull-right">
+              <h3>Presentation Mode Scanners</h3>
+              <div class="hidden-xs col-sm-3 col-md-6 pull-right">
                 <div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <img src="/assets/images/LS4278.jpg" alt="Handheld cordless barcode scanner (Motorola Symbol LS4278) docked in cradle base unit. The scanner rest parallel to the table and must be picked up and moved to the package." class="img-responsive pull-right" />
-                    Before: Motorola Symbol LS4278 in Cradle Base Unit
-                  </div>
-                  <div class="col-sm-12 col-md-6">
-                    <img src="/assets/images/DS6878.jpg" alt="Handheld cordless barcode scanner (Motorola Symbol DS6878) docked in hands free base unit. The scanner stands nearly upright so a package can be held in front of the scanner." class="img-responsive pull-right" />
-                    After: Motorola Symbol DS6878 in Hands-Free Base Unit
-                  </div>
+                  <figure class="col-sm-12 col-md-6">
+                    <img src="/assets/images/LS4278.jpg" alt="" class="img-responsive" />
+                    <figcaption>Before: <span class="hidden-sm">Motorola Symbol</span> LS4278 in Cradle Base<span class="hidden-sm"> Unit</figcaption>
+                  </figure>
+                  <figure class="col-sm-12 col-md-6">
+                    <img src="/assets/images/DS6878.jpg" alt="" class="img-responsive" />
+                    <figcaption>After: <span class="hidden-sm">Motorola Symbol</span> DS6878 in Hands-Free Base<span class="hidden-sm"> Unit</span></figcaption>
+                  </figure>
                 </div>
               </div>
-              <h4>Presentation Mode Scanners</h4>
-              <p>Point of service hardware integration was always a key feature of HARLD. Previous developers had used barcode scanners for quick, error-free data entry in several workflows, including package logging. Package carrier tracking numbers were captured by the scanners in a flash, but constantly picking up and putting down the scanner slowed the process.</p>
-              <p>When it came time to replace our fleet of Motorola Symbol LS4278 cordless handheld barcode scanners - which had a cradle style base unit and had to be picked up to be used - I surveyed Motorola Symbol's product line. Corded presentation-type scanners (either free-standing squares or gooseneck-mounted handhelds) would have worked for most packages, but the mailrooms often received <em>very</em> large packages (furniture, bicycles, tires) that necessitated the cordless hand-held form factor.</p>
-              <p>Eventually, I found the DS6878 with the "HF base," an obscure option that ended up being the best of both worlds. The scanners were almost identical to the LS4278, but instead of a cradle, these had a base unit that held them upright. When in the base, the scanners would enter presentation mode and automatically scan any barcode put in front of them. </p>
-              <p>This allowed small packages and letters to be scanned without having to pick up the scanner, while still being able to pick up the scanner and take it to the larger packages.</p>
+              <p>Point of service hardware integration was always a key feature of <abbr title="Housing and Residence Life Database">HARLD</abbr>. Barcode scanners, in particular, allowed for quick, error-free data entry. Staff captured package tracking numbers in a flash using a barcode scanner. This saved time, but picking up and putting down the scanner slowed the process.</p>
+              <p>We were using the Motorola Symbol LS4278 cordless handheld scanners at the time. The scanners had to be hand held to operate, which led to the constant up-down that was gumming up the works. </p>
+              <p>When it was time to replace these scanners, I looked at a variety of alternatives. &ldquo;Presentation mode&rdquo; scanners would solve most of the issue; one could hold a package in front of the scanner and have it scanned. This would work great for small parcels, but the Area Offices often got <em>very</em> large packages. Presentation mode was <em>not</em> going to work for things like bicycles, furniture, and car tires.</p>
+              <p>My growing frustration disappeared when I saw the &ldquo;<abbr title="Hands-Free">HF</abbr> base&rdquo; for the DS6878 scanner line. This obscure option ended up being the best of both worlds! The scanner form-factor was almost identical to the LS4278, so it would work for the big stuff. The magic was in the charging base, which held the scanner upright. This allowed the scanners to function in presentation mode while docked and charging.</p>
             </li>
             <li>
-              <h4>Scan to Distribute</h4>
-              <p>When packages were logged, an internal tracking label was printed and affixed to the package. It had the full package ID (a 6-7 digit number) printed in small numbers, the last 3 digits printed in large numbers for easy identification on a shelf, and a barcode with "PK" and the package number (two-letter prefixes were used to distinguish object types, with PK being package).</p>
-              <p>Historically, package traffic had been low enough that collisions in the last 3 digits were fairly rare and staff simply checked off packages on the screen as they distributed them rather than scanning the package ID label. As package volume increased, the last 3 digits became less reliable as a differentiator and mispicks began to become an issue.</p>
-              <p>The obvious solution was to require that the packages be scanned upon distribution, but the physical workflow using handheld scanners was inefficient. Students would grab packages as soon as they hit the counter (leading to awkward exchanges such as "um, can you please give me back that box you just ripped open so I can scan it?"), so staff would walk to the shelves, grab the packages, pile them on the desk, pick the scanner up, scan them, put the scanner down, pick the packages up, and put them on the counter.</p>
-              <p>With the new presentation mode scanners, the process became virtually seamless and ensured people got the right packages without grinding the front desk to a halt.</p>
+              <h3>Scan to Distribute</h3>
+              <figure class="col-xs-6 col-md-5 pull-right">
+                <img src="/assets/images/harld-package-label.jpg" alt="" class="img-responsive" />
+                <figcaption><abbr title="Housing and Residence Life Database">HARLD</abbr> <span class="hidden-sm hidden-xs">Package</span> Tracking Label</figcaption>
+              </figure>
+              <p><abbr title="Housing and Residence Life Database">HARLD</abbr> assigned a package ID and printed an internal tracking label when a package was logged. Area Office staff used these labels when locating packages. For a long time, the last three digits of the package ID were enough to identify a package on the shelf. Staff picked up packages from the shelf, checked them off in <abbr title="Housing and Residence Life Database">HARLD</abbr>, and clicked &ldquo;Distribute.&rdquo;</p>
+              <p>As package volume increased, collisions in the last 3 digits became more common. This led to mispicks and people sometimes getting the wrong package. The obvious solution was to have staff scan the barcode on the tracking label instead of checking it off.</p>
+              <p>The physical logistics of this proved inefficient. Students often grabbed packages as soon as they hit the counter, so scanning had to occur behind the desk. Find packages, put on desk, lift scanner, scan, put down scanner, pick up packages, hand to recipient.</p>
+              <p>Once we switched to presentation mode scanners, this process became fast and fluid. Find packages, present to scanner, hand to recipient.</p>
             </li>
           </ul>

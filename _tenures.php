@@ -11,21 +11,25 @@
       Page::$title = $type->name();
     }
   }
+  $isHomepage = !$headers;
   // if headers not loaded, get all
-  if(!$headers) {
+  if($isHomepage) {
     $headers = TenureType::getAll();
     Page::$isHomepage = true;
-    Page::$showTopnav = false;
     Page::$showBreadcrumbs = false;
     // show all skills
     Page::$skills = Skill::getAll();
     Page::$offCanvasSidebar = true;
   }
   Page::renderTop();
+  // output hidden header for screen reader on homepage
+  if($isHomepage) 
+    echo "          <h1 class=\"sr-only\">Kinsey Roberts</h1>\r\n";
   foreach ($headers as $header) {
           $prevDept = false; ?>
+
           <h2 class="head-tenure-type"><?php echo $header->name(); ?></h2>
-          <ul class="list-departments">
+          <ul class="list-departments list-unstyled <?php if($header->showDuration()) echo ' duration' ?>">
 <?php   foreach($header->tenures() as $tenure) { 
           if($tenure->department()->id() != $prevDept) { 
             if($prevDept) { ?>
@@ -34,7 +38,7 @@
             </li>
 <?php       } ?>
             <li>
-              <div class="tenure-department" itemscope itemprop="<?php echo $tenure->type()->schemaProperty(); ?>" itemtype="<?php echo $tenure->type()->schemaType(); ?>">
+              <div class="tenure-department" itemscope itemprop="<?php echo $tenure->type()->deptProperty(); ?>" itemtype="<?php echo $tenure->type()->deptType(); ?>">
 <?php     if($header->showDuration()) 
             echo "                <div class=\"department-duration\">{$tenure->department()->duration()}</div>\n"; ?>
 <?php 
@@ -83,23 +87,28 @@
                   </div>
                   <div class="tenure-title<?php if(!$hasBullets) echo ' subtle'; ?>">
 <?php     if($tenure->showLink() || $tenure->hasUrl()) {
+            $isExternal = !$tenure->showLink() && $tenure->hasUrl() && strpos($tenure->url(), ':');
             echo '                    <a href="';
             echo $tenure->url();
-            if($tenure->hasUrl())
+            if($isExternal)
               echo '" target="_blank';
             echo '" data-category="Tenures';
             if(isset($type) && $type)
               echo " - {$type->name()}";
-            $external = $tenure->hasUrl() ? ' (external)' : '';
+            $external =  $isExternal ? ' (external)' : '';
             echo "\" data-action=\"Tenure Click{$external} - {$tenure->name()}\">";
-            if($tenure->type()->emitJobTitle() && $tenure->end() == 'present')
-              echo '<span itemprop="jobTitle">';
           } 
+          if($tenure->type()->nameProperty())
+            echo '<span itemprop="'.$tenure->type()->nameProperty().'">';
           echo $tenure->name(); 
           if($tenure->category()) 
             echo " - {$tenure->category()}";
-          if($tenure->type()->emitJobTitle() && !$tenure->end())
+          if($tenure->type()->nameProperty())
             echo '</span>';
+          if($isExternal && $tenure->hasUrl())
+            echo Page::externalLinkIcon();
+          else if (!$tenure->showLink() && $tenure->hasUrl() && strpos($tenure->url(), 'pdf'))
+            echo Page::pdfIcon();
           if($tenure->showLink() || $tenure->hasUrl())
             echo '</a>';
 ?>

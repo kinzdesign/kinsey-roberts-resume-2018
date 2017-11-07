@@ -30,7 +30,7 @@ DROP TABLE IF EXISTS `bullets`;
 CREATE TABLE `bullets` (
   `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `tenure` tinyint(3) unsigned NOT NULL,
-  `text` varchar(255) NOT NULL,
+  `text` varchar(512) NOT NULL,
   `displayorder` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `experience` (`tenure`),
@@ -170,9 +170,9 @@ CREATE TABLE `tenure_types` (
   `showInNav` bit(1) NOT NULL DEFAULT b'1',
   `showDuration` bit(1) NOT NULL DEFAULT b'1',
   `showStartDate` bit(1) NOT NULL DEFAULT b'1',
-  `emitJobTitle` bit(1) NOT NULL DEFAULT b'0',
-  `schemaProperty` varchar(45) DEFAULT NULL,
-  `schemaType` varchar(45) DEFAULT NULL,
+  `nameProperty` varchar(45) DEFAULT NULL,
+  `deptProperty` varchar(45) DEFAULT NULL,
+  `deptType` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -189,8 +189,8 @@ CREATE TABLE `tenures` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `type` tinyint(3) unsigned NOT NULL,
   `department` tinyint(3) unsigned NOT NULL,
-  `name` varchar(55) NOT NULL,
-  `slug` varchar(55) NOT NULL,
+  `name` varchar(65) NOT NULL,
+  `slug` varchar(65) NOT NULL,
   `category` varchar(55) DEFAULT NULL,
   `synopsis` varchar(160) DEFAULT NULL,
   `url` varchar(120) DEFAULT NULL,

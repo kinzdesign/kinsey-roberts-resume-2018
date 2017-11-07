@@ -1,9 +1,20 @@
-.list-deliverables {
-  padding-left: 20px;
+ul { 
+  padding-left: 24px;
+}
 
-  .list-margin-bottom {
-    li {
-      margin-bottom: 0.5em;
-    }
+.list-margin-bottom {
+  li {
+    margin-bottom: 0.5em;
+  }
+  ul, ol {
+    margin-top: 0.5em;
+  }
+}
+
+ul.list-unstyled > li > ul {
+  list-style-type: circle;
+
+  > li > ul {
+    list-style-type: disc;
   }
 }

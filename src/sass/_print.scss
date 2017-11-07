@@ -1,0 +1,83 @@
+@media print {
+
+  /* font sizes */
+
+  h1, h2, h3, h4 {
+    font-size: 14pt;
+  }
+  h5, h6, .tenure-title, .tenure-title.subtle {
+    font-size: 12pt;
+  }
+
+  .tenure-department {
+    font-size: 10pt;
+  }
+
+  /* navbar */
+
+  body.top-navbar-fixed {
+    padding-top: 0;
+  }
+
+  .navbar-fixed-top {
+    position: relative;
+    margin-bottom: 0;
+    min-height: 0;
+  }
+
+  .navbar {
+    display: block;
+  }
+
+  .navbar-brand {
+    font-size: 16pt;
+    padding-bottom: 0;
+    height: auto;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  /* hides */
+
+  .breadcrumb,
+  .btn-offcanvas,
+  .fa,
+  .footer,
+  .navbar-nav,
+  .navbar-toggle,
+  .sidebar {
+    display: none !important;
+  }
+
+  .list-departments>li {
+    margin-top: 12px;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .list-departments.duration>li {
+    padding-top: 10px;
+    margin-top: 10px;
+
+    &:first-child {
+      padding-top: 0;
+      margin-top: 0;
+    }
+  }
+
+  .list-tenure-bullets>li {
+    margin-top: 2px;
+    font-size: 10pt;
+  }
+
+  abbr[title] {
+    border-bottom: none;
+  }
+
+  abbr[title]:after,
+  a[href]:after {
+    content: "";
+  }
+}

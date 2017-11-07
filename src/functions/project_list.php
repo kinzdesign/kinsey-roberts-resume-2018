@@ -6,7 +6,7 @@
 
           <hr/>
           <section>
-            <h3>Projects</h3>
+            <h2>Projects</h2>
             <ul class="list-projects">
 <?php     foreach ($projects as $project) { ?>
               <li>

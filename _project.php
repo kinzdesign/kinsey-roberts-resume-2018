@@ -13,10 +13,10 @@
     Page::$skills = $project->skills();
     Page::renderTop($project->name() . ' | Projects ');
 ?>
-          <h2 class="head-tenure-type"><?php echo $project->name(); ?></h2>
+          <h1 class="head-tenure-type"><?php echo $project->name(); ?></h1>
           <div class="tenure-title">
             <a href="<?php echo $project->tenure()->url(); ?>" data-category="Project - <?php echo $project->name(); ?>" data-action="Tenure Click - <?php echo $project->tenure()->name(); ?>">
-              <span itemprop="jobTitle">
+              <span itemprop="<?php echo $project->tenure()->type()->nameProperty(); ?>">
                 <?php 
                 echo $project->tenure()->name(); 
                 if($project->tenure()->category()) 
@@ -25,7 +25,7 @@
               </span>
             </a>
           </div>
-<?php     echo "          <span itemscope itemprop=\"{$project->tenure()->type()->schemaProperty()}\" itemType=\"{$project->tenure()->type()->schemaType()}\">\r\n";
+<?php     echo "          <span itemscope itemprop=\"{$project->tenure()->type()->deptProperty()}\" itemType=\"{$project->tenure()->type()->deptType()}\">\r\n";
           if($project->tenure()->department()->url()) {
             echo "            <a href=\"{$project->tenure()->department()->url()}\" target=\"_blank\" data-category=\"Tenure - {$project->tenure()->name()}\" data-action=\"Department Click - {$project->tenure()->department()->name()}\">\r\n";
           }
@@ -45,8 +45,8 @@
           if($project->tenure()->department()->url())
             echo "                <span itemprop=\"url\" class=\"hidden\" aria-hidden=\"true\">{$project->tenure()->department()->url()}</span>\r\n";
           echo "              </span>\r\n";
-          if($project->tenure()->department()->url())
-            echo "            </a>\r\n"; 
+          if($project->tenure()->department()->url()) 
+            echo "              ".Page::externalLinkIcon()."\r\n            </a>\r\n"; 
           echo "            <span itemscope itemprop=\"address\" itemtype=\"http://schema.org/PostalAddress\" class=\"hidden\" aria-hidden=\"true\">\r\n";
           if($project->tenure()->department()->organization()->street())
             echo "              <span itemprop=\"streetAddress\">{$project->tenure()->department()->organization()->street()}</span>\r\n";

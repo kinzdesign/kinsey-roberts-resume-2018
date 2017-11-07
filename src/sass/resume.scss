@@ -18,3 +18,6 @@
 @import "tenures";
 @import "footer";
 @import "lists";
+
+// print styles last for override
+@import "print";

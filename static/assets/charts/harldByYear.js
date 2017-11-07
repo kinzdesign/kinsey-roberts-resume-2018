@@ -3,7 +3,7 @@ google.charts.setOnLoadCallback(drawChartHarldByYear);
 
 function drawChartHarldByYear() {
   var data = google.visualization.arrayToDataTable([
-    ['Fiscal Year', 'Packages', 'Work Orders', 'Ledger Entries', 'Access Badges', 'Keys'],
+    ['Fiscal Year', 'Packages', 'Work Orders', 'Ledger Entries', 'Cards', 'Keys'],
     ['FY08', 51005,  9868,  7570,    0,    0],
     ['FY09', 51349, 10120, 10178, 6265,    0],
     ['FY10', 52167, 13205, 10784, 7840, 4385],

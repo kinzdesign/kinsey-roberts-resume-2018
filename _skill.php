@@ -13,7 +13,7 @@
     // build title
     Page::renderTop("{$skill->name()} | {$skill->type()->name()} | Skills");
 ?>
-          <h2 class="head-skill"><?php echo $skill->name(); ?></h2>
+          <h1 class="head-skill"><?php echo $skill->name(); ?></h1>
 <?php   // render static content if present
         if(!Page::renderPartial('skills', $slug))
           // otherwise output synopsis if present

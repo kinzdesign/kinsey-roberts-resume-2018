@@ -12,16 +12,16 @@
     Page::$skills = $tenure->skills();
     Page::renderTop("{$tenure->extendedName()} | {$tenure->type()->name()}");
 ?>
-          <h2 class="head-tenure" itemprop="jobTitle"><?php 
+          <h1 class="head-tenure" itemprop="<?php echo $tenure->type()->nameProperty(); ?>"><?php 
             echo $tenure->name(); 
             if($tenure->category()) 
               echo " - {$tenure->category()}";
-          ?></h2>
+          ?></h1>
           <div class="tenure-date-block">
             <div class="tenure-duration"><?php echo $tenure->duration(); ?></div>
             <div class="tenure-dates"><?php echo $tenure->start(); ?>&ndash;<?php echo $tenure->end(); ?></div>
           </div>
-<?php     echo "          <span itemscope itemprop=\"{$tenure->type()->schemaProperty()}\" itemType=\"{$tenure->type()->schemaType()}\">\r\n";
+<?php     echo "          <span itemscope itemprop=\"{$tenure->type()->deptProperty()}\" itemType=\"{$tenure->type()->deptType()}\">\r\n";
           if($tenure->department()->url()) {
             echo "            <a href=\"{$tenure->department()->url()}\" target=\"_blank\" data-category=\"Tenure - {$tenure->name()}\" data-action=\"Department Click - {$tenure->department()->name()}\">\r\n";
           }
@@ -38,8 +38,8 @@
           echo "                <span class=\"tenure-department\" itemprop=\"name\">{$tenure->department()->name()}</span>\r\n"; ?>
               </span>
 <?php     if($tenure->department()->url())
-            echo "           </a>\r\n"; 
-            echo "           <span itemscope itemprop=\"address\" itemtype=\"http://schema.org/PostalAddress\" class=\"hidden\" aria-hidden=\"true\">";
+            echo "              ".Page::externalLinkIcon()."\r\n            </a>\r\n"; 
+            echo "           <span itemscope itemprop=\"address\" itemtype=\"http://schema.org/PostalAddress\" class=\"hidden\" aria-hidden=\"true\">\r\n";
             if($tenure->department()->organization()->street())
               echo "             <span itemprop=\"streetAddress\">{$tenure->department()->organization()->street()}</span>\r\n";
             if($tenure->department()->organization()->city())

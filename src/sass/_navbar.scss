@@ -34,10 +34,33 @@ body.top-navbar-fixed {
     display: none;
   }
 }
+
 .navbar-short-text {
   display: none;
 
   @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
     display: inline;
   }
+}
+
+.print-only-email {
+  display: none;
+
+  @media print {
+    display: inline-block;
+    float: right;
+    padding-top: 21px;
+  }
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: lighten($brand-primary, 45%);
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.navbar-right .fa-envelope-o {
+  color: #fff;
 }

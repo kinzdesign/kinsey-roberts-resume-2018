@@ -404,22 +404,22 @@ h6, .h6 {
     font-size: 75%; }
 
 h1, .h1 {
-  font-size: 39px; }
-
-h2, .h2 {
   font-size: 32px; }
 
-h3, .h3 {
-  font-size: 26px; }
+h2, .h2 {
+  font-size: 25px; }
 
-h4, .h4 {
+h3, .h3 {
   font-size: 19px; }
 
-h5, .h5 {
+h4, .h4 {
   font-size: 15px; }
 
+h5, .h5 {
+  font-size: 14px; }
+
 h6, .h6 {
-  font-size: 13px; }
+  font-size: 12px; }
 
 p {
   margin: 0 0 10.5px; }
@@ -2625,7 +2625,7 @@ tbody.collapse.in {
 
 .navbar-fixed-top .navbar-collapse,
 .navbar-fixed-bottom .navbar-collapse {
-  max-height: 380px; }
+  max-height: 400px; }
   @media (max-device-width: 480px) and (orientation: landscape) {
     .navbar-fixed-top .navbar-collapse,
     .navbar-fixed-bottom .navbar-collapse {
@@ -3802,6 +3802,22 @@ body.top-navbar-fixed {
     .navbar-short-text {
       display: inline; } }
 
+.print-only-email {
+  display: none; }
+  @media print {
+    .print-only-email {
+      display: inline-block;
+      float: right;
+      padding-top: 21px; } }
+
+.navbar-default .navbar-nav > li > a {
+  color: #be96f0; }
+  .navbar-default .navbar-nav > li > a:hover {
+    color: #fff; }
+
+.navbar-right .fa-envelope-o {
+  color: #fff; }
+
 /*
  * Style tweaks
  * --------------------------------------------------
@@ -3895,6 +3911,22 @@ body {
 .padding-both-xs {
   padding-bottom: 1px; }
 
+.padding-all-large {
+  padding: 18px 27px; }
+
+.padding-all-small {
+  padding: 6px 9px; }
+
+.bg-success, .bg-warning, .bg-danger {
+  color: #fff; }
+
+figcaption {
+  font-style: italic; }
+
+abbr[title], acronym[title], abbr[data-original-title] {
+  border-bottom: 1px dotted #b4bcc2;
+  text-decoration: none; }
+
 /* icons */
 .fa {
   font-family: FontAwesome;
@@ -3905,6 +3937,15 @@ body {
 
 .collapsed > .fa-chevron-up-down:before {
   content: "\f078"; }
+
+.fa-external-link, .fa-file-pdf-o {
+  color: #95a5a6 !important;
+  font-size: 0.75em !important;
+  padding-left: 0.4em; }
+
+.fa-file-pdf-o {
+  position: relative;
+  top: -0.17em; }
 
 .breadcrumb {
   list-style: none;
@@ -3977,7 +4018,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .sidebar h3 {
-    font-size: 19px; } }
+    font-size: 15px; } }
 .sidebar .panel-group {
   border-radius: 4px; }
 .sidebar .panel-group, .sidebar .panel-heading {
@@ -3985,7 +4026,7 @@ body {
 .sidebar .panel-heading {
   border-radius: 0;
   padding: 4px;
-  font-size: 15px;
+  font-size: 14px;
   background-color: #f5f5f5; }
   .sidebar .panel-heading .fa {
     font-size: 0.7em;
@@ -4001,14 +4042,14 @@ body {
       margin-bottom: 0.6em; }
 
 .tenure-department {
-  font-size: 15px; }
+  font-size: 14px; }
 
 .tenure-title {
-  font-size: 19px;
+  font-size: 15px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700; }
   .tenure-title.subtle {
-    font-size: 15px; }
+    font-size: 14px; }
 
 .tenure-synopsis,
 .tenure-dates {
@@ -4021,10 +4062,14 @@ body {
   font-weight: bold; }
 
 .list-departments > li {
-  margin-top: 22px;
-  padding-top: 22px;
-  border-top: 1px solid #ddd; }
+  padding-top: 22px; }
   .list-departments > li:first-child {
+    padding-top: 11px; }
+
+.list-departments.duration > li {
+  margin-top: 22px;
+  border-top: 1px solid #ddd; }
+  .list-departments.duration > li:first-child {
     border-top: none;
     padding-top: 0; }
 
@@ -4048,9 +4093,81 @@ body {
   .footer .footer-right {
     text-align: right; }
 
-.list-deliverables {
-  padding-left: 20px; }
-  .list-deliverables .list-margin-bottom li {
-    margin-bottom: 0.5em; }
+ul {
+  padding-left: 24px; }
+
+.list-margin-bottom li {
+  margin-bottom: 0.5em; }
+.list-margin-bottom ul, .list-margin-bottom ol {
+  margin-top: 0.5em; }
+
+ul.list-unstyled > li > ul, .sidebar .panel-body ul > li > ul {
+  list-style-type: circle; }
+  ul.list-unstyled > li > ul > li > ul, .sidebar .panel-body ul > li > ul > li > ul {
+    list-style-type: disc; }
+
+@media print {
+  /* font sizes */
+  h1, h2, h3, h4 {
+    font-size: 14pt; }
+
+  h5, h6, .tenure-title, .tenure-title.subtle {
+    font-size: 12pt; }
+
+  .tenure-department {
+    font-size: 10pt; }
+
+  /* navbar */
+  body.top-navbar-fixed {
+    padding-top: 0; }
+
+  .navbar-fixed-top {
+    position: relative;
+    margin-bottom: 0;
+    min-height: 0; }
+
+  .navbar {
+    display: block; }
+
+  .navbar-brand {
+    font-size: 16pt;
+    padding-bottom: 0;
+    height: auto; }
+
+  ul {
+    padding-left: 20px; }
+
+  /* hides */
+  .breadcrumb,
+  .btn-offcanvas,
+  .fa,
+  .footer,
+  .navbar-nav,
+  .navbar-toggle,
+  .sidebar {
+    display: none !important; }
+
+  .list-departments > li {
+    margin-top: 12px;
+    padding-top: 0;
+    border-top: none; }
+
+  .list-departments.duration > li {
+    padding-top: 10px;
+    margin-top: 10px; }
+    .list-departments.duration > li:first-child {
+      padding-top: 0;
+      margin-top: 0; }
+
+  .list-tenure-bullets > li {
+    margin-top: 2px;
+    font-size: 10pt; }
+
+  abbr[title] {
+    border-bottom: none; }
+
+  abbr[title]:after,
+  a[href]:after {
+    content: ""; } }
 
 /*# sourceMappingURL=/assets/css/resume.css.map */

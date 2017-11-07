@@ -12,7 +12,7 @@
   }
   Page::renderTop();
   foreach ($headers as $header) { ?>
-          <h2 class="head-skill-type"><?php echo $header->name(); ?></h2>
+          <h1 class="head-skill-type"><?php echo $header->name(); ?></h1>
           <ul class="list-skills">
 <?php   foreach($header->skills() as $skill) { ?>
             <li><?php echo "<a href=\"{$skill->url()}\" data-category=\"Skills List". (isset($type) ? " - {$type->name()}" : '') . "\" data-action=\"Skill Click - {$skill->name()}\">{$skill->name()}</a>"; ?></li>
