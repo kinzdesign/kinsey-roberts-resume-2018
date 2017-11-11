@@ -25,17 +25,18 @@ function sync_dir($root, $directory) {
 
 function sync_file($root, $fileinfo) {
   switch ($fileinfo->getExtension()) {
-    # do nothing for gzip files
+    # file types to skip (not upload)
     case 'gz':
+    case 'map':
       break;
     # compress text-based formats
     case 'html':
     case 'js':
     case 'css':
-    case 'map':
     case 'xml':
     case 'svg':
     case 'json':
+    case 'txt':
       gzip_file($root, $fileinfo->getPathname());
       break;
     # upload binary files as-is
