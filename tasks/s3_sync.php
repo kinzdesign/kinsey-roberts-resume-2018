@@ -43,9 +43,9 @@ function relative_path($root, $pathname) {
   return str_replace('\\','/',str_replace($root, '', $pathname));
 }
 
-function echo_exec($cmd) {
-  echo str_replace('upload:', '   > uploaded:', exec($cmd));
-  echo "\r\n";
+function s3_upload($pathname, $relative, $encoding = '') {
+  $cmd = "aws s3 cp --cache-control max-age=2592000 --expires 2034-01-01T00:00:00Z {$encoding} $pathname s3://kinseyroberts.me{$relative}";
+  echo str_replace('upload:', '   > uploaded:', exec($cmd)) . "\r\n";
 }
 
 function gzip_file($root, $pathname) {
@@ -60,7 +60,7 @@ function gzip_file($root, $pathname) {
   // get relative path
   $relative = relative_path($root, $pathname);
   // upload gz file
-  echo_exec("aws s3 cp --content-encoding gzip $gzippath s3://kinseyroberts.me{$relative}");
+  s3_upload($gzippath, $relative, '--content-encoding gzip');
   // delete gz file
   unlink($gzippath);
 }
@@ -69,7 +69,7 @@ function upload_file($root, $pathname) {
   // get relative path
   $relative = relative_path($root, $pathname);
   // upload file
-  echo_exec("aws s3 cp $pathname s3://kinseyroberts.me{$relative}");
+  s3_upload($pathname, $relative);
 }
 
 $root = realpath("../static");

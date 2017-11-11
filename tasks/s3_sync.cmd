@@ -3,4 +3,5 @@
 ECHO.
 ECHO  + Uploading static contents to S3
 php s3_sync.php
+ECHO  + Done!
 ECHO.
