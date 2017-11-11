@@ -60,6 +60,10 @@ $w3cTime = Config::getBuildTimeW3C();
 $sitemap = download_page($sitemap, $w3cTime, '/', '1.0');
 // build error page
 $sitemap = download_page($sitemap, $w3cTime, '/error/', '0.0');
+// build privacy page
+$sitemap = download_page($sitemap, $w3cTime, '/privacy/', '0.0');
+// build search page
+$sitemap = download_page($sitemap, $w3cTime, '/search/', '0.0');
 // build tenure-type pages
 foreach (TenureType::getAll() as $type)
   $sitemap = download_page($sitemap, $w3cTime, "/{$type->slug()}/", 0.8);
