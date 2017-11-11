@@ -16,3 +16,7 @@
 ?></title>
 <?php Page::renderPartial('layout', 'favicons'); ?>
 <link rel="author" href="/humans.txt" />
+<?php #output canonical URL if defined
+  if(Page::$canonicalUrl)
+    echo '<link rel="canonical" href="'.Config::productionHost().Page::$canonicalUrl."\"/>\r\n";
+?>

@@ -10,6 +10,7 @@
     $tenure->type()->queueBreadcrumb();
     $tenure->queueBreadcrumb();
     Page::$skills = $tenure->skills();
+    Page::$canonicalUrl = $tenure->canonicalUrl();
     Page::renderTop("{$tenure->extendedName()} | {$tenure->type()->name()}");
 ?>
           <h1 class="head-tenure" itemprop="<?php echo $tenure->type()->nameProperty(); ?>"><?php 

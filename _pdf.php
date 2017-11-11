@@ -11,6 +11,7 @@
     Page::$cssFile = 'pdf-viewer';
     Page::$jsJQuery = false;
     Page::$jsResume = false;
+    Page::$canonicalUrl = "/pdfs/{$slug}/";
     // per-document page titles
     $docName = false;
     switch ($slug) {

@@ -1,6 +1,7 @@
 <?php 
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'); 
   Project::queueProjectsBreadcrumb();
+  Page::$canonicalUrl = '/projects/';
   Page::renderTop('Projects');
   $projects = Project::getAll(' ORDER BY COALESCE(displayorder, 254), name');
   echo "          <h1>Projects</h1>\r\n";

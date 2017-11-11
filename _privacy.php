@@ -1,6 +1,7 @@
 <?php 
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'); 
   Page::$showBreadcrumbs = false;
+  Page::$canonicalUrl = '/privacy/';
   Page::renderTop('Privacy Policy');
 ?>
           <h1>Privacy Policy</h1>

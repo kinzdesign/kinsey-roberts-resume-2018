@@ -1,6 +1,7 @@
 <?php 
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'); 
   Page::$showBreadcrumbs = false;
+  Page::$canonicalUrl = '/search/';
   Page::renderTop('Search');
 ?>
 <h1>Search</h1>

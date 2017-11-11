@@ -10,6 +10,7 @@
     Skill::queueSkillsBreadcrumb();
     $skill->type()->queueBreadcrumb();
     $skill->queueBreadcrumb();
+    Page::$canonicalUrl = $skill->canonicalUrl();
     // build title
     Page::renderTop("{$skill->name()} | {$skill->type()->name()} | Skills");
 ?>

@@ -6,9 +6,11 @@
     $headers = array($type);
     Page::$title = $type->name() . ' | Skills';
     $type->queueBreadcrumb();
+    Page::$canonicalUrl = $type->canonicalUrl();
   } else {
     $headers = SkillType::getAll();
     Page::$title = 'Skills';
+    Page::$canonicalUrl = '/skills/';
   }
   Page::renderTop();
   foreach ($headers as $header) { ?>

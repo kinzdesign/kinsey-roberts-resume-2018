@@ -44,8 +44,12 @@ class SkillType {
     return $this->skills;
   }
 
+  public function canonicalUrl() {
+    return "/skills/{$this->slug()}/";
+  }
+
   public function url() {
-    return "/skills/{$this->slug()}/" . Page::cacheBreaker();
+    return $this->canonicalUrl() . Page::cacheBreaker();
   }
 
   public function queueBreadcrumb() {

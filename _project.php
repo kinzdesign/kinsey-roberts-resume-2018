@@ -11,6 +11,7 @@
     $project->tenure()->queueBreadcrumb();
     $project->queueBreadcrumb();
     Page::$skills = $project->skills();
+    Page::$canonicalUrl = $project->canonicalUrl();
     Page::renderTop($project->name() . ' | Projects ');
 ?>
           <h1 class="head-tenure-type"><?php echo $project->name(); ?></h1>
