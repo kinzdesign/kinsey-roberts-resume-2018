@@ -12,7 +12,7 @@ function minify_html($contents) {
   return $contents;
 }
 
-function download_page($path) {
+function download_page($sitemap, $w3cTime, $path, $priority) {
   // ensure directory exists
   $dir = "../static{$path}";
   if(!file_exists($dir))  
@@ -23,8 +23,9 @@ function download_page($path) {
   $contents = minify_html($contents);
   // save contents to static
   file_put_contents("../static{$path}index.html", $contents);
-
   echo "   > created /static{$path}\n";
+  // add to sitemap
+  return $sitemap . "<url><loc>".Config::productionHost()."{$path}</loc><lastmod>{$w3cTime}</lastmod><priority>{$priority}</priority></url>";
 }
 
 function copy_page($from, $to) {
@@ -50,34 +51,42 @@ function endswith($haystack, $needle) {
     return substr_compare($haystack, $needle, $h - $n, $n) === 0;
 }
 
+// begin sitemap XML
+$sitemap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">';
+// get timestamp in proper format
+$w3cTime = Config::getBuildTimeW3C();
+
 // build homepage
-download_page('/');
+$sitemap = download_page($sitemap, $w3cTime, '/', '1.0');
 // build error page
-download_page('/error/');
+$sitemap = download_page($sitemap, $w3cTime, '/error/', '0.0');
 // build tenure-type pages
 foreach (TenureType::getAll() as $type)
-  download_page("/{$type->slug()}/");
+  $sitemap = download_page($sitemap, $w3cTime, "/{$type->slug()}/", 0.8);
 // build tenure pages
 foreach (Tenure::getAll() as $tenure)
   if($tenure->showLink() && !$tenure->hasUrl())
-    download_page("/{$tenure->type()->slug()}/{$tenure->slug()}/");
+    $sitemap = download_page($sitemap, $w3cTime, "/{$tenure->type()->slug()}/{$tenure->slug()}/", 0.6);
 // build projects root
-download_page('/projects/');
+$sitemap = download_page($sitemap, $w3cTime, '/projects/', 0.7);
 // build project pages
 foreach (Project::getAll() as $project)
-  download_page("/{$project->tenure()->type()->slug()}/{$project->tenure()->slug()}/{$project->slug()}/");
+  $sitemap = download_page($sitemap, $w3cTime, "/{$project->tenure()->type()->slug()}/{$project->tenure()->slug()}/{$project->slug()}/", 0.5);
 // build skills root
-download_page('/skills/');
+$sitemap = download_page($sitemap, $w3cTime, '/skills/', 0.7);
 // build skill-type pages
 foreach (SkillType::getAll() as $type)
-  download_page("/skills/{$type->slug()}/");
+  $sitemap = download_page($sitemap, $w3cTime, "/skills/{$type->slug()}/", 0.4);
 // build skill pages
 foreach (Skill::getAll() as $skill)
-  download_page("/skills/{$skill->type()->slug()}/{$skill->slug()}/");
+  $sitemap = download_page($sitemap, $w3cTime, "/skills/{$skill->type()->slug()}/{$skill->slug()}/", 0.3);
 // build PDF viewer pages
 foreach ((new DirectoryIterator("$cwd/../assets/pdfs/")) as $file)
   if ($file->getExtension() == 'pdf')
-    download_page('/pdf/' . substr($file->getFilename(), 0, -4) . '/');
+    $sitemap = download_page($sitemap, $w3cTime, '/pdf/' . substr($file->getFilename(), 0, -4) . '/', 0.6);
+
+// write sitemap
+file_put_contents("../sitemap.xml", $sitemap .= '</urlset>');
 
 // copy assets
 exec("xcopy /I /S /H /Y /C {$cwd}\\..\\assets {$cwd}\\..\\static\\assets");
@@ -87,3 +96,4 @@ echo "   > copied  /assets/ to /static/assets/\n";
 copy_file('favicon.ico');
 copy_file('robots.txt');
 copy_file('humans.txt');
+copy_file('sitemap.xml');
