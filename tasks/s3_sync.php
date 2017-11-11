@@ -48,6 +48,9 @@ function sync_file($root, $fileinfo) {
     case 'json':
       gzip_file($root, $fileinfo->getPathname(), '--content-type application/json;charset=utf-8');
       break;
+    case 'webmanifest':
+      gzip_file($root, $fileinfo->getPathname(), '--content-type application/manifest+json;charset=utf-8');
+      break;
     case 'txt':
       gzip_file($root, $fileinfo->getPathname(), '--content-type text/plain;charset=utf-8');
       break;
