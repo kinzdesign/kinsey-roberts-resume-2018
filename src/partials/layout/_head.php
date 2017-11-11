@@ -15,4 +15,4 @@
       echo 'Kinsey Roberts';
 ?></title>
 <?php Page::renderPartial('layout', 'favicons'); ?>
-
+<link rel="author" href="/humans.txt" />

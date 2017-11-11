@@ -37,6 +37,12 @@ function copy_page($from, $to) {
   echo "   > copied  /static{$from} to /static{$to}\n";
 }
 
+function copy_file($path) {
+  copy("../{$path}", "../static/{$path}");
+  echo "   > copied  /{$path} to /static/{$path}\n";
+
+}
+
 function endswith($haystack, $needle) {
     $h = strlen($haystack);
     $n = strlen($needle);
@@ -77,6 +83,7 @@ foreach ((new DirectoryIterator("$cwd/../assets/pdfs/")) as $file)
 exec("xcopy /I /S /H /Y /C {$cwd}\\..\\assets {$cwd}\\..\\static\\assets");
 echo "   > copied  /assets/ to /static/assets/\n";
 
-// copy favicon
-copy("../favicon.ico", "../static/favicon.ico");
-echo "   > copied  /favicon.ico to /static/favicon.ico\n";
+// copy root files
+copy_file('favicon.ico');
+copy_file('robots.txt');
+copy_file('humans.txt');
