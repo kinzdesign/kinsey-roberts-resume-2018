@@ -73,7 +73,7 @@ class Skill {
   }
 
   public static function queueSkillsBreadcrumb() {
-    Page::$breadcrumbs['Skills'] = '/skills/';
+    Page::$breadcrumbs['Skills'] = '/skills/' . Page::cacheBreaker();
   }
 
   /*

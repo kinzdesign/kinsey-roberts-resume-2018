@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/" data-category="Topnav" data-action="Click - Home">
+          <a class="navbar-brand" href="/<?php echo Page::cacheBreaker(); ?>" data-category="Topnav" data-action="Click - Home">
             <span itemprop="honorificPrefix" class="hidden">Mx.</span>
             <span itemprop="name">
               <span itemprop="givenName">Kinsey</span>

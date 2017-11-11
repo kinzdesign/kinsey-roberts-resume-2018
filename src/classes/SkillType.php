@@ -45,7 +45,7 @@ class SkillType {
   }
 
   public function url() {
-    return "/skills/{$this->slug()}/";
+    return "/skills/{$this->slug()}/" . Page::cacheBreaker();
   }
 
   public function queueBreadcrumb() {

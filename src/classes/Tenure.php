@@ -154,6 +154,8 @@ class Tenure {
   public function url() {
     if($this->showLink())
       return "/{$this->type()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
+    if(substr($this->url, 0, 5) == "/pdf/")
+      return $this->url . Page::cacheBreaker();
     return $this->url;
   }
 

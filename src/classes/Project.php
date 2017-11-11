@@ -67,7 +67,7 @@ class Project {
   }
 
   public static function queueProjectsBreadcrumb() {
-    Page::$breadcrumbs['Projects'] = '/projects/';
+    Page::$breadcrumbs['Projects'] = '/projects/' . Page::cacheBreaker();
   }
 
   /*
