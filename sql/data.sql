@@ -29,7 +29,7 @@ LOCK TABLES `bullets` WRITE;
 INSERT INTO `bullets` VALUES
   (4,16,'Trained a staff of 3-6 students on network/hardware/software troubleshooting, repair, and support',2),
   (6,15,'Developed for desktop, web, and mobile platforms using Microsoft .NET Framework and C#',1),
-  (7,15,'Owned multiple products as the sole full-time developer, including a flagship <a href=\"{project|harld}\">housing operations system</a>',2),
+  (7,15,'Maintained multiple products as the sole full-time developer, including a flagship <a href=\"{project|harld}\">housing operations system</a>',2),
   (8,15,'Grew custom digital signage platform from an 8 display pilot to <a href=\"{project|digital-signage}\">&ge;&thinsp;36 installations across campus</a>',4),
   (9,15,'Communicated with and observed end users to ease pain points and discover new software optimizations',5),
   (10,15,'Designed ad hoc and self-service <abbr title=\"Structured Query Language\">SQL</abbr> reports to support business needs and improve staff efficiency',6),
@@ -44,13 +44,13 @@ INSERT INTO `bullets` VALUES
   (21,20,'Facilitated educational sessions covering implicit bias, microaggressions, intent vs. impact, and more',NULL),
   (22,19,'Completed 2007 and 2017 <a href=\"https://www.campusprideindex.org/campuses/details/19?campus=case-western-reserve-university\" target=\"_blank\" data-category=\"External Link\" data-action=\"Campus Pride Index\">Campus Pride Index</a>{ico|ext} surveys; identified opportunities for improvement',2),
   (24,19,'Expanded the <abbr title=\"Lesbian Gay Bisexual Transgender\">LGBT</abbr> Resources webpage in 2008, rebranded for opening of <abbr title=\"Lesbian Gay Bisexual Transgender\">LGBT</abbr> Center in 2010',1),
-  (25,1,'Maintained school\'s web presence, spanning 21 domains, 108 subdomains, and &ge;<abbr title=\"16,000\">16K</abbr> pages',NULL),
-  (26,1,'Introduced new-to-the-team development practices including Sass, source control, and <abbr title=\"Object-Oriented Programming\">OOP</abbr>',NULL),
-  (27,1,'Collaborated with marketing to imagine, design, and execute web and email campaigns',NULL),
-  (28,1,'<a href=\"{project|server-hardening}\">Hardened web server configuration and code</a> to remediate a breach and reduce vulnerability',NULL),
-  (29,1,'Led the <a href=\"{project|server-migration}\">migration from ColdFusion to ASP.NET</a>, developing both code and people in the process',NULL),
-  (30,1,'Stepped up to <a href=\"{project|hobsons-admissions}\">support the admissions team with their <abbr title=\"Customer Relationship Management system\">CRM</abbr></a> while our <abbr title=\"Business Analyst\">BA</abbr> position was vacant',NULL),
-  (31,15,'<a href=\"{project|harld}\">Optimized mailroom procedures</a> to handle 67% increase in mailroom traffic from <abbr title=\"Fiscal Year 2008 (7/2007-6/2008)\">FY08</abbr> to <abbr title=\"Fiscal Year 2013 (7/2012-6/2013)\">FY13</abbr>',3);
+  (25,1,'Maintained school\'s web presence, spanning 21 domains, 108 subdomains, and &ge;<abbr title=\"16,000\">16K</abbr> pages',1),
+  (26,1,'Introduced new-to-the-team development practices including Sass, source control, and <abbr title=\"Object-Oriented Programming\">OOP</abbr>',4),
+  (27,1,'Collaborated with marketing to imagine, design, and execute web and email campaigns',5),
+  (28,1,'<a href=\"{project|server-hardening}\">Hardened web server configuration and code</a> to remediate a breach and reduce vulnerability',2),
+  (29,1,'Led the <a href=\"{project|server-migration}\">migration from ColdFusion to ASP.NET</a>, developing both code and people in the process',3),
+  (30,1,'Stepped up to <a href=\"{project|hobsons-admissions}\">support the admissions team with their <abbr title=\"Customer Relationship Management system\">CRM</abbr></a> while our <abbr title=\"Business Analyst\">BA</abbr> position was vacant',4),
+  (31,15,'<a href=\"{project|mailroom}\">Optimized mailroom procedures</a> to handle 67% increase in mailroom traffic from <abbr title=\"Fiscal Year 2008 (7/2007-6/2008)\">FY08</abbr> to <abbr title=\"Fiscal Year 2013 (7/2012-6/2013)\">FY13</abbr>',3);
 /*!40000 ALTER TABLE `bullets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -307,9 +307,7 @@ INSERT INTO `tenures` VALUES
   (26,4,14,'Vice President','vice-president',NULL,NULL,NULL,'2011-01-24','2013-01-24','\0'),
   (28,5,15,'CWRU Pride Alumni Award','cwru-pride-alumni-award',NULL,NULL,'/pdf/cwru-pride-alumni-award/','2017-10-06','2017-10-06','\0'),
   (29,5,16,'Outstanding New Professional Staff','outstanding-new-professional-staff',NULL,NULL,NULL,'2011-05-25','2011-05-25','\0'),
-  (30,5,17,'Exceptional Support and Commitment to University-Wide Traditions','exceptional-support-and-commitment-to-university-wide-traditions',NULL,NULL,NULL,'2013-05-01','2013-05-01','\0'),
-  (31,5,18,'Outstanding Student Club/Organization Member','outstanding-student-club/organization-member',NULL,NULL,'https://students.case.edu/traditions/awards/leadership/2007.html','2007-05-01','2007-05-01','\0'),
-  (32,5,19,'Student Who Makes a Difference','student-who-makes-a-difference',NULL,NULL,NULL,'2006-02-01','2006-02-01','\0');
+  (30,5,17,'Exceptional Support and Commitment to University-Wide Traditions','exceptional-support-and-commitment-to-university-wide-traditions',NULL,NULL,NULL,'2013-05-01','2013-05-01','\0');
 /*!40000 ALTER TABLE `tenures` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
