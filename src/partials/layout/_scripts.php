@@ -1,7 +1,7 @@
 <?php # use LABjs for parallel JS loading, use local fallback or if DNT specified ?>
-    <script>if(!_dntEnabled()) document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/labjs/2.0.3/LAB.min.js"><\/script>');</script>
-    <script>window.$LAB || document.write('<script src="/assets/js/vendor/LAB.min.js"><\/script>');</script>
-    <script>
+<script>if(!_dntEnabled()) document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/labjs/2.0.3/LAB.min.js"><\/script>');</script>
+<script>window.$LAB || document.write('<script src="/assets/js/vendor/LAB.min.js"><\/script>');</script>
+<script>
 <?php 
   # jQuery (necessary for Bootstrap's JavaScript plugins), with local fallback 
   # loadOrFallback adapted from https://gist.github.com/mondaychen/1598350
@@ -73,5 +73,4 @@
     echo ';';
   }
 ?>
-
-    </script>
+</script>

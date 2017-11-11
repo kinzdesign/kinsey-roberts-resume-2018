@@ -15,5 +15,5 @@
   Page::renderPartial('layout', 'footer');
   Page::renderPartial('layout', 'scripts'); 
 ?>
-  </body>
+</body>
 </html>

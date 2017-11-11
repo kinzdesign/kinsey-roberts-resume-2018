@@ -3,6 +3,15 @@
 $cwd = getcwd();
 require_once("$cwd/../vendor/autoload.php"); 
 
+function minify_html($contents) {
+  // condense tags separated by just a line break
+  $contents = preg_replace('!>[\r\n]+<!', '><', $contents);
+  // replace consecutive whitespace with a single space
+  $contents = preg_replace('!\s+!', ' ', $contents);
+  // return minified
+  return $contents;
+}
+
 function download_page($path) {
   // ensure directory exists
   $dir = "../static{$path}";
@@ -11,7 +20,7 @@ function download_page($path) {
   // download contents
   $contents = file_get_contents("http://localhost{$path}?static=true");
   // minify contents
-  $contents = preg_replace('!\s+!', ' ', $contents);
+  $contents = minify_html($contents);
   // save contents to static
   file_put_contents("../static{$path}index.html", $contents);
 
