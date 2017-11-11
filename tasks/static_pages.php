@@ -8,8 +8,12 @@ function download_page($path) {
   $dir = "../static{$path}";
   if(!file_exists($dir))  
     mkdir($dir, 0777, true);
-  // download and save contents to static
-  file_put_contents("../static{$path}index.html", file_get_contents("http://localhost{$path}?static=true"));
+  // download contents
+  $contents = file_get_contents("http://localhost{$path}?static=true");
+  // minify contents
+  $contents = preg_replace('!\s+!', ' ', $contents);
+  // save contents to static
+  file_put_contents("../static{$path}index.html", $contents);
   echo "   > created /static{$path}\n";
 }
 
