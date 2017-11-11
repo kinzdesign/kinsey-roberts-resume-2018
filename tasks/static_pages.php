@@ -14,6 +14,7 @@ function download_page($path) {
   $contents = preg_replace('!\s+!', ' ', $contents);
   // save contents to static
   file_put_contents("../static{$path}index.html", $contents);
+
   echo "   > created /static{$path}\n";
 }
 
