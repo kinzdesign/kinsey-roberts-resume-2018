@@ -8,7 +8,7 @@
     Page::error(404, "We could not find a PDF with slug '{$slug}'.", "Not Found");
   } else { // output contents
     // use stripped-down CSS and JS
-    Page::$cssFile = 'pdf-viewer';
+    Page::$cssFile = false;
     Page::$jsJQuery = false;
     Page::$jsResume = false;
     Page::$canonicalUrl = "/pdfs/{$slug}/";
@@ -39,6 +39,7 @@
 <html lang="en">
 <head>
 <?php Page::renderPartial('layout', 'head'); ?>
+<style><?php echo(file_get_contents(getcwd().'\assets\css\pdf-viewer.min.css')); ?></style>
 </head>
 <body>
 <?php Page::renderPartial('layout', 'gtm-body'); ?>

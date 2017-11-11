@@ -4,8 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php # Google Tag Manager with DNT honoring ?>
 <script><?php echo(file_get_contents(getcwd().'\assets\js\inline.min.js')); ?></script>
-<?php # Latest compiled and minified CSS ?>
-<link rel="stylesheet" href="/assets/css/<?php echo Page::$cssFile; ?>.min.css?ts=<?php Config::echoBuildTime() ?>">
+<?php # Latest compiled and minified CSS 
+  if(Page::$cssFile)
+    echo '<link rel="stylesheet" href="/assets/css/'.Page::$cssFile.'.min.css'.Page::cacheBreaker(true).'"/>';
+?>
 <?php # HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries ?>
 <!--[if lt IE 9]><script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script><script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 <?php # Page title ?>

@@ -31,7 +31,7 @@ var process_run = function(isSkills, breakpoint, before) {
   // recurse all html files in static
   fs.recurse('../static/', ['**/*.html'], function(filepath, relative, filename) {  
     // see if it starts with skills
-    var startsWithSkills = (relative.substr(0,6) == "skills");
+    var startsWithSkills = (relative.substr(0,7) == "skills\\");
     // if processing skills
     if(isSkills) {
       // see if subdir comes before or after breakpoint
@@ -40,7 +40,9 @@ var process_run = function(isSkills, breakpoint, before) {
     } else {
       // non-skills go as-is, regardless of breakpoint
       if(!startsWithSkills)
-        inline_critical(relative);
+        // except PDFs (their entire CSS is already inlined)
+        if(relative.substr(0,4) != "pdf\\")
+          inline_critical(relative);
     }
   });
 }
