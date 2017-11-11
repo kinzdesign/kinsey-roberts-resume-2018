@@ -15,7 +15,14 @@
     Page::renderPartial('layout', 'breakpoints'); 
 ?>
           <div class="col-xs-<?php echo $cols; ?> footer-right">
-            <a href="/privacy/<?php echo Page::cacheBreaker();?>" data-category="Footer" data-action="Privacy Policy Click">Privacy Policy</a>
+            <ul class="list-inline">
+              <li>
+                <a href="/search/<?php echo Page::cacheBreaker();?>" data-category="Footer" data-action="Search Click">Search</a>
+              </li>
+              <li>
+                <a href="/privacy/<?php echo Page::cacheBreaker();?>" data-category="Footer" data-action="Privacy Policy Click">Privacy Policy</a>
+              </li>
+            </ul>
           </div>
       </nav>
     </footer>
