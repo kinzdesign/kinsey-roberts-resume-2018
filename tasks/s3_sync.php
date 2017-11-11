@@ -79,5 +79,9 @@ function upload_file($root, $pathname) {
   s3_upload($pathname, $relative);
 }
 
+// sync static directory, recursively
 $root = realpath("../static");
 sync_dir($root, $root);
+// ping Google with new sitemap
+$ping = 'https://www.google.com/webmasters/tools/ping?sitemap=' . urlencode(Config::productionHost() . '/sitemap.xml');
+echo '   > pinging Google at ' . $ping;
