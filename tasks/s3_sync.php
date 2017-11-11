@@ -5,15 +5,21 @@ require_once("$cwd/../vendor/autoload.php");
 
 function sync_dir($root, $directory) {
   $dir = new DirectoryIterator($directory);
+  $dirs = [];
   foreach ($dir as $fileinfo) {
     if (!$fileinfo->isDot()) {
       if($fileinfo->isDir()) {
-        sync_dir($root, $fileinfo->getPathname());
+        // queue subdirectories
+        $dirs[] = $fileinfo->getPathname();
       }
       elseif($fileinfo->isFile()) {
         sync_file($root, $fileinfo);
       }
     }
+  }
+  // process queued subdirectories
+  foreach ($dirs as $pathname) {
+    sync_dir($root, $pathname);
   }
 }
 
