@@ -54,7 +54,7 @@
 
 function echoBanner($slug, $linkText, $docName) { ?>
     <div class="banner">
-      <a href="/assets/pdfs/<?php echo $slug; ?>.pdf" target="_blank" data-category="PDF Viewer" data-action="Download Click<?php if(isset($docName) && $docName) echo " - {$docName}"; ?>">
+      <a href="/assets/pdfs/<?php echo $slug; ?>.pdf" target="_blank" rel="noopener" data-category="PDF Viewer" data-action="Download Click<?php if(isset($docName) && $docName) echo " - {$docName}"; ?>">
         <p>
           <i class="fa fa-fw fa-download" aria-hidden="true"></i>
           <?php echo $linkText; ?>

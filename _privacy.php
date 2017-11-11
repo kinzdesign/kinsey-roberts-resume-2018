@@ -47,7 +47,7 @@
           </section>
           <section>
             <h2>Google</h2>
-            <p>Google's advertising requirements can be summed up by <a href="https://support.google.com/adwordspolicy/answer/1316548?hl=en" target="_blank" data-category="Privacy Policy" data-action="Google Advertising Requirements">Google's Advertising Principles</a>. They are put in place to provide a positive experience for users.</p>
+            <p>Google's advertising requirements can be summed up by <a href="https://support.google.com/adwordspolicy/answer/1316548?hl=en" target="_blank" rel="noopener" data-category="Privacy Policy" data-action="Google Advertising Requirements">Google's Advertising Principles</a>. They are put in place to provide a positive experience for users.</p>
             <p>We use Google AdSense Advertising on our website.</p>
             <p>Google, as a third-party vendor, uses cookies to serve ads on our site. Google's use of the DART cookie enables it to serve ads to our users based on previous visits to our site and other sites on the Internet. Users may opt-out of the use of the DART cookie by visiting the Google Ad and Content Network privacy policy.</p>
             <p><strong>We have implemented the following:</strong></p>
@@ -58,12 +58,12 @@
             </ul>
             <p>We, along with third-party vendors such as Google use first-party cookies (such as the Google Analytics cookies) and third-party cookies (such as the DoubleClick cookie) or other third-party identifiers together to compile data regarding user interactions with ad impressions and other ad service functions as they relate to our website.</p>
             <p><strong>Opting out:</strong></p>
-            <p>Users can set preferences for how Google advertises to you using the <a href="https://adssettings.google.com/u/0/authenticated?hl=en" target="_blank" data-category="Privacy Policy" data-action="Google Ad Settings page">Google Ad Settings page</a>. Alternatively, you can opt out by visiting the <a href="http://optout.networkadvertising.org/" target="_blank" data-category="Privacy Policy" data-action="Network Advertising Initiative Opt Out page">Network Advertising Initiative Opt Out page</p> or by using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" data-category="Privacy Policy" data-action="Google Analytics Opt Out Browser add on">Google Analytics Opt Out Browser add on</a>.</p>
+            <p>Users can set preferences for how Google advertises to you using the <a href="https://adssettings.google.com/u/0/authenticated?hl=en" target="_blank" rel="noopener" data-category="Privacy Policy" data-action="Google Ad Settings page">Google Ad Settings page</a>. Alternatively, you can opt out by visiting the <a href="http://optout.networkadvertising.org/" target="_blank" rel="noopener" data-category="Privacy Policy" data-action="Network Advertising Initiative Opt Out page">Network Advertising Initiative Opt Out page</p> or by using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" data-category="Privacy Policy" data-action="Google Analytics Opt Out Browser add on">Google Analytics Opt Out Browser add on</a>.</p>
           </section>
           <section>
             <h2>California Online Privacy Protection Act</h2>
             <p>CalOPPA is the first state law in the nation to require commercial websites and online services to post a privacy policy.  The law's reach stretches well beyond California to require any person or company in the United States (and conceivably the world) that operates websites collecting Personally Identifiable Information from California consumers to post a conspicuous privacy policy on its website stating exactly the information being collected and those individuals or companies with whom it is being shared.</p>
-            <p>See more at: <a href="http://consumercal.org/california-online-privacy-protection-act-caloppa/#sthash.0FdRbT51.dpuf" target="_blank" data-category="Privacy Policy" data-action="CalOPPA">http://consumercal.org/california-online-privacy-protection-act-caloppa/#sthash.0FdRbT51.dpuf</a></p>
+            <p>See more at: <a href="http://consumercal.org/california-online-privacy-protection-act-caloppa/#sthash.0FdRbT51.dpuf" target="_blank" rel="noopener" data-category="Privacy Policy" data-action="CalOPPA">http://consumercal.org/california-online-privacy-protection-act-caloppa/#sthash.0FdRbT51.dpuf</a></p>
             <p><strong>According to CalOPPA, we agree to the following:</strong></p>
             <ul>
               <li>Users can visit our site anonymously.</li>
