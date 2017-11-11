@@ -7,5 +7,4 @@ del /q "..\static\*"
 FOR /D %%p IN ("..\static\*.*") DO rmdir "%%p" /s /q
 :: build new files
 php static_pages.php
-git add ../static 2> nul
 ECHO.

@@ -85,8 +85,9 @@ foreach ((new DirectoryIterator("$cwd/../assets/pdfs/")) as $file)
   if ($file->getExtension() == 'pdf')
     $sitemap = download_page($sitemap, $w3cTime, '/pdf/' . substr($file->getFilename(), 0, -4) . '/', 0.6);
 
-// write sitemap
+// write and stage sitemap
 file_put_contents("../sitemap.xml", $sitemap .= '</urlset>');
+exec("git add ..\\sitemap.xml");
 
 // copy assets
 exec("xcopy /I /S /H /Y /C {$cwd}\\..\\assets {$cwd}\\..\\static\\assets");
@@ -97,3 +98,6 @@ copy_file('favicon.ico');
 copy_file('robots.txt');
 copy_file('humans.txt');
 copy_file('sitemap.xml');
+
+// stage static directory
+exec("git add ..\\static\\");
