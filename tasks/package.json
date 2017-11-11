@@ -1,0 +1,16 @@
+{
+  "name": "kinsey-roberts-resume-2017",
+  "version": "0.9.0",
+  "description": "NPM tasks for building resume assets",
+  "dependencies": {},
+  "devDependencies": {
+    "critical": "^1.0.0",
+    "file-system": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.4.0"
+  },
+  "repository": "https://bitbucket.org/kinzdesign/kinsey-roberts-resume-2017.git",
+  "scripts": {},
+  "author": "Kinsey Roberts",
+  "license": "ISC"
+}
