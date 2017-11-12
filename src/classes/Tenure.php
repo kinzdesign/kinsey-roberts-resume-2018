@@ -137,7 +137,7 @@ class Tenure {
   }
 
   public function hasPartial() {
-    return Page::partialExists('tenure', $this->slug());
+    return Page::partialExists('tenures', $this->slug());
   }
 
   public function showLink() {

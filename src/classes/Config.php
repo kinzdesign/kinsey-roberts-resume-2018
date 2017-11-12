@@ -2,7 +2,7 @@
 class Config {
 
   // timestamp of last build
-  public static function getBuildTime() { return '1510522648'; }
+  public static function getBuildTime() { return '1510523645'; }
   public static function getBuildTimeW3C() { return date('c', self::getBuildTime()); }
   public static function echoBuildTime() { echo self::getBuildTime(); }
 
