@@ -11,7 +11,7 @@
     Page::$cssFile = false;
     Page::$jsJQuery = false;
     Page::$jsResume = false;
-    Page::$canonicalUrl = "/pdfs/{$slug}/";
+    Page::$canonicalUrl = "/pdf/{$slug}/";
     // per-document page titles
     $docName = false;
     switch ($slug) {

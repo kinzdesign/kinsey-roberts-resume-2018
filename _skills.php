@@ -18,7 +18,7 @@
           <ul class="list-skills">
 <?php   foreach($header->skills() as $skill) {
     // output skill with link if projects exist
-    if($skill->hasProjects())
+    if($skill->showLink())
       echo "                    <li><a href=\"{$skill->url()}\" data-category=\"Skills Page". (isset($type) ? " - {$type->name()}" : '') . "\" data-action=\"Skill Click - {$skill->name()}\">{$skill->name()}</a></li>\r\n";
     else
       echo "                    <li>{$skill->name()}</li>\r\n";

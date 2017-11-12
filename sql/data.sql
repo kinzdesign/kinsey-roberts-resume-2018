@@ -42,7 +42,7 @@ INSERT INTO `bullets` VALUES
   (18,5,'Presented a poster on <a href=\"{project|intersectional-identities}\">capturing intersectional identities in demographic surveys</a>',3),
   (19,18,'Built new avenues for collaboration and knowledge sharing during an <abbr title=\"Information Technology\">IT</abbr> reorganization/centralization',NULL),
   (21,20,'Facilitated educational sessions covering implicit bias, microaggressions, intent vs. impact, and more',NULL),
-  (22,19,'Completed 2007 and 2017 <a href=\"https://www.campusprideindex.org/campuses/details/19?campus=case-western-reserve-university\" target=\"_blank\" rel=\"noopener\" data-category=\"External Link\" data-action=\"Campus Pride Index\">Campus Pride Index</a>{ico|ext} surveys; identified opportunities for improvement',2),
+  (22,19,'Completed 2007 and 2017 <a href=\"https://www.campusprideindex.org/campuses/details/19?campus=case-western-reserve-university\" target=\"_blank\" rel=\"noopener noreferrer\" data-category=\"External Link\" data-action=\"Campus Pride Index\">Campus Pride Index</a>{ico|ext} surveys; identified opportunities for improvement',2),
   (24,19,'Expanded the <abbr title=\"Lesbian Gay Bisexual Transgender\">LGBT</abbr> Resources webpage in 2008, rebranded for opening of <abbr title=\"Lesbian Gay Bisexual Transgender\">LGBT</abbr> Center in 2010',1),
   (25,1,'Maintained school\'s web presence, spanning 21 domains, 108 subdomains, and &ge;<abbr title=\"16,000\">16K</abbr> pages',1),
   (26,1,'Introduced new-to-the-team development practices including Sass, source control, and <abbr title=\"Object-Oriented Programming\">OOP</abbr>',4),

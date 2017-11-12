@@ -84,7 +84,8 @@ foreach (SkillType::getAll() as $type)
   $sitemap = download_page($sitemap, $w3cTime, "/skills/{$type->slug()}/", 0.4);
 // build skill pages
 foreach (Skill::getAll() as $skill)
-  $sitemap = download_page($sitemap, $w3cTime, "/skills/{$skill->type()->slug()}/{$skill->slug()}/", 0.3);
+  if($skill->showLink())
+    $sitemap = download_page($sitemap, $w3cTime, "/skills/{$skill->type()->slug()}/{$skill->slug()}/", 0.3);
 // build PDF viewer pages
 foreach ((new DirectoryIterator("$cwd/../assets/pdfs/")) as $file)
   if ($file->getExtension() == 'pdf')

@@ -63,6 +63,17 @@ class Skill {
   public function hasProjects() {
     return $this->hasProjects;
   }
+
+  public function hasPartial() {
+    return Page::partialExists('skills', $this->slug());
+  }
+
+  public function showLink() {
+    return 
+      $this->synopsis() ||
+      $this->hasPartial() || 
+      $this->hasProjects();
+  }
   
   public function canonicalUrl() {
     return "/skills/{$this->type()->slug()}/{$this->slug()}/";

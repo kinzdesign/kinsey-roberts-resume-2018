@@ -35,7 +35,7 @@
     } // end header 
 
     // output skill with link if projects exist
-    if($skill->hasProjects())
+    if($skill->showLink())
       echo "                    <li><a href=\"{$skill->url()}\" data-category=\"Skills List\" data-action=\"Skill Click - {$skill->name()}\">{$skill->name()}</a></li>\r\n";
     else
       echo "                    <li>{$skill->name()}</li>\r\n";
