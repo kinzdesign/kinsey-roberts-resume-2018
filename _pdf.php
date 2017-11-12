@@ -2,7 +2,7 @@
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'); 
   $slug = Page::$params['pdf'];
   // get file path
-  $path = "{$_SERVER['DOCUMENT_ROOT']}/assets/pdfs/{$slug}.pdf";
+  $path = "{$_SERVER['DOCUMENT_ROOT']}/assets/pdf/{$slug}.pdf";
   if(!file_exists($path)) {
     // handle 404
     Page::error(404, "We could not find a PDF with slug '{$slug}'.", "Not Found");
