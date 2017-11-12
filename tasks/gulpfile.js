@@ -1,11 +1,13 @@
 'use strict';
 
+var QUEUE_COUNT = 6; // In quick tests, 6 (43.7s) was faster than 4 (45.9s), 8 (44.4s) or 12 (53.9s)
+
 var gulp = require('gulp');
 var critical = require('critical');
 var fs = require('file-system');
 
 var inline_critical = function (path) {
-  critical.generate({
+  return critical.generate({
     // inline critical CSS
     inline: true,
     // minify it
@@ -25,38 +27,56 @@ var inline_critical = function (path) {
   });
 }
 
-var process_run = function(isSkills, breakpoint, before) {
-  // silence errors
-  process.setMaxListeners(0);
-  // recurse all html files in static
-  fs.recurse('../static/', ['**/*.html'], function(filepath, relative, filename) {  
-    // see if it starts with skills
-    var startsWithSkills = (relative.substr(0,7) == "skills\\");
-    // if processing skills
-    if(isSkills) {
-      // see if subdir comes before or after breakpoint
-      if(startsWithSkills && (relative[7] <= breakpoint) == before)
-        inline_critical(relative);
-    } else {
-      // non-skills go as-is, regardless of breakpoint
-      if(!startsWithSkills)
-        // except PDFs (their entire CSS is already inlined)
-        if(relative.substr(0,4) != "pdf\\")
-          inline_critical(relative);
-    }
+var process_files_queue = function(q, i) {
+  // base case, empty queue
+  if(!q || q.length < 1)
+    return;
+  // pop a file to process
+  var path = q.pop();
+  // inline and get promise
+  return inline_critical(path).then(() => {
+    // output status
+    console.log('   > inlined ' + path + ' on queue ' + i);
+    // tail recursion
+    process_files_queue(q, i);
+  }).catch((reason) => {
+    console.log(' ! error in ' + path + ' on queue ' + i);
+    console.log(' ! ' + reason);
+    // tail recursion
+    process_files_queue(q, i);
   });
 }
 
-// split into 3 tasks to try to avoid crashing Chromium
+var build_and_launch_queues = function(n) {
+  // array of queues to process in parallel
+  var Qs = [];
+  // initialize inner queues
+  for (var i = 0; i < n; i++)
+    Qs[i] = [];
 
-gulp.task('critical-skills-a-i', [], function (cb) {
-  process_run(true, 'i', true);
-});
+  // indexer to split pages between queues
+  var cur = 0;
 
-gulp.task('critical-skills-j-z', [], function (cb) {
-  process_run(true, 'i', false);
-});
+  // recurse all html files in static folder
+  fs.recurseSync('../static/', ['**/*.html'], function(filepath, relative, filename) {  
+    // ignore PDFs (already inlined)
+    if(relative.substr(0,4) != 'pdf\\') {
+      // enqueue page in current queue
+      Qs[cur].push(relative);
+      // increment indexer with rollover at n
+      cur = (cur + 1) % n;
+    }
+  });
 
-gulp.task('critical-non-skills', [], function (cb) {
-  process_run(false);
+  // kick-off queues
+  for (var i = 0; i < n; i++)
+    process_files_queue(Qs[i], i);
+}
+
+gulp.task('critical', [], function (cb) {
+  console.log(' + Inlining critical path CSS using ' + QUEUE_COUNT + ' queues');
+  // silence errors
+  process.setMaxListeners(0);
+  // kick off parallel queues to inline critical CSS
+  build_and_launch_queues(QUEUE_COUNT);
 });
