@@ -96,7 +96,7 @@
             echo '                    <a href="';
             echo $tenure->url();
             if($isExternal)
-              echo '" target="_blank';
+              echo '" target="_blank" rel="noopener noreferrer';
             echo '" data-category="Tenures';
             if(isset($type) && $type)
               echo " - {$type->name()}";
