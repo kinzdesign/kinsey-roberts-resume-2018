@@ -1,12 +1,14 @@
 <?php 
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
   $headers = false;
+  $headerTag = 'h2';
   // try to load tenure type if specified
   if(isset(Page::$params['tenure-type'])) {
     $type = TenureType::getBySlug(Page::$params['tenure-type']);
     // ensure we got a type ('tenure-type' param could actually be an employer)
     if($type) {
       $headers = array($type);
+      $headerTag = 'h1';
       $type->queueBreadcrumb();
       Page::$title = $type->name();
       Page::$canonicalUrl = $type->canonicalUrl();
@@ -28,9 +30,9 @@
   if($isHomepage) 
     echo "          <h1 class=\"sr-only\">Kinsey Roberts</h1>\r\n";
   foreach ($headers as $header) {
-          $prevDept = false; ?>
-
-          <h2 class="head-tenure-type"><?php echo $header->name(); ?></h2>
+    $prevDept = false; 
+    echo "<{$headerTag} class=\"head-tenure-type\">{$header->name()}</{$headerTag}>\r\n";
+?>
           <ul class="list-departments list-unstyled <?php if($header->showDuration()) echo ' duration' ?>">
 <?php   foreach($header->tenures() as $tenure) { 
           if($tenure->department()->id() != $prevDept) { 
@@ -88,7 +90,8 @@
                     ?></div>
                   </div>
                   <div class="tenure-title<?php if(!$hasBullets) echo ' subtle'; ?>">
-<?php     if($tenure->showLink() || $tenure->hasUrl()) {
+<?php     $isExternal = false;
+          if($tenure->showLink() || $tenure->hasUrl()) {
             $isExternal = !$tenure->showLink() && $tenure->hasUrl() && strpos($tenure->url(), ':');
             echo '                    <a href="';
             echo $tenure->url();

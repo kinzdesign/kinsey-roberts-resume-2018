@@ -16,9 +16,13 @@
   foreach ($headers as $header) { ?>
           <h1 class="head-skill-type"><?php echo $header->name(); ?></h1>
           <ul class="list-skills">
-<?php   foreach($header->skills() as $skill) { ?>
-            <li><?php echo "<a href=\"{$skill->url()}\" data-category=\"Skills List". (isset($type) ? " - {$type->name()}" : '') . "\" data-action=\"Skill Click - {$skill->name()}\">{$skill->name()}</a>"; ?></li>
-<?php   } // end skill ?>
+<?php   foreach($header->skills() as $skill) {
+    // output skill with link if projects exist
+    if($skill->hasProjects())
+      echo "                    <li><a href=\"{$skill->url()}\" data-category=\"Skills Page". (isset($type) ? " - {$type->name()}" : '') . "\" data-action=\"Skill Click - {$skill->name()}\">{$skill->name()}</a></li>\r\n";
+    else
+      echo "                    <li>{$skill->name()}</li>\r\n";
+        } // end skill ?>
           </ul>
 <?php } // end header 
 
