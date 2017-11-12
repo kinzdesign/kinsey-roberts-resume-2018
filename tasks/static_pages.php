@@ -4,11 +4,12 @@ $cwd = getcwd();
 require_once("$cwd/../vendor/autoload.php"); 
 
 function minify_html($contents) {
-  // condense tags separated by just a line break
-  $contents = preg_replace('!>[\r\n]+<!', '><', $contents);
-  // replace consecutive whitespace with a single space
-  $contents = preg_replace('!\s+!', ' ', $contents);
-  // return minified
+  if(Config::minifyHtml()) {
+    // condense tags separated by just a line break
+    $contents = preg_replace('!>[\r\n]+<!', '><', $contents);
+    // replace consecutive whitespace with a single space
+    $contents = preg_replace('!\s+!', ' ', $contents);
+  }
   return $contents;
 }
 

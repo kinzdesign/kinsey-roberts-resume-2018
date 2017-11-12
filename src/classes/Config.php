@@ -16,4 +16,7 @@ class Config {
   public static function staticHost() { return getenv('STATIC_HOST'); }
   public static function productionHost() { return 'http://kinseyroberts.me'; }
   public static function hostUrl() { return Page::isStatic() ? self::staticHost() : self::localHost(); }
+
+  // build configuration
+  public static function minifyHtml() { return true; }
 }
