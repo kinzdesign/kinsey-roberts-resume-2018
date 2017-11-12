@@ -98,6 +98,27 @@ exec("git add ..\\sitemap.xml");
 exec("xcopy /I /S /H /Y /C {$cwd}\\..\\assets {$cwd}\\..\\static\\assets");
 echo "   > copied  /assets/ to /static/assets/\n";
 
+// remove css map files
+foreach ((new DirectoryIterator("$cwd/../static/assets/css/")) as $file) {
+  switch ($file->getExtension()) {
+    // delete map files
+    case 'map':
+      unlink($file->getPathname());
+      break;
+    // remove map declaration from css files
+    case 'css':
+      // read file
+      $pathname = $file->getPathname();
+      $contents = file_get_contents($pathname);
+      // remove map declaration
+      $contents = preg_replace('!\\s?/\\*# sourceMappingURL=.*!', '', $contents);
+      // write file
+      file_put_contents($pathname, $contents);
+      break;
+  }
+}
+echo "   > removed CSS map files\n";
+
 // copy root files
 copy_file('favicon.ico');
 copy_file('robots.txt');
