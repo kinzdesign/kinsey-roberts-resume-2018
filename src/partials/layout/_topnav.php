@@ -60,7 +60,7 @@
 <?php } ?>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="https://www.linkedin.com/in/kinsey-roberts-66166512" target="_blank" rel="noopener" rel="noopener" data-category="Contact" data-action="Topnav - LinkedIn" title="LinkedIn Profile" itemprop="sameAs">
+              <a href="https://www.linkedin.com/in/kinsey-roberts-66166512" target="_blank" rel="noopener" rel="noopener noreferrer" data-category="Contact" data-action="Topnav - LinkedIn" title="LinkedIn Profile" itemprop="sameAs">
                 <i class="fa fa-lg fa-fw fa-linkedin hidden-xs" aria-hidden="true"></i>
                 <span class="visible-xs-inline visible-sm-inline">LinkedIn Profile</span>
               </a>
