@@ -80,8 +80,12 @@ class TenureType {
     return $this->tenures;
   }
 
+  public function canonicalUrl() {
+    return "/{$this->slug()}/";
+  }
+
   public function url() {
-    return "/{$this->slug()}/" . Page::cacheBreaker();
+    return $this->canonicalUrl() . Page::cacheBreaker();
   }
 
   public function queueBreadcrumb() {

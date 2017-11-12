@@ -1,0 +1,11 @@
+/* TEAM */
+Developer: Kinsey Roberts
+Site: kinsey.q.roberts@gmail.com
+Location: Cleveland, Ohio, USA
+              
+/* SITE */
+Last update: 2017/11/12 14:50
+Language: English
+Doctype: HTML5
+Standards: HTML5, CSS3
+Components: Bootstrap, jQuery

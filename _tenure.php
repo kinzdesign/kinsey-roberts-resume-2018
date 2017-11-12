@@ -10,6 +10,7 @@
     $tenure->type()->queueBreadcrumb();
     $tenure->queueBreadcrumb();
     Page::$skills = $tenure->skills();
+    Page::$canonicalUrl = $tenure->canonicalUrl();
     Page::renderTop("{$tenure->extendedName()} | {$tenure->type()->name()}");
 ?>
           <h1 class="head-tenure" itemprop="<?php echo $tenure->type()->nameProperty(); ?>"><?php 
@@ -23,7 +24,7 @@
           </div>
 <?php     echo "          <span itemscope itemprop=\"{$tenure->type()->deptProperty()}\" itemType=\"{$tenure->type()->deptType()}\">\r\n";
           if($tenure->department()->url()) {
-            echo "            <a href=\"{$tenure->department()->url()}\" target=\"_blank\" data-category=\"Tenure - {$tenure->name()}\" data-action=\"Department Click - {$tenure->department()->name()}\">\r\n";
+            echo "            <a href=\"{$tenure->department()->url()}\" target=\"_blank\" rel=\"noopener\" data-category=\"Tenure - {$tenure->name()}\" data-action=\"Department Click - {$tenure->department()->name()}\">\r\n";
           }
           if($tenure->department()->organization()) { ?>
               <span class="tenure-organization" itemprop="name"><?php echo $tenure->department()->organization()->name(); ?></span>,

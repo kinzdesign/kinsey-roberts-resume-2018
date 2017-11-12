@@ -11,6 +11,7 @@ class Page {
   public static $showBreadcrumbs = true;
   public static $showTopnav = true;
   public static $params = array();
+  public static $canonicalUrl = false;
   
   public static $jsFontAwesome = true;
   public static $jsJQuery = true;

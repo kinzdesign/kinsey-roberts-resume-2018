@@ -41,6 +41,10 @@
     else if ($arg1 == 'privacy') {
       return '/_privacy.php';
     }
+    // handle search page
+    else if ($arg1 == 'search') {
+      return '/_search.php';
+    }
     // otherwise, first arg is tenure type
     else
     {

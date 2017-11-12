@@ -14,6 +14,7 @@
 <?php 
   Page::renderPartial('layout', 'footer');
   Page::renderPartial('layout', 'scripts'); 
+  Page::renderPartial('layout', 'searchbox'); 
 ?>
-  </body>
+</body>
 </html>

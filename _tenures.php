@@ -9,6 +9,7 @@
       $headers = array($type);
       $type->queueBreadcrumb();
       Page::$title = $type->name();
+      Page::$canonicalUrl = $type->canonicalUrl();
     }
   }
   $isHomepage = !$headers;
@@ -20,6 +21,7 @@
     // show all skills
     Page::$skills = Skill::getAll();
     Page::$offCanvasSidebar = true;
+    Page::$canonicalUrl = '/';
   }
   Page::renderTop();
   // output hidden header for screen reader on homepage

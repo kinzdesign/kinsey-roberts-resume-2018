@@ -58,8 +58,12 @@ class Project {
     return $this->skills;
   }
 
+  public function canonicalUrl() {
+    return "/{$this->tenure()->type()->slug()}/{$this->tenure()->slug()}/{$this->slug()}/";
+  }
+
   public function url() {
-    return "/{$this->tenure()->type()->slug()}/{$this->tenure()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
+    return $this->canonicalUrl() . Page::cacheBreaker();
   }
 
   public function queueBreadcrumb() {
@@ -67,7 +71,7 @@ class Project {
   }
 
   public static function queueProjectsBreadcrumb() {
-    Page::$breadcrumbs['Projects'] = '/projects/';
+    Page::$breadcrumbs['Projects'] = '/projects/' . Page::cacheBreaker();
   }
 
   /*

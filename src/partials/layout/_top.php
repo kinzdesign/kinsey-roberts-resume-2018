@@ -2,10 +2,10 @@
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'); 
 ?><!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
 <?php Page::renderPartial('layout', 'head'); ?>
-  </head>
-  <body class="top-navbar-fixed" itemscope itemtype="http://schema.org/Person">
+</head>
+<body class="top-navbar-fixed" itemscope itemtype="http://schema.org/Person">
 <?php Page::renderPartial('layout', 'gtm-body'); ?>
 <?php Page::renderPartial('layout', 'topnav'); ?>
     <div class="container">

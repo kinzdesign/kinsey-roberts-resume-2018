@@ -63,9 +63,13 @@ class Skill {
   public function hasProjects() {
     return $this->hasProjects;
   }
+  
+  public function canonicalUrl() {
+    return "/skills/{$this->type()->slug()}/{$this->slug()}/";
+  }
 
   public function url() {
-    return "/skills/{$this->type()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
+    return $this->canonicalUrl() . Page::cacheBreaker();
   }
 
   public function queueBreadcrumb() {
@@ -73,7 +77,7 @@ class Skill {
   }
 
   public static function queueSkillsBreadcrumb() {
-    Page::$breadcrumbs['Skills'] = '/skills/';
+    Page::$breadcrumbs['Skills'] = '/skills/' . Page::cacheBreaker();
   }
 
   /*

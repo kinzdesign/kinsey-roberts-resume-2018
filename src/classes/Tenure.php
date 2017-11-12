@@ -151,9 +151,15 @@ class Tenure {
     return !(!$this->url);
   }
 
+  public function canonicalUrl() {
+    return "/{$this->type()->slug()}/{$this->slug()}/";
+  }
+
   public function url() {
     if($this->showLink())
-      return "/{$this->type()->slug()}/{$this->slug()}/" . Page::cacheBreaker();
+      return $this->canonicalUrl() . Page::cacheBreaker();
+    if(substr($this->url, 0, 5) == "/pdf/")
+      return $this->url . Page::cacheBreaker();
     return $this->url;
   }
 
