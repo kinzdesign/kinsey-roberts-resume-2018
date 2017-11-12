@@ -3,7 +3,7 @@
   Page::registerChart('harldByYear');
   function emitProjectListItem($slug) {
     $project = Project::getBySlug($slug);
-    echo "            <li>\r\n              <a href=\"{$project->url()}\" data-category=\"Project - HARLD\" data-action=\"Body Click - {$project->name()}\"><h4>{$project->name()}</h4></a>\r\n              <p>{$project->synopsis()}</p>\r\n            </li>\r\n";
+    echo "            <li>\r\n              <a href=\"{$project->url()}\" data-category=\"Project - HARLD\" data-action=\"Body Click - {$project->name()}\"><h3>{$project->name()}</h3></a>\r\n              <p>{$project->synopsis()}</p>\r\n            </li>\r\n";
   }
 ?>
           <p><abbr title="Housing and Residence Life Database">HARLD</abbr> powers the day-to-day operations of several student-serving departments. It is a custom multi-client, multi-platform system built on C# and the .NET Framework.</p>
