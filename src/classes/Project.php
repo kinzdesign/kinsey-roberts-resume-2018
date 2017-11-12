@@ -127,10 +127,10 @@ class Project {
     $arr = array();
     if($skill) {
       $sql = self::SELECT . ' WHERE id IN (SELECT project FROM project_skills WHERE skill = ?) ' . self::ORDER;
-      $result = Database::execute($sql, $skill->id(), $skill);
+      $result = Database::execute($sql, $skill->id());
       if($result)
         while($row = $result->fetchRow()) 
-          $arr[] = new self($row, $skill);
+          $arr[] = new self($row);
     }
     return $arr;
   }
