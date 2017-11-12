@@ -88,7 +88,8 @@
                     ?></div>
                   </div>
                   <div class="tenure-title<?php if(!$hasBullets) echo ' subtle'; ?>">
-<?php     if($tenure->showLink() || $tenure->hasUrl()) {
+<?php     $isExternal = false;
+          if($tenure->showLink() || $tenure->hasUrl()) {
             $isExternal = !$tenure->showLink() && $tenure->hasUrl() && strpos($tenure->url(), ':');
             echo '                    <a href="';
             echo $tenure->url();
