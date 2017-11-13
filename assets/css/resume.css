@@ -4168,5 +4168,14 @@ ul.list-unstyled > li > ul, .sidebar .panel-body ul > li > ul {
   abbr[title]:after,
   a[href]:after {
     content: ""; } }
+.wf-opensans-n4-active body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.wf-montserrat-n7-active h1, .wf-montserrat-n7-active h2, .wf-montserrat-n7-active h3, .wf-montserrat-n7-active h4, .wf-montserrat-n7-active h5, .wf-montserrat-n7-active h6,
+.wf-montserrat-n7-active .h1, .wf-montserrat-n7-active .h2, .wf-montserrat-n7-active .h3, .wf-montserrat-n7-active .h4, .wf-montserrat-n7-active .h5, .wf-montserrat-n7-active .h6,
+.wf-montserrat-n7-active .navbar-brand,
+.wf-montserrat-n7-active .project-list-name,
+.wf-montserrat-n7-active .tenure-title {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /*# sourceMappingURL=/assets/css/resume.css.map */
