@@ -36,7 +36,7 @@ var process_files_queue = function(q, i) {
   // inline and get promise
   return inline_critical(path).then(() => {
     // output status
-    console.log('   > inlined ' + path + ' on queue ' + i);
+    console.log('   > queue ' + i + ' ' + path);
     // tail recursion
     process_files_queue(q, i);
   }).catch((reason) => {
