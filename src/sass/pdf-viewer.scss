@@ -16,12 +16,20 @@ html, body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  font-family: $font-family-sans-serif;
+  font-family: $font-family-base;
+}
+.wf-opensans-n4-active {
+  html, body {
+    font-family: $font-loaded-base;
+  }
 }
 
 strong {
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
+}
+.wf-montserrat-n7-active strong {
+  font-family: $headings-font-loaded;
 }
 
 .wrapper {
