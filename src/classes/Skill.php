@@ -26,6 +26,7 @@ class Skill {
           $slug,
           $projects,
           $hasProjects,
+          $tenures,
           $hasTenures;
 
   public function id() {
@@ -66,6 +67,12 @@ class Skill {
     return $this->hasProjects;
   }
 
+  public function tenures() {
+    // lazy-load Tenure objects
+    if($this->hasTenures && !$this->tenures)
+      $this->tenures = Tenure::getBySkillId($this->id());
+    return $this->tenures;
+  }
 
   public function hasTenures() {
     return $this->hasTenures;
@@ -79,6 +86,7 @@ class Skill {
     return 
       $this->synopsis() ||
       $this->hasPartial() || 
+      $this->hasTenures() || 
       $this->hasProjects();
   }
   
