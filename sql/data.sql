@@ -301,8 +301,6 @@ INSERT INTO `skills` VALUES
   (49,1,'XPath','xpath',NULL,NULL),
   (50,11,'jQuery','jquery',NULL,NULL),
   (51,12,'Internet Information Services (IIS)','iis',NULL,NULL),
-  (52,12,'Apache HTTP Server','apache',NULL,NULL),
-  (53,12,'WAMP Stack','wamp-stack',NULL,NULL),
   (54,12,'LAMP Stack','lamp-stack',NULL,NULL),
   (55,10,'Documentation','documentation',NULL,NULL),
   (56,3,'SQL Server Reporting Services','sql-server-reporting-services',NULL,NULL),
@@ -395,6 +393,7 @@ INSERT INTO `tenure_skills` VALUES
   (1,59),
   (15,60),
   (15,61),
+  (15,62),
   (15,63),
   (5,64);
 /*!40000 ALTER TABLE `tenure_skills` ENABLE KEYS */;
