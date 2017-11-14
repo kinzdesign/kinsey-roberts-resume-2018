@@ -318,6 +318,15 @@ INSERT INTO `skills` VALUES
 UNLOCK TABLES;
 
 --
+-- Dumping data for table `tenure_skills`
+--
+
+LOCK TABLES `tenure_skills` WRITE;
+/*!40000 ALTER TABLE `tenure_skills` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tenure_skills` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping data for table `tenure_types`
 --
 
