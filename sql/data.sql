@@ -44,12 +44,12 @@ INSERT INTO `bullets` VALUES
   (21,20,'Facilitated educational sessions covering implicit bias, microaggressions, intent vs. impact, and more',NULL),
   (22,19,'Completed 2007 and 2017 <a href=\"https://www.campusprideindex.org/campuses/details/19?campus=case-western-reserve-university\" target=\"_blank\" rel=\"noopener noreferrer\" data-category=\"External Link\" data-action=\"Campus Pride Index\">Campus Pride Index</a>{ico|ext} surveys; identified opportunities for improvement',2),
   (24,19,'Expanded the <abbr title=\"Lesbian Gay Bisexual Transgender\">LGBT</abbr> Resources webpage in 2008, rebranded for opening of <abbr title=\"Lesbian Gay Bisexual Transgender\">LGBT</abbr> Center in 2010',1),
-  (25,1,'Maintained school\'s web presence, spanning 21 domains, 108 subdomains, and &ge;<abbr title=\"16,000\">16K</abbr> pages',1),
+  (25,1,'Maintained management school\'s web presence, spanning 21 domains, 108 subdomains, and &ge;<abbr title=\"16,000\">16K</abbr> pages',1),
   (26,1,'Introduced new-to-the-team development practices including Sass, source control, and <abbr title=\"Object-Oriented Programming\">OOP</abbr>',4),
   (27,1,'Collaborated with marketing to imagine, design, and execute web and email campaigns',5),
   (28,1,'<a href=\"{project|server-hardening}\">Hardened web server configuration and code</a> to remediate a breach and reduce vulnerability',2),
   (29,1,'Led the <a href=\"{project|server-migration}\">migration from ColdFusion to ASP.NET</a>, developing both code and people in the process',3),
-  (30,1,'Stepped up to <a href=\"{project|hobsons-admissions}\">support the admissions team with their <abbr title=\"Customer Relationship Management system\">CRM</abbr></a> while our <abbr title=\"Business Analyst\">BA</abbr> position was vacant',4),
+  (30,1,'Stepped up to <a href=\"{project|admissions-crm}\">support the admissions team with their <abbr title=\"Customer Relationship Management system\">CRM</abbr></a> while our <abbr title=\"Business Analyst\">BA</abbr> position was vacant',4),
   (31,15,'<a href=\"{project|mailroom}\">Optimized mailroom procedures</a> to handle 67% increase in mailroom traffic from <abbr title=\"Fiscal Year 2008 (7/2007-6/2008)\">FY08</abbr> to <abbr title=\"Fiscal Year 2013 (7/2012-6/2013)\">FY13</abbr>',3);
 /*!40000 ALTER TABLE `bullets` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -216,7 +216,7 @@ INSERT INTO `projects` VALUES
   (6,15,'Housing and Residence Life Database (HARLD)','harld','Expanded software that powered day-to-day operations of university housing, residence life, greek life, and associated offices',NULL),
   (7,15,'Digital Signage','digital-signage','Devised a digital signage platform to inform members of the campus community in public areas',NULL),
   (10,5,'Intersectional Identities Poster','intersectional-identities','Demonstrated a granular demographics form to allow more diverse self-expression',NULL),
-  (11,1,'Hobsons Admissions','hobsons-admissions','Took over support of an admissions management system while our business analyst position was vacant',NULL),
+  (11,1,'Hobsons Admissions','admissions-crm','Took over support of an admissions management system while our business analyst position was vacant',NULL),
   (12,15,'Automated Card, Badge, and Key Issuing','physical-security','Rendered manual, paper-based procedures obsolete by incorporating physical security functionality into housing office software',NULL);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -301,7 +301,7 @@ INSERT INTO `skills` VALUES
   (49,1,'XPath','xpath',NULL,NULL),
   (50,11,'jQuery','jquery',NULL,NULL),
   (51,12,'Internet Information Services (IIS)','iis',NULL,NULL),
-  (54,12,'LAMP Stack','lamp-stack',NULL,NULL),
+  (54,12,'LAMP/WAMP Stack','lamp-wamp-stack',NULL,NULL),
   (55,10,'Documentation','documentation',NULL,NULL),
   (56,3,'SQL Server Reporting Services','sql-server-reporting-services',NULL,NULL),
   (57,2,'Microsoft Windows Server','microsoft-windows-server',NULL,NULL),

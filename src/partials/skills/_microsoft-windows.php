@@ -1,0 +1,2 @@
+<p>Microsoft Windows has been my primary operating system since grade school. All my professional work has been in Windows.</p>
+<p>Besides developing for Windows, I have experience installing, configuring, and troubleshooting Windows. I maintained the computers, network and printers for the <abbr title="Case Western Reserve University">CWRU</abbr> student newspaper. The newspaper lacked an IT staff, so we all pitched in where we could.</p>
