@@ -12,6 +12,7 @@
   border: 1px solid transparent;
   border-radius: $alert-border-radius;
 
+/*
   // Headings for larger alerts
   h4 {
     margin-top: 0;
@@ -23,6 +24,7 @@
   .alert-link {
     font-weight: $alert-link-font-weight;
   }
+*/
 
   // Improve alignment and spacing of inner content
   > p,
@@ -35,6 +37,7 @@
   }
 }
 
+/*
 // Dismissible alerts
 //
 // Expand the right padding and account for the close button's positioning.
@@ -67,6 +70,7 @@
 .alert-warning {
   @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
 }
+*/
 
 .alert-danger {
   @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);

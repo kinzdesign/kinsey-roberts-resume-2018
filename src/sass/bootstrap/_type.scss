@@ -80,11 +80,13 @@ small,
   font-size: floor((100% * $font-size-small / $font-size-base));
 }
 
+/*
 mark,
 .mark {
   background-color: $state-warning-bg;
   padding: .2em;
 }
+*/
 
 // Alignment
 .text-left           { text-align: left; }
@@ -98,6 +100,7 @@ mark,
 .text-uppercase      { text-transform: uppercase; }
 .text-capitalize     { text-transform: capitalize; }
 
+/*
 // Contextual colors
 .text-muted {
   color: $text-muted;
@@ -122,16 +125,20 @@ mark,
   color: #fff;
 }
 @include bg-variant('.bg-primary', $brand-primary);
+*/
 
 @include bg-variant('.bg-success', $state-success-bg);
 
+/*
 @include bg-variant('.bg-info', $state-info-bg);
 
 @include bg-variant('.bg-warning', $state-warning-bg);
+*/
 
 @include bg-variant('.bg-danger', $state-danger-bg);
 
 
+/*
 // Page header
 // -------------------------
 
@@ -140,6 +147,7 @@ mark,
   margin: ($line-height-computed * 2) 0 $line-height-computed;
   border-bottom: 1px solid $page-header-border-color;
 }
+*/
 
 
 // Lists
@@ -181,6 +189,7 @@ ol {
   }
 }
 
+/*
 // Description Lists
 dl {
   margin-top: 0; // Remove browser default
@@ -220,6 +229,7 @@ dd {
     }
   }
 }
+*/
 
 
 // Misc
@@ -237,6 +247,7 @@ abbr[data-original-title] {
   @extend .text-uppercase;
 }
 
+/*
 // Blockquotes
 blockquote {
   padding: ($line-height-computed / 2) $line-height-computed;
@@ -296,3 +307,4 @@ address {
   font-style: normal;
   line-height: $line-height-base;
 }
+*/

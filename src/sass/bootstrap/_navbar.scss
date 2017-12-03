@@ -283,6 +283,7 @@
 // Extension of the `.form-inline` with some extra flavor for optimum display in
 // our navbars.
 
+/*
 .navbar-form {
   margin-left: -$navbar-padding-horizontal;
   margin-right: -$navbar-padding-horizontal;
@@ -319,8 +320,10 @@
     @include box-shadow(none);
   }
 }
+*/
 
 
+/*
 // Dropdown menus
 
 // Menu position and menu carets
@@ -334,6 +337,7 @@
   @include border-top-radius($navbar-border-radius);
   @include border-bottom-radius(0);
 }
+*/
 
 
 // Buttons in navbars
@@ -352,6 +356,7 @@
 }
 
 
+/* 
 // Text in navbars
 //
 // Add a class to make any element properly align itself vertically within the navbars.
@@ -365,6 +370,7 @@
     margin-right: $navbar-padding-horizontal;
   }
 }
+*/
 
 
 // Component alignment
@@ -528,6 +534,7 @@
 
 // Inverse navbar
 
+/* 
 .navbar-inverse {
   background-color: $navbar-inverse-bg;
   border-color: $navbar-inverse-border;
@@ -660,3 +667,4 @@
     }
   }
 }
+*/
