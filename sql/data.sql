@@ -27,16 +27,14 @@ USE `resume`;
 LOCK TABLES `bullets` WRITE;
 /*!40000 ALTER TABLE `bullets` DISABLE KEYS */;
 INSERT INTO `bullets` VALUES
-  (4,16,'Trained a staff of 3-6 students on network/hardware/software troubleshooting, repair, and support',2),
-  (6,15,'Developed for desktop, web, and mobile platforms using Microsoft .NET Framework and C#',1),
-  (7,15,'Maintained multiple products as the sole full-time developer, including a flagship <a href=\"{project|harld}\">housing operations system</a>',2),
-  (8,15,'Grew custom digital signage platform from an 8 display pilot to <a href=\"{project|digital-signage}\">&ge;&thinsp;36 installations across campus</a>',4),
-  (9,15,'Communicated with and observed end users to ease pain points and discover new software optimizations',5),
-  (10,15,'Designed ad hoc and self-service <abbr title=\"Structured Query Language\">SQL</abbr> reports to support business needs and improve staff efficiency',6),
+  (6,2,'Developed for desktop, web, and mobile platforms using Microsoft .NET Framework and C#',1),
+  (7,2,'Maintained multiple products as the sole full-time developer, including a flagship <a href=\"{project|harld}\">housing operations system</a>',2),
+  (8,2,'Grew custom digital signage platform from an 8 display pilot to <a href=\"{project|digital-signage}\">&ge;&thinsp;36 installations across campus</a>',4),
+  (9,2,'Communicated with and observed end users to ease pain points and discover new software optimizations',5),
+  (10,2,'Designed ad hoc and self-service <abbr title=\"Structured Query Language\">SQL</abbr> reports to support business needs and improve staff efficiency',6),
   (11,2,'Promoted from Software Developer to reflect increased skills, experience, and performance',1),
   (13,3,'Research-focused biology curriculum with substantial interdisciplinary breadth, <a href=\"{pdf|bs-biology-transcript}\" target=\"_blank\" rel=\"noopener\">earned a 3.275 <abbr title=\"Grade Point Average\">GPA</abbr>{ico|pdf}</a>',1),
   (14,3,'Contributed to epilepsy research in transgenic mice at the Neural Engineering Center in <abbr title=\"Biomedical Engineering\">BME</abbr> department',2),
-  (15,4,'Excelled in undergraduate <abbr title=\"Computer Science\">CS</abbr> courses in preparation for the <abbr title=\"Master of Science in Computer Science\">MS in CS</abbr> program; <a href=\"{pdf|non-degree-transcript}\" target=\"_blank\" rel=\"noopener\">earned an A in each{ico|pdf}</a>',1),
   (16,5,'Maintained a <a href=\"{pdf|ms-computer-science-transcript}\" target=\"_blank\" rel=\"noopener\">4.0 cumulative <abbr title=\"Grade Point Average\">GPA</abbr>{ico|pdf}</a> through computer science core and bioinformatics specialization',1),
   (17,5,'Researched impact of <a href=\"{project|gamifying-genetics}\">gamification on genetic literacy acquisition</a> during self-guided online learning',2),
   (18,5,'Presented a poster on <a href=\"{project|intersectional-identities}\">capturing intersectional identities in demographic surveys</a>',3),
@@ -44,13 +42,13 @@ INSERT INTO `bullets` VALUES
   (21,20,'Facilitated educational sessions covering implicit bias, microaggressions, intent vs. impact, and more',NULL),
   (22,19,'Completed 2007 and 2017 <a href=\"https://www.campusprideindex.org/campuses/details/19?campus=case-western-reserve-university\" target=\"_blank\" rel=\"noopener noreferrer\" data-category=\"External Link\" data-action=\"Campus Pride Index\">Campus Pride Index</a>{ico|ext} surveys; identified opportunities for improvement',2),
   (24,19,'Expanded the <abbr title=\"Lesbian Gay Bisexual Transgender\">LGBT</abbr> Resources webpage in 2008, rebranded for opening of <abbr title=\"Lesbian Gay Bisexual Transgender\">LGBT</abbr> Center in 2010',1),
-  (25,1,'Maintained school\'s web presence, spanning 21 domains, 108 subdomains, and &ge;<abbr title=\"16,000\">16K</abbr> pages',1),
+  (25,1,'Maintained management school\'s web presence, spanning 21 domains, 108 subdomains, and &ge;<abbr title=\"16,000\">16K</abbr> pages',1),
   (26,1,'Introduced new-to-the-team development practices including Sass, source control, and <abbr title=\"Object-Oriented Programming\">OOP</abbr>',4),
   (27,1,'Collaborated with marketing to imagine, design, and execute web and email campaigns',5),
   (28,1,'<a href=\"{project|server-hardening}\">Hardened web server configuration and code</a> to remediate a breach and reduce vulnerability',2),
   (29,1,'Led the <a href=\"{project|server-migration}\">migration from ColdFusion to ASP.NET</a>, developing both code and people in the process',3),
-  (30,1,'Stepped up to <a href=\"{project|hobsons-admissions}\">support the admissions team with their <abbr title=\"Customer Relationship Management system\">CRM</abbr></a> while our <abbr title=\"Business Analyst\">BA</abbr> position was vacant',4),
-  (31,15,'<a href=\"{project|mailroom}\">Optimized mailroom procedures</a> to handle 67% increase in mailroom traffic from <abbr title=\"Fiscal Year 2008 (7/2007-6/2008)\">FY08</abbr> to <abbr title=\"Fiscal Year 2013 (7/2012-6/2013)\">FY13</abbr>',3);
+  (30,1,'Stepped up to <a href=\"{project|admissions-crm}\">support the admissions team with their <abbr title=\"Customer Relationship Management system\">CRM</abbr></a> while our <abbr title=\"Business Analyst\">BA</abbr> position was vacant',4),
+  (31,2,'<a href=\"{project|mailroom}\">Optimized mailroom procedures</a> to handle 67% increase in mailroom traffic from <abbr title=\"Fiscal Year 2008 (7/2007-6/2008)\">FY08</abbr> to <abbr title=\"Fiscal Year 2013 (7/2012-6/2013)\">FY13</abbr>',3);
 /*!40000 ALTER TABLE `bullets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,13 +101,29 @@ UNLOCK TABLES;
 LOCK TABLES `project_skills` WRITE;
 /*!40000 ALTER TABLE `project_skills` DISABLE KEYS */;
 INSERT INTO `project_skills` VALUES
+  (1,2,NULL),
+  (1,44,NULL),
+  (1,51,NULL),
+  (1,55,NULL),
+  (1,57,NULL),
   (2,1,NULL),
   (2,5,NULL),
+  (2,7,NULL),
   (2,9,NULL),
   (2,11,NULL),
+  (2,28,NULL),
+  (2,44,NULL),
+  (2,51,NULL),
+  (2,55,NULL),
+  (2,57,NULL),
   (3,1,NULL),
+  (3,7,NULL),
+  (3,12,NULL),
   (3,13,NULL),
   (3,14,NULL),
+  (3,16,NULL),
+  (3,17,NULL),
+  (3,18,NULL),
   (3,29,NULL),
   (3,30,NULL),
   (3,32,NULL),
@@ -118,12 +132,18 @@ INSERT INTO `project_skills` VALUES
   (4,10,NULL),
   (4,30,NULL),
   (4,33,NULL),
+  (4,35,NULL),
   (4,36,NULL),
   (4,37,NULL),
   (4,38,NULL),
   (4,39,NULL),
   (4,40,NULL),
   (4,41,NULL),
+  (4,45,NULL),
+  (4,46,NULL),
+  (4,47,NULL),
+  (4,48,NULL),
+  (4,54,NULL),
   (6,1,NULL),
   (6,3,NULL),
   (6,5,NULL),
@@ -140,9 +160,13 @@ INSERT INTO `project_skills` VALUES
   (6,20,NULL),
   (6,22,NULL),
   (6,23,NULL),
+  (6,27,NULL),
   (6,29,NULL),
   (6,30,NULL),
   (6,32,NULL),
+  (6,56,NULL),
+  (6,60,NULL),
+  (6,61,NULL),
   (7,1,NULL),
   (7,3,NULL),
   (7,7,NULL),
@@ -156,8 +180,23 @@ INSERT INTO `project_skills` VALUES
   (7,30,NULL),
   (7,31,NULL),
   (7,32,NULL),
+  (7,49,NULL),
   (10,42,NULL),
-  (10,43,NULL);
+  (10,43,NULL),
+  (11,11,NULL),
+  (11,55,NULL),
+  (11,58,NULL),
+  (12,1,NULL),
+  (12,3,NULL),
+  (12,7,NULL),
+  (12,12,NULL),
+  (12,15,NULL),
+  (12,16,NULL),
+  (12,17,NULL),
+  (12,18,NULL),
+  (12,56,NULL),
+  (12,60,NULL),
+  (12,61,NULL);
 /*!40000 ALTER TABLE `project_skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -170,13 +209,13 @@ LOCK TABLES `projects` WRITE;
 INSERT INTO `projects` VALUES
   (1,1,'Server Hardening','server-hardening','Developed a three-phase plan to address a web server that was breached before my arrival',NULL),
   (2,1,'Server Migration','server-migration','Built core infrastructure and trained fellow staff to transition from Adobe ColdFusion to Microsoft ASP.NET',NULL),
-  (3,15,'Optimized Growing Mailroom Operations','mailroom','Optimized mailroom workflows to handle a 67% increase in packages over 4 years',NULL),
+  (3,2,'Optimized Growing Mailroom Operations','mailroom','Optimized mailroom workflows to handle a 67% increase in packages over 4 years',NULL),
   (4,5,'Gamifying Genetics','gamifying-genetics','Investigated how people learn about science and genetics online and the effects of game-play elements on the process',NULL),
-  (6,15,'Housing and Residence Life Database (HARLD)','harld','Expanded software that powered day-to-day operations of university housing, residence life, greek life, and associated offices',NULL),
-  (7,15,'Digital Signage','digital-signage','Devised a digital signage platform to inform members of the campus community in public areas',NULL),
+  (6,2,'Housing and Residence Life Database (HARLD)','harld','Expanded software that powered day-to-day operations of university housing, residence life, greek life, and associated offices',NULL),
+  (7,2,'Digital Signage','digital-signage','Devised a digital signage platform to inform members of the campus community in public areas',NULL),
   (10,5,'Intersectional Identities Poster','intersectional-identities','Demonstrated a granular demographics form to allow more diverse self-expression',NULL),
-  (11,1,'Hobsons Admissions','hobsons-admissions','Took over support of an admissions management system while our business analyst position was vacant',NULL),
-  (12,15,'Automated Card, Badge, and Key Issuing','physical-security','Rendered manual, paper-based procedures obsolete by incorporating physical security functionality into housing office software',NULL);
+  (11,1,'Hobsons Admissions','admissions-crm','Took over support of an admissions management system while our business analyst position was vacant',NULL),
+  (12,2,'Automated Card, Badge, and Key Issuing','physical-security','Rendered manual, paper-based procedures obsolete by incorporating physical security functionality into housing office software',NULL);
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -197,7 +236,8 @@ INSERT INTO `skill_types` VALUES
   (8,'Point of Service Hardware','point-of-service-hardware',60,'\0'),
   (9,'Protocols','protocols',75,'\0'),
   (10,'Administrative','administrative',75,'\0'),
-  (11,'JavaScript','javascript',30,'\0');
+  (11,'JavaScript','javascript',30,'\0'),
+  (12,'Servers','servers',25,'\0');
 /*!40000 ALTER TABLE `skill_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -257,8 +297,104 @@ INSERT INTO `skills` VALUES
   (47,1,'JavaScript','javascript',NULL,NULL),
   (48,1,'Sass','sass',NULL,NULL),
   (49,1,'XPath','xpath',NULL,NULL),
-  (50,11,'jQuery','jquery',NULL,NULL);
+  (50,11,'jQuery','jquery',NULL,NULL),
+  (51,12,'Internet Information Services (IIS)','iis',NULL,NULL),
+  (54,12,'LAMP/WAMP Stack','lamp-wamp-stack',NULL,NULL),
+  (55,10,'Documentation','documentation',NULL,NULL),
+  (56,3,'SQL Server Reporting Services','sql-server-reporting-services',NULL,NULL),
+  (57,2,'Microsoft Windows Server','microsoft-windows-server',NULL,NULL),
+  (58,1,'HTML Emails','html-emails',NULL,NULL),
+  (59,4,'MailChimp','mailchimp',NULL,NULL),
+  (60,10,'Data Entry','data-entry',NULL,NULL),
+  (61,10,'Data Auditing','data-auditing',NULL,NULL),
+  (62,7,'One-on-One Training','one-on-one-training',NULL,NULL),
+  (63,7,'Phone Support','phone-support',NULL,NULL),
+  (64,11,'D3.js','d3-js',NULL,NULL);
 /*!40000 ALTER TABLE `skills` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `tenure_skills`
+--
+
+LOCK TABLES `tenure_skills` WRITE;
+/*!40000 ALTER TABLE `tenure_skills` DISABLE KEYS */;
+INSERT INTO `tenure_skills` VALUES
+  (1,1),
+  (2,1),
+  (1,2),
+  (1,3),
+  (2,3),
+  (5,4),
+  (1,5),
+  (2,5),
+  (5,6),
+  (1,7),
+  (2,7),
+  (1,8),
+  (2,8),
+  (1,9),
+  (5,10),
+  (1,11),
+  (2,11),
+  (2,12),
+  (2,13),
+  (2,14),
+  (2,15),
+  (2,16),
+  (2,17),
+  (2,18),
+  (2,19),
+  (2,20),
+  (2,21),
+  (2,22),
+  (2,23),
+  (2,24),
+  (1,25),
+  (2,25),
+  (1,26),
+  (2,26),
+  (1,27),
+  (2,27),
+  (1,28),
+  (2,29),
+  (2,30),
+  (2,31),
+  (2,32),
+  (5,33),
+  (5,34),
+  (5,35),
+  (5,37),
+  (5,38),
+  (5,39),
+  (5,40),
+  (5,41),
+  (1,42),
+  (2,42),
+  (2,43),
+  (1,44),
+  (2,44),
+  (1,45),
+  (1,46),
+  (1,47),
+  (1,48),
+  (2,49),
+  (1,50),
+  (1,51),
+  (5,54),
+  (1,55),
+  (2,55),
+  (2,56),
+  (1,57),
+  (1,58),
+  (2,58),
+  (1,59),
+  (2,60),
+  (2,61),
+  (2,62),
+  (2,63),
+  (5,64);
+/*!40000 ALTER TABLE `tenure_skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -269,7 +405,7 @@ LOCK TABLES `tenure_types` WRITE;
 /*!40000 ALTER TABLE `tenure_types` DISABLE KEYS */;
 INSERT INTO `tenure_types` VALUES
   (1,'Experience','experience',NULL,1,'','','','jobTitle','worksFor','http://schema.org/Organization'),
-  (2,'Education','education',NULL,2,'','\0','',NULL,'alumniOf','http://schema.org/EducationalOrganization'),
+  (2,'Education','education',NULL,2,'','\0','\0',NULL,'alumniOf','http://schema.org/EducationalOrganization'),
   (3,'Professional Development','professional-development','Conferences',3,'','\0','\0',NULL,'affiliation','http://schema.org/Organization'),
   (4,'Volunteer Experience','volunteer-experience','Volunteer',4,'','','',NULL,'memberOf','http://schema.org/Organization'),
   (5,'Awards','awards',NULL,5,'','\0','\0','award','affiliation','http://schema.org/Organization');
@@ -284,10 +420,9 @@ LOCK TABLES `tenures` WRITE;
 /*!40000 ALTER TABLE `tenures` DISABLE KEYS */;
 INSERT INTO `tenures` VALUES
   (1,1,1,'Lead Web Developer','lead-web-developer','Analyst/Programmer 3',NULL,NULL,'2013-08-07',NULL,''),
-  (2,1,2,'Application Developer','application-developer','Analyst/Programmer 3',NULL,NULL,'2012-10-01','2013-08-06',''),
+  (2,1,2,'Application Developer','application-developer','Analyst/Programmer 3',NULL,NULL,'2007-05-21','2013-08-06',''),
   (3,2,3,'Bachelor of Science','bs-biology','Biology',NULL,NULL,'2003-08-25','2007-05-20',''),
-  (4,2,4,'Non-Degree Studies','non-degree',NULL,NULL,NULL,'2010-08-23','2011-12-09','\0'),
-  (5,2,4,'Master of Science','ms-computer-science','Computer Science',NULL,NULL,'2012-01-17','2017-01-20',''),
+  (5,2,4,'Master of Science','ms-computer-science','Computer Science',NULL,NULL,'2010-08-23','2017-01-20',''),
   (6,3,5,'HighEdWeb conference 2016','highedweb-2016','Memphis, TN',NULL,'https://2016.highedweb.org/','2016-10-16','2016-10-19','\0'),
   (7,3,5,'HighEdWeb conference 2015','highedweb-2015','Milwaukee, WI',NULL,'https://2015.highedweb.org/','2015-10-04','2015-10-07','\0'),
   (8,3,6,'Web 2.0 Expo conference 2010','web-2-0-expo-2010','San Francisco, CA',NULL,'https://conferences.oreilly.com/web2expo/webexsf2010','2010-05-03','2010-05-06','\0'),
@@ -297,8 +432,6 @@ INSERT INTO `tenures` VALUES
   (12,3,8,'Code PaLOUsa conference 2013','code-palousa-2013','Louisville, KY',NULL,'http://lanyrd.com/2013/codepalousa/','2013-04-01','2013-04-01','\0'),
   (13,3,8,'Code PaLOUsa conference 2012','code-palousa-2012','Louisville, KY',NULL,'http://lanyrd.com/2012/codepalousa/','2012-03-01','2012-03-01','\0'),
   (14,3,8,'Code PaLOUsa conference 2011','code-palousa-2011','Louisville, KY',NULL,'http://lanyrd.com/2011/codepalousa/','2011-03-01','2011-03-01','\0'),
-  (15,1,2,'Software Developer','software-developer','Analyst/Programmer 2',NULL,NULL,'2008-06-01','2012-10-01','\0'),
-  (16,1,2,'Training and Support Manager','training-and-support-manager',NULL,NULL,NULL,'2007-05-21','2008-06-01','\0'),
   (18,4,9,'Web Developers Group','web-developers-group','Founder',NULL,NULL,'2016-09-16',NULL,'\0'),
   (19,4,10,'LGBTQA Committee','lgbtqa-committee','Member',NULL,'https://case.edu/lgbt/committee/','2007-06-14',NULL,'\0'),
   (20,4,11,'Diversity 360','diversity-360','Facilitator',NULL,'https://students.case.edu/diversity/training/diversity360/','2016-02-03',NULL,'\0'),

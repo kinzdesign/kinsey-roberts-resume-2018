@@ -22,7 +22,6 @@
     Page::$showBreadcrumbs = false;
     // show all skills
     Page::$skills = Skill::getAll();
-    Page::$offCanvasSidebar = true;
     Page::$canonicalUrl = '/';
   }
   Page::renderTop();

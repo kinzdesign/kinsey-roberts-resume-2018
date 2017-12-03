@@ -1,0 +1,2 @@
+<p>My first exposure to Microsoft C# was in 2004, during an Elementary Computer Programming course. The class was not taught in any particular language, but the professor recommended C#. I bought my first O'Reilly book and started teaching myself C#.</p>
+<p>Since then, I have used C# and the .NET Framework for most of my professional career.</p>

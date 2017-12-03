@@ -155,6 +155,23 @@ CREATE TABLE `skills` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `tenure_skills`
+--
+
+DROP TABLE IF EXISTS `tenure_skills`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tenure_skills` (
+  `tenure` tinyint(3) unsigned NOT NULL,
+  `skill` smallint(5) unsigned NOT NULL,
+  PRIMARY KEY (`tenure`,`skill`),
+  KEY `fk_tenure_skills_skill_idx` (`skill`),
+  CONSTRAINT `fk_tenure_skills_skill` FOREIGN KEY (`skill`) REFERENCES `skills` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tenure_skills_tenure` FOREIGN KEY (`tenure`) REFERENCES `tenures` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `tenure_types`
 --
 

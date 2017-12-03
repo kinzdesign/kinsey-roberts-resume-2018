@@ -1,3 +1,5 @@
+$footer-height: 60px;
+
 .footer {
   width: 100%;
   margin-top: 3em;
@@ -8,6 +10,7 @@
 
   a, a:hover, a:active, a:link, a:visited {
     color: white;
+    text-decoration: underline;
   }
 
   .footer-center {
@@ -17,4 +20,20 @@
   .footer-right {
     text-align: right;
   }
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: $footer-height * 1.5;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: $footer-height;
 }

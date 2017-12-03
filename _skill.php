@@ -20,6 +20,8 @@
           // otherwise output synopsis if present
           if($skill->synopsis())
             echo "<p>{$skill->synopsis()}</p>\n";
+        // render tenure list
+        tenure_list($skill->tenures());
         // render project list
         project_list($skill->projects());
   } // end contents 

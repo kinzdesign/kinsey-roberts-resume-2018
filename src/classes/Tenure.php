@@ -253,4 +253,16 @@ class Tenure {
       return new self($row);
     return false;
   }
+
+    public static function getBySkillId($skillId) {
+    $arr = array();
+    if($skillId) {
+      $sql = self::SELECT . ' WHERE id IN (SELECT tenure FROM tenure_skills WHERE skill = ?) ' . self::ORDER;
+      $result = Database::execute($sql, $skillId);
+      if($result)
+        while($row = $result->fetchRow()) 
+          $arr[] = new self($row);
+    }
+    return $arr;
+  }
 }

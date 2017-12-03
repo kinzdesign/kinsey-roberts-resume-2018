@@ -12,6 +12,7 @@ class Skill {
     $this->slug         = $row['slug'];
     $this->synopsis     = Page::interpolateLinks($row['synopsis']);
     $this->hasProjects  = $row['hasProjects'] == '1';
+    $this->hasTenures   = $row['hasTenures'] == '1';
   }
 
   /*
@@ -24,7 +25,9 @@ class Skill {
           $synopsis,
           $slug,
           $projects,
-          $hasProjects;
+          $hasProjects,
+          $tenures,
+          $hasTenures;
 
   public function id() {
     return $this->id;
@@ -64,6 +67,17 @@ class Skill {
     return $this->hasProjects;
   }
 
+  public function tenures() {
+    // lazy-load Tenure objects
+    if($this->hasTenures && !$this->tenures)
+      $this->tenures = Tenure::getBySkillId($this->id());
+    return $this->tenures;
+  }
+
+  public function hasTenures() {
+    return $this->hasTenures;
+  }
+
   public function hasPartial() {
     return Page::partialExists('skills', $this->slug());
   }
@@ -72,6 +86,7 @@ class Skill {
     return 
       $this->synopsis() ||
       $this->hasPartial() || 
+      $this->hasTenures() || 
       $this->hasProjects();
   }
   
@@ -96,12 +111,13 @@ class Skill {
    */
 
   const SELECT = "SELECT s.id, s.type, s.name, s.slug, s.synopsis, " .
-    "EXISTS(SELECT * FROM project_skills ps WHERE ps.skill = s.id) AS hasProjects " .
+    "EXISTS(SELECT * FROM project_skills ps WHERE ps.skill = s.id) AS hasProjects, " .
+    "EXISTS(SELECT * FROM tenure_skills ts WHERE ts.skill = s.id) AS hasTenures " .
     "FROM skills s INNER JOIN skill_types t ON s.type = t.id ";
   const ORDER  = " ORDER BY COALESCE(t.displayorder, t.id), COALESCE(s.displayorder, s.id) ";
 
   const PROJECT_SELECT = self::SELECT . ' WHERE s.id IN (SELECT skill FROM project_skills WHERE project = ?) ' . self::ORDER;
-  const TENURE_SELECT = self::SELECT . ' WHERE s.id IN (SELECT skill FROM project_skills WHERE project IN (SELECT id FROM projects WHERE tenure = ?)) ' . self::ORDER;
+  const TENURE_SELECT = self::SELECT . ' WHERE s.id IN (SELECT skill FROM project_skills WHERE project IN (SELECT id FROM projects WHERE tenure = ?)) OR s.id IN (SELECT skill FROM tenure_skills WHERE tenure = ?) ' . self::ORDER;
 
   public static function getAll() {
     $arr = array();
@@ -157,7 +173,7 @@ class Skill {
 
   public static function getByTenureId($tenureId) {
     $arr = array();
-    $result = Database::execute(self::TENURE_SELECT, $tenureId);
+    $result = Database::execute(self::TENURE_SELECT, [$tenureId, $tenureId]);
     if($result)
       while($row = $result->fetchRow()) 
         $arr[] = new self($row);
@@ -167,7 +183,7 @@ class Skill {
   public static function getByTenure($tenure) {
     $arr = array();
     if($tenure) {
-      $result = Database::execute(self::TENURE_SELECT, $tenure->id());
+      $result = Database::execute(self::TENURE_SELECT, [$tenure->id(), $tenure->id()]);
       if($result)
         while($row = $result->fetchRow()) 
           $arr[] = new self($row, false);

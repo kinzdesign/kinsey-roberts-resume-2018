@@ -21,6 +21,7 @@
      
      ,"src/functions/duration_string.php" 
      ,"src/functions/project_list.php" 
+     ,"src/functions/tenure_list.php" 
     ]
   }
 }
