@@ -4,7 +4,7 @@ Site: kinsey.q.roberts@gmail.com
 Location: Cleveland, Ohio, USA
               
 /* SITE */
-Last update: 2017/12/02 17:35
+Last update: 2017/12/02 19:39
 Language: English
 Doctype: HTML5
 Standards: HTML5, CSS3
