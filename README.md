@@ -14,17 +14,17 @@ This project is an HTML-based resume and portfolio for Kinsey Roberts.
 ## [Build Process](tasks/build.cmd)
 
  1. Database is backed up to [`/sql/`](sql/) using [`mysqldump` and `sed`](tasks/db_backup.cmd)
- 2. Assets are built using a [Ruby script](tasks/_compile_assets.rb)
-   1. CSS is compiled from Sass and minified
-   2. JavaScript files are concatenated and minified
-   3. [PHP configuration](src/classes/Config.php) and [`humans.txt`](humans.txt) are updated to reflect build time
+ 2. Assets are built using a [Ruby script](tasks/compile_assets.rb)
+    1. CSS is compiled from Sass and minified
+    2. JavaScript files are concatenated and minified
+    3. [PHP configuration](src/classes/Config.php) and [`humans.txt`](humans.txt) are updated to reflect build time
  3. Each page is saved to a static HTML file using a [PHP script](tasks/static_pages.php)
     1. Build time is included as a query string parameter on all links for cache busting
     2. Page's contents are minified and saved under [`/static/`](static/)
     3. [`sitemap.xml`](sitemap.xml) is built as each page is processed
  4. Critical CSS is inlined into each page using a [`gulp` task](tasks/gulpfile.js)
-  1. The [`critical` npm package](https://www.npmjs.com/package/critical) analyzes all 4 Bootstrap breakpoints to inline above-the-fold styles
-  2. Pages were split into 6 parallel queues to reduce processing time
+    1. The [`critical` npm package](https://www.npmjs.com/package/critical) analyzes all 4 Bootstrap breakpoints to inline above-the-fold styles
+    2. Pages were split into 6 parallel queues to reduce processing time
 
 This seems like an absurd number of technologies for one build script. The Ruby Sass/JS pipeline was reused from a previous project. The static pages script needed database access, and doing it in PHP let me reuse the data objects I'd written. I couldn't find a Ruby critical CSS gem that considered more than one breakpoint; enter Node.js and gulp. Add some batch scripting to tie it all together and it became a tidy build process.
 
