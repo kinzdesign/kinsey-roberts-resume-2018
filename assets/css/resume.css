@@ -2878,8 +2878,16 @@ abbr[title], acronym[title], abbr[data-original-title] {
   border-bottom: 1px dotted #b4bcc2;
   text-decoration: none; }
 
-main a {
-  text-decoration: underline; }
+/* Link formatting
+-------------------------------------------------- */
+main a, main a:link, main a:visited, .sidebar .panel-body a, .sidebar .panel-body a:link, .sidebar .panel-body a:visited {
+  text-decoration: none;
+  border-bottom: 1px solid #b4cff9; }
+  main a:hover, main a:link:hover, main a:visited:hover, .sidebar .panel-body a:hover, .sidebar .panel-body a:link:hover, .sidebar .panel-body a:visited:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #0d47a1; }
+  main a abbr[title], main a acronym[title], main a abbr[data-original-title], main a:link abbr[title], main a:link acronym[title], main a:link abbr[data-original-title], main a:visited abbr[title], main a:visited acronym[title], main a:visited abbr[data-original-title], .sidebar .panel-body a abbr[title], .sidebar .panel-body a acronym[title], .sidebar .panel-body a abbr[data-original-title], .sidebar .panel-body a:link abbr[title], .sidebar .panel-body a:link acronym[title], .sidebar .panel-body a:link abbr[data-original-title], .sidebar .panel-body a:visited abbr[title], .sidebar .panel-body a:visited acronym[title], .sidebar .panel-body a:visited abbr[data-original-title] {
+    border-bottom: 1px dotted #95a5a6; }
 
 /* icons */
 .fa {
@@ -2992,8 +3000,8 @@ main a {
   .sidebar .panel-body ul {
     margin-bottom: 0; }
     .sidebar .panel-body ul li {
-      line-height: 0.95;
-      margin-bottom: 0.6em; }
+      line-height: 1.2;
+      margin-bottom: 0.7em; }
   .sidebar .panel-body a {
     text-decoration: underline; }
 
@@ -3049,6 +3057,15 @@ main a {
     text-align: center; }
   .footer .footer-right {
     text-align: right; }
+
+/* Link formatting
+-------------------------------------------------- */
+.footer a, .footer a:link, .footer a:visited {
+  text-decoration: none;
+  border-bottom: 1px solid #666; }
+  .footer a:hover, .footer a:link:hover, .footer a:visited:hover {
+    text-decoration: none;
+    border-bottom: 1px solid white; }
 
 /* Sticky footer styles
 -------------------------------------------------- */

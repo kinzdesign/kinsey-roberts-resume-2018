@@ -22,6 +22,21 @@ $footer-height: 60px;
   }
 }
 
+
+/* Link formatting
+-------------------------------------------------- */
+.footer {
+  a, a:link, a:visited {
+    text-decoration: none;
+    border-bottom: 1px solid #666;
+
+    &:hover {
+      text-decoration: none;
+      border-bottom: 1px solid white;
+    }
+  }
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
