@@ -35,7 +35,6 @@ INSERT INTO `bullets` VALUES
   (11,2,'Promoted from Software Developer to reflect increased skills, experience, and performance',1),
   (13,3,'Research-focused biology curriculum with substantial interdisciplinary breadth, <a href=\"{pdf|bs-biology-transcript}\" target=\"_blank\" rel=\"noopener\">earned a 3.275 <abbr title=\"Grade Point Average\">GPA</abbr>{ico|pdf}</a>',1),
   (14,3,'Contributed to epilepsy research in transgenic mice at the Neural Engineering Center in <abbr title=\"Biomedical Engineering\">BME</abbr> department',2),
-  (15,4,'Excelled in undergraduate <abbr title=\"Computer Science\">CS</abbr> courses in preparation for the <abbr title=\"Master of Science in Computer Science\">MS in CS</abbr> program; <a href=\"{pdf|non-degree-transcript}\" target=\"_blank\" rel=\"noopener\">earned an A in each{ico|pdf}</a>',1),
   (16,5,'Maintained a <a href=\"{pdf|ms-computer-science-transcript}\" target=\"_blank\" rel=\"noopener\">4.0 cumulative <abbr title=\"Grade Point Average\">GPA</abbr>{ico|pdf}</a> through computer science core and bioinformatics specialization',1),
   (17,5,'Researched impact of <a href=\"{project|gamifying-genetics}\">gamification on genetic literacy acquisition</a> during self-guided online learning',2),
   (18,5,'Presented a poster on <a href=\"{project|intersectional-identities}\">capturing intersectional identities in demographic surveys</a>',3),
@@ -406,7 +405,7 @@ LOCK TABLES `tenure_types` WRITE;
 /*!40000 ALTER TABLE `tenure_types` DISABLE KEYS */;
 INSERT INTO `tenure_types` VALUES
   (1,'Experience','experience',NULL,1,'','','','jobTitle','worksFor','http://schema.org/Organization'),
-  (2,'Education','education',NULL,2,'','\0','',NULL,'alumniOf','http://schema.org/EducationalOrganization'),
+  (2,'Education','education',NULL,2,'','\0','\0',NULL,'alumniOf','http://schema.org/EducationalOrganization'),
   (3,'Professional Development','professional-development','Conferences',3,'','\0','\0',NULL,'affiliation','http://schema.org/Organization'),
   (4,'Volunteer Experience','volunteer-experience','Volunteer',4,'','','',NULL,'memberOf','http://schema.org/Organization'),
   (5,'Awards','awards',NULL,5,'','\0','\0','award','affiliation','http://schema.org/Organization');
@@ -423,8 +422,7 @@ INSERT INTO `tenures` VALUES
   (1,1,1,'Lead Web Developer','lead-web-developer','Analyst/Programmer 3',NULL,NULL,'2013-08-07',NULL,''),
   (2,1,2,'Application Developer','application-developer','Analyst/Programmer 3',NULL,NULL,'2007-05-21','2013-08-06',''),
   (3,2,3,'Bachelor of Science','bs-biology','Biology',NULL,NULL,'2003-08-25','2007-05-20',''),
-  (4,2,4,'Non-Degree Studies','non-degree',NULL,NULL,NULL,'2010-08-23','2011-12-09','\0'),
-  (5,2,4,'Master of Science','ms-computer-science','Computer Science',NULL,NULL,'2012-01-17','2017-01-20',''),
+  (5,2,4,'Master of Science','ms-computer-science','Computer Science',NULL,NULL,'2010-08-23','2017-01-20',''),
   (6,3,5,'HighEdWeb conference 2016','highedweb-2016','Memphis, TN',NULL,'https://2016.highedweb.org/','2016-10-16','2016-10-19','\0'),
   (7,3,5,'HighEdWeb conference 2015','highedweb-2015','Milwaukee, WI',NULL,'https://2015.highedweb.org/','2015-10-04','2015-10-07','\0'),
   (8,3,6,'Web 2.0 Expo conference 2010','web-2-0-expo-2010','San Francisco, CA',NULL,'https://conferences.oreilly.com/web2expo/webexsf2010','2010-05-03','2010-05-06','\0'),
