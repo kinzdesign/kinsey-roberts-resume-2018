@@ -67,7 +67,7 @@ function relative_path($root, $pathname) {
 
 function s3_upload($pathname, $relative, $args = '') {
   $cmd = "aws s3 cp --cache-control max-age=2592000 --expires 2034-01-01T00:00:00Z {$args} $pathname s3://kinseyroberts.me{$relative}";
-  echo str_replace('upload:', '   > uploaded:', exec($cmd)) . "\r\n";
+  echo str_replace('upload: ..', '   > uploaded: ', exec($cmd)) . "\r\n";
 }
 
 function gzip_file($root, $pathname, $args = "") {
@@ -94,10 +94,15 @@ function upload_file($root, $pathname) {
   s3_upload($pathname, $relative);
 }
 
+function ping($url) {
+  echo "   >  pinging: $url\r\n";
+  return file_get_contents($url);
+}
+
 // sync static directory, recursively
 $root = realpath("../static");
 sync_dir($root, $root);
-// ping Google with new sitemap
-$ping = 'https://www.google.com/webmasters/tools/ping?sitemap=' . urlencode(Config::productionHost() . '/sitemap.xml');
-echo "   > pinging Google at $ping\r\n";
-file_get_contents($ping);
+// ping search engines with new sitemap
+$sitemap = urlencode(Config::productionHost() . '/sitemap.xml');
+ping('https://www.google.com/webmasters/tools/ping?sitemap=' . $sitemap);
+ping('https://www.bing.com/webmaster/ping.aspx?siteMap=' . $sitemap);

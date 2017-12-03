@@ -2,6 +2,6 @@
 @ECHO OFF
 ECHO.
 ECHO  + Uploading static contents to S3
-php s3_sync.php
+php s3_upload.php
 ECHO  + Done!
 ECHO.
