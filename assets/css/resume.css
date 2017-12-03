@@ -3835,6 +3835,9 @@ abbr[title], acronym[title], abbr[data-original-title] {
   border-bottom: 1px dotted #b4bcc2;
   text-decoration: none; }
 
+main a {
+  text-decoration: underline; }
+
 /* icons */
 .fa {
   font-family: FontAwesome;
@@ -3948,6 +3951,8 @@ abbr[title], acronym[title], abbr[data-original-title] {
     .sidebar .panel-body ul li {
       line-height: 0.95;
       margin-bottom: 0.6em; }
+  .sidebar .panel-body a {
+    text-decoration: underline; }
 
 .tenure-department {
   font-size: 14px; }
@@ -3995,7 +4000,8 @@ abbr[title], acronym[title], abbr[data-original-title] {
   color: white;
   font-size: 13px; }
   .footer a, .footer a:hover, .footer a:active, .footer a:link, .footer a:visited {
-    color: white; }
+    color: white;
+    text-decoration: underline; }
   .footer .footer-center {
     text-align: center; }
   .footer .footer-right {
