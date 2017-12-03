@@ -68,7 +68,7 @@
     }
     # emit FontAwesome CDN loader, respecting DNT
     if(Page::$jsFontAwesome) 
-      echo "\r\n        .script(_dntEnabled() ? '/assets/js/font-awesome.js' : 'https://use.fontawesome.com/ced7440677.js')";
+      echo "\r\n        .script(_dntEnabled() ? '/assets/js/font-awesome.min.js' : 'https://use.fontawesome.com/ced7440677.js')";
 
     echo ';';
   }
