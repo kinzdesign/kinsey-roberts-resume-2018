@@ -1,34 +1,8 @@
 /* padding */
 
-.padding-top-large,
 .padding-both-large {
   padding-top: $padding-large-vertical;
-}
-.padding-bottom-large,
-.padding-both-large {
   padding-bottom: $padding-large-vertical;
-}
-
-.padding-top-small,
-.padding-both-small {
-  padding-top: $padding-small-vertical;
-}
-.padding-bottom-small,
-.padding-both-small {
-  padding-bottom: $padding-small-vertical;
-}
-
-.padding-top-xs,
-.padding-both-xs {
-  padding-top: $padding-xs-vertical;
-}
-.padding-bottom-xs,
-.padding-both-xs {
-  padding-bottom: $padding-xs-vertical;
-}
-
-.padding-all-large {
-  padding: $padding-large-vertical $padding-large-horizontal;
 }
 
 .padding-all-small {
