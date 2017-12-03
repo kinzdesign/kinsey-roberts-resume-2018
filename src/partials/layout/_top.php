@@ -9,17 +9,9 @@
 <?php Page::renderPartial('layout', 'gtm-body'); ?>
 <?php Page::renderPartial('layout', 'topnav'); ?>
     <div class="container">
-<?php if(Page::showSidebar()) { 
-        if(Page::$offCanvasSidebar) { ?>
-      <div class="row row-offcanvas row-offcanvas-right">
-        <main class="col-xs-12 col-sm-8 col-md-9">
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-warning btn-xs btn-offcanvas" data-toggle="offcanvas">Skills</button>
-          </p>
-<?php   } else { ?>
+<?php if(Page::showSidebar()) { ?>
       <div class="row">
         <main class="col-xs-12 col-sm-8 col-md-9">
-<?php   } ?>
 <?php } else { ?>
       <div class="row">
         <main class="col-xs-12">
