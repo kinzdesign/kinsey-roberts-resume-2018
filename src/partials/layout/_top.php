@@ -9,12 +9,12 @@
 <?php Page::renderPartial('layout', 'gtm-body'); ?>
 <?php Page::renderPartial('layout', 'topnav'); ?>
     <div class="container">
-<?php if(Page::showSidebar()) { ?>
+<?php if(Page::$showBreadcrumbs && count(Page::$breadcrumbs) > 0)
+        Page::renderPartial('layout', 'breadcrumbs');
+      if(Page::showSidebar()) { ?>
       <div class="row">
         <main class="col-xs-12 col-sm-8 col-md-9">
 <?php } else { ?>
       <div class="row">
         <main class="col-xs-12">
 <?php }
-      if(Page::$showBreadcrumbs && count(Page::$breadcrumbs) > 0)
-        Page::renderPartial('layout', 'breadcrumbs');

@@ -27,12 +27,13 @@ USE `resume`;
 LOCK TABLES `bullets` WRITE;
 /*!40000 ALTER TABLE `bullets` DISABLE KEYS */;
 INSERT INTO `bullets` VALUES
+  (4,16,'Trained a staff of 3-6 students on network/hardware/software troubleshooting, repair, and support',2),
   (6,2,'Developed for desktop, web, and mobile platforms using Microsoft .NET Framework and C#',1),
   (7,2,'Maintained multiple products as the sole full-time developer, including a flagship <a href=\"{project|harld}\">housing operations system</a>',2),
   (8,2,'Grew custom digital signage platform from an 8 display pilot to <a href=\"{project|digital-signage}\">&ge;&thinsp;36 installations across campus</a>',4),
   (9,2,'Communicated with and observed end users to ease pain points and discover new software optimizations',5),
   (10,2,'Designed ad hoc and self-service <abbr title=\"Structured Query Language\">SQL</abbr> reports to support business needs and improve staff efficiency',6),
-  (11,2,'Promoted from Software Developer to reflect increased skills, experience, and performance',1),
+  (11,15,'Built skills and experience while completing similar duties as Application Developer above',1),
   (13,3,'Research-focused biology curriculum with substantial interdisciplinary breadth, <a href=\"{pdf|bs-biology-transcript}\" target=\"_blank\" rel=\"noopener\">earned a 3.275 <abbr title=\"Grade Point Average\">GPA</abbr>{ico|pdf}</a>',1),
   (14,3,'Contributed to epilepsy research in transgenic mice at the Neural Engineering Center in <abbr title=\"Biomedical Engineering\">BME</abbr> department',2),
   (16,5,'Maintained a <a href=\"{pdf|ms-computer-science-transcript}\" target=\"_blank\" rel=\"noopener\">4.0 cumulative <abbr title=\"Grade Point Average\">GPA</abbr>{ico|pdf}</a> through computer science core and bioinformatics specialization',1),
@@ -71,11 +72,9 @@ INSERT INTO `departments` VALUES
   (10,1,'LGBT Center',NULL,'https://www.case.edu/lgbt/'),
   (11,1,'Office of Multicultural Affairs',NULL,'https://students.case.edu/departments/oma/'),
   (14,5,'University View Condominium Association',NULL,NULL),
-  (15,1,'CWRU Pride, LGBT Alumni Network',NULL,'https://case.edu/alumni/lgbt/'),
+  (15,1,'CWRU Pride LGBT Alumni Network',NULL,'https://case.edu/alumni/lgbt/'),
   (16,1,'Student Affairs Professional Development Committee',NULL,NULL),
-  (17,1,'Office of Student Affairs',NULL,'https://students.case.edu/'),
-  (18,1,'Dr. Dorothy Pijan Student Leadership Awards',NULL,'https://students.case.edu/traditions/awards/leadership/'),
-  (19,1,'Office of Student Activities and Leadership',NULL,'https://students.case.edu/departments/activities/');
+  (17,1,'Office of Student Affairs',NULL,'https://students.case.edu/');
 /*!40000 ALTER TABLE `departments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -420,7 +419,7 @@ LOCK TABLES `tenures` WRITE;
 /*!40000 ALTER TABLE `tenures` DISABLE KEYS */;
 INSERT INTO `tenures` VALUES
   (1,1,1,'Lead Web Developer','lead-web-developer','Analyst/Programmer 3',NULL,NULL,'2013-08-07',NULL,''),
-  (2,1,2,'Application Developer','application-developer','Analyst/Programmer 3',NULL,NULL,'2007-05-21','2013-08-06',''),
+  (2,1,2,'Application Developer','application-developer','Analyst/Programmer 3',NULL,NULL,'2012-10-01','2013-08-06',''),
   (3,2,3,'Bachelor of Science','bs-biology','Biology',NULL,NULL,'2003-08-25','2007-05-20',''),
   (5,2,4,'Master of Science','ms-computer-science','Computer Science',NULL,NULL,'2010-08-23','2017-01-20',''),
   (6,3,5,'HighEdWeb conference 2016','highedweb-2016','Memphis, TN',NULL,'https://2016.highedweb.org/','2016-10-16','2016-10-19','\0'),
@@ -432,6 +431,8 @@ INSERT INTO `tenures` VALUES
   (12,3,8,'Code PaLOUsa conference 2013','code-palousa-2013','Louisville, KY',NULL,'http://lanyrd.com/2013/codepalousa/','2013-04-01','2013-04-01','\0'),
   (13,3,8,'Code PaLOUsa conference 2012','code-palousa-2012','Louisville, KY',NULL,'http://lanyrd.com/2012/codepalousa/','2012-03-01','2012-03-01','\0'),
   (14,3,8,'Code PaLOUsa conference 2011','code-palousa-2011','Louisville, KY',NULL,'http://lanyrd.com/2011/codepalousa/','2011-03-01','2011-03-01','\0'),
+  (15,1,2,'Software Developer','software-developer','Analyst/Programmer 2',NULL,NULL,'2008-06-01','2012-10-01','\0'),
+  (16,1,2,'Training and Support Manager','training-and-support-manager',NULL,NULL,NULL,'2007-05-21','2008-06-01','\0'),
   (18,4,9,'Web Developers Group','web-developers-group','Founder',NULL,NULL,'2016-09-16',NULL,'\0'),
   (19,4,10,'LGBTQA Committee','lgbtqa-committee','Member',NULL,'https://case.edu/lgbt/committee/','2007-06-14',NULL,'\0'),
   (20,4,11,'Diversity 360','diversity-360','Facilitator',NULL,'https://students.case.edu/diversity/training/diversity360/','2016-02-03',NULL,'\0'),

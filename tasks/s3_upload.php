@@ -37,7 +37,9 @@ function sync_file($root, $fileinfo) {
       gzip_file($root, $fileinfo->getPathname(), '--content-type text/javascript;charset=utf-8');
       break;
     case 'css':
-      gzip_file($root, $fileinfo->getPathname(), '--content-type text/css;charset=utf-8');
+      # only upload minified CSS
+      if(substr($fileinfo->getPathname(), -8) === '.min.css')
+        gzip_file($root, $fileinfo->getPathname(), '--content-type text/css;charset=utf-8');
       break;
     case 'xml':
       gzip_file($root, $fileinfo->getPathname(), '--content-type text/xml;charset=utf-8');
