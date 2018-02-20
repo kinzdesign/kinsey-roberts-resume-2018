@@ -104,6 +104,9 @@ function ping($url) {
 // sync static directory, recursively
 $root = realpath("../static");
 sync_dir($root, $root);
+  $cmd = "";
+// copy application-developer to software-developer in case any old links on resume
+exec('aws s3 cp s3://kinseyroberts.me/experience/application-developer/ s3://kinseyroberts.me/experience/software-developer/ --recursive');
 // ping search engines with new sitemap
 $sitemap = urlencode(Config::productionHost() . '/sitemap.xml');
 ping('https://www.google.com/webmasters/tools/ping?sitemap=' . $sitemap);
